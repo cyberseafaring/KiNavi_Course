@@ -1,7 +1,7 @@
 * [Home](cpt363-1/home.md)
 * [Contents](cpt363-1/contents.md)
 * [Schedule](cpt363-1/schedule.md)
-* [Topics](cpt363-3/topics.md)
+* [Topics](cpt363-1/topics.md)
 * [Resources](cpt363-1/resources.md)
 * [Abbreviation](cpt363-1/abbreviation.md)
 * [Contact](cpt363-1/contact.md)
