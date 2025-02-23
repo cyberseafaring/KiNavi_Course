@@ -1,9 +1,9 @@
 # 💻
 
 <h1 id="cover-heading">
-  Docsify Open MultiCourse Hub
+  Kinavi Course Hub
 </h1>
 
-[CPT363-1](cpt363-1/home.md)
-[CPT363-2](cpt363-2/home.md)
-[CPT363-3](cpt363-3/home.md)
+[Marine Radar](cpt363-1/home.md)
+[Nautical Internet of Things](cpt363-2/home.md)
+[Intelligent Navigation](cpt363-3/home.md)

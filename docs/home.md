@@ -1,4 +1,4 @@
-# Kinavi 课程信息
+# Kinavi Courses info
 
 ---
 
