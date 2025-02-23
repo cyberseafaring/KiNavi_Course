@@ -1,3 +1,9 @@
+**Course Materials**
+
+- [Presented Slides)](cpt363-1/module-00)
+**Teaching Materials**
+- [Teaching Materials)](cpt363-1/textbook)
+
 **Week Schedule**
 
 - [Marine Radar Course](cpt363-1/course-welcome)
