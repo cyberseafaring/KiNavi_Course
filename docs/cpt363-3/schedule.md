@@ -1,31 +1,201 @@
-# Schedule
+# 课程安排
 
-## :fas fa-calendar fa-fw: [Week 1 (May 9 - 15)](cpt363-3/module-01)
-**What is usability and user experience design?**  
-:fas fa-desktop fa-fw: [Introduction to UX Design](https://docs.google.com/presentation/d/e/2PACX-1vRnnRFelgw1ksq_p8Eryg3dnyLCRRLPf5fBgdwdv9p-tCIwcxqWvzDGrGbjxGHL7HqEJVpmV26ntk3a/pub?start=false&loop=false&delayms=3000)   
-:fas fa-book fa-fw: [Usability 101: Introduction to Usability](https://www.nngroup.com/articles/usability-101-introduction-to-usability/)  
+### 第一周：智能航运概论（2课时）
 
-## :fas fa-calendar fa-fw: [Week 2 (May 16 - 22)](cpt363-3/module-02)
-**What does a holistic user experience design process look like?**  
-:fas fa-keyboard fa-fw: [Course Reflection Log](https://sso.canvaslms.com/courses/1924881/assignments/14377752) <span class='badge'> Fri Aug 3rd 11:59pm PDT</span>  
-:fas fa-desktop fa-fw: [The Process of UX Design](https://docs.google.com/presentation/d/e/2PACX-1vRnnRFelgw1ksq_p8Eryg3dnyLCRRLPf5fBgdwdv9p-tCIwcxqWvzDGrGbjxGHL7HqEJVpmV26ntk3a/pub?start=false&loop=false&delayms=3000)   
-:fas fa-book fa-fw: [The Evolution of UX Process Methodology](https://uxplanet.org/the-evolution-of-ux-process-methodology-47f52557178b)  
+- **讲解内容**：
+  - 智能航运的定义与发展历程
+  - 全球智能航运发展现状与趋势
+  - 中国智能航运战略与政策
+  - 智能航运生态系统概述
+- **课堂问题**：
+  1. 请查阅资料，列举三个全球智能航运发展的典型案例，并简要分析其成功因素。
+  2. 中国在智能航运领域有哪些主要的战略政策？这些政策对行业发展有何影响？
+  3. 你认为智能航运生态系统中哪些要素是最重要的？为什么？
 
-## :fas fa-calendar fa-fw: [Week 3 (May 23 - 29)](cpt363-3/module-03)
-**How to make more strategic design decisions?**  
-:fas fa-keyboard fa-fw: [Journey Map](https://sso.canvaslms.com/courses/1924881/assignments/14377756) <span class='badge'> Tue Jun 12th 11:59pm PDT</span>  
-:fas fa-folder fa-fw: [Informed Consent Materials](https://sso.canvaslms.com/courses/1924881/files/folder/Downloads/Informed%20Consent)  
-:fas fa-desktop fa-fw: [Strategic UX Design](https://docs.google.com/presentation/d/e/2PACX-1vRnnRFelgw1ksq_p8Eryg3dnyLCRRLPf5fBgdwdv9p-tCIwcxqWvzDGrGbjxGHL7HqEJVpmV26ntk3a/pub?start=false&loop=false&delayms=3000)   
-:fas fa-book fa-fw: [What is a User Journey Map?](https://www.aytech.ca/blog/user-journey-map/)  
+### 第二周：新一代信息技术基础（2课时）
 
-## :fas fa-calendar fa-fw: [Week 4 (May 30 - Jun 5)](cpt363-3/module-04)
-**How to explore the problem space?**  
-:fas fa-desktop fa-fw: [Prototyping](https://docs.google.com/presentation/d/e/2PACX-1vRnnRFelgw1ksq_p8Eryg3dnyLCRRLPf5fBgdwdv9p-tCIwcxqWvzDGrGbjxGHL7HqEJVpmV26ntk3a/pub?start=false&loop=false&delayms=3000)   
-:fas fa-book fa-fw: [The Skeptic’s Guide To Low-Fidelity Prototyping](https://www.smashingmagazine.com/2014/10/the-skeptics-guide-to-low-fidelity-prototyping/)  
-:fas fa-users fa-fw: In-class office hours (tentative)  
+- **讲解内容**：
+  - 物联网技术基础
+  - 大数据分析技术
+  - 人工智能基础知识
+  - 机器学习基本原理
+  - 生成式大模型技术
+- **课堂问题**：
+  1. 请查找一个物联网在智能航运中的实际应用案例，并分析其技术原理。
+  2. 如何利用大数据分析技术优化船舶航线规划？请提出一个具体方案。
+  3. 生成式大模型技术在智能航运中有哪些潜在应用？请列举两个例子。
 
-## :fas fa-calendar fa-fw: [Week 5 (Jun 6 - 12)](cpt363-3/module-05)
-**How to plan, conduct, and summarize usability tests?**  
-:fas fa-desktop fa-fw: [Usability Testing](https://docs.google.com/presentation/d/e/2PACX-1vRnnRFelgw1ksq_p8Eryg3dnyLCRRLPf5fBgdwdv9p-tCIwcxqWvzDGrGbjxGHL7HqEJVpmV26ntk3a/pub?start=false&loop=false&delayms=3000)   
-:fas fa-book fa-fw: [The Art of Guerrilla Usability Testing](http://www.uxbooth.com/articles/the-art-of-guerrilla-usability-testing/)  
-:fas fa-users fa-fw: In-class office hours (tentative)
+### 第三周：智能船舶概论（2课时）
+
+- **讲解内容**：
+  - 智能船舶的定义与分级
+  - 智能船舶发展现状
+  - 智能船舶关键技术框架
+  - 智能船舶标准体系
+- **课堂问题**：
+  1. 请查找一个智能船舶的分级标准，并解释其分级依据。
+  2. 你认为智能船舶发展的最大技术瓶颈是什么？如何解决？
+  3. 智能船舶标准体系中哪些标准是最关键的？为什么？
+
+### 第四周：智能船舶导航系统（4课时）
+
+- **讲解内容**：
+  - 智能航行辅助决策系统
+  - 船舶自动避碰技术
+  - 智能航线规划
+  - 船舶定位与导航技术
+  - 电子海图显示与信息系统（ECDIS）
+- **课堂问题**：
+  1. 请查找一个智能航行辅助决策系统的实际应用案例，并分析其决策逻辑。
+  2. 船舶自动避碰技术有哪些最新的技术进展？请列举两个。
+  3. 如何利用智能航线规划技术提高船舶燃油效率？请提出一个具体方案。
+  4. 电子海图显示与信息系统（ECDIS）有哪些主要功能？请列举三个。
+
+### 第五周：智能船舶动力系统（3课时）
+
+- **讲解内容**：
+  - 智能主机监控系统
+  - 智能能效管理系统
+  - 船舶能耗优化技术
+  - 新能源应用技术
+- **课堂问题**：
+  1. 请查找一个智能主机监控系统的实际应用案例，并分析其监控指标。
+  2. 智能能效管理系统如何帮助船舶降低能耗？请提出一个具体方案。
+  3. 新能源在船舶动力系统中的应用有哪些优势和挑战？请列举两个例子。
+
+### 第六周：船舶远程控制与维护（3课时）
+
+- **讲解内容**：
+  - 船岸通信技术
+  - 远程监控系统架构
+  - 设备状态监测与预测性维护
+  - 船舶数字孪生技术
+- **课堂问题**：
+  1. 请查找一种船岸通信技术，并分析其在智能船舶中的应用优势。
+  2. 远程监控系统架构中哪些模块是必不可少的？为什么？
+  3. 设备状态监测与预测性维护如何提高船舶设备的可靠性？请提出一个具体方案。
+  4. 船舶数字孪生技术有哪些主要应用场景？请列举两个。
+
+### 第七周：智能港口基础设施（3课时）
+
+- **讲解内容**：
+  - 智能港口总体架构
+  - 自动化码头设备
+  - 港口物联网系统
+  - 5G技术在港口的应用
+- **课堂问题**：
+  1. 请查找一个智能港口的总体架构图，并分析其主要组成部分。
+  2. 自动化码头设备有哪些主要类型？请列举三个。
+  3. 港口物联网系统如何实现港口设备的互联互通？请提出一个具体方案。
+  4. 5G技术在港口的应用有哪些优势？请列举两个。
+
+### 第八周：智能港口作业系统（3课时）
+
+- **讲解内容**：
+  - 自动化装卸系统
+  - 智能调度系统
+  - 智能理货系统
+  - 港口数字孪生应用
+- **课堂问题**：
+  1. 请查找一个自动化装卸系统的实际应用案例，并分析其工作流程。
+  2. 智能调度系统如何优化港口作业效率？请提出一个具体方案。
+  3. 智能理货系统有哪些主要功能？请列举三个。
+  4. 港口数字孪生应用有哪些主要优势？请列举两个。
+
+### 第九周：智能航道系统（2课时）
+
+- **讲解内容**：
+  - 智能航道监测技术
+  - 水文气象信息服务
+  - 通航环境感知
+  - 航道维护管理
+- **课堂问题**：
+  1. 请查找一个智能航道监测技术的实际应用案例，并分析其监测参数。
+  2. 水文气象信息服务如何提高船舶航行安全？请提出一个具体方案。
+  3. 通航环境感知技术有哪些主要应用场景？请列举两个。
+  4. 航道维护管理中哪些技术是关键？为什么？
+
+### 第十周：智能水运管理（2课时）
+
+- **讲解内容**：
+  - 船舶交通管理系统（VTS）
+  - 智能航运监管平台
+  - 海事大数据应用
+  - 智能应急指挥系统
+- **课堂问题**：
+  1. 请查找一个船舶交通管理系统（VTS）的实际应用案例，并分析其功能模块。
+  2. 智能航运监管平台如何实现对航运市场的有效监管？请提出一个具体方案。
+  3. 海事大数据应用有哪些主要场景？请列举三个。
+  4. 智能应急指挥系统在应对海上突发事件中的作用是什么？请列举两个例子。
+
+### 第十一周：航运安全与网络安全（2课时）
+
+- **讲解内容**：
+  - 智能航运安全风险分析
+  - 网络安全威胁与防护
+  - 智能航运安全管理体系
+  - 应急响应机制
+- **课堂问题**：
+  1. 请查找一个智能航运安全风险分析的案例，并分析其主要风险点。
+  2. 网络安全威胁有哪些主要类型？请列举三个。
+  3. 智能航运安全管理体系中哪些措施是最重要的？为什么？
+  4. 应急响应机制在应对网络安全事件中的作用是什么？请列举两个例子。
+
+### 第十二周：智能航运新技术应用（2课时）
+
+- **讲解内容**：
+  - 区块链技术应用
+  - 人工智能视觉技术
+  - 增强现实/虚拟现实技术
+  - 云计算与边缘计算
+- **课堂问题**：
+  1. 请查找一个区块链技术在智能航运中的应用案例，并分析其技术原理。
+  2. 人工智能视觉技术如何提高船舶航行安全？请提出一个具体方案。
+  3. 增强现实/虚拟现实技术在智能航运中的主要应用场景是什么？请列举两个。
+  4. 云计算与边缘计算在智能航运中的主要应用优势是什么？请列举两个。
+
+### 第十三周：智能航运标准与法规（1课时）
+
+- **讲解内容**：
+  - 国际海事组织（IMO）相关规范
+  - 智能船舶法律法规
+  - 智能航运数据安全与隐私保护
+  - 自主航行法律框架
+- **课堂问题**：
+  1. 请查找一个国际海事组织（IMO）的规范，并分析其对智能航运的影响。
+  2. 智能船舶法律法规中哪些条款是最关键的？为什么？
+  3. 智能航运数据安全与隐私保护的主要法律依据是什么？请列举两个。
+  4. 自主航行法律框架中哪些内容是需要重点关注的？为什么？
+
+### 第十四周：智能航运未来展望（1课时）
+
+- **讲解内容**：
+  - 技术发展趋势
+  - 行业变革与挑战
+  - 人才需求与培养
+  - 创新机遇与方向
+- **课堂问题**：
+  1. 请查找一个智能航运技术发展趋势的报告，并分析其主要观点。
+  2. 智能航运发展对传统航运行业带来了哪些变革？请列举三个。
+  3. 你认为智能航运领域最需要哪些类型的人才？为什么？
+  4. 智能航运领域有哪些创新机遇？请列举两个。
+
+### 第十五周：课程总结与复习（2课时）
+
+- **讲解内容**：
+  - 回顾课程的主要内容
+  - 总结学生在课堂讨论和作业中的表现
+  - 解答学生在学习过程中遇到的问题
+- **课堂问题**：
+  1. 请总结本课程中你认为最重要的三个知识点，并说明理由。
+  2. 你在学习过程中遇到了哪些困难？是如何解决的？
+  3. 你对本课程的哪些内容最感兴趣？为什么？
+
+### 第十六周：期末答疑（2课时）
+
+- **考查内容**：
+  - 课程目标的考核
+  - 重点知识点的掌握
+  - 问题解决能力的评估
+- **考试形式**：
+  - 课程小论文（选修）
