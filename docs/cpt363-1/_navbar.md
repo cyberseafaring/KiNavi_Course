@@ -2,5 +2,5 @@
 * [Contents](cpt363-1/contents.md)
 * [Schedule](cpt363-1/schedule.md)
 * [Resources](cpt363-1/resources.md)
-* [UX Techniques Guide](cpt363-1/ux-techniques-guide.md)
+* [Abbreviation](cpt363-1/abbreviation.md)
 * [Contact](cpt363-1/contact.md)
