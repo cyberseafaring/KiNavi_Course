@@ -1,4 +1,4 @@
-**WeekSchedule**
+**Week Schedule**
 
 - [Marine Radar Course](cpt363-1/course-welcome)
 - [Week 1 (February 25, 2025)](cpt363-1/module-01)
