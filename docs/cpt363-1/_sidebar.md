@@ -1,6 +1,6 @@
 **Course Materials**
 
-- [Presented Slides)](cpt363-1/module-00)
+- [Presented Slides)](cpt363-1/slides)
 **Teaching Materials**
 - [Teaching Materials)](cpt363-1/textbook)
 

@@ -11,4 +11,4 @@ In today's fast-paced maritime industry, the ability to navigate safely and effi
 A short description of the CPT363-2 course would go here.
 
 ## [Intelligent Navigation](cpt363-3/home.md)
-A short description of the CPT363-3 course would go here.
+This course offers a comprehensive exploration of intelligent shipping technologies, focusing on smart ships, smart ports, and smart waterways. It integrates artificial intelligence, big data, and IoT into maritime applications, covering key topics such as ship navigation systems, power management, remote control, and port operations. Through case studies and practical applications, the course equips students with interdisciplinary thinking, problem-solving skills, and a deep understanding of the digital transformation in shipping. It emphasizes innovation, maritime safety, cybersecurity, and the evolving regulatory landscape, preparing students for the future of maritime technology.
