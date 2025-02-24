@@ -2,7 +2,8 @@
 
 # What is usability and user experience design?
 
-## Summaries and Questions  
+## Summaries and Questions
+
 [May 9th Class One-minute Summaries](https://sso.canvaslms.com/courses/1924881/assignments/14377751)
 
 ## Presented Slides  
