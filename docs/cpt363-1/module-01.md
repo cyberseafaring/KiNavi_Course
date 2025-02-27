@@ -3,6 +3,7 @@
 ## 1.1 Overview of Radar Technology
 
 ### Definition of Radar
+
 - **雷达（Radio Detection and Ranging）** 是一种利用电磁波的反射和散射原理来探测目标并确定其位置及相关属性的技术。它通过发射无线电波并接收从目标反射回来的信号来工作。
 - **Radar (Radio Detection and Ranging)** is a technology that uses the reflection and scattering of electromagnetic waves to detect targets and determine their positions and related attributes. It works by transmitting radio waves and receiving the signals reflected from targets.
 
