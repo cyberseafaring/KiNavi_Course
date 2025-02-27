@@ -8,6 +8,7 @@
 - **Radar (Radio Detection and Ranging)** is a technology that uses the reflection and scattering of electromagnetic waves to detect targets and determine their positions and related attributes. It works by transmitting radio waves and receiving the signals reflected from targets.
 
 ### Basic Principles
+
 - **发射（Transmission）**：雷达发射机产生高频电磁波脉冲，通过天线将这些脉冲发送到空间中。
 - **接收（Reception）**：当这些脉冲遇到目标时，部分能量会被反射回来，雷达接收机通过天线接收这些反射信号。
 - **回波处理（Echo Processing）**：雷达系统对反射信号进行处理，计算信号往返的时间，从而确定目标的距离。同时，通过天线的旋转确定目标的方向。
