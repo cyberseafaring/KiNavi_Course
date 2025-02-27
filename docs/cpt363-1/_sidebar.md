@@ -3,6 +3,8 @@
 - [Presented Slides)](cpt363-1/slides)
 **Teaching Materials**
 - [Teaching Materials)](cpt363-1/textbook)
+- [Teaching Materials)](cpt363-1/textbook/chapter-01)
+- [Teaching Materials)](cpt363-1/textbook/chapter-02)
 
 **Week Schedule**
 
