@@ -1,10 +1,10 @@
 **Course Materials**
 
-- [Presented Slides)](cpt363-1/slides)
+- [Presented Slides](cpt363-1/slides)
 **Teaching Materials**
-- [Teaching Materials)](cpt363-1/textbook)
-- [Teaching Materials)](cpt363-1/textbook/chapter-01)
-- [Teaching Materials)](cpt363-1/textbook/chapter-02)
+- [Textbook(PDF))](cpt363-1/textbook)
+- [Chapter-01](cpt363-1/textbook/chapter-01)
+- [Chapter-02](cpt363-1/textbook/chapter-02)
 
 **Week Schedule**
 
