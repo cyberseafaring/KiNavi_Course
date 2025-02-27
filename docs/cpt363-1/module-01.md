@@ -17,6 +17,7 @@
 - **回波处理（Echo Processing）**：The radar system processes the reflected signals, calculates the time taken for the signals to travel to and from the target, and thus determines the target’s distance. Meanwhile, the direction of the target is determined by the rotation of the antenna.
 
 ### Classification of Radar
+
 - **按用途分类（Classification by Purpose）**：
     - **导航雷达（Navigation Radar）**：用于船舶导航，帮助确定船舶位置、航向和周围环境，避免碰撞和搁浅。
     - **气象雷达（Weather Radar）**：用于探测气象条件，如降雨、风暴等，帮助选择最佳航线。
