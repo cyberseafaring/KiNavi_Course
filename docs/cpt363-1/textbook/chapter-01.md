@@ -220,6 +220,7 @@ There are two other orientation modes available. One is termed north-up, where t
 这种方位模式下，航向标记在显示屏上始终是垂直的，如图1.13所示。随着船舶航向的变化，显示屏上的图像也随之变化——图像与船舶稳定，与驾驶台窗户的视角一致，但相对于真北是未稳定的。图中展示了船舶改变航向前后的对比情况。这种模式是早期船用雷达上唯一可用的方位模式，由于成本和技术限制。然而，这种模式今天唯一显著的优势是它不需要向雷达输入工作中的罗经或罗盘信号，与现代雷达上的其他方位模式不同，即真北向上和航向向上。这两种模式在下面的章节中分别描述，它们稳定了雷达图像的方位。因此，船首向上模式通常被称为未稳定模式。如果遇到罗经问题，可能需要使用这种模式，因此需要充分理解。
 
 1.4.1.1 Head-Up Orientation
+
 This orientation, where the heading marker is always vertical on the display, is illustrated in Figure 1.13. As the vessel’s heading changes, so does the orientation of the displayed image — the image is vessel stabilized, aligning with the view from the bridge windows, but is unstabilized with respect to true-north. The figure shows the situation just before and after a course change. This was the only orientation mode available on very early marine radars because of cost and technological limitations. However, the only significant attraction of using the basic head-up mode today is that it does not need a working gyro or compass input to the radar, unlike the other orientation modes on a modern radar, north-up and course-up. These modes, described separately in the sections below, stabilize the orientation of the radar image. For this reason, head-up mode is often described as unstabilized. If compass problems are encountered its use may be essential and so needs to be fully understood.
 
 船首向上未稳定模式在表面上很有吸引力，因为显示屏上的雷达图像直接对应于通过驾驶台窗户看到的场景。一个放置良好的显示屏，靠近驾驶台窗户且面向前方，无论用户是查看雷达屏幕还是通过驾驶台窗户向前看，船舶右侧的物体都会出现在显示屏的右侧，左侧的物体则出现在左侧。
