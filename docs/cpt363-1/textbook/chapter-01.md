@@ -159,6 +159,7 @@ The term PPI will perhaps cease to be used over time, especially with the increa
 在雷达显示屏上，目标的过去轨迹保持可见通常是很有用的，至少在几分钟内。这可以更清楚地可视化关键目标的运动。目标被认为在显示屏上留下轨迹。最初，这个功能是通过使用具有非常高图像持久性的阴极射线管（CRT）实现的。显示屏上的任何即时图像只会因为CRT显示屏上特别选择的磷光体而缓慢褪去。因此，目标会在显示屏上创建一条线，显示它们过去的位置。在目标的最近位置附近，轨迹会很亮，并且会逐渐褪去，进一步沿着它的长度变得不可见，见图1.10。如今，这种效果是通过数字处理显示的雷达图像人为创造的。这允许在轨迹显示中更大的灵活性，例如它们的消逝时间长度以及是否显示它们。它还可以更清楚地区分目标和轨迹，例如，通过使用不同的颜色。
 
 1.2.4.3 Target Trails
+
 It is very often useful on a radar display for the past track of targets to remain visible, at least for a few minutes. This can give a much clearer visualization of the movement of critical targets. Targets are said to leave a trail on the display. Originally this feature was achieved by using CRTs with a very high image persistence. Any instantaneous image on the display only slowly faded because of the specially chosen phosphors used on the display surface of the CRT. Consequently, targets would create a line on the display, showing their past positions. Close to the most recent position of the target the trail would be bright and would gradually fade to being invisible further along its length, see Figure 1.10. Nowadays this effect is artificially created by digital processing of the displayed radar image. This allows greater flexibility in the display of trails, such as their time length to extinction and whether or not they are displayed. It also more clearly distinguishes between targets and trials, for instance, by the use of different colours.
 
 ### 1.3 方位测量原理
@@ -168,7 +169,9 @@ It is very often useful on a radar display for the past track of targets to rema
 一般来说，方位是选定参考方向与感兴趣物体方向之间的角度。在PPI显示屏上，基本的参考是观测船舶航向的瞬时方向。
 
 1.3 PRINCIPLES OF BEARING MEASUREMENT
+
 1.3.1 The Heading Marker
+
 In general, a bearing is the angle between the direction of a chosen reference and that of an object of interest. On a PPI display the fundamental reference is the instantaneous direction of the observing vessel’s heading.
 
 当雷达天线波束的轴线穿过船舶的首尾线向前方向时，雷达天线旋转机构内的一个传感器被激活，相关的电子设备向雷达接收机发送一个时间脉冲。这个脉冲用于将显示电子设备与天线旋转同步，特别是用作航向标记或航向指示器的参考。此外，随着天线的旋转，还会在规则的角度增量处产生方位脉冲，以考虑其可能由于风、振动和船舶运动效应而产生的不均匀旋转。因此，所有目标不仅以彼此之间的正确角度关系显示，而且也以与本船航向的正确角度关系显示（见图1.11）。
@@ -188,6 +191,7 @@ A modern radar may also be able to display a stern line, drawn on a reciprocal b
 国际海事组织性能标准（见第11.2.1节）要求提供一种快速获取显示屏上任何物体回波方位的方法。
 
 1.3.2 Bearing Measurement
+
 IMO Performance Standards (see Section 11.2.1) require that provision be made for quickly obtaining the bearing of any object whose echo appears on the display.
 
 传统上，这是通过各种机械和机电设备实现的，这些设备使观测者能够测量航向标记与感兴趣目标之间的角度。在现代雷达上，电子方位线（EBLs）用于这种测量。特别是，这些被设计用来能够快速确定目标相对于本船航向的方位。在雷达的基本设置中，EBL从显示屏的中心（原点）开始，那里是本船的位置，延伸到操作显示区域的边缘，其角度位置可以从周边的方位标度上读取。使用适当的控制装置，操作员可以将EBL定位，使其通过感兴趣的目标。这在图1.12（a）中进行了说明。
@@ -203,6 +207,7 @@ In addition to the bearing scale facility there will also be a numerical readout
 现代雷达上有多种显示模式，用于确定雷达如何显示与外部世界的信息。这些包括三种不同的区域，即方位模式、运动模式和稳定模式。方位模式定义显示屏的“垂直”方向如何与外部世界水平（方位）方向对齐；运动模式定义本船如何相对于显示屏移动；稳定模式定义绝对运动如何参照——相对于地面还是相对于海洋。将显示屏视为一个传统的x和y坐标图形表示，y方向被认为是垂直的，x方向被认为是水平的。
 
 1.4 DISPLAY MODES
+
 There are a number of display modes on a modern radar for determining exactly how the radar shows information in relation to the outside world. These cover three different areas, which are referred to as orientation, motion and stabilization modes. The orientation mode defines how the ‘vertical’ direction of the display aligns with the outside world horizontal (azimuthal) direction; the motion mode defines how the own-vessel moves with respect to the display; and the stabilization mode defines how absolute movement is referenced — relative to the ground or relative to the sea. Taking the display to be a conventional graphical representation in x and y coordinates, it is the y-direction that is considered to be vertical and the x-direction as being horizontal.
 
 #### 1.4.1 方位模式
