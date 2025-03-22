@@ -363,6 +363,38 @@
     }
   </script>
 
+  <!-- MathJax for LaTeX Rendering -->
+  <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+              tex2jax: {
+                  inlineMath: [['$', '$'], ['\\(', '\\)']],
+                  displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                  processEscapes: true
+              }
+          });
+      </script>
+
+  <!-- Docsify Configuration -->
+  <script>
+    window.$docsify = {
+      name: 'Maritime Intelligent Tech',
+      homepage: 'home.md',
+      onlyCover: true,
+      loadSidebar: true,
+      loadNavbar: true,
+      subMaxLevel: 3,
+      plugins: [
+        function (hook) {
+          hook.doneEach(function () {
+            if (window.MathJax) {
+              MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+            }
+          });
+        }
+      ]
+    }
+  </script>
+
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
 
   <!-- Adjust Page Margins When Standalone or Embedded -->
