@@ -363,16 +363,16 @@
     }
   </script>
 
-  <!-- MathJax for LaTeX Rendering -->
-  <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-              tex2jax: {
-                  inlineMath: [['$', '$'], ['\\(', '\\)']],
-                  displayMath: [['$$', '$$'], ['\\[', '\\]']],
-                  processEscapes: true
-              }
-          });
-      </script>
+  <!-- MathJax Configuration for v3.x -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\$', '\$']],
+        displayMath: [['$$', '$$'], ['\$$', '\$$']],
+        processEscapes: true
+      }
+    };
+  </script>
 
   <!-- Docsify Configuration -->
   <script>
@@ -387,7 +387,7 @@
         function (hook) {
           hook.doneEach(function () {
             if (window.MathJax) {
-              MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+              MathJax.typesetPromise && MathJax.typesetPromise();
             }
           });
         }
@@ -440,6 +440,13 @@
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-php.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-swift.min.js"></script>
+
+
+<!-- MathJax 3.x CDN -->
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+
 
 </body>
 

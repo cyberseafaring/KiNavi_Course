@@ -1,6 +1,3 @@
-<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-
 # Deep Neural Network Design for Radar Applications  
 
 Edited by Sevgi Zubeyde Gurbuz  
