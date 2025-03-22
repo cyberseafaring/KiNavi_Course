@@ -6,6 +6,7 @@
 - [Chapter-01](cpt363-1/textbook/chapter-01)
 - [Chapter-02](cpt363-1/textbook/chapter-02)
 
+- [DNN-Radar](cpt363-1/textbook/DNN-Radar)
 **Week Schedule**
 
 - [Marine Radar Course](cpt363-1/course-welcome)
