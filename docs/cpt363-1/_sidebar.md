@@ -1,6 +1,6 @@
 **Course Materials**
 
-- [P_resented Slides](cpt363-1/slides)
+- [Presented Slides](cpt363-1/slides)
 
 **Teaching Materials**
 
