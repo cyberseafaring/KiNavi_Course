@@ -5,6 +5,11 @@
 - [Week 2 (May 16 - 22)](cpt363-2/module-02)
 - [Week 3 (May 23 - 29)](cpt363-2/module-03)
 - [Week 4 (May 30 - Jun 5)](cpt363-2/module-04)
+
+**Teaching Materials**
+
+- [IIoT(中英文))](cpt363-2/textbook/IIoT/IIoT_translated)
+
 - **LMS Links**
 - [![Calendar](https://icongr.am/fontawesome/calendar.svg?size=16&color=808080)Calendar](https://jwc.dlmu.edu.cn/info/1128/5053.htm)
 - [![Assignments Icon](https://icongr.am/fontawesome/pencil.svg?size=16&color=808080)Assignments](https://canvas.sfu.ca/courses/44038/assignments )
