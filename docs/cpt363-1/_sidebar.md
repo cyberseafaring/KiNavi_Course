@@ -1,13 +1,15 @@
 **Course Materials**
 
-- [Presented Slides](cpt363-1/slides)
+- [P_resented Slides](cpt363-1/slides)
 
 **Teaching Materials**
+
 - [Textbook(PDF))](cpt363-1/textbook)
-- [Marine Radar Textbook](cpt363-1/textbook/LJMU-Radar/Marine_Radar_translated)
+- [MarineRadarTextbook](cpt363-1/textbook/LJMU-Radar/Marine_Radar_translated)
 - [DNN-Radar](cpt363-1/textbook/DNN-Radar/DNN-Radar-book)
 
 **Week Schedule**
+
 - [Marine Radar Course](cpt363-1/course-welcome)
 - [Week 1 (February 25, 2025)](cpt363-1/module-01)
 - [Week 1 (February 27, 2025)](cpt363-1/module-01)
