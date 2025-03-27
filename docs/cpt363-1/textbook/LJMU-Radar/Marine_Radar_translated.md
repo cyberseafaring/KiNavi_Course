@@ -448,10 +448,6 @@ FIGURE 1.5 Creating a table of received signal strengths:(a) plane view of area 
 
 ![](images/4fe800062a6a8e5d9d85e6450fe3685ea5e288812def52b0d52a4f6c987feb18.jpg)  
 
-
-
-图4.2：基于物联网和人工智能的智能家居系统架构
-
 FIGURE 1.6 Conversion of range and azimuths to $(x,y)$ Cartesian coordinates.  
 
 
@@ -726,9 +722,7 @@ Except in emergency situations, when azimuth stabilization has been compromised 
 
 There are two motion modes, known as relative motion and true motion. Relative means relative to the own ship, while true means relative to an outside reference system. The outside reference is split into two stabilization modes ground stabilized and sea stabilized. Ground stabilization requires an external sensor signal that at least can determine the speed over ground (SOG) of the observing vessel. In today’s world this is typically based on the output of a Global Navigation Satellite System (GNSS) using data from the US Global Positioning System (GPS) and/or Russia’s Globalnaya Navigatsionnaya Sputnikovaya Sistema (GLONASS). Other systems can also give this information, as discussed in Section 6.9.6. When sea stabilized, the important sensor is the speed log, which measures the vessel’s speed through the water (STW).  
 
-
-
-物联网技术和人工智能专家认为，有两种运动模式，即相对运动和真实运动。相对运动是指相对于自身船舶的运动，而真实运动是指相对于外部参考系统的运动。外部参考系统可以分为两种稳定模式：地面稳定和海面稳定。地面稳定需要一个外部传感器信号，该信号至少可以确定观测船舶的地面速度（SOG）。在当今的世界中，这通常基于全球导航卫星系统（GNSS）的输出，使用来自美国全球定位系统（GPS）和/或俄罗斯全球导航卫星系统（GLONASS）的数据。其他系统也可以提供这些信息，如第6.9.6节所讨论的。海面稳定时，重要的传感器是速度记录仪，它测量船舶在水中的速度（STW）。这两种运动模式和稳定模式对于确保船舶在海面上的安全和准确的导航至关重要。
+有两种运动模式，即相对运动和真实运动。相对运动是指相对于自身船舶的运动，而真实运动是指相对于外部参考系统的运动。外部参考系统可以分为两种稳定模式：地面稳定和海面稳定。地面稳定需要一个外部传感器信号，该信号至少可以确定观测船舶的地面速度（SOG）。在当今的世界中，这通常基于全球导航卫星系统（GNSS）的输出，使用来自美国全球定位系统（GPS）和/或俄罗斯全球导航卫星系统（GLONASS）的数据。其他系统也可以提供这些信息，如第6.9.6节所讨论的。海面稳定时，重要的传感器是速度记录仪，它测量船舶在水中的速度（STW）。这两种运动模式和稳定模式对于确保船舶在海面上的安全和准确的导航至关重要。
 
 ![](images/9a1db673a897f3a21986bc866b1d461a9c3f2fbdc08c483721c61c1c96949afc.jpg) 
 
@@ -2381,18 +2375,6 @@ The primary role of the receiver is to amplify the weak returning echoes interce
 
 ![](images/ed1ef123ee886ddf0045774d3b4b2971633e44f24156dec9e11fba9c8fae4988.jpg)  
 
-
-
-图：该物联网设备使用 Wi-Fi 或 Ethernet 连接到互联网，但如果没有安全措施，可能会使整个网络容易受到网络攻击（网络攻击：是指一种试图破坏、摧毁或使计算机、计算机系统、计算机网络、手机网络等失去功能或使其无法正常运行的恶意行为）。
-
-然而，随着物联网设备在各行各业的广泛应用，其安全问题也日益凸显，尤其是在家居自动化、工业控制系统和可穿戴设备等领域。物联网设备通常使用微控制器（一种小型计算机，用于控制和与外部设备交互）和传感器（一种用于检测和测量物理参数的设备，如温度、湿度和运动等）来收集和处理数据。
-
-随着物联网设备变得越来越普遍，其安全风险也越来越高。黑客可能会利用物联网设备的漏洞，窃取敏感信息或破坏设备的正常运行，甚至使用物联网设备作为攻击其他网络或系统的跳板。因此，保证物联网设备的安全性和完整性变得非常重要。
-
-为了应对这些安全风险，开发者和制造商可以采取多种措施，例如：使用安全的数据传输协议（一种用于确保数据在传输过程中安全的协议，如 HTTPS 和 TLS 等），确保设备及其组件得到及时的更新和补丁，使用强大的身份验证和授权机制（一种用于验证用户身份并授予用户访问权限的机制），以及实施加密技术（一种用于保护数据免受未经授权访问的技术，如 SSL 和 AES 等）。
-
-此外，随着人工智能（人工智能：是一种模拟人类智能行为的计算机系统，能够感知周围环境、学习和适应环境的变化，并做出相应的反应）的应用越来越广泛，其与物联网设备的集成也变得更加紧密。人工智能可以帮助物联网设备更好地理解和响应环境的变化，并且可以帮助检测和防御潜在的安全威胁。因此，物联网设备的安全性和人工智能的集成对于构建一个更加安全和可靠的物联网生态系统至关重要。
-
 FIGURE 2.20 Receiver processor chain.  
 
 
@@ -2415,7 +2397,7 @@ The receiver processes the signal and, in particular, amplifies it by analogue m
 
 这使得长序列（如$10010100\cdots101$）能够被生成。如果序列可以进一步被划分为小组（如分为四个，例如1001、0100等），那么每个小组中的序列都可以被赋予特定的含义。例如，0000可以代表数字零；0001代表数字一；0010代表数字二；0011代表数字三等等。数字信号（Digital Signal）可以通过将常规的数字、字母和符号编码为数字序列来代表任何事物，从而展现计算机的强大功能。这种数字编码（Digital Coding）的能力是计算机强大的原因。
 
-特别地，雷达信号在任何一个瞬间的强度可以用一个数字序列来表示；实际的时间瞬间可以用一个独立的数字序列来表示。我们将信号强度（或其他任何参数）在特定时间的测量值称为一个样本（sample）。一旦信号被数字化，很容易对其进行非常复杂的处理，因为这变成了一个简单的数字计算过程（digital computing process）。然而，也有一些限制。这些限制包括信号处理和计算复杂性等多个方面。数字化信号后，可以对其进行快速处理和分析，使得物联网设备和人工智能系统可以快速、准确地做出反应和决策。
+特别地，雷达信号在任何一个瞬间的强度可以用一个数字序列来表示；实际的时间瞬间可以用一个独立的数字序列来表示。我们将信号强度（或其他任何参数）在特定时间的测量值称为一个样本（sample）。一旦信号被数字化，很容易对其进行非常复杂的处理，因为这变成了一个简单的数字计算过程（digital computing process）。然而，也有一些限制。这些限制包括信号处理和计算复杂性等多个方面。
 
 首先，信号必须具有适合的强度，以允许准确的数字化，因此雷达回波的小信号必须在数字化之前由接收器放大，否则数字化是不切实际的。其次，如果我们要复制模拟信号中的信息，则信号的连续数字样本必须在适合的短时间间隔内采集。所选择的间隔被称为采样率（sample rate，[即信号在单位时间内被采样的次数]）。雷达信号的一个问题是其高传输频率（[即信号传输的频率非常高，需要更快的采样速度]）。
 
@@ -6028,18 +6010,6 @@ The following points should be noted with regard to arrays:
 
 ![](images/de51288283fd9f0ded5bf275eba7efd70444e8b7b93364d58cf5fad6b76036da.jpg)  
 
-
-
-该图像显示了一个 IoT 设备的概念模型，它集成了多种传感器和执行器组件，通过网络连接和人工智能（AI）算法实现实时数据处理和决策。图像展示了设备与周围环境之间的交互，体现了“物联网”（Internet of Things，IoT）[即将各类物体与互联网连接起来，实现它们之间的信息交互和协同工作的一种技术体系] 的理念。
-
-在图像的中心位置，是一个微控制器（Microcontroller）[一种小型的计算机系统，能够控制和监控外部设备]，它作为设备的大脑，处理传感器数据并执行智能决策。微控制器通过各种接口与传感器（Sensor）[能够检测和测量物理参数的设备] 和执行器（Actuator）[能够执行特定动作的设备] 连接，实现对环境的感知和控制。
-
-图像左侧展示了多种类型的传感器，如温度传感器（Temperature Sensor）[测量温度的传感器]、湿度传感器（Humidity Sensor）[测量湿度的传感器] 和运动传感器（Motion Sensor）[检测运动的传感器]，这些传感器能够实时监测环境参数并将数据反馈给微控制器。右侧则展示了执行器，如继电器（Relay）[一种电气开关设备]、直流电机（DC Motor）[一种能够旋转的电动机] 和LED灯（LED Light）[一种发光二极管]，这些执行器能够根据微控制器的指令执行特定动作。
-
-图像底部显示了设备与互联网的连接，通过无线通信技术，如Wi-Fi（Wireless Fidelity）[一种无线局域网技术] 或蜂窝网络（Cellular Network）[一种移动通信网络技术]，实现设备与云端服务器（Cloud Server）[一种通过互联网提供服务的远程服务器] 的数据交互和遥测控制。这种连接使得设备能够接收和执行远程指令，并将实时数据上传到云端进行处理和分析。
-
-总的来说，该图像生动地演示了IoT设备的基本架构
-
 FIGURE 3.16 Arrays of reflectors incorporated into the structures of navigation marks.  
 
 
@@ -6537,10 +6507,6 @@ The detection of survival craft is a particularly important issue. Traditionally
 生存艇的检测是一个尤其重要的问题。传统上，这个功能是通过无线电频率由RDF（无线电方向 finder，[即利用无线电信号来确定目标方位的设备]）来完成的，但是这个责任现在已经转移至雷达显示上，RDF已经变得过时，并且不再是国际海事组织（IMO）当前的要求。相反地，所有受全球海事紧急和安全服务（GMDSS）法规约束的船舶，必须配备生存艇的搜索和救援透射仪（SART，[即利用雷达信号来确定生存艇位置的设备]），以便在雷达屏幕上有生存艇存在的主动指示。SART 通常安装在生存艇上的一个短桩上，它是一个透射仪，只有在被雷达信号询问时才会传输信号。
 
 ![](images/68a141590a731a22b534ad146fbb68a20ce2714b7d36a7c28903572d5007aae8.jpg)  
-
-
-
-该图显示了一个物联网设备的结构示意图，包括了各种传感器、执行器和通信模块（通信模块是指能让设备与其他设备或者服务器进行信息交换的部分），展示了其功能组成。这个图解释了物联网设备如何通过这些组件进行数据的采集和处理，同时也能与其他设备进行通信，进行数据的传输和接收。同时，该图也隐含了该设备可能使用的各种通信协议（通信协议是指设备之间数据传输时遵循的规则和标准）和技术，例如WiFi、蓝牙或者移动网络等。
 
 FIGURE 3.33 (a) Examples of radar beacon information in Admiralty List of Radio Signals Vol. 2, (b) Extract from Admiralty chart symbols.  
 
@@ -8938,10 +8904,6 @@ The performance measures stated in Table 4.3 therefore define two levels of expe
 
 ![](images/6ea643196ebb9607131a9558ed5310a35ceb7d5f5e9565785e235db908d6fe89.jpg)  
 
-
-
-图片描述：该图像似乎是一张技术图表或是一种展示特定物联网（IoT）设备或人工智能（AI）系统组件的插图。然而，没有提供具体的图像描述或上下文，我无法给出更详细的解释。通常，这种图像会用于演示物联网设备之间的连接、数据流动或者人工智能算法在物联网场景中的应用。如果需要对特定物联网技术或人工智能概念进行解释，请提供更多的上下文或图像描述。
-
 ![](images/8b9b153619fb93cd45a044b7c5502a178a37e8be3eee67c82e0427c36483da29.jpg)  
 
 
@@ -10274,10 +10236,6 @@ In order to produce an acceptable system for practical operation, these limits a
 
 ![](images/d19be004093b84c0314a473ed2dee2350d793afb9800bc38654b21e4be818294.jpg)  
 
-
-
-然而，你提供的文本似乎是一张图片的链接，而不是需要翻译的文本。如果你能提供需要翻译的实际文本，我将非常乐意帮助你将其翻译为流畅、准确的中文。同时，请确保文本内容与物联网技术和人工智能相关，以便我能够提供专业且精确的翻译。
-
 FIGURE 4.26 The sequence of cross-ahead/cross-astern points.  
 
 
@@ -10444,7 +10402,7 @@ In order to allow all transponders to share the limited frequencies available, e
 
 
 
-为了使所有应答器能够共享有限的可用频率，每个应答器仅在非常短的时间内传输，并且传输时间被精确控制。这种传输系统被称为TDMA（时间分割多址）时间分割多址。时间由全球导航卫星系统（GNSS）（实际上是GPS）卫星提供的时钟来调节，并被划分为帧，每个帧的长度为1分钟。每个帧被进一步划分为2250个相等的时隙。因此，在每一分钟内，通常有4500个时隙可供传输使用，分布在两个频率上（图5.2）。大约256个比特（相当于40-50个文本字符）被发送在每个时隙中。信息到时隙的分配可以通过个别应答器在三个不同的模式下进行。在这三个模式中，应答器可以根据自己的需要和系统的要求灵活地分配传输时隙，从而实现高效的通信。这些模式使得应答器可以在不同的应用场景中发挥作用，如物联网设备、移动终端等，根据不同的需求和资源条件来调整传输策略。
+为了使所有应答器能够共享有限的可用频率，每个应答器仅在非常短的时间内传输，并且传输时间被精确控制。这种传输系统被称为TDMA（时间分割多址）时间分割多址。时间由全球导航卫星系统（GNSS）（实际上是GPS）卫星提供的时钟来调节，并被划分为帧，每个帧的长度为1分钟。每个帧被进一步划分为2250个相等的时隙。因此，在每一分钟内，通常有4500个时隙可供传输使用，分布在两个频率上（图5.2）。大约256个比特（相当于40-50个文本字符）被发送在每个时隙中。信息到时隙的分配可以通过个别应答器在三个不同的模式下进行。在这三个模式中，应答器可以根据自己的需要和系统的要求灵活地分配传输时隙，从而实现高效的通信。
 
 ### 5.1.1 Autonomous and Continuous Mode  
 
@@ -11687,10 +11645,6 @@ The use of a weak land echo as the sensitive criterion by which to judge the set
 
 ![](images/addc9b6700e49e06540740cc0bce483e5c7e712b0744f81bfb6afedb65281f7f.jpg)  
 
-
-
-图片中所示的设备是一个IoT（物联网）[即“互联网的下一代”，通过让设备与互联网相连，打破设备间和人与设备间的孤立，形成一个万物互联的网络，实现设备与设备间、设备与人、设备与环境间的实时信息交互与通讯]设备，其特点包括集成度高、可靠性强、安全性好、易维护等。
-
 FIGURE 6.4 Setting the tuning control.  
 
 
@@ -11884,8 +11838,6 @@ Many systems site the echo box on the waveguide just on the antenna side of the 
 
 
 许多系统将回声箱（echo box）安装在波导（waveguide）上，位于传输/接收（T/R）单元的天线侧（见第2.6.3.1节），如图6.7（a）所示。这消除了使单元适合在甲板上安装的需要，并允许单元更加紧凑和经济。但是，它存在一个严重的缺点，即它无法监测天线或波导的性能。如果将回声箱放置在这个位置，它与相关电路一起，形成一个收发器监测器（transceiver monitor），并且应该由某种安排来监测天线的辐射。这种安排通常被称为功率或输出监测器（power or output monitor）（见第6.3.3节）。 
-
-注：本文中的专业术语如“回声箱”（echo box）、“波导”（waveguide）、“传输/接收单元”（T/R cell）、“收发器监测器”（transceiver monitor）、“功率或输出监测器”（power or output monitor）等保持了原文的技术精确性，适合于物联网技术和人工智能领域的专业阅读。
 
 ![](images/cde3e30a7060b67dddc7741705aad2f3c0ce03a2c7e621e6d0a9ba8d3b8a41cd.jpg)  
 
@@ -15081,7 +15033,7 @@ In the OAW triangle (Figure 7.25), the position of $W$ is determined from a know
 
 
 
-2. 在决定什么是可接受的 CPA 时，应考虑到不准确的后果，並且應該傾向于谨慎处理。这意味着，在确定可接受的 CPA（[CPA，指在物联网技术中，预防措施和控制活动的可接受程度]）时，应考虑到不准确可能带来的后果，并且应该倾向于采取更为谨慎的态度，以避免潜在的风险。
+2. 在决定什么是可接受的 CPA 时，应考虑到不准确的后果，並且應該傾向于谨慎处理。这意味着，在确定可接受的 CPA 时，应考虑到不准确可能带来的后果，并且应该倾向于采取更为谨慎的态度，以避免潜在的风险。
 
 3. Small alterations of course and speed by plotted targets can be completely swamped by errors, especially when speeds are low.  
 
@@ -16412,7 +16364,7 @@ FIGURE 8.2 Vertical shadowing.
 
 
 
-图8.2 垂直阴影（此概念是指在物联网和人工智能图像处理中，垂直方向上的阴影效应，[即对象或物体在垂直方向上投射出的阴影，对图像或视觉效果产生影响]）。
+图8.2 垂直阴影
 
 #### 8.2.3.2 Horizontal Shadowing  
 
@@ -17867,11 +17819,7 @@ It cannot be stressed too strongly that total reliance should not be placed on a
 
 FIGURE 10.11 Multi-path signals.  
 
-
-
 图10.11 多径信号。 
-
-（注：多径信号是指在物联网或无线通信系统中，信号通过多条不同的路径传播到接收端，这种现象可能会导致信号的衰弱、延迟或干扰。）
 
 #### 10.1.5.3 Loss of Signal  
 
