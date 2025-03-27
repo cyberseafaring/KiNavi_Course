@@ -3,6 +3,7 @@
 - [Presented Slides](cpt363-1/slides)
 **Teaching Materials**
 - [Textbook(PDF))](cpt363-1/textbook)
+<!-- 
 - [Chapter-01](cpt363-1/textbook/LJMU-Radar/chapter01/chapter-01)
 - [Chapter-02](cpt363-1/textbook/LJMU-Radar/chapter02/chapter-02)
 - [Chapter-03](cpt363-1/textbook/LJMU-Radar/chapter03/chapter-03)
@@ -14,7 +15,10 @@
 - [Chapter-09](cpt363-1/textbook/LJMU-Radar/chapter09/chapter-09)
 - [Chapter-10](cpt363-1/textbook/LJMU-Radar/chapter10/chapter-10)
 - [Chapter-11](cpt363-1/textbook/LJMU-Radar/chapter11/chapter-11)
-- [Chapter-12](cpt363-1/textbook/LJMU-Radar/chapter12/chapter-12)
+- [Chapter-12](cpt363-1/textbook/LJMU-Radar/chapter12/chapter-12) 
+-->
+
+- [Marine Radar Textbook](cpt363-1/textbook/LJMU-Radar/Marine_Radar_translated)
 
 - [DNN-Radar](cpt363-1/textbook/DNN-Radar/DNN-Radar-book)
 **Week Schedule**

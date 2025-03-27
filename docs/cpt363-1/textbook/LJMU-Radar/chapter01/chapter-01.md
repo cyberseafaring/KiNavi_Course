@@ -2,7 +2,7 @@
 
 # Basic Radar Principles  
 
-# 1.1 INTRODUCTION  
+## 1.1 INTRODUCTION  
 
 Radar forms an important component of the navigational equipment fitted on virtually all vessels apart from the very smallest. Its display of critical information is easily assimilated by a trained user and has acted as a focus for the presentation of other navigational data, giving it a deserved prominence on the bridge of a vessel. It is poised to retain its central electronic navigational role into the foreseeable future, equalled only in display significance by the rather more recent development, the electronic chart. Together, they will provide the basis of the major displays for marine navigation into an increasingly integrated navigational world.  
 
@@ -19,8 +19,6 @@ Radar forms an important component of the navigational equipment fitted on virtu
 | Navigational | 导航的 | 指与导航相关的，包括确定位置、规划路线、避免障碍等方面的活动或设备。 |
 | Electronic Chart | 电子海图 |一种数字化的海图，能够实时更新并提供详细的海事信息，如水深、航道、危险区等。 |
 | Integrated | 集成化 | 指系统或过程的各个部分紧密结合，实现功能的高度协同和自动化。 |
-
-
 
 The word RADAR is an acronym derived from the words Radio Detection and Ranging. The scientist Heinrich Hertz, after whom the basic unit of frequency is named, demonstrated in 1886 that radio waves could be reflected from metallic objects. In 1904 a German engineer, Christian  Huilsmeyer, obtained a patent in several countries for a radio wave device capable of detecting ships, but it aroused little enthusiasm because of its very limited range. Marconi, delivering a lecture in 1922, drew attention to the work of Hertz and proposed in principle what we know today as marine radar. Although radar was used to determine the height of the ionosphere in the mid-1920s, it was not until 1935 that radar pulses were successfully used to detect and measure the range of an aircraft. In the 1930s there was much simultaneous but independent development of radar techniques in Britain, Germany, France and America. Radar first went to sea in a warship in 1937 and by 1939 considerable improvement in performance had been achieved. By 1944 naval radar had made an appearance on merchant ships and from about the end of the Second World War the growth of civil marine radar began. Progressively it was refined to meet the needs of peacetime navigation and collision avoidance.  
 
@@ -57,9 +55,9 @@ The civil marine radars in use today differ markedly from their ancestors of the
 
 
 
-# 1.2 PRINCIPLES OF RANGE AND BEARING MEASUREMENT  
+## 1.2 PRINCIPLES OF RANGE AND BEARING MEASUREMENT  
 
-# 1.2.1 The Echo Principle  
+### 1.2.1 The Echo Principle  
 
 An object (normally referred to as a target) is detected by the transmission of radio energy as a pulse or otherwise, and the subsequent reception of a fraction of such energy (the echo) which is reflected by the target in the direction of the transmitter. The phenomenon is analogous to the reflection of sound waves from land formations and large buildings. Imagine somebody giving a short sharp shout through cupped hands to focus the sound energy. The sound wave travels outwards and some of it may strike, for example, a cliff. Some of the energy which is intercepted will be reflected by the cliff. If the reflected energy returns in the direction of the caller, and is of sufficient strength, it will be heard as an audible echo, resembling the original shout. In considering this analogy, the following points can usefully assist in gaining a preliminary understanding of pulse radar detection:  
 
@@ -79,12 +77,14 @@ An object (normally referred to as a target) is detected by the transmission of 
 | Echo | 回声 | 从物体上反射回来的能量信号 |
 | Transmitter | 发送器 | 向目标物体发送能量的设备 |
 
-
-
 A. The echo is never as loud as the original shout.   
+
 B. The chance of detecting an echo depends on the loudness and duration of the shout.   
+
 C. Short shouts are required if echoes from close targets are not to be drowned by the original shout.   
+
 D. A sufficiently long interval between shouts is required to allow time for echoes from distant targets to return.   
+
 E. It can be more effective to cup one’s hands over the mouth when shouting and put a hand to the ear when listening for the echo.  
 
 【翻译】
@@ -105,8 +105,6 @@ E. 在喊叫时用手捂住嘴巴，在倾听回声时把手放在耳朵旁可�
 | Duration | 持续时间 | 声音保持的时间长度 |
 | Interval | 间隔 | 两个事件（如喊叫声）之间的时间差距 |
 
-
-
 Now considering radar, its basic building blocks are illustrated diagrammatically in Figure 1.1. The antenna is used both to transmit the signal and to receive its reflection. On transmit, the antenna is acting very much like the cupped hand, focussing the energy in a particular direction. On receive it is acting more like a hand to the ear, collecting more received energy from that direction. The transmitter has a similar role to that of the mouth and vocal chords of the shouter, and the radar receiver acts as the ear. The processor clarifies the received signal and judges its distance, perhaps somewhat similar to what a trained human brain can do in identifying and assessing a received sound wave. Finally the radar displays the information to a human operator, perhaps analogous to a human writing down the estimated range and direction of the object producing the echo.  
 
 【翻译】
@@ -123,9 +121,8 @@ Now considering radar, its basic building blocks are illustrated diagrammaticall
 | Receiver | 接收器 | 接收电磁波并将其转换回电信号的设备 |
 | Processor | 处理器 | 负责处理和分析接收到的信号以提取有用信息的设备 |
 
+![](images/bd646b1ed2740507a9bacd689bf63c846ec52b2c5cb75710fa4d55d998bf7053.jpg)
 
-
-![](images/bd646b1ed2740507a9bacd689bf63c846ec52b2c5cb75710fa4d55d998bf7053.jpg)  
 FIGURE 1.1 The basic radar system.  
 
 【翻译】
@@ -141,11 +138,9 @@ FIGURE 1.1 The basic radar system.
 | System | 系统 | 一系列相互连接的组件或设备 |
 | Basic | 基本 | 最简单或最初级的形式或结构 |
 
-
-
 The antenna of a marine radar rotates steadily in the horizontal plane giving a complete rotation about every 2 s. This means that radar pulses consecutively cover all directions over $360^{\circ}$ at each rotation of the antenna. The speed of radio waves is so high, about one million times greater than sound waves, that the antenna receives all the reflected energy from a particular transmitted pulse before it has appreciably rotated.  
 
-# 1.2.2 Range as a Function of Time  
+### 1.2.2 Range as a Function of Time  
 
 It is self-evident that the time which elapses between the transmission of a pulse and the reception of the corresponding echo depends on the speed of the pulse and the distance which it has travelled in making its two-way journey. If the speed of the pulse is known and the elapsed time can be measured, the range of the target producing the echo can be calculated.  
 
@@ -162,8 +157,6 @@ It is self-evident that the time which elapses between the transmission of a pul
 | echo | 回声 | 原始信号被反射回来后的副本 |
 | elapsed time | 所经历的时间 | 指两个事件之间的时间间隔 |
 | range | 范围、距离 | 指目标物体与观察者或传感器之间的距离 |
-
-
 
 The velocity of radio waves is dependent on the nature of the medium through which they travel. In fact, within the Earth’s atmosphere it is hardly different to that within a space-type vacuum, that is $299,792,458\mathrm{m}/\mathrm{s}$ . In our own minds this is easiest to be considered to be almost precisely 300,000,000 (three hundred million) metres per second, or as 300 metres per microsecond $(\upmu s)$ , where $1\upmu\mathrm{s}$ represents one millionth part of a second (i.e. $10^{-6}s,$ . Using this value it is possible to produce a simple general relationship between target range and the elapsed time which separates the transmission of the pulse and the reception of an echo in any particular case (Figure 1.2).  
 
