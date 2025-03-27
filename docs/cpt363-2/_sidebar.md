@@ -8,7 +8,7 @@
 
 **Teaching Materials**
 
-- [IIoT(中英文))](cpt363-2/textbook/IIoT/IIoT_translated)
+- [IIoT(中英文))](cpt363-2/textbooks/IIoT/IIoT_translated)
 
 - **LMS Links**
 - [![Calendar](https://icongr.am/fontawesome/calendar.svg?size=16&color=808080)Calendar](https://jwc.dlmu.edu.cn/info/1128/5053.htm)
