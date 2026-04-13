@@ -1,57 +1,14 @@
-# Topics
+# LMS Topics
 
-### [A](#a)|B|C|[D](#d)|E|[F](#f)|G|[H](#h)|I|[J](#j)|[K](#k)|[L](#l)|[M](#m)|N|O|[P](#p)|Q|R|[S](#s)|[T](#t)|[U](#u)|[V](#v)|W|X|Y|Z  
+此页保留为兼容入口，当前主题索引请以新版 [Textbook Map](cpt363-2/topics.md) 为准。
 
-### A
-[Agile UX](https://canvas.sfu.ca/courses/44038/modules/items/1096966)
+## Current Structure
 
-### D
-[Design Ethics](https://canvas.sfu.ca/courses/44038/modules/items/1096966)  
-[Design Thinking](https://canvas.sfu.ca/courses/44038/modules/items/1096965)  
+- 课程主题不再按 UX 词条组织
+- 现已按教材第 1-8 章重组
+- 每章都有对应模块页、范例课程、实验和测验
 
-### F
-[5-Second Test](https://canvas.sfu.ca/courses/44038/modules/items/1096974)   
-[Five Whys](https://canvas.sfu.ca/courses/44038/modules/items/1096965)  
+## Go To
 
-### H
-[Hypothesis](https://canvas.sfu.ca/courses/44038/modules/items/1096966)  
-
-### J
-[Journey Maps](https://canvas.sfu.ca/courses/44038/modules/items/1096970)  
-
-### K
-[Kano Model](https://canvas.sfu.ca/courses/44038/modules/items/1096970)  
-
-### L
-[Lean UX](https://canvas.sfu.ca/courses/44038/modules/items/1096966)  
-
-### M
-[Microsoft Product Reaction Cards](https://canvas.sfu.ca/courses/44038/modules/items/1096966)  
-
-### P
-[Problem Statement](https://canvas.sfu.ca/courses/44038/modules/items/1096970)  
-[Product Design Principles](https://canvas.sfu.ca/courses/44038/modules/items/1096970)  
-[Prototyping](https://canvas.sfu.ca/courses/44038/modules/items/1096967)   
-
-### S
-[Scenario-based Design (and Task-Centered Design)](https://canvas.sfu.ca/courses/44038/modules/items/1096967)  
-[Scenarios (and Design Scenarios)](https://canvas.sfu.ca/courses/44038/modules/items/1096967)  
-[Sketching](https://canvas.sfu.ca/courses/44038/modules/items/1096967)
-[Social Design](https://canvas.sfu.ca/courses/44038/modules/items/1096965)  
-[Software Design Processes](https://canvas.sfu.ca/courses/44038/modules/items/1096966)  
-[Storyboards](https://canvas.sfu.ca/courses/44038/modules/items/1096967)  
-
-### T
-[Task Analysis](https://canvas.sfu.ca/courses/44038/modules/items/1096966)  
-
-### U
-[Usability](https://canvas.sfu.ca/courses/44038/modules/items/1096965)  
-[Usability Goals](https://canvas.sfu.ca/courses/44038/modules/items/1096966)  
-[Usability Testing](https://canvas.sfu.ca/courses/44038/modules/items/1096974)   
-[User-centered Design (UCD)](https://canvas.sfu.ca/courses/44038/modules/items/1096965)  
-[User Experience Design](https://canvas.sfu.ca/courses/44038/modules/items/1096966)   
-[UX Goals](https://canvas.sfu.ca/courses/44038/modules/items/1096966)  
-[UX Strategy](https://canvas.sfu.ca/courses/44038/modules/items/1096970)  
-
-### V
-[Value Proposition](https://canvas.sfu.ca/courses/44038/modules/items/1096970)  
+- [新版章节地图](cpt363-2/topics.md)
+- [新版课时安排](cpt363-2/schedule.md)

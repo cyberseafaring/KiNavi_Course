@@ -1,21 +1,21 @@
 **CPT363-2**
 
 - [Course Welcome](cpt363-2/course-welcome)
-- [Week 1 (May 9 - 15)](cpt363-2/module-01)
-- [Week 2 (May 16 - 22)](cpt363-2/module-02)
-- [Week 3 (May 23 - 29)](cpt363-2/module-03)
-- [Week 4 (May 30 - Jun 5)](cpt363-2/module-04)
+- [Chapter 1 物联网技术基础](cpt363-2/module-01)
+- [Chapter 2 船联网技术演变](cpt363-2/module-02)
+- [Chapter 3 船联网体系架构](cpt363-2/module-03)
+- [Chapter 4 船载感知信息采集](cpt363-2/module-04)
+- [Chapter 5 海上通信网络基础](cpt363-2/module-05)
+- [Chapter 6 船联网数据治理](cpt363-2/module-06)
+- [Chapter 7 船联网安全机制](cpt363-2/module-07)
+- [Chapter 8 典型应用发展趋势](cpt363-2/module-08)
 
 **Teaching Materials**
 
 - [IIoT(中英文))](cpt363-2/textbooks/IIoT/IIoT_translated)
-- [教材数字资源平台](cpt363-2/ios-textbook-resources/index.html)
-- [章节资源](cpt363-2/ios-textbook-resources/chapters/index.html)
-- [范例课程](cpt363-2/ios-textbook-resources/lectures/index.html)
-- [实验项目](cpt363-2/ios-textbook-resources/labs/index.html)
-- [扩展教程](cpt363-2/ios-textbook-resources/tutorials/index.html)
-- [数据资源](cpt363-2/ios-textbook-resources/datasets/index.html)
-- [交互内容](cpt363-2/ios-textbook-resources/interactive/index.html)
+- [Textbook Map](cpt363-2/topics.md)
+- [Schedule](cpt363-2/schedule.md)
+- [Extended Resources](cpt363-2/resources.md)
 
 - **LMS Links**
 - [![Calendar](https://icongr.am/fontawesome/calendar.svg?size=16&color=808080)Calendar](https://jwc.dlmu.edu.cn/info/1128/5053.htm)

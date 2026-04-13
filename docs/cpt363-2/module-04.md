@@ -1,19 +1,36 @@
-![Wireframe](images/6968244538_4c0f7c7e64_k.jpg ':class=banner-image')
+# Chapter 4 船载感知信息采集
 
-# How to explore the problem space?
+本章对应教材第 4 章，围绕“船上有哪些关键感知链条，以及这些数据为什么不总是可信”展开。重点包括定位、姿态、AIS、设备状态、多源感知和质量标注。
 
-## Summaries and Questions  
-[May 30th Class One-minute Summaries](https://sso.canvaslms.com/courses/1924881/assignments/14377745)
+## Textbook Mainline
 
-## Presented Slides  
-<div class="video-container-16by9"><iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRnnRFelgw1ksq_p8Eryg3dnyLCRRLPf5fBgdwdv9p-tCIwcxqWvzDGrGbjxGHL7HqEJVpmV26ntk3a/embed?start=false&loop=false&delayms=3000" frameborder="0" width=780" height="585" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></div>
+- 船舶自身状态感知：定位、时间基准、航向姿态、速度航程
+- 周边交通态势感知：AIS、报文字段、雷达、视觉、声呐
+- 船舶运行状态感知：主机、电力、机舱、能耗、舱室监测
+- 数据质量问题形态、质量标注与在线校核
+- 多源感知互补、时间同步和目标关联
+- 弱网断链条件下的感知闭环
 
-## Supplemental Materials  
-<div class="video-container-4by3"><iframe width="780" height="585" src="https://www.youtube.com/embed/MwidSAlbEB8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+## Core Teaching Pages
 
-## Downloads
-[4-UP BROWSERS + GRID](https://sso.canvaslms.com/courses/1924881/files/folder/Downloads/Sketching%20Templates/sneakpeekit-4-browsers)  
-[4-UP MOBILES + GRID](https://sso.canvaslms.com/courses/1924881/files/folder/Downloads/Sketching%20Templates/sneakpeekit-4-mobiles)  
+- [教材章节资源](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/chapters/ch04/index.html)
+- [L07 船载感知链条与多源采集](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/lectures/L07/index.html)
+- [L08 多源感知数据质量标注](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/lectures/L08/index.html)
+- [章节测验](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/interactive/quizzes/index.html)
 
-## Required Reading  
-<a class="embedly-card" data-card-controls="0" data-card-align="left" href="https://www.smashingmagazine.com/2014/10/the-skeptics-guide-to-low-fidelity-prototyping/">The Skeptic’s Guide To Low-Fidelity Prototyping</a>
+## Practice Mapping
+
+- [Lab02 传感器数据采集传输](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/labs/lab02/index.html)
+- [Lab06 视觉船舶检测](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/labs/lab06/index.html)
+- [计算机视觉扩展教程](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/tutorials/computer-vision/index.html)
+- [船舶图像样本](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/datasets/ship-images/sample-ship-01.svg)
+
+## Extension Tasks
+
+- 解释 GNSS、AIS、雷达、视觉为什么必须互补而不能相互替代
+- 为一条感知数据增加 `quality` 或 `confidence` 字段并给出使用规则
+- 举一个“时间不同步导致融合出错”的例子
+
+## Why This Chapter Matters
+
+如果感知链本身没有被理解和标注，后续的数据融合、告警和协同决策都会建立在不透明的数据基础上。
