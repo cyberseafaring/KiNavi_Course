@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="《船联网技术基础》数据资源，提供AIS、雷达等实验数据。">
+    <title>数据资源 - 船联网技术基础</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="icon" type="image/svg+xml" href="../assets/images/logo.svg">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logo.svg" alt="Logo" class="logo-icon">
+                <span>船联网技术基础</span>
+            </a>
+            <button class="menu-toggle" aria-label="菜单" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav" id="main-nav">
+                <a href="../index.html" class="nav-link">首页</a>
+                <a href="../chapters/index.html" class="nav-link">章节资源</a>
+                <a href="../lectures/index.html" class="nav-link">范例课程</a>
+                <a href="../labs/index.html" class="nav-link">实验项目</a>
+                <a href="../tutorials/index.html" class="nav-link">扩展教程</a>
+                <a href="index.html" class="nav-link active">数据资源</a>
+                <a href="../interactive/index.html" class="nav-link">交互内容</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="hero" style="min-height: 30vh;">
+        <div class="hero-content">
+            <h1 class="hero-title">数据资源</h1>
+            <p class="hero-subtitle">实验用数据集与样本文件</p>
+        </div>
+    </section>
+
+    <!-- Datasets -->
+    <section class="section">
+        <div class="container">
+            <div class="card-grid" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="card">
+                    <h3 class="card-title">AIS 数据</h3>
+                    <p class="card-description">船舶自动识别系统样本数据，包含NMEA格式报文。</p>
+                    <ul style="padding-left: 1.2rem; font-size: 0.875rem; color: var(--ios-gray); line-height: 1.8; margin-top: 1rem;">
+                        <li><a href="ais-samples/ais_nmea_sample.txt" download>ais_nmea_sample.txt</a> - NMEA报文样本</li>
+                        <li><a href="ais-samples/ais_decoded_sample.csv" download>ais_decoded_sample.csv</a> - 解码后数据</li>
+                    </ul>
+                    <div class="mt-3">
+                        <span class="tag">NMEA</span>
+                        <span class="tag">AIS</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">船舶轨迹数据</h3>
+                    <p class="card-description">船舶历史航行轨迹数据，用于轨迹分析与可视化实验。</p>
+                    <ul style="padding-left: 1.2rem; font-size: 0.875rem; color: var(--ios-gray); line-height: 1.8; margin-top: 1rem;">
+                        <li><a href="ais-samples/vessel_tracks.csv" download>vessel_tracks.csv</a> - 船舶轨迹点数据</li>
+                        <li><a href="ais-samples/vessel_info.json" download>vessel_info.json</a> - 船舶信息</li>
+                    </ul>
+                    <div class="mt-3">
+                        <span class="tag">CSV</span>
+                        <span class="tag">轨迹</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">通信日志数据</h3>
+                    <p class="card-description">船岸通信日志样本，用于网络性能分析实验。</p>
+                    <ul style="padding-left: 1.2rem; font-size: 0.875rem; color: var(--ios-gray); line-height: 1.8; margin-top: 1rem;">
+                        <li><a href="comm-logs/comm_log_sample.csv" download>comm_log_sample.csv</a> - 通信日志</li>
+                        <li><a href="comm-logs/latency_data.csv" download>latency_data.csv</a> - 延迟测试数据</li>
+                    </ul>
+                    <div class="mt-3">
+                        <span class="tag">日志</span>
+                        <span class="tag">性能</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">NMEA 日志</h3>
+                    <p class="card-description">NMEA-0183 语句样本，用于协议分析与解析实验。</p>
+                    <ul style="padding-left: 1.2rem; font-size: 0.875rem; color: var(--ios-gray); line-height: 1.8; margin-top: 1rem;">
+                        <li><a href="nmea-logs/nmea_sample.txt" download>nmea_sample.txt</a> - NMEA语句样本</li>
+                    </ul>
+                    <div class="mt-3">
+                        <span class="tag">NMEA</span>
+                        <span class="tag">协议</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">安全测试数据</h3>
+                    <p class="card-description">网络安全实验用脱敏数据样本。</p>
+                    <ul style="padding-left: 1.2rem; font-size: 0.875rem; color: var(--ios-gray); line-height: 1.8; margin-top: 1rem;">
+                        <li><a href="security/security_log_sample.csv" download>security_log_sample.csv</a> - 安全日志样本</li>
+                        <li><a href="security/anomaly_data.csv" download>anomaly_data.csv</a> - 异常数据样本</li>
+                    </ul>
+                    <div class="mt-3">
+                        <span class="tag">安全</span>
+                        <span class="tag">异常检测</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">船舶图像</h3>
+                    <p class="card-description">用于计算机视觉实验的示例图片（SVG）。</p>
+                    <ul style="padding-left: 1.2rem; font-size: 0.875rem; color: var(--ios-gray); line-height: 1.8; margin-top: 1rem;">
+                        <li><a href="ship-images/sample-ship-01.svg" download>sample-ship-01.svg</a></li>
+                        <li><a href="ship-images/sample-ship-02.svg" download>sample-ship-02.svg</a></li>
+                        <li><a href="ship-images/sample-ship-03.svg" download>sample-ship-03.svg</a></li>
+                    </ul>
+                    <div class="mt-3">
+                        <span class="tag">图像</span>
+                        <span class="tag">CV</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Usage Notice -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="card" style="max-width: 800px; margin: 0 auto;">
+                <h3 style="margin-bottom: 1rem;">数据使用说明</h3>
+                <ul style="padding-left: 1.5rem; line-height: 2;">
+                    <li>所有数据仅供教学实验使用，不得用于商业目的</li>
+                    <li>AIS数据已做脱敏处理，船舶身份信息经过匿名化</li>
+                    <li>数据格式说明请参考各实验指导手册</li>
+                    <li>如需更多数据，请联系课程组</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-text">《船联网技术基础》配套数字资源 · 大连海事大学</p>
+            <nav class="footer-links">
+                <a href="../chapters/index.html" class="footer-link">章节资源</a>
+                <a href="../lectures/index.html" class="footer-link">范例课程</a>
+                <a href="../labs/index.html" class="footer-link">实验项目</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

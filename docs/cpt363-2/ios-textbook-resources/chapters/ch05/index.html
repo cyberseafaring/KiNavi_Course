@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="第5章 海上通信网络基础">
+    <title>第5章 海上通信网络基础 - 船联网技术基础</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <link rel="stylesheet" href="../../assets/css/content.css">
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/logo.svg">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">
+                <img src="../../assets/images/logo.svg" alt="Logo" class="logo-icon">
+                <span>船联网技术基础</span>
+            </a>
+            <button class="menu-toggle" aria-label="菜单" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav" id="main-nav">
+                <a href="../../index.html" class="nav-link">首页</a>
+                <a href="../index.html" class="nav-link active">章节资源</a>
+                <a href="../../lectures/index.html" class="nav-link">范例课程</a>
+                <a href="../../labs/index.html" class="nav-link">实验项目</a>
+                <a href="../../tutorials/index.html" class="nav-link">扩展教程</a>
+                <a href="../../datasets/index.html" class="nav-link">数据资源</a>
+                <a href="../../interactive/index.html" class="nav-link">交互内容</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container" style="padding-top: calc(var(--header-height) + 1rem);">
+        <nav class="breadcrumb" aria-label="面包屑导航">
+            <a href="../../index.html">首页</a>
+            <span style="margin: 0 0.5rem;">›</span>
+            <a href="../index.html">章节资源</a>
+            <span style="margin: 0 0.5rem;">›</span>
+            <span style="color: var(--color-text);">第5章</span>
+        </nav>
+    </div>
+
+    <main class="section" style="padding-top: 1.5rem;">
+        <div class="container">
+            <div class="content-grid">
+                <article class="content-article">
+                    <div class="content-header">
+                        <span class="chapter-number">5</span>
+                        <div>
+                            <h1 style="margin-bottom: 0.25rem; font-size: 1.75rem;">海上通信网络基础</h1>
+                            <p class="text-muted">链路特性、多链路组织、降级策略</p>
+                        </div>
+                    </div>
+
+                    <h2 id="objectives">学习目标</h2>
+                    <p>本章聚焦海上通信的工程特性，说明链路指标如何影响航行应用，并给出多链路组织与降级运行的基本思路。</p>
+                    <ul>
+                        <li>能够用带宽、时延、抖动、丢包、可用性描述链路状态</li>
+                        <li>能够比较 VHF、卫星、蜂窝、港区专网的适用条件</li>
+                        <li>能够解释多链路组织与降级策略的基本原则</li>
+                    </ul>
+
+                    <h2 id="key">知识要点</h2>
+
+                    <h3 id="metrics">5.1 指标与表现</h3>
+                    <p>通信指标对航行应用的影响往往以“信息迟到”“信息丢失”和“信息不连续”的形式出现。把这些表现映射回带宽、时延、抖动与丢包，可以更直接地定位问题属于链路还是属于应用设计。</p>
+
+                    <h3 id="links">5.2 链路类型</h3>
+                    <p>海上通信往往同时存在多种链路。近岸阶段可以使用蜂窝网络，远洋阶段更依赖卫星通信，港区可能存在专用网络。链路选型应由业务需求驱动，并把费用、覆盖和可靠性纳入同一套权衡框架。</p>
+
+                    <h3 id="multi">5.3 多链路组织</h3>
+                    <p>多链路并不是简单的并联叠加。系统需要明确优先级、切换条件和缓存补传策略，避免频繁切换引起的抖动放大。对于关键信息，更可取的方式是定义摘要模式与低频保底通道。</p>
+
+                    <h2 id="reading">延伸阅读</h2>
+                    <ul>
+                        <li>海事卫星通信系统公开技术资料</li>
+                        <li>VHF 数据链相关综述资料</li>
+                    </ul>
+
+                    <h2 id="questions">思考题</h2>
+                    <ol>
+                        <li>在远洋航行阶段，哪些业务更适合在船端完成闭环，为什么。</li>
+                        <li>如果链路时延突然升高，你会从系统设计角度做哪些降级处理。</li>
+                        <li>举例说明多链路切换带来的副作用，并给出一种缓解方法。</li>
+                    </ol>
+
+                    <div class="callout">
+                        <h4 style="margin-bottom: 1rem;">相关资源</h4>
+                        <div class="resource-list" style="grid-template-columns: 1fr;">
+                            <a href="../../lectures/L09/index.html" class="resource-item">
+                                <span class="resource-number">L09</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">海上通信链路特性分析</h5>
+                                    <p class="resource-meta">指标差异与适用条件</p>
+                                </div>
+                            </a>
+                            <a href="../../lectures/L10/index.html" class="resource-item">
+                                <span class="resource-number">L10</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">多链路组织降级策略</h5>
+                                    <p class="resource-meta">弱网条件应对</p>
+                                </div>
+                            </a>
+                            <a href="../../labs/lab04/index.html" class="resource-item">
+                                <span class="resource-number">Lab04</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">NMEA-0183协议分析</h5>
+                                    <p class="resource-meta">从报文到字段的解析训练</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border);">
+                        <a href="../ch04/index.html" class="btn btn-secondary">← 上一章：船载感知信息采集</a>
+                        <a href="../ch06/index.html" class="btn btn-secondary">下一章：船联网数据治理 →</a>
+                    </div>
+                </article>
+
+                <aside class="sidebar-sticky">
+                    <div class="card">
+                        <h4 style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--color-text-muted);">本章目录</h4>
+                        <ul class="toc-list">
+                            <li class="toc-item"><a href="#objectives" class="toc-link">学习目标</a></li>
+                            <li class="toc-item"><a href="#key" class="toc-link">知识要点</a></li>
+                            <li class="toc-item toc-h3"><a href="#metrics" class="toc-link">5.1 指标与表现</a></li>
+                            <li class="toc-item toc-h3"><a href="#links" class="toc-link">5.2 链路类型</a></li>
+                            <li class="toc-item toc-h3"><a href="#multi" class="toc-link">5.3 多链路组织</a></li>
+                            <li class="toc-item"><a href="#reading" class="toc-link">延伸阅读</a></li>
+                            <li class="toc-item"><a href="#questions" class="toc-link">思考题</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="card meta-box" style="margin-top: 1.5rem;">
+                        <h4 style="margin-bottom: 0.5rem; font-size: 0.875rem;">章节信息</h4>
+                        <p>对应课时：2课时</p>
+                        <p>建议学时：90分钟</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-text">《船联网技术基础》配套数字资源 · 大连海事大学</p>
+            <nav class="footer-links">
+                <a href="../index.html" class="footer-link">章节资源</a>
+                <a href="../../lectures/index.html" class="footer-link">范例课程</a>
+                <a href="../../labs/index.html" class="footer-link">实验项目</a>
+                <a href="../../datasets/index.html" class="footer-link">数据资源</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>
+

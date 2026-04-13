@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="《船联网技术基础》扩展教程，包含树莓派开发、计算机视觉、Python基础、海事数据处理等进阶内容。">
+    <title>扩展教程 - 船联网技术基础</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="icon" type="image/svg+xml" href="../assets/images/logo.svg">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logo.svg" alt="Logo" class="logo-icon">
+                <span>船联网技术基础</span>
+            </a>
+            <button class="menu-toggle" aria-label="菜单" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav" id="main-nav">
+                <a href="../index.html" class="nav-link">首页</a>
+                <a href="../chapters/index.html" class="nav-link">章节资源</a>
+                <a href="../lectures/index.html" class="nav-link">范例课程</a>
+                <a href="../labs/index.html" class="nav-link">实验项目</a>
+                <a href="index.html" class="nav-link active">扩展教程</a>
+                <a href="../datasets/index.html" class="nav-link">数据资源</a>
+                <a href="../interactive/index.html" class="nav-link">交互内容</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="hero" style="min-height: 30vh;">
+        <div class="hero-content">
+            <h1 class="hero-title">扩展教程</h1>
+            <p class="hero-subtitle">进阶学习资源，拓展技术视野</p>
+        </div>
+    </section>
+
+    <!-- Tutorials Grid -->
+    <section class="section">
+        <div class="container">
+            <div class="card-grid" style="grid-template-columns: repeat(2, 1fr);">
+                <a href="raspberry-pi/index.html" class="card" style="display: block;">
+                    <div style="display: flex; align-items: flex-start; gap: 1.5rem;">
+                        <svg class="card-icon" style="flex-shrink: 0;" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="12" width="32" height="24" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="14" cy="18" r="2" fill="currentColor"/>
+                            <circle cx="14" cy="30" r="2" fill="currentColor"/>
+                            <rect x="20" y="16" width="16" height="8" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M4 18h4M4 30h4M40 18h4M40 30h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <div>
+                            <h3 class="card-title">树莓派开发</h3>
+                            <p class="card-description">嵌入式系统开发入门，学习使用树莓派进行船联网边缘设备开发。</p>
+                            <div class="mt-2">
+                                <span class="tag">硬件</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">GPIO</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="computer-vision/index.html" class="card" style="display: block;">
+                    <div style="display: flex; align-items: flex-start; gap: 1.5rem;">
+                        <svg class="card-icon" style="flex-shrink: 0;" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="24" cy="24" r="3" fill="currentColor"/>
+                            <path d="M24 2v4M24 42v4M2 24h4M42 24h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <div>
+                            <h3 class="card-title">计算机视觉</h3>
+                            <p class="card-description">图像处理与目标检测基础，应用于船舶识别与海上监控场景。</p>
+                            <div class="mt-2">
+                                <span class="tag">OpenCV</span>
+                                <span class="tag">深度学习</span>
+                                <span class="tag">YOLO</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="python-basics/index.html" class="card" style="display: block;">
+                    <div style="display: flex; align-items: flex-start; gap: 1.5rem;">
+                        <svg class="card-icon" style="flex-shrink: 0;" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 4C14 4 14 10 14 14v6h12v2H12s-8-1-8 10c0 11 7 12 10 12h5v-6s0-6 6-6h10s6 0 6-6V14c0-6-4-10-14-10h-3z" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="18" cy="12" r="2" fill="currentColor"/>
+                        </svg>
+                        <div>
+                            <h3 class="card-title">Python基础</h3>
+                            <p class="card-description">数据处理编程入门，掌握Python在船联网数据分析中的应用。</p>
+                            <div class="mt-2">
+                                <span class="tag">NumPy</span>
+                                <span class="tag">Pandas</span>
+                                <span class="tag">Matplotlib</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="maritime-data/index.html" class="card" style="display: block;">
+                    <div style="display: flex; align-items: flex-start; gap: 1.5rem;">
+                        <svg class="card-icon" style="flex-shrink: 0;" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 36c8-8 16 4 20-8s8-12 20 0" stroke="currentColor" stroke-width="2"/>
+                            <path d="M24 12l-8 16h16l-8-16z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <circle cx="24" cy="8" r="3" stroke="currentColor" stroke-width="2"/>
+                            <path d="M16 28h16" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <div>
+                            <h3 class="card-title">海事数据</h3>
+                            <p class="card-description">AIS、雷达等海事数据的获取、解析与分析处理方法。</p>
+                            <div class="mt-2">
+                                <span class="tag">AIS</span>
+                                <span class="tag">NMEA</span>
+                                <span class="tag">数据分析</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Path -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">学习路径建议</h2>
+            </div>
+            <div class="card" style="max-width: 800px; margin: 0 auto;">
+                <p style="margin-bottom: 1rem;">根据学习目标选择合适的扩展教程：</p>
+                <ul style="padding-left: 1.5rem; line-height: 2;">
+                    <li><strong>船联网边缘开发</strong> → Python基础 → 树莓派开发 → 海事数据</li>
+                    <li><strong>智能感知应用</strong> → Python基础 → 计算机视觉 → 海事数据</li>
+                    <li><strong>数据分析方向</strong> → Python基础 → 海事数据</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-text">《船联网技术基础》配套数字资源 · 大连海事大学</p>
+            <nav class="footer-links">
+                <a href="../chapters/index.html" class="footer-link">章节资源</a>
+                <a href="../lectures/index.html" class="footer-link">范例课程</a>
+                <a href="../labs/index.html" class="footer-link">实验项目</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="《船联网技术基础》本科教材配套数字资源平台，提供章节资源、范例课程、实验项目及扩展教程。">
+    <meta name="keywords" content="船联网, IoS, 智能航运, 海事技术, 本科教材">
+    <title>船联网技术基础 - 配套数字资源</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <!-- Favicon (placeholder) -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8 20 L16 8 L24 20 L16 16 Z" fill="currentColor" opacity="0.3"/>
+                    <path d="M8 20 L16 16 L24 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="16" cy="16" r="3" fill="currentColor"/>
+                </svg>
+                <span>船联网技术基础</span>
+            </a>
+
+            <button class="menu-toggle" aria-label="菜单" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav" id="main-nav">
+                <a href="index.html" class="nav-link active">首页</a>
+                <a href="chapters/index.html" class="nav-link">章节资源</a>
+                <a href="lectures/index.html" class="nav-link">范例课程</a>
+                <a href="labs/index.html" class="nav-link">实验项目</a>
+                <a href="tutorials/index.html" class="nav-link">扩展教程</a>
+                <a href="datasets/index.html" class="nav-link">数据资源</a>
+                <a href="interactive/index.html" class="nav-link">交互内容</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">《船联网技术基础》<br>配套数字资源</h1>
+            <p class="hero-subtitle">面向航海技术、海事信息工程、交通信息工程专业本科生</p>
+            <p class="hero-description">
+                本平台提供教材配套的章节学习资源、16节范例课程、8个实验项目，
+                以及树莓派开发、计算机视觉、Python基础、海事数据处理等扩展教程。
+            </p>
+            <div class="btn-group">
+                <a href="chapters/index.html" class="btn btn-primary">开始学习</a>
+                <a href="#overview" class="btn btn-secondary">了解更多</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Navigation -->
+    <section class="section quick-nav">
+        <div class="container">
+            <div class="card-grid">
+                <a href="chapters/index.html" class="card">
+                    <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="6" y="4" width="28" height="40" rx="2" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 12h16M12 20h16M12 28h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="38" cy="38" r="8" fill="currentColor" opacity="0.2"/>
+                        <path d="M38 34v8M34 38h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <div class="card-content">
+                        <h3 class="card-title">章节资源</h3>
+                        <p class="card-description">8个章节的知识要点、课件资料与延伸阅读</p>
+                    </div>
+                </a>
+
+                <a href="lectures/index.html" class="card">
+                    <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="4" y="8" width="40" height="28" rx="2" stroke="currentColor" stroke-width="2"/>
+                        <path d="M20 18l10 6-10 6V18z" fill="currentColor"/>
+                        <rect x="12" y="40" width="24" height="4" rx="1" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <div class="card-content">
+                        <h3 class="card-title">范例课程</h3>
+                        <p class="card-description">16节课时的教学设计与课堂资源</p>
+                    </div>
+                </a>
+
+                <a href="labs/index.html" class="card">
+                    <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 4v12l-8 20a4 4 0 004 4h20a4 4 0 004-4l-8-20V4" stroke="currentColor" stroke-width="2"/>
+                        <path d="M14 4h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <ellipse cx="24" cy="32" rx="8" ry="4" fill="currentColor" opacity="0.2"/>
+                        <circle cx="20" cy="28" r="2" fill="currentColor"/>
+                        <circle cx="28" cy="30" r="3" fill="currentColor" opacity="0.6"/>
+                    </svg>
+                    <div class="card-content">
+                        <h3 class="card-title">实验项目</h3>
+                        <p class="card-description">8个动手实验，掌握核心技术技能</p>
+                    </div>
+                </a>
+
+                <a href="tutorials/index.html" class="card">
+                    <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="4" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                        <rect x="26" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                        <rect x="4" y="26" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                        <rect x="26" y="26" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="13" cy="13" r="4" fill="currentColor" opacity="0.3"/>
+                        <path d="M32 10h6M35 7v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M10 32l6 6M16 32l-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="35" cy="35" r="4" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <div class="card-content">
+                        <h3 class="card-title">扩展教程</h3>
+                        <p class="card-description">树莓派、CV、Python、海事数据等进阶内容</p>
+                    </div>
+                </a>
+
+                <a href="datasets/index.html" class="card">
+                    <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 10c0-3 5-6 12-6s12 3 12 6-5 6-12 6-12-3-12-6z" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 10v10c0 3 5 6 12 6s12-3 12-6V10" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 20v10c0 3 5 6 12 6s12-3 12-6V20" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 30v8c0 3 5 6 12 6s12-3 12-6v-8" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <div class="card-content">
+                        <h3 class="card-title">数据资源</h3>
+                        <p class="card-description">AIS、NMEA、轨迹等示例数据集</p>
+                    </div>
+                </a>
+
+                <a href="interactive/index.html" class="card">
+                    <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="6" y="10" width="36" height="24" rx="2" stroke="currentColor" stroke-width="2"/>
+                        <path d="M16 38h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M18 22l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div class="card-content">
+                        <h3 class="card-title">交互内容</h3>
+                        <p class="card-description">在线测验、架构图、轨迹回放</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapter Overview -->
+    <section class="section section-alt" id="overview">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">章节概览</h2>
+                <p class="section-subtitle">教材共8章，涵盖船联网技术的完整知识体系</p>
+            </div>
+
+            <div class="chapter-grid">
+                <a href="chapters/ch01/index.html" class="chapter-card">
+                    <span class="chapter-number">1</span>
+                    <h4 class="chapter-title">物联网技术基础</h4>
+                    <p class="chapter-meta">概念、特征、技术链条</p>
+                </a>
+
+                <a href="chapters/ch02/index.html" class="chapter-card">
+                    <span class="chapter-number">2</span>
+                    <h4 class="chapter-title">船联网技术演变</h4>
+                    <p class="chapter-meta">概念边界、演进脉络、AIS基础</p>
+                </a>
+
+                <a href="chapters/ch03/index.html" class="chapter-card">
+                    <span class="chapter-number">3</span>
+                    <h4 class="chapter-title">船联网体系架构</h4>
+                    <p class="chapter-meta">分层模型、接口边界、协同机制</p>
+                </a>
+
+                <a href="chapters/ch04/index.html" class="chapter-card">
+                    <span class="chapter-number">4</span>
+                    <h4 class="chapter-title">船载感知信息采集</h4>
+                    <p class="chapter-meta">定位姿态、态势感知、质量标注</p>
+                </a>
+
+                <a href="chapters/ch05/index.html" class="chapter-card">
+                    <span class="chapter-number">5</span>
+                    <h4 class="chapter-title">海上通信网络基础</h4>
+                    <p class="chapter-meta">链路特性、多链路组织、降级策略</p>
+                </a>
+
+                <a href="chapters/ch06/index.html" class="chapter-card">
+                    <span class="chapter-number">6</span>
+                    <h4 class="chapter-title">船联网数据治理</h4>
+                    <p class="chapter-meta">解析存储、时间语义、融合共享</p>
+                </a>
+
+                <a href="chapters/ch07/index.html" class="chapter-card">
+                    <span class="chapter-number">7</span>
+                    <h4 class="chapter-title">船联网安全机制</h4>
+                    <p class="chapter-meta">安全目标、威胁模型、降级运行</p>
+                </a>
+
+                <a href="chapters/ch08/index.html" class="chapter-card">
+                    <span class="chapter-number">8</span>
+                    <h4 class="chapter-title">典型应用发展趋势</h4>
+                    <p class="chapter-meta">智能航海、绿色航运、未来展望</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lectures Preview -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">范例课程</h2>
+                <p class="section-subtitle">16个课时的教学设计，每课时约45分钟</p>
+            </div>
+
+            <div class="resource-list">
+                <a href="lectures/L01/index.html" class="resource-item">
+                    <span class="resource-number">L01</span>
+                    <div class="resource-content">
+                        <h5 class="resource-title">物联网概念发展历程</h5>
+                        <p class="resource-meta">第1章 · 物联网定义与发展脉络</p>
+                    </div>
+                </a>
+                <a href="lectures/L02/index.html" class="resource-item">
+                    <span class="resource-number">L02</span>
+                    <div class="resource-content">
+                        <h5 class="resource-title">物联网核心技术栈</h5>
+                        <p class="resource-meta">第1章 · 感知连接计算协同</p>
+                    </div>
+                </a>
+                <a href="lectures/L03/index.html" class="resource-item">
+                    <span class="resource-number">L03</span>
+                    <div class="resource-content">
+                        <h5 class="resource-title">船联网概念边界演进脉络</h5>
+                        <p class="resource-meta">第2章 · 对象范围与演进主线</p>
+                    </div>
+                </a>
+                <a href="lectures/L04/index.html" class="resource-item">
+                    <span class="resource-number">L04</span>
+                    <div class="resource-content">
+                        <h5 class="resource-title">AIS系统海上信息协同基础</h5>
+                        <p class="resource-meta">第2章 · AIS系统构成与局限</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="lectures/index.html" class="btn btn-secondary">查看全部16节课程</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Labs Preview -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">实验项目</h2>
+                <p class="section-subtitle">动手实践，掌握船联网核心技术</p>
+            </div>
+
+            <div class="resource-list">
+                <a href="labs/lab01/index.html" class="resource-item">
+                    <span class="resource-number">01</span>
+                    <div class="resource-content">
+                        <h5 class="resource-title">树莓派开发环境搭建</h5>
+                        <p class="resource-meta">系统安装、网络配置、开发工具</p>
+                    </div>
+                </a>
+                <a href="labs/lab02/index.html" class="resource-item">
+                    <span class="resource-number">02</span>
+                    <div class="resource-content">
+                        <h5 class="resource-title">传感器数据采集传输</h5>
+                        <p class="resource-meta">传感器接入、数据采集与上传</p>
+                    </div>
+                </a>
+                <a href="labs/lab03/index.html" class="resource-item">
+                    <span class="resource-number">03</span>
+                    <div class="resource-content">
+                        <h5 class="resource-title">AIS报文解析实验</h5>
+                        <p class="resource-meta">NMEA AIS 解析与字段校验</p>
+                    </div>
+                </a>
+                <a href="labs/lab04/index.html" class="resource-item">
+                    <span class="resource-number">04</span>
+                    <div class="resource-content">
+                        <h5 class="resource-title">NMEA-0183协议分析</h5>
+                        <p class="resource-meta">典型语句结构、校验、解析实践</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="labs/index.html" class="btn btn-secondary">查看全部8个实验</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tutorials Preview -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">扩展教程</h2>
+                <p class="section-subtitle">进阶学习资源，拓展技术视野</p>
+            </div>
+
+            <div class="card-grid" style="grid-template-columns: repeat(4, 1fr);">
+                <a href="tutorials/raspberry-pi/index.html" class="card">
+                    <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="8" y="12" width="32" height="24" rx="2" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="14" cy="18" r="2" fill="currentColor"/>
+                        <circle cx="14" cy="30" r="2" fill="currentColor"/>
+                        <rect x="20" y="16" width="16" height="8" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M4 18h4M4 30h4M40 18h4M40 30h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <h4 class="card-title">树莓派开发</h4>
+                    <p class="card-description">嵌入式系统开发入门</p>
+                </a>
+
+                <a href="tutorials/computer-vision/index.html" class="card">
+                    <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="24" cy="24" r="3" fill="currentColor"/>
+                        <path d="M24 2v4M24 42v4M2 24h4M42 24h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <h4 class="card-title">计算机视觉</h4>
+                    <p class="card-description">图像处理与目标检测</p>
+                </a>
+
+                <a href="tutorials/python-basics/index.html" class="card">
+                    <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24 4C14 4 14 10 14 14v6h12v2H12s-8-1-8 10c0 11 7 12 10 12h5v-6s0-6 6-6h10s6 0 6-6V14c0-6-4-10-14-10h-3z" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="18" cy="12" r="2" fill="currentColor"/>
+                    </svg>
+                    <h4 class="card-title">Python基础</h4>
+                    <p class="card-description">数据处理编程入门</p>
+                </a>
+
+                <a href="tutorials/maritime-data/index.html" class="card">
+                    <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 36c8-8 16 4 20-8s8-12 20 0" stroke="currentColor" stroke-width="2"/>
+                        <path d="M24 12l-8 16h16l-8-16z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <circle cx="24" cy="8" r="3" stroke="currentColor" stroke-width="2"/>
+                        <path d="M16 28h16" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <h4 class="card-title">海事数据</h4>
+                    <p class="card-description">AIS、雷达数据分析</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-text">
+                《船联网技术基础》配套数字资源 · 大连海事大学
+            </p>
+            <nav class="footer-links">
+                <a href="chapters/index.html" class="footer-link">章节资源</a>
+                <a href="lectures/index.html" class="footer-link">范例课程</a>
+                <a href="labs/index.html" class="footer-link">实验项目</a>
+                <a href="datasets/index.html" class="footer-link">数据资源</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

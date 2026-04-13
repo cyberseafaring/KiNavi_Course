@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="轨迹回放工具">
+    <title>船舶轨迹回放 - 仿真演示</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="stylesheet" href="../../../assets/css/responsive.css">
+    <link rel="stylesheet" href="../../../assets/css/content.css">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/images/logo.svg">
+    <style>
+        .controls {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .controls input[type="range"] {
+            width: min(520px, 100%);
+        }
+        .plot {
+            width: 100%;
+            height: 420px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            background: linear-gradient(180deg, var(--ios-sky-blue), white);
+        }
+        .stat {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../../index.html" class="logo">
+                <img src="../../../assets/images/logo.svg" alt="Logo" class="logo-icon">
+                <span>船联网技术基础</span>
+            </a>
+            <button class="menu-toggle" aria-label="菜单" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav" id="main-nav">
+                <a href="../../../index.html" class="nav-link">首页</a>
+                <a href="../../../chapters/index.html" class="nav-link">章节资源</a>
+                <a href="../../../lectures/index.html" class="nav-link">范例课程</a>
+                <a href="../../../labs/index.html" class="nav-link">实验项目</a>
+                <a href="../../../tutorials/index.html" class="nav-link">扩展教程</a>
+                <a href="../../../datasets/index.html" class="nav-link">数据资源</a>
+                <a href="../../index.html" class="nav-link active">交互内容</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container" style="padding-top: calc(var(--header-height) + 1rem);">
+        <nav class="breadcrumb" aria-label="面包屑导航">
+            <a href="../../../index.html">首页</a>
+            <span style="margin: 0 0.5rem;">›</span>
+            <a href="../../index.html">交互内容</a>
+            <span style="margin: 0 0.5rem;">›</span>
+            <a href="../index.html">仿真演示</a>
+            <span style="margin: 0 0.5rem;">›</span>
+            <span style="color: var(--color-text);">轨迹回放</span>
+        </nav>
+    </div>
+
+    <main class="section" style="padding-top: 1.5rem;">
+        <div class="container" style="max-width: 980px;">
+            <div class="content-header">
+                <span class="content-number">T</span>
+                <div>
+                    <h1 style="margin-bottom: 0.25rem; font-size: 1.75rem;">船舶轨迹回放</h1>
+                    <p class="text-muted">读取示例轨迹数据，按时间推进显示位置</p>
+                </div>
+            </div>
+
+            <div class="card" style="padding: 1.25rem;">
+                <div class="controls mb-2">
+                    <button class="btn btn-primary" id="playBtn">播放</button>
+                    <button class="btn btn-secondary" id="pauseBtn">暂停</button>
+                    <input type="range" id="slider" min="0" max="0" value="0" step="1" aria-label="时间进度">
+                </div>
+                <div class="stat" id="stat">加载中...</div>
+            </div>
+
+            <div class="card" style="margin-top: 1.5rem; padding: 1.25rem;">
+                <svg class="plot" id="svg" viewBox="0 0 800 420" preserveAspectRatio="none"></svg>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <a href="../index.html" class="btn btn-secondary">← 返回仿真演示</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-text">《船联网技术基础》配套数字资源 · 大连海事大学</p>
+            <nav class="footer-links">
+                <a href="../../../chapters/index.html" class="footer-link">章节资源</a>
+                <a href="../../../lectures/index.html" class="footer-link">范例课程</a>
+                <a href="../../../labs/index.html" class="footer-link">实验项目</a>
+                <a href="../../../datasets/index.html" class="footer-link">数据资源</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="../../../assets/js/main.js"></script>
+    <script>
+        (function () {
+            const dataUrl = '../../../datasets/ais-samples/vessel_tracks.csv';
+            const svg = document.getElementById('svg');
+            const slider = document.getElementById('slider');
+            const stat = document.getElementById('stat');
+            const playBtn = document.getElementById('playBtn');
+            const pauseBtn = document.getElementById('pauseBtn');
+
+            let timer = null;
+            let points = [];
+            let bounds = null;
+
+            function parseCsv(text) {
+                const lines = text.trim().split(/\\r?\\n/);
+                const header = lines[0].split(',');
+                const idx = Object.fromEntries(header.map((k, i) => [k.trim(), i]));
+                return lines.slice(1).map(function (line) {
+                    const parts = line.split(',');
+                    return {
+                        ts: parts[idx.timestamp],
+                        lat: Number(parts[idx.lat]),
+                        lon: Number(parts[idx.lon]),
+                        sog: Number(parts[idx.sog])
+                    };
+                }).filter(p => Number.isFinite(p.lat) && Number.isFinite(p.lon));
+            }
+
+            function computeBounds(ps) {
+                let minLat = Infinity, maxLat = -Infinity, minLon = Infinity, maxLon = -Infinity;
+                ps.forEach(p => {
+                    minLat = Math.min(minLat, p.lat);
+                    maxLat = Math.max(maxLat, p.lat);
+                    minLon = Math.min(minLon, p.lon);
+                    maxLon = Math.max(maxLon, p.lon);
+                });
+                const padLat = (maxLat - minLat) * 0.08 || 0.01;
+                const padLon = (maxLon - minLon) * 0.08 || 0.01;
+                return { minLat: minLat - padLat, maxLat: maxLat + padLat, minLon: minLon - padLon, maxLon: maxLon + padLon };
+            }
+
+            function toXY(p) {
+                const w = 800, h = 420;
+                const x = (p.lon - bounds.minLon) / (bounds.maxLon - bounds.minLon) * w;
+                const y = h - (p.lat - bounds.minLat) / (bounds.maxLat - bounds.minLat) * h;
+                return { x, y };
+            }
+
+            function drawBase() {
+                svg.innerHTML = '';
+                const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                const d = points.map((p, i) => {
+                    const xy = toXY(p);
+                    return (i === 0 ? 'M' : 'L') + xy.x.toFixed(2) + ' ' + xy.y.toFixed(2);
+                }).join(' ');
+                path.setAttribute('d', d);
+                path.setAttribute('fill', 'none');
+                path.setAttribute('stroke', '#2f528f');
+                path.setAttribute('stroke-width', '2');
+                path.setAttribute('opacity', '0.7');
+                svg.appendChild(path);
+
+                const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                dot.setAttribute('id', 'dot');
+                dot.setAttribute('r', '6');
+                dot.setAttribute('fill', '#5ca078');
+                dot.setAttribute('stroke', '#ffffff');
+                dot.setAttribute('stroke-width', '2');
+                svg.appendChild(dot);
+            }
+
+            function update(i) {
+                const p = points[i];
+                const xy = toXY(p);
+                const dot = document.getElementById('dot');
+                dot.setAttribute('cx', String(xy.x));
+                dot.setAttribute('cy', String(xy.y));
+                stat.textContent = '时间：' + p.ts + ' ｜ 速度：' + (Number.isFinite(p.sog) ? p.sog.toFixed(1) : 'NA') + ' kn ｜ 点：' + (i + 1) + '/' + points.length;
+                slider.value = String(i);
+            }
+
+            function play() {
+                if (timer) return;
+                timer = window.setInterval(function () {
+                    const i = Number(slider.value);
+                    const next = Math.min(points.length - 1, i + 1);
+                    update(next);
+                    if (next >= points.length - 1) pause();
+                }, 250);
+            }
+
+            function pause() {
+                if (timer) window.clearInterval(timer);
+                timer = null;
+            }
+
+            playBtn.addEventListener('click', play);
+            pauseBtn.addEventListener('click', pause);
+            slider.addEventListener('input', function () {
+                pause();
+                update(Number(slider.value));
+            });
+
+            fetch(dataUrl)
+                .then(r => { if (!r.ok) throw new Error('Failed to load data: ' + r.status); return r.text(); })
+                .then(text => {
+                    points = parseCsv(text);
+                    bounds = computeBounds(points);
+                    slider.max = String(points.length - 1);
+                    drawBase();
+                    update(0);
+                })
+                .catch(err => {
+                    stat.textContent = '加载失败：' + err.message;
+                    console.error(err);
+                });
+        })();
+    </script>
+</body>
+</html>
+

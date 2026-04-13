@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="第4章 船载感知信息采集">
+    <title>第4章 船载感知信息采集 - 船联网技术基础</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <link rel="stylesheet" href="../../assets/css/content.css">
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/logo.svg">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">
+                <img src="../../assets/images/logo.svg" alt="Logo" class="logo-icon">
+                <span>船联网技术基础</span>
+            </a>
+            <button class="menu-toggle" aria-label="菜单" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav" id="main-nav">
+                <a href="../../index.html" class="nav-link">首页</a>
+                <a href="../index.html" class="nav-link active">章节资源</a>
+                <a href="../../lectures/index.html" class="nav-link">范例课程</a>
+                <a href="../../labs/index.html" class="nav-link">实验项目</a>
+                <a href="../../tutorials/index.html" class="nav-link">扩展教程</a>
+                <a href="../../datasets/index.html" class="nav-link">数据资源</a>
+                <a href="../../interactive/index.html" class="nav-link">交互内容</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container" style="padding-top: calc(var(--header-height) + 1rem);">
+        <nav class="breadcrumb" aria-label="面包屑导航">
+            <a href="../../index.html">首页</a>
+            <span style="margin: 0 0.5rem;">›</span>
+            <a href="../index.html">章节资源</a>
+            <span style="margin: 0 0.5rem;">›</span>
+            <span style="color: var(--color-text);">第4章</span>
+        </nav>
+    </div>
+
+    <main class="section" style="padding-top: 1.5rem;">
+        <div class="container">
+            <div class="content-grid">
+                <article class="content-article">
+                    <div class="content-header">
+                        <span class="chapter-number">4</span>
+                        <div>
+                            <h1 style="margin-bottom: 0.25rem; font-size: 1.75rem;">船载感知信息采集</h1>
+                            <p class="text-muted">定位姿态、态势感知、质量标注</p>
+                        </div>
+                    </div>
+
+                    <h2 id="objectives">学习目标</h2>
+                    <p>本章关注船端信息如何被采集并形成可用数据，重点讨论定位、态势感知和数据质量表达。</p>
+                    <ul>
+                        <li>能够说明 GNSS 定位与姿态感知的主要误差来源</li>
+                        <li>能够解释雷达、AIS、视觉等多源感知的互补关系</li>
+                        <li>能够理解数据质量标注的必要性及常见表达方式</li>
+                    </ul>
+
+                    <h2 id="key">知识要点</h2>
+
+                    <h3 id="gnss">4.1 定位姿态感知</h3>
+                    <p>航行应用对位置与时间基准高度敏感。GNSS 提供了主流的定位手段，但遮挡、多路径、电离层扰动和干扰都会带来误差。工程设计需要把误差来源和可观测性说清楚，并把“可用精度”与“业务需要”对齐。</p>
+
+                    <h3 id="multi">4.2 多源态势感知</h3>
+                    <p>单一传感器很难在所有海况和能见度条件下稳定工作。雷达在目标探测上稳定，AIS 在身份与意图表达上有优势，视觉在近距离识别上信息量更高。多源互补的关键在于定义融合前的质量线索与时间对齐规则。</p>
+
+                    <h3 id="quality">4.3 数据质量标注</h3>
+                    <p>质量标注把“数据是否可信”显式写进数据本身。常见标注包括缺测、延迟、异常状态和来源说明。对航行决策来说，质量标注不只用于算法，也用于人机协同阶段的风险判断。</p>
+
+                    <h2 id="reading">延伸阅读</h2>
+                    <ul>
+                        <li>WGS 84 坐标基准介绍资料</li>
+                        <li>公开 AIS 数据字段说明文档</li>
+                    </ul>
+
+                    <h2 id="questions">思考题</h2>
+                    <ol>
+                        <li>在近岸与远洋两类场景下，GNSS 误差的主导因素可能有何差异。</li>
+                        <li>多源感知时，为什么需要把时间对齐作为独立问题处理。</li>
+                        <li>举例说明一种质量标注字段，并说明它如何影响后续融合。</li>
+                    </ol>
+
+                    <div class="callout">
+                        <h4 style="margin-bottom: 1rem;">相关资源</h4>
+                        <div class="resource-list" style="grid-template-columns: 1fr;">
+                            <a href="../../lectures/L07/index.html" class="resource-item">
+                                <span class="resource-number">L07</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">船舶定位姿态感知</h5>
+                                    <p class="resource-meta">定位原理与误差来源</p>
+                                </div>
+                            </a>
+                            <a href="../../lectures/L08/index.html" class="resource-item">
+                                <span class="resource-number">L08</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">多源感知数据质量标注</h5>
+                                    <p class="resource-meta">互补关系与降级策略</p>
+                                </div>
+                            </a>
+                            <a href="../../labs/lab02/index.html" class="resource-item">
+                                <span class="resource-number">Lab02</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">传感器数据采集传输</h5>
+                                    <p class="resource-meta">采集、上传与记录</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border);">
+                        <a href="../ch03/index.html" class="btn btn-secondary">← 上一章：船联网体系架构</a>
+                        <a href="../ch05/index.html" class="btn btn-secondary">下一章：海上通信网络基础 →</a>
+                    </div>
+                </article>
+
+                <aside class="sidebar-sticky">
+                    <div class="card">
+                        <h4 style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--color-text-muted);">本章目录</h4>
+                        <ul class="toc-list">
+                            <li class="toc-item"><a href="#objectives" class="toc-link">学习目标</a></li>
+                            <li class="toc-item"><a href="#key" class="toc-link">知识要点</a></li>
+                            <li class="toc-item toc-h3"><a href="#gnss" class="toc-link">4.1 定位姿态感知</a></li>
+                            <li class="toc-item toc-h3"><a href="#multi" class="toc-link">4.2 多源态势感知</a></li>
+                            <li class="toc-item toc-h3"><a href="#quality" class="toc-link">4.3 数据质量标注</a></li>
+                            <li class="toc-item"><a href="#reading" class="toc-link">延伸阅读</a></li>
+                            <li class="toc-item"><a href="#questions" class="toc-link">思考题</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="card meta-box" style="margin-top: 1.5rem;">
+                        <h4 style="margin-bottom: 0.5rem; font-size: 0.875rem;">章节信息</h4>
+                        <p>对应课时：2课时</p>
+                        <p>建议学时：90分钟</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-text">《船联网技术基础》配套数字资源 · 大连海事大学</p>
+            <nav class="footer-links">
+                <a href="../index.html" class="footer-link">章节资源</a>
+                <a href="../../lectures/index.html" class="footer-link">范例课程</a>
+                <a href="../../labs/index.html" class="footer-link">实验项目</a>
+                <a href="../../datasets/index.html" class="footer-link">数据资源</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>
+

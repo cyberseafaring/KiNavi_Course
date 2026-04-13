@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lab08 安全威胁模拟防护">
+    <title>Lab08 安全威胁模拟防护 - 船联网技术基础</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <link rel="stylesheet" href="../../assets/css/content.css">
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/logo.svg">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">
+                <img src="../../assets/images/logo.svg" alt="Logo" class="logo-icon">
+                <span>船联网技术基础</span>
+            </a>
+            <button class="menu-toggle" aria-label="菜单" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav" id="main-nav">
+                <a href="../../index.html" class="nav-link">首页</a>
+                <a href="../../chapters/index.html" class="nav-link">章节资源</a>
+                <a href="../../lectures/index.html" class="nav-link">范例课程</a>
+                <a href="../index.html" class="nav-link active">实验项目</a>
+                <a href="../../tutorials/index.html" class="nav-link">扩展教程</a>
+                <a href="../../datasets/index.html" class="nav-link">数据资源</a>
+                <a href="../../interactive/index.html" class="nav-link">交互内容</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container" style="padding-top: calc(var(--header-height) + 1rem);">
+        <nav class="breadcrumb" aria-label="面包屑导航">
+            <a href="../../index.html">首页</a>
+            <span style="margin: 0 0.5rem;">›</span>
+            <a href="../index.html">实验项目</a>
+            <span style="margin: 0 0.5rem;">›</span>
+            <span style="color: var(--color-text);">Lab08</span>
+        </nav>
+    </div>
+
+    <main class="section" style="padding-top: 1.5rem;">
+        <div class="container">
+            <div class="content-grid">
+                <article class="content-article">
+                    <div class="content-header">
+                        <span class="content-number">08</span>
+                        <div>
+                            <h1 style="margin-bottom: 0.25rem; font-size: 1.75rem;">安全威胁模拟防护</h1>
+                            <p class="text-muted">创新型 · 第7章配套</p>
+                        </div>
+                    </div>
+
+                    <div id="lab-markdown" class="card" style="padding: 1.5rem;"></div>
+
+                    <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
+                        <a href="../lab07/index.html" class="btn btn-secondary">← 上一实验：多源数据融合实践</a>
+                        <a href="../index.html" class="btn btn-primary">返回实验列表 →</a>
+                    </div>
+                </article>
+
+                <aside class="sidebar-sticky">
+                    <div class="card" id="toc" style="padding: 1.25rem;"></div>
+                    <div class="card meta-box" style="margin-top: 1.5rem;">
+                        <h4 style="margin-bottom: 0.5rem; font-size: 0.875rem;">实验信息</h4>
+                        <p>方向：网络安全</p>
+                        <p>重点：日志与证据链</p>
+                        <p>产出：分析报告与策略建议</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-text">《船联网技术基础》配套数字资源 · 大连海事大学</p>
+            <nav class="footer-links">
+                <a href="../../chapters/index.html" class="footer-link">章节资源</a>
+                <a href="../../lectures/index.html" class="footer-link">范例课程</a>
+                <a href="../index.html" class="footer-link">实验项目</a>
+                <a href="../../datasets/index.html" class="footer-link">数据资源</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="../../assets/vendor/marked.min.js"></script>
+    <script src="../../assets/js/markdown-renderer.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.initMarkdownRenderer) window.initMarkdownRenderer();
+            window.loadAndRenderMarkdown('guide.md', '#lab-markdown').then(function () {
+                window.generateTOC('#lab-markdown', '#toc');
+            });
+        });
+    </script>
+</body>
+</html>
+

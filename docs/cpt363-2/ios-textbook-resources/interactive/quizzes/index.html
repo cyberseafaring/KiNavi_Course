@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="在线测验">
+    <title>在线测验 - 船联网技术基础</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <link rel="stylesheet" href="../../assets/css/content.css">
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/logo.svg">
+    <style>
+        .quiz-controls {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .quiz-controls select {
+            padding: 0.6rem 0.8rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            background: white;
+        }
+        .quiz-question {
+            padding: 1rem 1.25rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            background: white;
+            margin-bottom: 1rem;
+        }
+        .quiz-question h3 {
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        .quiz-options label {
+            display: block;
+            padding: 0.4rem 0.5rem;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+        }
+        .quiz-options label:hover {
+            background: var(--color-background-alt);
+        }
+        .quiz-explain {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+        .quiz-result {
+            padding: 1rem 1.25rem;
+            border-radius: var(--radius-lg);
+            background: var(--ios-sky-blue);
+            color: var(--color-primary-dark);
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">
+                <img src="../../assets/images/logo.svg" alt="Logo" class="logo-icon">
+                <span>船联网技术基础</span>
+            </a>
+            <button class="menu-toggle" aria-label="菜单" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav" id="main-nav">
+                <a href="../../index.html" class="nav-link">首页</a>
+                <a href="../../chapters/index.html" class="nav-link">章节资源</a>
+                <a href="../../lectures/index.html" class="nav-link">范例课程</a>
+                <a href="../../labs/index.html" class="nav-link">实验项目</a>
+                <a href="../../tutorials/index.html" class="nav-link">扩展教程</a>
+                <a href="../../datasets/index.html" class="nav-link">数据资源</a>
+                <a href="../index.html" class="nav-link active">交互内容</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container" style="padding-top: calc(var(--header-height) + 1rem);">
+        <nav class="breadcrumb" aria-label="面包屑导航">
+            <a href="../../index.html">首页</a>
+            <span style="margin: 0 0.5rem;">›</span>
+            <a href="../index.html">交互内容</a>
+            <span style="margin: 0 0.5rem;">›</span>
+            <span style="color: var(--color-text);">在线测验</span>
+        </nav>
+    </div>
+
+    <main class="section" style="padding-top: 1.5rem;">
+        <div class="container" style="max-width: 980px;">
+            <div class="content-header">
+                <span class="content-number">Q</span>
+                <div>
+                    <h1 style="margin-bottom: 0.25rem; font-size: 1.75rem;">在线测验</h1>
+                    <p class="text-muted">选择章节后作答，提交后获得反馈</p>
+                </div>
+            </div>
+
+            <div class="quiz-controls mb-3">
+                <label for="chapterSelect" class="text-muted" style="font-size: 0.9rem;">章节</label>
+                <select id="chapterSelect">
+                    <option value="ch01">第1章 物联网技术基础</option>
+                    <option value="ch02">第2章 船联网技术演变</option>
+                    <option value="ch03">第3章 船联网体系架构</option>
+                    <option value="ch04">第4章 船载感知信息采集</option>
+                    <option value="ch05">第5章 海上通信网络基础</option>
+                    <option value="ch06">第6章 船联网数据治理</option>
+                    <option value="ch07">第7章 船联网安全机制</option>
+                    <option value="ch08">第8章 典型应用发展趋势</option>
+                </select>
+                <button id="loadBtn" class="btn btn-secondary">载入题目</button>
+                <button id="submitBtn" class="btn btn-primary">提交作答</button>
+            </div>
+
+            <div id="quizResult" class="quiz-result" style="display:none;"></div>
+            <div id="quizContainer"></div>
+
+            <div style="margin-top: 2rem;">
+                <a href="../index.html" class="btn btn-secondary">← 返回交互内容</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-text">《船联网技术基础》配套数字资源 · 大连海事大学</p>
+            <nav class="footer-links">
+                <a href="../../chapters/index.html" class="footer-link">章节资源</a>
+                <a href="../../lectures/index.html" class="footer-link">范例课程</a>
+                <a href="../../labs/index.html" class="footer-link">实验项目</a>
+                <a href="../../datasets/index.html" class="footer-link">数据资源</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/quiz.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            window.IoSQuiz.init({
+                selectId: 'chapterSelect',
+                loadBtnId: 'loadBtn',
+                submitBtnId: 'submitBtn',
+                containerId: 'quizContainer',
+                resultId: 'quizResult',
+                baseUrl: 'questions/'
+            });
+        });
+    </script>
+</body>
+</html>
+

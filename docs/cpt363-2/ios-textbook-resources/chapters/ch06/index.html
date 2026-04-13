@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="第6章 船联网数据治理">
+    <title>第6章 船联网数据治理 - 船联网技术基础</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <link rel="stylesheet" href="../../assets/css/content.css">
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/logo.svg">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">
+                <img src="../../assets/images/logo.svg" alt="Logo" class="logo-icon">
+                <span>船联网技术基础</span>
+            </a>
+            <button class="menu-toggle" aria-label="菜单" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav" id="main-nav">
+                <a href="../../index.html" class="nav-link">首页</a>
+                <a href="../index.html" class="nav-link active">章节资源</a>
+                <a href="../../lectures/index.html" class="nav-link">范例课程</a>
+                <a href="../../labs/index.html" class="nav-link">实验项目</a>
+                <a href="../../tutorials/index.html" class="nav-link">扩展教程</a>
+                <a href="../../datasets/index.html" class="nav-link">数据资源</a>
+                <a href="../../interactive/index.html" class="nav-link">交互内容</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container" style="padding-top: calc(var(--header-height) + 1rem);">
+        <nav class="breadcrumb" aria-label="面包屑导航">
+            <a href="../../index.html">首页</a>
+            <span style="margin: 0 0.5rem;">›</span>
+            <a href="../index.html">章节资源</a>
+            <span style="margin: 0 0.5rem;">›</span>
+            <span style="color: var(--color-text);">第6章</span>
+        </nav>
+    </div>
+
+    <main class="section" style="padding-top: 1.5rem;">
+        <div class="container">
+            <div class="content-grid">
+                <article class="content-article">
+                    <div class="content-header">
+                        <span class="chapter-number">6</span>
+                        <div>
+                            <h1 style="margin-bottom: 0.25rem; font-size: 1.75rem;">船联网数据治理</h1>
+                            <p class="text-muted">解析存储、时间语义、融合共享</p>
+                        </div>
+                    </div>
+
+                    <h2 id="objectives">学习目标</h2>
+                    <p>本章回答一个问题：船联网数据如何从报文变成可复用的信息产品，并在多系统之间保持一致与可追溯。</p>
+                    <ul>
+                        <li>能够区分采集时间、到达时间、处理时间等时间语义</li>
+                        <li>能够理解解析、存储、融合、共享的处理链条</li>
+                        <li>能够说明数据字典与版本管理在工程中的作用</li>
+                    </ul>
+
+                    <h2 id="key">知识要点</h2>
+
+                    <h3 id="types">6.1 数据类型分层</h3>
+                    <p>船联网数据可按航行态势、运行状态、环境信息和业务数据进行分层。分层的目的是把采集频率、时效窗口与存储成本放在同一框架下讨论，避免把所有数据都当作“实时数据”。</p>
+
+                    <h3 id="time">6.2 时间语义</h3>
+                    <p>同一条数据在系统中可能同时存在多种时间戳。没有清晰的时间语义，融合与回放会出现系统性偏差。工程上应明确每个时间戳的来源与含义，并把同步策略作为系统能力的一部分。</p>
+
+                    <h3 id="pipeline">6.3 解析存储融合</h3>
+                    <p>数据处理链条通常经历解析、清洗、结构化存储、融合加工和共享交付。关键不在于使用哪一种数据库，而在于明确原始层、清洗层和产品层的边界，并保持证据链可追溯。</p>
+
+                    <h2 id="reading">延伸阅读</h2>
+                    <ul>
+                        <li>NMEA 相关公开字段说明资料</li>
+                        <li>公开 AIS 数据解析资料</li>
+                    </ul>
+
+                    <h2 id="questions">思考题</h2>
+                    <ol>
+                        <li>为什么需要区分采集时间与到达时间，它们会如何影响融合。</li>
+                        <li>原始层与产品层数据的保存策略应如何权衡。</li>
+                        <li>当数据字典版本发生变化时，如何保持历史数据可用。</li>
+                    </ol>
+
+                    <div class="callout">
+                        <h4 style="margin-bottom: 1rem;">相关资源</h4>
+                        <div class="resource-list" style="grid-template-columns: 1fr;">
+                            <a href="../../lectures/L11/index.html" class="resource-item">
+                                <span class="resource-number">L11</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">船联网数据解析存储</h5>
+                                    <p class="resource-meta">报文解析与分层存储</p>
+                                </div>
+                            </a>
+                            <a href="../../lectures/L12/index.html" class="resource-item">
+                                <span class="resource-number">L12</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">数据融合分析方法</h5>
+                                    <p class="resource-meta">时间对齐与目标关联</p>
+                                </div>
+                            </a>
+                            <a href="../../labs/lab05/index.html" class="resource-item">
+                                <span class="resource-number">Lab05</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">船舶轨迹可视化</h5>
+                                    <p class="resource-meta">回放与指标计算</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border);">
+                        <a href="../ch05/index.html" class="btn btn-secondary">← 上一章：海上通信网络基础</a>
+                        <a href="../ch07/index.html" class="btn btn-secondary">下一章：船联网安全机制 →</a>
+                    </div>
+                </article>
+
+                <aside class="sidebar-sticky">
+                    <div class="card">
+                        <h4 style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--color-text-muted);">本章目录</h4>
+                        <ul class="toc-list">
+                            <li class="toc-item"><a href="#objectives" class="toc-link">学习目标</a></li>
+                            <li class="toc-item"><a href="#key" class="toc-link">知识要点</a></li>
+                            <li class="toc-item toc-h3"><a href="#types" class="toc-link">6.1 数据类型分层</a></li>
+                            <li class="toc-item toc-h3"><a href="#time" class="toc-link">6.2 时间语义</a></li>
+                            <li class="toc-item toc-h3"><a href="#pipeline" class="toc-link">6.3 解析存储融合</a></li>
+                            <li class="toc-item"><a href="#reading" class="toc-link">延伸阅读</a></li>
+                            <li class="toc-item"><a href="#questions" class="toc-link">思考题</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="card meta-box" style="margin-top: 1.5rem;">
+                        <h4 style="margin-bottom: 0.5rem; font-size: 0.875rem;">章节信息</h4>
+                        <p>对应课时：2课时</p>
+                        <p>建议学时：90分钟</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-text">《船联网技术基础》配套数字资源 · 大连海事大学</p>
+            <nav class="footer-links">
+                <a href="../index.html" class="footer-link">章节资源</a>
+                <a href="../../lectures/index.html" class="footer-link">范例课程</a>
+                <a href="../../labs/index.html" class="footer-link">实验项目</a>
+                <a href="../../datasets/index.html" class="footer-link">数据资源</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>
+

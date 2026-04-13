@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="《船联网技术基础》实验项目，8个动手实验掌握核心技术技能。">
+    <title>实验项目 - 船联网技术基础</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="icon" type="image/svg+xml" href="../assets/images/logo.svg">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logo.svg" alt="Logo" class="logo-icon">
+                <span>船联网技术基础</span>
+            </a>
+            <button class="menu-toggle" aria-label="菜单" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav" id="main-nav">
+                <a href="../index.html" class="nav-link">首页</a>
+                <a href="../chapters/index.html" class="nav-link">章节资源</a>
+                <a href="../lectures/index.html" class="nav-link">范例课程</a>
+                <a href="index.html" class="nav-link active">实验项目</a>
+                <a href="../tutorials/index.html" class="nav-link">扩展教程</a>
+                <a href="../datasets/index.html" class="nav-link">数据资源</a>
+                <a href="../interactive/index.html" class="nav-link">交互内容</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="hero" style="min-height: 30vh;">
+        <div class="hero-content">
+            <h1 class="hero-title">实验项目</h1>
+            <p class="hero-subtitle">8个动手实验，掌握船联网核心技术技能</p>
+        </div>
+    </section>
+
+    <!-- Labs Grid -->
+    <section class="section">
+        <div class="container">
+            <div class="chapter-grid">
+                <a href="lab01/index.html" class="chapter-card">
+                    <span class="chapter-number">1</span>
+                    <h4 class="chapter-title">树莓派开发环境搭建</h4>
+                    <p class="chapter-meta">树莓派系统安装与开发工具配置</p>
+                    <div class="mt-2">
+                        <span class="tag tag-info">Raspberry Pi</span>
+                        <span class="tag tag-success">Linux</span>
+                    </div>
+                </a>
+
+                <a href="lab02/index.html" class="chapter-card">
+                    <span class="chapter-number">2</span>
+                    <h4 class="chapter-title">传感器数据采集传输</h4>
+                    <p class="chapter-meta">传感器接入、采集、上传与记录</p>
+                    <div class="mt-2">
+                        <span class="tag tag-info">Python</span>
+                        <span class="tag tag-warning">GPIO</span>
+                    </div>
+                </a>
+
+                <a href="lab03/index.html" class="chapter-card">
+                    <span class="chapter-number">3</span>
+                    <h4 class="chapter-title">AIS报文解析实验</h4>
+                    <p class="chapter-meta">NMEA AIS 报文解析与字段校验</p>
+                    <div class="mt-2">
+                        <span class="tag tag-info">Python</span>
+                        <span class="tag tag-success">AIS</span>
+                    </div>
+                </a>
+
+                <a href="lab04/index.html" class="chapter-card">
+                    <span class="chapter-number">4</span>
+                    <h4 class="chapter-title">NMEA-0183协议分析</h4>
+                    <p class="chapter-meta">典型语句结构、校验计算、解析实践</p>
+                    <div class="mt-2">
+                        <span class="tag tag-info">Python</span>
+                        <span class="tag tag-success">NMEA</span>
+                    </div>
+                </a>
+
+                <a href="lab05/index.html" class="chapter-card">
+                    <span class="chapter-number">5</span>
+                    <h4 class="chapter-title">船舶轨迹可视化</h4>
+                    <p class="chapter-meta">轨迹绘制、回放与指标计算</p>
+                    <div class="mt-2">
+                        <span class="tag tag-info">Python</span>
+                        <span class="tag tag-success">可视化</span>
+                    </div>
+                </a>
+
+                <a href="lab06/index.html" class="chapter-card">
+                    <span class="chapter-number">6</span>
+                    <h4 class="chapter-title">视觉船舶检测</h4>
+                    <p class="chapter-meta">公开数据集上完成目标检测流程</p>
+                    <div class="mt-2">
+                        <span class="tag tag-info">Python</span>
+                        <span class="tag tag-warning">OpenCV</span>
+                    </div>
+                </a>
+
+                <a href="lab07/index.html" class="chapter-card">
+                    <span class="chapter-number">7</span>
+                    <h4 class="chapter-title">多源数据融合实践</h4>
+                    <p class="chapter-meta">时间对齐、目标关联与态势生成</p>
+                    <div class="mt-2">
+                        <span class="tag tag-info">Python</span>
+                        <span class="tag tag-warning">数据融合</span>
+                    </div>
+                </a>
+
+                <a href="lab08/index.html" class="chapter-card">
+                    <span class="chapter-number">8</span>
+                    <h4 class="chapter-title">安全威胁模拟防护</h4>
+                    <p class="chapter-meta">威胁复现、日志分析与防护策略</p>
+                    <div class="mt-2">
+                        <span class="tag tag-info">Python</span>
+                        <span class="tag tag-warning">安全</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lab Environment -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">实验环境要求</h2>
+            </div>
+            <div class="card-grid" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="card">
+                    <h4 class="card-title">软件环境</h4>
+                    <ul style="padding-left: 1.2rem; line-height: 1.8; font-size: 0.9rem; color: var(--ios-gray);">
+                        <li>Python 3.8+</li>
+                        <li>VS Code / PyCharm</li>
+                        <li>Git</li>
+                        <li>现代浏览器</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4 class="card-title">Python库</h4>
+                    <ul style="padding-left: 1.2rem; line-height: 1.8; font-size: 0.9rem; color: var(--ios-gray);">
+                        <li>numpy, pandas</li>
+                        <li>matplotlib, folium</li>
+                        <li>pyais</li>
+                        <li>requests</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4 class="card-title">数据资源</h4>
+                    <ul style="padding-left: 1.2rem; line-height: 1.8; font-size: 0.9rem; color: var(--ios-gray);">
+                        <li>AIS样本数据</li>
+                        <li>船舶轨迹数据</li>
+                        <li>NMEA报文样本</li>
+                        <li>网络日志数据</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-text">《船联网技术基础》配套数字资源 · 大连海事大学</p>
+            <nav class="footer-links">
+                <a href="../chapters/index.html" class="footer-link">章节资源</a>
+                <a href="../lectures/index.html" class="footer-link">范例课程</a>
+                <a href="index.html" class="footer-link">实验项目</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

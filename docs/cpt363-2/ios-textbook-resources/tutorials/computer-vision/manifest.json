@@ -1,0 +1,7 @@
+[
+  { "file": "01-opencv-intro.md", "title": "OpenCV 入门" },
+  { "file": "02-image-processing.md", "title": "图像预处理" },
+  { "file": "03-object-detection.md", "title": "目标检测概念" },
+  { "file": "04-yolo-ship-detection.md", "title": "YOLO 船舶检测" }
+]
+

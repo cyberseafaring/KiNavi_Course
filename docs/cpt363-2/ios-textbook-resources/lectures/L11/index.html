@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="L11 船联网数据解析存储">
+    <title>L11 船联网数据解析存储 - 船联网技术基础</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <link rel="stylesheet" href="../../assets/css/content.css">
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/logo.svg">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">
+                <img src="../../assets/images/logo.svg" alt="Logo" class="logo-icon">
+                <span>船联网技术基础</span>
+            </a>
+            <button class="menu-toggle" aria-label="菜单" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav" id="main-nav">
+                <a href="../../index.html" class="nav-link">首页</a>
+                <a href="../../chapters/index.html" class="nav-link">章节资源</a>
+                <a href="../index.html" class="nav-link active">范例课程</a>
+                <a href="../../labs/index.html" class="nav-link">实验项目</a>
+                <a href="../../tutorials/index.html" class="nav-link">扩展教程</a>
+                <a href="../../datasets/index.html" class="nav-link">数据资源</a>
+                <a href="../../interactive/index.html" class="nav-link">交互内容</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container" style="padding-top: calc(var(--header-height) + 1rem);">
+        <nav class="breadcrumb" aria-label="面包屑导航">
+            <a href="../../index.html">首页</a>
+            <span style="margin: 0 0.5rem;">›</span>
+            <a href="../index.html">范例课程</a>
+            <span style="margin: 0 0.5rem;">›</span>
+            <span style="color: var(--color-text);">L11</span>
+        </nav>
+    </div>
+
+    <main class="section" style="padding-top: 1.5rem;">
+        <div class="container">
+            <div class="content-grid">
+                <article class="content-article">
+                    <div class="content-header">
+                        <span class="content-number">L11</span>
+                        <div>
+                            <h1 style="margin-bottom: 0.25rem; font-size: 1.75rem;">船联网数据解析存储</h1>
+                            <p class="text-muted">第6章 · 实验演示课 · 45分钟</p>
+                        </div>
+                    </div>
+
+                    <h2 id="objectives">教学目标</h2>
+                    <p>本节课通过解析示例报文，把数据治理链条从抽象概念落到可操作的工程步骤。</p>
+                    <ul>
+                        <li>能够区分数据类型分层与时间语义</li>
+                        <li>能够完成简单 NMEA 语句解析与字段校验</li>
+                        <li>能够理解原始层、清洗层、产品层的边界</li>
+                    </ul>
+
+                    <h2 id="outline">内容要点</h2>
+                    <ul>
+                        <li>数据类型分层与存储策略</li>
+                        <li>NMEA 语句结构与校验</li>
+                        <li>解析结果的字段命名与版本管理意识</li>
+                    </ul>
+
+                    <h2 id="flow">课堂节奏</h2>
+                    <ul>
+                        <li>演示：读取样本日志并解析字段</li>
+                        <li>讲解：时间戳与存储分层</li>
+                        <li>练习：为解析结果设计最小数据字典</li>
+                    </ul>
+
+                    <h2 id="materials">资源清单</h2>
+                    <ul>
+                        <li>示例数据：见 数据资源 中 AIS 与 NMEA 样本</li>
+                        <li>实验指引：建议配合 Lab03 与 Lab04</li>
+                    </ul>
+
+                    <h2 id="questions">课后思考题</h2>
+                    <ol>
+                        <li>如果解析出的字段名称发生变更，如何保持历史数据可用。</li>
+                        <li>为什么保存原始层数据对排错与追溯很重要。</li>
+                    </ol>
+
+                    <div style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border);">
+                        <a href="../L10/index.html" class="btn btn-secondary">← 上一课：多链路组织降级策略</a>
+                        <a href="../L12/index.html" class="btn btn-primary">下一课：数据融合分析方法 →</a>
+                    </div>
+                </article>
+
+                <aside class="sidebar-sticky">
+                    <div class="card">
+                        <h4 style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--color-text-muted);">本课目录</h4>
+                        <ul class="toc-list">
+                            <li class="toc-item"><a href="#objectives" class="toc-link">教学目标</a></li>
+                            <li class="toc-item"><a href="#outline" class="toc-link">内容要点</a></li>
+                            <li class="toc-item"><a href="#flow" class="toc-link">课堂节奏</a></li>
+                            <li class="toc-item"><a href="#materials" class="toc-link">资源清单</a></li>
+                            <li class="toc-item"><a href="#questions" class="toc-link">课后思考题</a></li>
+                        </ul>
+                    </div>
+                    <div class="card meta-box" style="margin-top: 1.5rem;">
+                        <h4 style="margin-bottom: 0.5rem; font-size: 0.875rem;">课程信息</h4>
+                        <p>对应章节：第6章</p>
+                        <p>类型：实验演示课</p>
+                        <p>建议时长：45分钟</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-text">《船联网技术基础》配套数字资源 · 大连海事大学</p>
+            <nav class="footer-links">
+                <a href="../../chapters/index.html" class="footer-link">章节资源</a>
+                <a href="../index.html" class="footer-link">范例课程</a>
+                <a href="../../labs/index.html" class="footer-link">实验项目</a>
+                <a href="../../datasets/index.html" class="footer-link">数据资源</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>
+

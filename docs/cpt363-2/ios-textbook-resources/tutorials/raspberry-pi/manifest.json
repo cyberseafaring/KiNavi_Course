@@ -1,0 +1,7 @@
+[
+  { "file": "01-getting-started.md", "title": "入门系统安装" },
+  { "file": "02-gpio-basics.md", "title": "GPIO 基础" },
+  { "file": "03-sensor-integration.md", "title": "传感器接入" },
+  { "file": "04-networking.md", "title": "网络通信" }
+]
+

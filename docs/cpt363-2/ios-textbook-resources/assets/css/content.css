@@ -1,0 +1,153 @@
+/* ===========================================
+   Content Styles - 章节/课程/实验/教程
+   =========================================== */
+
+@import url('variables.css');
+
+.breadcrumb {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+}
+
+.breadcrumb a {
+    color: var(--color-text-muted);
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 3rem;
+}
+
+.content-article {
+    max-width: 800px;
+}
+
+.content-article h2 {
+    margin-top: 2.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.content-article h3 {
+    margin-top: 1.5rem;
+}
+
+.content-article ul,
+.content-article ol {
+    padding-left: 1.5rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.content-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.content-header .chapter-number,
+.content-header .content-number {
+    width: 64px;
+    height: 64px;
+    font-size: 1.5rem;
+}
+
+.content-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: var(--radius-lg);
+    font-weight: 700;
+}
+
+.sidebar-sticky {
+    position: sticky;
+    top: calc(var(--header-height) + 2rem);
+}
+
+.toc-list {
+    list-style: none;
+    padding: 0;
+}
+
+.toc-item {
+    margin-bottom: 0.5rem;
+}
+
+.toc-link {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    display: block;
+    padding: 0.25rem 0;
+}
+
+.toc-link:hover {
+    color: var(--color-primary);
+}
+
+.toc-h3 {
+    padding-left: 1rem;
+}
+
+.side-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-nav li {
+    margin-bottom: 0.25rem;
+}
+
+.side-nav a {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-md);
+    color: var(--color-text);
+    font-size: 0.9rem;
+}
+
+.side-nav a:hover {
+    background: var(--color-background-alt);
+}
+
+.side-nav a.active {
+    background: var(--ios-light-blue);
+    color: var(--color-primary-dark);
+}
+
+.callout {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--ios-sky-blue);
+    border-radius: var(--radius-lg);
+}
+
+.meta-box p {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.error {
+    color: var(--ios-orange);
+}
+
+.loading {
+    color: var(--color-text-muted);
+}
+
+@media (max-width: 1024px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}

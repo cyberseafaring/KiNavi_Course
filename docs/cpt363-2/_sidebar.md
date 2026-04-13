@@ -9,6 +9,13 @@
 **Teaching Materials**
 
 - [IIoT(中英文))](cpt363-2/textbooks/IIoT/IIoT_translated)
+- [教材数字资源平台](cpt363-2/ios-textbook-resources/index.html)
+- [章节资源](cpt363-2/ios-textbook-resources/chapters/index.html)
+- [范例课程](cpt363-2/ios-textbook-resources/lectures/index.html)
+- [实验项目](cpt363-2/ios-textbook-resources/labs/index.html)
+- [扩展教程](cpt363-2/ios-textbook-resources/tutorials/index.html)
+- [数据资源](cpt363-2/ios-textbook-resources/datasets/index.html)
+- [交互内容](cpt363-2/ios-textbook-resources/interactive/index.html)
 
 - **LMS Links**
 - [![Calendar](https://icongr.am/fontawesome/calendar.svg?size=16&color=808080)Calendar](https://jwc.dlmu.edu.cn/info/1128/5053.htm)

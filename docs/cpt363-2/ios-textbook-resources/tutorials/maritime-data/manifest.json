@@ -1,0 +1,6 @@
+[
+  { "file": "01-ais-data-intro.md", "title": "AIS 数据入门" },
+  { "file": "02-trajectory-analysis.md", "title": "轨迹分析" },
+  { "file": "03-maritime-apis.md", "title": "海事数据接口" }
+]
+

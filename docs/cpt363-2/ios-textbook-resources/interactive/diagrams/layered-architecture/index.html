@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="船联网分层架构交互图">
+    <title>船联网分层架构 - 交互式架构图</title>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="stylesheet" href="../../../assets/css/responsive.css">
+    <link rel="stylesheet" href="../../../assets/css/content.css">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/images/logo.svg">
+    <style>
+        .layer-stack {
+            display: grid;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        .layer {
+            padding: 1rem 1.25rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            background: linear-gradient(135deg, var(--ios-layer-1) 0%, var(--ios-layer-2) 100%);
+            cursor: pointer;
+        }
+        .layer.active {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+        }
+        .layer h3 {
+            margin-bottom: 0.25rem;
+        }
+        .layer p {
+            margin: 0;
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+        .detail {
+            white-space: pre-wrap;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../../index.html" class="logo">
+                <img src="../../../assets/images/logo.svg" alt="Logo" class="logo-icon">
+                <span>船联网技术基础</span>
+            </a>
+            <button class="menu-toggle" aria-label="菜单" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav" id="main-nav">
+                <a href="../../../index.html" class="nav-link">首页</a>
+                <a href="../../../chapters/index.html" class="nav-link">章节资源</a>
+                <a href="../../../lectures/index.html" class="nav-link">范例课程</a>
+                <a href="../../../labs/index.html" class="nav-link">实验项目</a>
+                <a href="../../../tutorials/index.html" class="nav-link">扩展教程</a>
+                <a href="../../../datasets/index.html" class="nav-link">数据资源</a>
+                <a href="../../index.html" class="nav-link active">交互内容</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container" style="padding-top: calc(var(--header-height) + 1rem);">
+        <nav class="breadcrumb" aria-label="面包屑导航">
+            <a href="../../../index.html">首页</a>
+            <span style="margin: 0 0.5rem;">›</span>
+            <a href="../../index.html">交互内容</a>
+            <span style="margin: 0 0.5rem;">›</span>
+            <a href="../index.html">交互式架构图</a>
+            <span style="margin: 0 0.5rem;">›</span>
+            <span style="color: var(--color-text);">分层架构</span>
+        </nav>
+    </div>
+
+    <main class="section" style="padding-top: 1.5rem;">
+        <div class="container" style="max-width: 980px;">
+            <div class="content-header">
+                <span class="content-number">A</span>
+                <div>
+                    <h1 style="margin-bottom: 0.25rem; font-size: 1.75rem;">船联网分层架构</h1>
+                    <p class="text-muted">点击层级查看职责边界与典型数据流</p>
+                </div>
+            </div>
+
+            <div class="card" style="padding: 1.25rem;">
+                <div class="layer-stack" id="layers"></div>
+            </div>
+
+            <div class="card" style="margin-top: 1.5rem; padding: 1.25rem;">
+                <h3 style="margin-bottom: 0.75rem;">说明</h3>
+                <div class="detail" id="detail"></div>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <a href="../index.html" class="btn btn-secondary">← 返回架构图列表</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-text">《船联网技术基础》配套数字资源 · 大连海事大学</p>
+            <nav class="footer-links">
+                <a href="../../../chapters/index.html" class="footer-link">章节资源</a>
+                <a href="../../../lectures/index.html" class="footer-link">范例课程</a>
+                <a href="../../../labs/index.html" class="footer-link">实验项目</a>
+                <a href="../../../datasets/index.html" class="footer-link">数据资源</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="../../../assets/js/main.js"></script>
+    <script>
+        (function () {
+            const data = [
+                {
+                    id: 'perception',
+                    title: '感知层',
+                    subtitle: '信息采集与质量线索',
+                    detail: [
+                        '输入：传感器观测、设备状态、航行相关报文',
+                        '输出：带时间语义与质量线索的数据记录',
+                        '关注点：精度、采样周期、缺测异常表达、时间基准'
+                    ].join('\\n')
+                },
+                {
+                    id: 'transport',
+                    title: '传输层',
+                    subtitle: '链路接入与消息组织',
+                    detail: [
+                        '输入：感知层数据与业务消息',
+                        '输出：可在弱网条件下交付的消息流',
+                        '关注点：带宽、时延、抖动、丢包、可用性，多链路组织与降级策略'
+                    ].join('\\n')
+                },
+                {
+                    id: 'computing',
+                    title: '计算层',
+                    subtitle: '加工融合与服务能力',
+                    detail: [
+                        '输入：消息流与历史数据',
+                        '输出：信息产品、分析结果、共享接口',
+                        '关注点：解析清洗、分层存储、时间对齐、目标关联、证据链与版本管理'
+                    ].join('\\n')
+                },
+                {
+                    id: 'application',
+                    title: '应用层',
+                    subtitle: '信息交付与决策支持',
+                    detail: [
+                        '输入：信息产品与服务接口',
+                        '输出：航行支持、运维管理、合规报告等业务能力',
+                        '关注点：时效窗口、责任边界、人机协同与风险控制'
+                    ].join('\\n')
+                }
+            ];
+
+            const layersEl = document.getElementById('layers');
+            const detailEl = document.getElementById('detail');
+
+            function setActive(id) {
+                layersEl.querySelectorAll('.layer').forEach(function (el) {
+                    el.classList.toggle('active', el.dataset.id === id);
+                });
+                const item = data.find(function (d) { return d.id === id; });
+                detailEl.textContent = item ? item.detail : '';
+            }
+
+            data.forEach(function (d) {
+                const el = document.createElement('div');
+                el.className = 'layer';
+                el.dataset.id = d.id;
+                el.innerHTML = '<h3>' + d.title + '</h3><p>' + d.subtitle + '</p>';
+                el.addEventListener('click', function () { setActive(d.id); });
+                layersEl.appendChild(el);
+            });
+
+            setActive('perception');
+        })();
+    </script>
+</body>
+</html>
+

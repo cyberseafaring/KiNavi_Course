@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="第1章 物联网技术基础">
+    <title>第1章 物联网技术基础 - 船联网技术基础</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <link rel="stylesheet" href="../../assets/css/content.css">
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/logo.svg">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">
+                <img src="../../assets/images/logo.svg" alt="Logo" class="logo-icon">
+                <span>船联网技术基础</span>
+            </a>
+            <button class="menu-toggle" aria-label="菜单" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav" id="main-nav">
+                <a href="../../index.html" class="nav-link">首页</a>
+                <a href="../index.html" class="nav-link active">章节资源</a>
+                <a href="../../lectures/index.html" class="nav-link">范例课程</a>
+                <a href="../../labs/index.html" class="nav-link">实验项目</a>
+                <a href="../../tutorials/index.html" class="nav-link">扩展教程</a>
+                <a href="../../datasets/index.html" class="nav-link">数据资源</a>
+                <a href="../../interactive/index.html" class="nav-link">交互内容</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container" style="padding-top: calc(var(--header-height) + 1rem);">
+        <nav class="breadcrumb" aria-label="面包屑导航">
+            <a href="../../index.html">首页</a>
+            <span style="margin: 0 0.5rem;">›</span>
+            <a href="../index.html">章节资源</a>
+            <span style="margin: 0 0.5rem;">›</span>
+            <span style="color: var(--color-text);">第1章</span>
+        </nav>
+    </div>
+
+    <main class="section" style="padding-top: 1.5rem;">
+        <div class="container">
+            <div class="content-grid">
+                <article class="content-article">
+                    <div class="content-header">
+                        <span class="chapter-number">1</span>
+                        <div>
+                            <h1 style="margin-bottom: 0.25rem; font-size: 1.75rem;">物联网技术基础</h1>
+                            <p class="text-muted">概念、特征、技术链条</p>
+                        </div>
+                    </div>
+
+                    <h2 id="objectives">学习目标</h2>
+                    <p>本章用物联网的通用技术链条作为共同语言，为后续船联网内容建立可复用的认识框架。</p>
+                    <ul>
+                        <li>能够用感知、连接、计算、应用四个环节描述物联网系统工作方式</li>
+                        <li>能够辨析物联网的典型特征，并指出其工程含义</li>
+                        <li>能够把物联网的通用要素映射到船联网场景</li>
+                    </ul>
+
+                    <h2 id="key">知识要点</h2>
+
+                    <h3 id="concept">1.1 物联网概念</h3>
+                    <p>物联网关注的核心不是某一种通信技术，而是物理世界的状态如何被采集、传输、处理并形成可用的信息产品。对于航海应用，这个链条需要在弱网、时延波动和设备异构的条件下保持可解释与可运行。</p>
+
+                    <h3 id="features">1.2 典型特征</h3>
+                    <p>物联网系统通常同时具备全面感知、可靠传输、智能处理和应用服务四类特征。工程上更重要的是这些特征如何形成边界条件，例如传感器精度决定了可达的定位与监测能力，链路可用性决定了信息是否需要缓存补传，处理位置决定了断链时的可用性。</p>
+
+                    <h3 id="stack">1.3 技术链条</h3>
+                    <p>把系统拆成感知、连接、计算、应用四个环节，有助于清晰讨论接口边界与性能约束。</p>
+                    <ul>
+                        <li><strong>感知</strong>：把物理量转换为可处理的数据，同时记录质量线索</li>
+                        <li><strong>连接</strong>：组织消息与链路接入，处理丢包与时延波动</li>
+                        <li><strong>计算</strong>：在端侧、边缘或云侧完成清洗、融合与服务编排</li>
+                        <li><strong>应用</strong>：把信息产品交付给人或系统，并支撑决策与运维</li>
+                    </ul>
+
+                    <h3 id="to-ios">1.4 向船联网的映射</h3>
+                    <p>船联网把物联网的通用链条放到海上运行环境中。海上链路覆盖差异明显，业务对实时性和安全性更敏感，因此系统设计需要把降级运行、证据链保全和跨域协同作为基础能力来考虑。</p>
+
+                    <h2 id="reading">延伸阅读</h2>
+                    <ul>
+                        <li>ISO/IEC 30141 物联网参考架构</li>
+                        <li>IETF RFC 8200 IPv6 规范</li>
+                        <li>ITU-T IoT 相关综述建议书</li>
+                    </ul>
+
+                    <h2 id="questions">思考题</h2>
+                    <ol>
+                        <li>用感知、连接、计算、应用四个环节描述一个你熟悉的海事系统，并指出关键约束在哪里。</li>
+                        <li>在链路可用性波动时，哪些信息应优先保障，哪些信息可以降级为摘要模式。</li>
+                        <li>如果同一条数据在多个系统中被重复采集，如何判断哪一条更可信。</li>
+                    </ol>
+
+                    <div class="callout">
+                        <h4 style="margin-bottom: 1rem;">相关资源</h4>
+                        <div class="resource-list" style="grid-template-columns: 1fr;">
+                            <a href="../../lectures/L01/index.html" class="resource-item">
+                                <span class="resource-number">L01</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">物联网概念发展历程</h5>
+                                    <p class="resource-meta">从定义到应用场景的整体脉络</p>
+                                </div>
+                            </a>
+                            <a href="../../lectures/L02/index.html" class="resource-item">
+                                <span class="resource-number">L02</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">物联网核心技术栈</h5>
+                                    <p class="resource-meta">感知连接计算协同的工程视角</p>
+                                </div>
+                            </a>
+                            <a href="../../labs/lab01/index.html" class="resource-item">
+                                <span class="resource-number">Lab01</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">树莓派开发环境搭建</h5>
+                                    <p class="resource-meta">完成端侧开发环境准备</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border);">
+                        <span class="text-muted">← 上一章</span>
+                        <a href="../ch02/index.html" class="btn btn-secondary">下一章：船联网技术演变 →</a>
+                    </div>
+                </article>
+
+                <aside class="sidebar-sticky">
+                    <div class="card">
+                        <h4 style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--color-text-muted);">本章目录</h4>
+                        <ul class="toc-list">
+                            <li class="toc-item"><a href="#objectives" class="toc-link">学习目标</a></li>
+                            <li class="toc-item"><a href="#key" class="toc-link">知识要点</a></li>
+                            <li class="toc-item toc-h3"><a href="#concept" class="toc-link">1.1 物联网概念</a></li>
+                            <li class="toc-item toc-h3"><a href="#features" class="toc-link">1.2 典型特征</a></li>
+                            <li class="toc-item toc-h3"><a href="#stack" class="toc-link">1.3 技术链条</a></li>
+                            <li class="toc-item toc-h3"><a href="#to-ios" class="toc-link">1.4 向船联网的映射</a></li>
+                            <li class="toc-item"><a href="#reading" class="toc-link">延伸阅读</a></li>
+                            <li class="toc-item"><a href="#questions" class="toc-link">思考题</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="card meta-box" style="margin-top: 1.5rem;">
+                        <h4 style="margin-bottom: 0.5rem; font-size: 0.875rem;">章节信息</h4>
+                        <p>对应课时：2课时</p>
+                        <p>建议学时：90分钟</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-text">《船联网技术基础》配套数字资源 · 大连海事大学</p>
+            <nav class="footer-links">
+                <a href="../index.html" class="footer-link">章节资源</a>
+                <a href="../../lectures/index.html" class="footer-link">范例课程</a>
+                <a href="../../labs/index.html" class="footer-link">实验项目</a>
+                <a href="../../datasets/index.html" class="footer-link">数据资源</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>
+

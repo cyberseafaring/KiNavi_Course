@@ -1,0 +1,98 @@
+/* ===========================================
+   CSS Variables - 船联网技术基础配套资源平台
+   配色方案与 LaTeX TikZ 保持一致
+   =========================================== */
+
+:root {
+    /* ===== 主色系（蓝灰色调）===== */
+    --ios-blue: rgb(70, 130, 180);
+    --ios-dark-blue: rgb(47, 82, 143);
+    --ios-light-blue: rgb(176, 206, 230);
+    --ios-sky-blue: rgb(225, 240, 250);
+
+    /* ===== 辅助色系（灰色调）===== */
+    --ios-gray: rgb(128, 138, 150);
+    --ios-light-gray: rgb(240, 242, 245);
+    --ios-dark-gray: rgb(64, 68, 75);
+
+    /* ===== 功能色系 ===== */
+    --ios-green: rgb(92, 160, 120);
+    --ios-orange: rgb(220, 150, 86);
+    --ios-teal: rgb(72, 145, 150);
+    --ios-purple: rgb(140, 120, 165);
+
+    /* ===== 层级色系（用于卡片渐变）===== */
+    --ios-layer-1: rgb(225, 240, 250);
+    --ios-layer-2: rgb(200, 225, 240);
+    --ios-layer-3: rgb(175, 205, 230);
+    --ios-layer-4: rgb(150, 185, 215);
+
+    /* ===== 语义色 ===== */
+    --color-primary: var(--ios-blue);
+    --color-primary-dark: var(--ios-dark-blue);
+    --color-primary-light: var(--ios-light-blue);
+    --color-background: #ffffff;
+    --color-background-alt: var(--ios-light-gray);
+    --color-text: var(--ios-dark-gray);
+    --color-text-muted: var(--ios-gray);
+    --color-border: rgba(128, 138, 150, 0.2);
+    --color-success: var(--ios-green);
+    --color-warning: var(--ios-orange);
+    --color-info: var(--ios-teal);
+
+    /* ===== 间距系统 ===== */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+
+    /* ===== 字体系统 ===== */
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    --font-mono: "SF Mono", "Fira Code", "JetBrains Mono", Consolas, monospace;
+
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+
+    --line-height-tight: 1.25;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.75;
+
+    /* ===== 圆角 ===== */
+    --radius-sm: 3px;
+    --radius-md: 6px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-full: 9999px;
+
+    /* ===== 阴影 ===== */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.12);
+
+    /* ===== 过渡 ===== */
+    --transition-fast: 150ms ease;
+    --transition-normal: 250ms ease;
+    --transition-slow: 350ms ease;
+
+    /* ===== 布局 ===== */
+    --container-max: 1200px;
+    --header-height: 64px;
+    --sidebar-width: 280px;
+}
+
+/* 深色模式支持（预留） */
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* 可在此覆盖变量实现深色模式 */
+    }
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="第2章 船联网技术演变">
+    <title>第2章 船联网技术演变 - 船联网技术基础</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <link rel="stylesheet" href="../../assets/css/content.css">
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/logo.svg">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="logo">
+                <img src="../../assets/images/logo.svg" alt="Logo" class="logo-icon">
+                <span>船联网技术基础</span>
+            </a>
+            <button class="menu-toggle" aria-label="菜单" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav" id="main-nav">
+                <a href="../../index.html" class="nav-link">首页</a>
+                <a href="../index.html" class="nav-link active">章节资源</a>
+                <a href="../../lectures/index.html" class="nav-link">范例课程</a>
+                <a href="../../labs/index.html" class="nav-link">实验项目</a>
+                <a href="../../tutorials/index.html" class="nav-link">扩展教程</a>
+                <a href="../../datasets/index.html" class="nav-link">数据资源</a>
+                <a href="../../interactive/index.html" class="nav-link">交互内容</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container" style="padding-top: calc(var(--header-height) + 1rem);">
+        <nav class="breadcrumb" aria-label="面包屑导航">
+            <a href="../../index.html">首页</a>
+            <span style="margin: 0 0.5rem;">›</span>
+            <a href="../index.html">章节资源</a>
+            <span style="margin: 0 0.5rem;">›</span>
+            <span style="color: var(--color-text);">第2章</span>
+        </nav>
+    </div>
+
+    <main class="section" style="padding-top: 1.5rem;">
+        <div class="container">
+            <div class="content-grid">
+                <article class="content-article">
+                    <div class="content-header">
+                        <span class="chapter-number">2</span>
+                        <div>
+                            <h1 style="margin-bottom: 0.25rem; font-size: 1.75rem;">船联网技术演变</h1>
+                            <p class="text-muted">概念边界、演进脉络、AIS基础</p>
+                        </div>
+                    </div>
+
+                    <h2 id="objectives">学习目标</h2>
+                    <p>本章回答一个问题：船联网从哪里来，边界在哪里，哪些系统构成了海上信息协同的历史基础。</p>
+                    <ul>
+                        <li>能够区分船内联网、船船通信、船岸通信的对象边界</li>
+                        <li>能够用演进主线解释从单点数字化到跨域协同的变化</li>
+                        <li>能够概括 AIS 的系统构成、信息内容和局限</li>
+                    </ul>
+
+                    <h2 id="key">知识要点</h2>
+
+                    <h3 id="boundary">2.1 概念边界</h3>
+                    <p>船联网可以用广义和狭义两种视角理解。广义视角关注船舶、航道要素、港口物流、监管服务和第三方服务的跨域协同。狭义视角更强调船舶作为节点的联网能力，以及船端数据在岸端形成服务的过程。工程讨论时需要先选定视角，避免把“通信手段”当作“系统能力”。</p>
+
+                    <h3 id="evolution">2.2 演进脉络</h3>
+                    <p>从演进角度看，船联网不是一次性替换传统系统，而是在既有航海设备数字化的基础上，逐步形成跨系统、跨船队、跨岸端机构的信息协同。推动因素包括监管要求、效率提升需求、远程运维与安全风险控制。演进的结果是信息产品从“单船可用”走向“跨域可共享”。</p>
+
+                    <h3 id="ais">2.3 AIS 基础作用</h3>
+                    <p>AIS 提供了标准化的船舶身份、动态与航行相关信息，是海上态势共享的重要基础。它的意义在于用统一的数据结构降低了协同门槛，但它并不等价于船联网。AIS 只覆盖了部分信息维度，且存在可用性与可信度的边界条件。</p>
+
+                    <h3 id="limits">2.4 局限补充思路</h3>
+                    <p>当 AIS 信息缺失、延迟或被误用时，系统需要引入互补手段，例如雷达、视觉和岸基服务，并通过数据质量标注与一致性校验降低误判风险。这个思路会在后续章节逐步展开。</p>
+
+                    <h2 id="reading">延伸阅读</h2>
+                    <ul>
+                        <li>IMO e-Navigation Strategy Implementation Plan</li>
+                        <li>IALA e-Navigation 相关建议书</li>
+                    </ul>
+
+                    <h2 id="questions">思考题</h2>
+                    <ol>
+                        <li>举例说明广义船联网与狭义船联网在对象范围上的区别。</li>
+                        <li>为什么 AIS 在海上信息协同中重要，但仍不能覆盖船联网的全部需求。</li>
+                        <li>在港区和远洋两种场景下，船联网演进的主要约束分别是什么。</li>
+                    </ol>
+
+                    <div class="callout">
+                        <h4 style="margin-bottom: 1rem;">相关资源</h4>
+                        <div class="resource-list" style="grid-template-columns: 1fr;">
+                            <a href="../../lectures/L03/index.html" class="resource-item">
+                                <span class="resource-number">L03</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">船联网概念边界演进脉络</h5>
+                                    <p class="resource-meta">对象范围与演进主线</p>
+                                </div>
+                            </a>
+                            <a href="../../lectures/L04/index.html" class="resource-item">
+                                <span class="resource-number">L04</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">AIS系统海上信息协同基础</h5>
+                                    <p class="resource-meta">系统构成与信息内容</p>
+                                </div>
+                            </a>
+                            <a href="../../labs/lab03/index.html" class="resource-item">
+                                <span class="resource-number">Lab03</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">AIS报文解析实验</h5>
+                                    <p class="resource-meta">从报文到字段的验证流程</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border);">
+                        <a href="../ch01/index.html" class="btn btn-secondary">← 上一章：物联网技术基础</a>
+                        <a href="../ch03/index.html" class="btn btn-secondary">下一章：船联网体系架构 →</a>
+                    </div>
+                </article>
+
+                <aside class="sidebar-sticky">
+                    <div class="card">
+                        <h4 style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--color-text-muted);">本章目录</h4>
+                        <ul class="toc-list">
+                            <li class="toc-item"><a href="#objectives" class="toc-link">学习目标</a></li>
+                            <li class="toc-item"><a href="#key" class="toc-link">知识要点</a></li>
+                            <li class="toc-item toc-h3"><a href="#boundary" class="toc-link">2.1 概念边界</a></li>
+                            <li class="toc-item toc-h3"><a href="#evolution" class="toc-link">2.2 演进脉络</a></li>
+                            <li class="toc-item toc-h3"><a href="#ais" class="toc-link">2.3 AIS 基础作用</a></li>
+                            <li class="toc-item toc-h3"><a href="#limits" class="toc-link">2.4 局限补充思路</a></li>
+                            <li class="toc-item"><a href="#reading" class="toc-link">延伸阅读</a></li>
+                            <li class="toc-item"><a href="#questions" class="toc-link">思考题</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="card meta-box" style="margin-top: 1.5rem;">
+                        <h4 style="margin-bottom: 0.5rem; font-size: 0.875rem;">章节信息</h4>
+                        <p>对应课时：2课时</p>
+                        <p>建议学时：90分钟</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-text">《船联网技术基础》配套数字资源 · 大连海事大学</p>
+            <nav class="footer-links">
+                <a href="../index.html" class="footer-link">章节资源</a>
+                <a href="../../lectures/index.html" class="footer-link">范例课程</a>
+                <a href="../../labs/index.html" class="footer-link">实验项目</a>
+                <a href="../../datasets/index.html" class="footer-link">数据资源</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>
+
