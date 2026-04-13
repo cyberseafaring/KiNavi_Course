@@ -76,10 +76,38 @@
                         <li>练习：为解析结果设计最小数据字典</li>
                     </ul>
 
+                    <h2 id="textbook-points">教材要点</h2>
+                    <ul>
+                        <li>解析不是终点，解析结果必须连同来源、时间语义、质量标注和版本信息一起进入治理链条</li>
+                        <li>原始层、清洗层、产品层要分开保存，保证排错、复盘和共享时都能找到责任边界</li>
+                        <li>采集时间优先于到达时间，到达时间和处理时间主要用于解释延迟、补传和排队问题</li>
+                        <li>字段命名、单位和编码规则必须进入数据字典，否则跨船端、跨版本会出现口径漂移</li>
+                    </ul>
+
+                    <h2 id="tasks">实验任务</h2>
+                    <ul>
+                        <li>任务1：读取 AIS 或 NMEA 样本，拆出字段、单位、校验和解析状态</li>
+                        <li>任务2：为解析结果设计最小数据字典，至少包含字段名、含义、单位、时间语义和版本号</li>
+                        <li>任务3：把原始记录、清洗记录和产品记录各写一条，比较它们应保留哪些信息</li>
+                        <li>任务4：选一个异常样本，说明它应该在解析阶段报错、在清洗阶段标注，还是在产品层降级</li>
+                    </ul>
+
+                    <h2 id="discussion">讨论框架</h2>
+                    <ul>
+                        <li>先讨论“为什么不能只保留解析后的字段”，把追溯、排错和审计需求说清楚</li>
+                        <li>再讨论“时间语义错了会怎样”，用错序、补传、重复写入三个场景分析后果</li>
+                        <li>最后讨论“版本演进如何不停机”，把向后兼容、对账和过渡期映射作为重点</li>
+                    </ul>
+
                     <h2 id="materials">资源清单</h2>
                     <ul>
-                        <li>示例数据：见 数据资源 中 AIS 与 NMEA 样本</li>
-                        <li>实验指引：建议配合 Lab03 与 Lab04</li>
+                        <li><a href="../../chapters/ch06/index.html">配套章节：第6章总览</a></li>
+                        <li><a href="../../labs/lab03/index.html">配套实验：Lab03 AIS 报文解析</a></li>
+                        <li><a href="../../labs/lab04/index.html">配套实验：Lab04 NMEA-0183 协议分析</a></li>
+                        <li><a href="../../labs/lab07/index.html">延伸实验：Lab07 多源数据融合</a></li>
+                        <li><a href="../../datasets/ais-samples/ais_nmea_sample.txt">示例数据：AIS NMEA 样本</a></li>
+                        <li><a href="../../datasets/nmea-logs/nmea_sample.txt">示例数据：NMEA 日志样本</a></li>
+                        <li><a href="../../interactive/quizzes/index.html">章节测验：第6章题库</a></li>
                     </ul>
 
                     <h2 id="questions">课后思考题</h2>
@@ -101,6 +129,9 @@
                             <li class="toc-item"><a href="#objectives" class="toc-link">教学目标</a></li>
                             <li class="toc-item"><a href="#outline" class="toc-link">内容要点</a></li>
                             <li class="toc-item"><a href="#flow" class="toc-link">课堂节奏</a></li>
+                            <li class="toc-item"><a href="#textbook-points" class="toc-link">教材要点</a></li>
+                            <li class="toc-item"><a href="#tasks" class="toc-link">实验任务</a></li>
+                            <li class="toc-item"><a href="#discussion" class="toc-link">讨论框架</a></li>
                             <li class="toc-item"><a href="#materials" class="toc-link">资源清单</a></li>
                             <li class="toc-item"><a href="#questions" class="toc-link">课后思考题</a></li>
                         </ul>
@@ -131,4 +162,3 @@
     <script src="../../assets/js/main.js"></script>
 </body>
 </html>
-

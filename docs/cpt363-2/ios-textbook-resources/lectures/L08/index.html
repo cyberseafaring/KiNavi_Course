@@ -76,10 +76,38 @@
                         <li>练习：为一个数据源制定简单的质量规则</li>
                     </ul>
 
+                    <h2 id="textbook-points">教材要点</h2>
+                    <ul>
+                        <li>多源感知不是简单叠加，而是用 AIS、雷达、视觉等来源在覆盖范围、身份语义和环境适应性上互补</li>
+                        <li>质量标注要覆盖缺测、延迟、漂移、错配、来源和时间状态，避免“有数据”被误判为“数据可信”</li>
+                        <li>时间同步是质量标注的一部分，采集时间、到达时间、处理时间混用会直接放大融合误差</li>
+                        <li>降级策略要提前定义：哪些字段必须保留，哪些字段可以摘要化，哪些情况下需要触发告警或回退</li>
+                    </ul>
+
+                    <h2 id="tasks">实验任务</h2>
+                    <ul>
+                        <li>任务1：读取 AIS 轨迹样本与视觉样本，列出各自能表达的目标信息和看不到的信息</li>
+                        <li>任务2：为一条观测记录设计最小质量字段集，至少包含 `source`、`sample_time`、`delay_state`、`confidence`</li>
+                        <li>任务3：模拟一个“视觉丢帧 + AIS 延迟”的场景，写出系统应如何降级显示与告警</li>
+                        <li>任务4：把任务结果扩展到 Lab06 或 Lab07，输出一页质量规则说明</li>
+                    </ul>
+
+                    <h2 id="discussion">讨论框架</h2>
+                    <ul>
+                        <li>先讨论“缺测是否等于错误”，明确缺测、异常、不可判定三种状态的区别</li>
+                        <li>再讨论“质量字段给谁看”，区分算法内部使用、产品层展示和运维审计三种视角</li>
+                        <li>最后讨论“什么时候必须降级”，把链路受限、单源退化、多源冲突三种场景分别落地</li>
+                    </ul>
+
                     <h2 id="materials">资源清单</h2>
                     <ul>
-                        <li>演示数据：见 数据资源 中 AIS 与轨迹样本</li>
-                        <li>实验建议：可扩展到 Lab07</li>
+                        <li><a href="../../chapters/ch04/index.html">配套章节：第4章总览</a></li>
+                        <li><a href="../../labs/lab06/index.html">配套实验：Lab06 视觉船舶检测</a></li>
+                        <li><a href="../../labs/lab07/index.html">扩展实验：Lab07 多源数据融合</a></li>
+                        <li><a href="../../datasets/ais-samples/vessel_tracks.csv">演示数据：AIS 轨迹样本</a></li>
+                        <li><a href="../../datasets/ship-images/sample-ship-01.svg">演示数据：船舶视觉样本</a></li>
+                        <li><a href="../../tutorials/computer-vision/index.html">扩展教程：计算机视觉</a></li>
+                        <li><a href="../../interactive/quizzes/index.html">章节测验：第4章题库</a></li>
                     </ul>
 
                     <h2 id="questions">课后思考题</h2>
@@ -101,6 +129,9 @@
                             <li class="toc-item"><a href="#objectives" class="toc-link">教学目标</a></li>
                             <li class="toc-item"><a href="#outline" class="toc-link">内容要点</a></li>
                             <li class="toc-item"><a href="#flow" class="toc-link">课堂节奏</a></li>
+                            <li class="toc-item"><a href="#textbook-points" class="toc-link">教材要点</a></li>
+                            <li class="toc-item"><a href="#tasks" class="toc-link">实验任务</a></li>
+                            <li class="toc-item"><a href="#discussion" class="toc-link">讨论框架</a></li>
                             <li class="toc-item"><a href="#materials" class="toc-link">资源清单</a></li>
                             <li class="toc-item"><a href="#questions" class="toc-link">课后思考题</a></li>
                         </ul>
@@ -131,4 +162,3 @@
     <script src="../../assets/js/main.js"></script>
 </body>
 </html>
-
