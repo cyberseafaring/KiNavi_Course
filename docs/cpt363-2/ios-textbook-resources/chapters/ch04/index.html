@@ -50,40 +50,411 @@
                         <span class="chapter-number">4</span>
                         <div>
                             <h1 style="margin-bottom: 0.25rem; font-size: 1.75rem;">船载感知信息采集</h1>
-                            <p class="text-muted">定位姿态、态势感知、质量标注</p>
+                            <p class="text-muted">自身状态、周边态势、运行状态、质量标注与多源互补</p>
                         </div>
                     </div>
 
-                    <h2 id="objectives">学习目标</h2>
-                    <p>本章关注船端信息如何被采集并形成可用数据，重点讨论定位、态势感知和数据质量表达。</p>
-                    <ul>
-                        <li>能够说明 GNSS 定位与姿态感知的主要误差来源</li>
-                        <li>能够解释雷达、AIS、视觉等多源感知的互补关系</li>
-                        <li>能够理解数据质量标注的必要性及常见表达方式</li>
-                    </ul>
+                    <section class="slide-hero">
+                        <span class="slide-eyebrow">CHAPTER 04</span>
+                        <h2 class="slide-title">船载感知信息采集</h2>
+                        <p class="slide-lead">船联网的数据质量决定应用上限。海上环境中的遮挡、海况、电磁干扰、链路波动和设备异构，都会把传感器误差放大成态势误判。理解感知链条，不只是知道设备名称，更要知道数据从哪里来、在哪些环节会失真，以及系统如何把这些不确定性显式表达出来。</p>
+                        <div class="highlight-strip">
+                            <div class="highlight-pill"><strong>自身状态</strong>定位、时间基准、航向姿态、速度航程</div>
+                            <div class="highlight-pill"><strong>周边态势</strong>AIS、雷达、视觉等多源互补</div>
+                            <div class="highlight-pill"><strong>运行状态</strong>主机、电力、货物与舱室监测</div>
+                            <div class="highlight-pill"><strong>质量意识</strong>标注、校核、同步与降级运行</div>
+                        </div>
+                    </section>
 
-                    <h2 id="key">知识要点</h2>
+                    <section class="slide-section" id="objectives">
+                        <h2><span class="section-kicker">GO</span>学习目标</h2>
+                        <p class="section-summary">本章围绕“从测量到数据”的链条建立质量意识。读完后，应能解释关键感知量的误差来源、互补关系以及质量标注如何影响后续融合与决策。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card accent-card">
+                                <h3>理解误差</h3>
+                                <p>说明定位、姿态、速度等关键量的误差来源及其工程表现。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>理解互补</h3>
+                                <p>解释 AIS、雷达、视觉等多源手段为何必须协同使用。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>理解质量</h3>
+                                <p>说明质量标注、时间同步和在线校核为何是感知系统基础能力。</p>
+                            </div>
+                        </div>
+                    </section>
 
-                    <h3 id="gnss">4.1 定位姿态感知</h3>
-                    <p>航行应用对位置与时间基准高度敏感。GNSS 提供了主流的定位手段，但遮挡、多路径、电离层扰动和干扰都会带来误差。工程设计需要把误差来源和可观测性说清楚，并把“可用精度”与“业务需要”对齐。</p>
+                    <section class="slide-section" id="roadmap">
+                        <h2><span class="section-kicker">MAP</span>章节路线图</h2>
+                        <p class="section-summary">本章先看船舶自身状态感知，再看周边交通态势感知，随后进入运行状态感知、质量标注和多源互补，最后落到弱网断链下的感知闭环。</p>
+                        <div class="flow-steps">
+                            <div class="flow-step">
+                                <span class="step-index">1</span>
+                                <h3 id="self-state">自身状态</h3>
+                                <p>位置、时间、姿态、速度与航程的来源和误差。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">2</span>
+                                <h3 id="traffic-state">周边态势</h3>
+                                <p>AIS、雷达、视觉等手段如何形成互补。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">3</span>
+                                <h3 id="operation-state">运行状态</h3>
+                                <p>机舱、动力、电力、货舱等设备如何进入数据链。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">4</span>
+                                <h3 id="quality-chain">质量与同步</h3>
+                                <p>标注、校核、时间基准与弱网闭环如何共同工作。</p>
+                            </div>
+                        </div>
+                    </section>
 
-                    <h3 id="multi">4.2 多源态势感知</h3>
-                    <p>单一传感器很难在所有海况和能见度条件下稳定工作。雷达在目标探测上稳定，AIS 在身份与意图表达上有优势，视觉在近距离识别上信息量更高。多源互补的关键在于定义融合前的质量线索与时间对齐规则。</p>
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">4.1</span>船舶自身状态感知</h2>
+                        <p class="section-summary">船舶自身状态感知以位置、时间、航向、姿态、速度和航程为主。它们不仅影响导航显示，还会影响目标关联、航迹推算、自动控制和能效计算。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card" id="position-time">
+                                <h3>定位与时间基准</h3>
+                                <p>经纬度本身不足以解释定位可靠性，坐标基准、解状态、授时状态和时间偏差同样属于定位数据的一部分。</p>
+                            </div>
+                            <div class="slide-card" id="attitude-heading">
+                                <h3>航向与姿态</h3>
+                                <p>罗经、卫星罗经、IMU 和组合导航共同决定航向与姿态质量，误差常以系统性偏差和时间错配形式出现。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="speed-log">
+                                <h3>速度与航程</h3>
+                                <p>对地速度、对水速度和航程累积值适用于不同任务，若时间基准不稳，误差会随时间累积放大。</p>
+                            </div>
+                        </div>
+                    </section>
 
-                    <h3 id="quality">4.3 数据质量标注</h3>
-                    <p>质量标注把“数据是否可信”显式写进数据本身。常见标注包括缺测、延迟、异常状态和来源说明。对航行决策来说，质量标注不只用于算法，也用于人机协同阶段的风险判断。</p>
+                    <section class="slide-section" id="gnss-fields">
+                        <h2><span class="section-kicker">4.1A</span>定位数据不只有经纬度</h2>
+                        <p class="section-summary">定位数据在系统中通常以经纬度和高度出现，但真正影响可解释性的还包括坐标基准、定位解状态、精度线索和时间基准状态。</p>
+                        <div class="comparison-table table-responsive">
+                            <table style="width:100%; border-collapse:collapse; font-size:0.95rem;">
+                                <thead>
+                                    <tr style="background: var(--color-background-alt);">
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">字段类别</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">典型内容</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">工程意义</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">位置字段</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">经纬度、高度</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">描述目标所在位置</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">坐标基准</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">WGS 84 等</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">决定跨系统交换时轨迹是否会整体偏移</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">精度与完整性线索</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">HDOP、完整性指标、解状态</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">比位置值本身更早暴露异常风险</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">时间字段</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">采集时间、到达时间、授时状态</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">决定多源数据能否对齐</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="gnss-availability">
+                        <h2><span class="section-kicker">4.1B</span>GNSS 可用性并不是恒定的</h2>
+                        <p class="section-summary">海上环境通常有利于卫星信号接收，但遮挡、多路径、电离层扰动以及干扰都会引入误差。误差既表现为数值偏差，也表现为更新间隔变化、短时跳变和质量指示异常。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card">
+                                <h3>遮挡与多路径</h3>
+                                <p>会导致星数下降、定位短时漂移或跳变，尤其影响港区和近岸复杂环境。</p>
+                            </div>
+                            <div class="slide-card">
+                                <h3>电离层与大气扰动</h3>
+                                <p>会造成误差缓慢变化和质量指示不稳定，需依靠多系统、多频和差分增强缓解。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>干扰与欺骗</h3>
+                                <p>会使位置或时间基准突然异常，系统必须保留状态字段并触发告警与降级。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="heading-attitude-depth">
+                        <h2><span class="section-kicker">4.1C</span>航向姿态错误往往不是异常值，而是系统性偏差</h2>
+                        <p class="section-summary">磁罗经、陀螺罗经、卫星罗经和 IMU 的误差来源不同。姿态数据进入融合链条后，经常不会表现为明显超界，而是以时间错配、安装偏差、海况扰动和平滑掩盖的形式出现。</p>
+                        <div class="two-col-grid">
+                            <div class="slide-card">
+                                <h3>典型误差线索</h3>
+                                <ul>
+                                    <li>磁罗经：受磁干扰，长期偏差明显</li>
+                                    <li>陀螺罗经：受校准与机械状态影响</li>
+                                    <li>卫星罗经：天线基线与可见卫星影响精度</li>
+                                    <li>IMU：海况下高频波动显著</li>
+                                </ul>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>工程处理思路</h3>
+                                <p>保留采样频率、滤波状态和质量标记，并建立交叉校核关系，例如航向变化是否与转向率一致、姿态波动是否与海况一致。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">4.2</span>周边交通态势感知</h2>
+                        <p class="section-summary">周边态势感知的核心是识别附近目标并估计其运动趋势。单一手段很难在所有海况和能见度条件下稳定工作，因此多源互补是基本思路，而不是可选增强。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card" id="ais-source">
+                                <h3>AIS</h3>
+                                <p>提供身份、位置、航向航速和航次信息，是合作式感知来源。</p>
+                            </div>
+                            <div class="slide-card" id="radar-source">
+                                <h3>雷达</h3>
+                                <p>提供独立位置观测和全天候探测能力，是非合作式感知核心手段。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="vision-source">
+                                <h3>视觉</h3>
+                                <p>提供近距离外观、类别和行为细节，是确认与分类的重要补充。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="multi-source-diagram">
+                        <h2><span class="section-kicker">4.2A</span>多源感知覆盖范围图</h2>
+                        <p class="section-summary">AIS、雷达和视觉在覆盖距离、探测方式和语义丰富度上各不相同。系统的可靠性来自互补，而不是来自某一种来源单独足够强。</p>
+                        <div class="diagram-frame">
+                            <svg viewBox="0 0 980 430" width="100%" role="img" aria-label="多源感知覆盖范围示意图">
+                                <circle cx="380" cy="220" r="34" fill="#2f528f"></circle>
+                                <text x="347" y="227" font-size="18" fill="#ffffff" font-weight="700">本船</text>
+
+                                <circle cx="380" cy="220" r="170" fill="rgba(70,130,180,0.08)" stroke="#4682b4" stroke-width="3"></circle>
+                                <text x="510" y="110" font-size="18" fill="#2f528f" font-weight="700">AIS 覆盖</text>
+
+                                <circle cx="380" cy="220" r="120" fill="rgba(72,145,150,0.10)" stroke="#489196" stroke-width="3"></circle>
+                                <text x="495" y="170" font-size="18" fill="#2a666b" font-weight="700">雷达覆盖</text>
+
+                                <path d="M380 220 L540 160 A180 180 0 0 1 540 280 Z" fill="rgba(92,160,120,0.16)" stroke="#5ca078" stroke-width="3"></path>
+                                <text x="565" y="225" font-size="18" fill="#3f6d54" font-weight="700">视觉覆盖</text>
+
+                                <rect x="700" y="95" width="180" height="70" rx="18" fill="#ffffff" stroke="#4682b4" stroke-width="3"></rect>
+                                <text x="758" y="123" font-size="20" fill="#2f528f" font-weight="700">AIS</text>
+                                <text x="718" y="148" font-size="14" fill="#556271">有身份语义，覆盖广</text>
+
+                                <rect x="700" y="185" width="180" height="70" rx="18" fill="#ffffff" stroke="#489196" stroke-width="3"></rect>
+                                <text x="750" y="213" font-size="20" fill="#2a666b" font-weight="700">雷达</text>
+                                <text x="720" y="238" font-size="14" fill="#556271">全天候探测，独立观测</text>
+
+                                <rect x="700" y="275" width="180" height="70" rx="18" fill="#ffffff" stroke="#5ca078" stroke-width="3"></rect>
+                                <text x="748" y="303" font-size="20" fill="#3f6d54" font-weight="700">视觉</text>
+                                <text x="716" y="328" font-size="14" fill="#556271">近距确认，语义丰富</text>
+                            </svg>
+                            <p class="diagram-caption">AIS 提供身份和意图线索，雷达提供独立位置与速度观测，视觉提供近距离确认和辅助分类。交叉校核区是多源互补最有价值的区域。</p>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="ais-details">
+                        <h2><span class="section-kicker">4.2B</span>AIS 的作用和边界要一起理解</h2>
+                        <p class="section-summary">AIS 在船联网中既是数据来源，也是一种跨主体协同机制。理解 AIS 的关键，不在于背报文编号，而在于看清数据生成链条、时效边界和不同接收路径的差异。</p>
+                        <div class="two-col-grid">
+                            <div class="slide-card">
+                                <h3>优势</h3>
+                                <ul>
+                                    <li>可提供身份、位置、航向航速和航次信息</li>
+                                    <li>为船船与船岸态势共享提供底座信息</li>
+                                    <li>目标类别不同，可显式进入风险判断逻辑</li>
+                                </ul>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>边界</h3>
+                                <ul>
+                                    <li>自报属性带来缺失、延迟和伪造风险</li>
+                                    <li>船载、岸基、卫星接收路径的覆盖与时效不同</li>
+                                    <li>字段来源不同，可信度和校核方式也不同</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">4.3</span>船舶运行状态感知</h2>
+                        <p class="section-summary">船舶运行状态感知聚焦主机、动力、电力、货物和舱室状态。与导航数据相比，这类数据更直接进入健康管理、运维决策和绿色航运核算。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card" id="power-engine">
+                                <h3>主机与动力系统</h3>
+                                <p>转速、扭矩、油耗、推进器状态决定运行安全和能效分析基础。</p>
+                            </div>
+                            <div class="slide-card" id="health-monitor">
+                                <h3>机舱设备健康</h3>
+                                <p>温度、压力、振动与状态量共同支撑健康管理和预测性维护。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="cargo-room">
+                                <h3>货物与舱室监测</h3>
+                                <p>液位、气体、温湿度和阀位等数据常直接关联安全风险。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="energy-chain">
+                        <h2><span class="section-kicker">4.3A</span>能效指标来自多组数据协同</h2>
+                        <p class="section-summary">单位航程能耗、排放统计和工况分析都不是单个传感器的结果，而是燃油消耗、航程、速度、载荷和环境背景共同作用的结果。</p>
+                        <div class="four-col-grid">
+                            <div class="slide-card"><h4>消耗量</h4><p>燃油流量或用油统计提供分子信息。</p></div>
+                            <div class="slide-card"><h4>航程与速度</h4><p>决定分母与运行背景。</p></div>
+                            <div class="slide-card"><h4>工况</h4><p>负荷、推进状态影响解释口径。</p></div>
+                            <div class="slide-card accent-card"><h4>环境背景</h4><p>风浪流与气象海况帮助解释波动。</p></div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">4.4</span>数据质量及标注</h2>
+                        <p class="section-summary">质量标注的意义，不是简单给数据贴上“好/坏”标签，而是把有效性、来源、时间语义和处理链路信息显式写进数据，使后续模块能够做出可解释取舍。</p>
+                        <div class="two-col-grid">
+                            <div class="slide-card" id="quality-types">
+                                <h3>典型质量问题形态</h3>
+                                <ul>
+                                    <li>缺测、漂移、延迟、异常值</li>
+                                    <li>卡死值、量化误差、乱序、重复</li>
+                                    <li>跨源不一致、单位或映射错误</li>
+                                </ul>
+                            </div>
+                            <div class="slide-card accent-card" id="quality-tags">
+                                <h3>最小质量标注集合</h3>
+                                <ul>
+                                    <li>有效性状态</li>
+                                    <li>来源标识与接口链路版本</li>
+                                    <li>采集时间、到达时间、时效估计</li>
+                                    <li>异常事件编号或处理动作记录</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="quality-detect">
+                        <h2><span class="section-kicker">4.4A</span>质量问题如何被发现</h2>
+                        <p class="section-summary">质量问题不需要复杂算法才能发现。持续监测采样间隔、时间戳、变化率和跨源差异，就能在感知侧提前发现大量问题。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card">
+                                <h3>范围检查</h3>
+                                <p>适合发现超出物理边界和明显不可能值。</p>
+                            </div>
+                            <div class="slide-card">
+                                <h3>变化率检查</h3>
+                                <p>适合发现跳变、抖动和短时异常冲击。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>一致性检查</h3>
+                                <p>适合发现多源之间的长期偏离和身份错配。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">4.5</span>多源互补与时间同步</h2>
+                        <p class="section-summary">多源互补的目标不是简单叠加更多数据，而是在不确定环境下形成最小可靠组合。时间同步则是所有互补和融合的前提条件。</p>
+                        <div class="two-col-grid">
+                            <div class="slide-card" id="complement">
+                                <h3>互补关系</h3>
+                                <p>AIS 提供身份语义，雷达提供独立观测，视觉提供目标确认；GNSS、IMU、罗经共同支撑自身状态连续性。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="time-sync">
+                                <h3>时间同步</h3>
+                                <p>即使各传感器误差都很小，只要时间轴不一致，融合结果就会出现系统性错配。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="fusion-preprocess">
+                        <h2><span class="section-kicker">4.5A</span>融合前先做前置处理</h2>
+                        <p class="section-summary">在进入融合前，数据通常需要完成坐标统一、单位统一、字段映射、异常过滤和延迟估计。否则融合面对的输入语义并不一致，结果就很难稳定。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card"><h4>坐标与安装几何</h4><p>不同传感器观测需转换到统一坐标系。</p></div>
+                            <div class="slide-card"><h4>延迟估计</h4><p>AIS、雷达、视觉的时效差异需要被显式估计。</p></div>
+                            <div class="slide-card accent-card"><h4>目标关联</h4><p>关联结果本身也应作为可解释数据产品输出。</p></div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="weak-network-loop">
+                        <h2><span class="section-kicker">4.5B</span>弱网断链下的感知闭环</h2>
+                        <p class="section-summary">弱网和断链在海上是常态。感知闭环要求关键感知数据和告警逻辑尽量放在船端，使驾驶台告警、关键设备保护和事件记录不依赖岸端服务存在。</p>
+                        <div class="two-col-grid">
+                            <div class="slide-card">
+                                <h3>断链期间必须保留的能力</h3>
+                                <ul>
+                                    <li>关键态势感知与告警</li>
+                                    <li>关键设备保护</li>
+                                    <li>事件与质量日志记录</li>
+                                </ul>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>岸端的角色</h3>
+                                <p>岸端提供增强分析、回放、运维和跨船协同能力，但不应成为船端最低安全能力的唯一依赖。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="external-links">
+                        <h2><span class="section-kicker">LINK</span>外部参考链接</h2>
+                        <div class="resource-list" style="grid-template-columns: 1fr;">
+                            <a href="https://www.gps.gov/systems/gps/performance/accuracy/" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">GPS</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">GPS Accuracy Overview</h5>
+                                    <p class="resource-meta">美国官方 GPS 精度与性能说明</p>
+                                </div>
+                            </a>
+                            <a href="http://en.beidou.gov.cn/SYSTEMS/SystemService/201912/P020191227601370947862.pdf" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">BDS</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">BeiDou Open Service Performance</h5>
+                                    <p class="resource-meta">北斗公开服务性能规范</p>
+                                </div>
+                            </a>
+                            <a href="https://www.imo.org/en/OurWork/Safety/Pages/AIS.aspx" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">IMO</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">IMO AIS Overview</h5>
+                                    <p class="resource-meta">AIS 系统与海上信息共享官方说明</p>
+                                </div>
+                            </a>
+                            <a href="https://www.furuno.com/en/products/radar" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">Furuno</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">Furuno Radar Product Line</h5>
+                                    <p class="resource-meta">船用雷达产品与技术背景</p>
+                                </div>
+                            </a>
+                            <a href="https://www.man-es.com/marine/products/prime-serv" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">MAN</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">MAN PrimeServ Assist</h5>
+                                    <p class="resource-meta">机舱健康管理与远程支持服务案例</p>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
 
                     <h2 id="reading">延伸阅读</h2>
                     <ul>
-                        <li>WGS 84 坐标基准介绍资料</li>
-                        <li>公开 AIS 数据字段说明文档</li>
+                        <li>WGS 84 坐标基准与 GNSS 精度说明</li>
+                        <li>IMO 船用导航雷达性能标准</li>
+                        <li>AIS 字段说明与 ITU-R M.1371 建议书</li>
                     </ul>
 
                     <h2 id="questions">思考题</h2>
                     <ol>
-                        <li>在近岸与远洋两类场景下，GNSS 误差的主导因素可能有何差异。</li>
-                        <li>多源感知时，为什么需要把时间对齐作为独立问题处理。</li>
-                        <li>举例说明一种质量标注字段，并说明它如何影响后续融合。</li>
+                        <li>在近岸与远洋两类场景下，GNSS 误差的主导因素可能有何差异？</li>
+                        <li>为什么说定位数据中的时间基准和质量线索与经纬度本身同样重要？</li>
+                        <li>多源感知时，为什么时间对齐必须作为独立问题处理？</li>
+                        <li>举例说明一种质量标注字段，并说明它如何影响后续融合或告警。</li>
+                        <li>在弱网和断链条件下，哪些感知能力必须留在船端闭环中？</li>
                     </ol>
 
                     <div class="callout">
@@ -110,10 +481,17 @@
                                     <p class="resource-meta">采集、上传与记录</p>
                                 </div>
                             </a>
+                            <a href="../../labs/lab06/index.html" class="resource-item">
+                                <span class="resource-number">Lab06</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">视觉船舶检测</h5>
+                                    <p class="resource-meta">视觉目标识别与近距确认</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
 
-                    <div style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border);">
+                    <div style="display:flex; justify-content:space-between; margin-top:3rem; padding-top:1.5rem; border-top:1px solid var(--color-border);">
                         <a href="../ch03/index.html" class="btn btn-secondary">← 上一章：船联网体系架构</a>
                         <a href="../ch05/index.html" class="btn btn-secondary">下一章：海上通信网络基础 →</a>
                     </div>
@@ -121,22 +499,48 @@
 
                 <aside class="sidebar-sticky">
                     <div class="card">
-                        <h4 style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--color-text-muted);">本章目录</h4>
+                        <h4 style="margin-bottom:1rem; font-size:0.875rem; color:var(--color-text-muted);">本章目录</h4>
                         <ul class="toc-list">
                             <li class="toc-item"><a href="#objectives" class="toc-link">学习目标</a></li>
-                            <li class="toc-item"><a href="#key" class="toc-link">知识要点</a></li>
-                            <li class="toc-item toc-h3"><a href="#gnss" class="toc-link">4.1 定位姿态感知</a></li>
-                            <li class="toc-item toc-h3"><a href="#multi" class="toc-link">4.2 多源态势感知</a></li>
-                            <li class="toc-item toc-h3"><a href="#quality" class="toc-link">4.3 数据质量标注</a></li>
+                            <li class="toc-item"><a href="#roadmap" class="toc-link">章节路线图</a></li>
+                            <li class="toc-item"><a href="#self-state" class="toc-link">4.1 自身状态感知</a></li>
+                            <li class="toc-item toc-h3"><a href="#position-time" class="toc-link">4.1.1 定位与时间</a></li>
+                            <li class="toc-item toc-h3"><a href="#attitude-heading" class="toc-link">4.1.2 航向与姿态</a></li>
+                            <li class="toc-item toc-h3"><a href="#speed-log" class="toc-link">4.1.3 速度与航程</a></li>
+                            <li class="toc-item toc-h3"><a href="#gnss-fields" class="toc-link">4.1A 定位字段</a></li>
+                            <li class="toc-item toc-h3"><a href="#gnss-availability" class="toc-link">4.1B GNSS 可用性</a></li>
+                            <li class="toc-item toc-h3"><a href="#heading-attitude-depth" class="toc-link">4.1C 姿态误差</a></li>
+                            <li class="toc-item"><a href="#traffic-state" class="toc-link">4.2 周边态势感知</a></li>
+                            <li class="toc-item toc-h3"><a href="#ais-source" class="toc-link">4.2.1 AIS</a></li>
+                            <li class="toc-item toc-h3"><a href="#radar-source" class="toc-link">4.2.2 雷达</a></li>
+                            <li class="toc-item toc-h3"><a href="#vision-source" class="toc-link">4.2.3 视觉</a></li>
+                            <li class="toc-item toc-h3"><a href="#multi-source-diagram" class="toc-link">4.2A 覆盖范围图</a></li>
+                            <li class="toc-item toc-h3"><a href="#ais-details" class="toc-link">4.2B AIS 细节</a></li>
+                            <li class="toc-item"><a href="#operation-state" class="toc-link">4.3 运行状态感知</a></li>
+                            <li class="toc-item toc-h3"><a href="#power-engine" class="toc-link">4.3.1 动力系统</a></li>
+                            <li class="toc-item toc-h3"><a href="#health-monitor" class="toc-link">4.3.2 健康管理</a></li>
+                            <li class="toc-item toc-h3"><a href="#cargo-room" class="toc-link">4.3.3 货舱监测</a></li>
+                            <li class="toc-item toc-h3"><a href="#energy-chain" class="toc-link">4.3A 能效链条</a></li>
+                            <li class="toc-item"><a href="#quality-chain" class="toc-link">4.4 质量标注</a></li>
+                            <li class="toc-item toc-h3"><a href="#quality-types" class="toc-link">4.4.1 问题形态</a></li>
+                            <li class="toc-item toc-h3"><a href="#quality-tags" class="toc-link">4.4.2 标注要素</a></li>
+                            <li class="toc-item toc-h3"><a href="#quality-detect" class="toc-link">4.4A 检测线索</a></li>
+                            <li class="toc-item"><a href="#complement" class="toc-link">4.5 多源互补</a></li>
+                            <li class="toc-item toc-h3"><a href="#time-sync" class="toc-link">4.5.2 时间同步</a></li>
+                            <li class="toc-item toc-h3"><a href="#fusion-preprocess" class="toc-link">4.5A 融合前置处理</a></li>
+                            <li class="toc-item toc-h3"><a href="#weak-network-loop" class="toc-link">4.5B 弱网闭环</a></li>
+                            <li class="toc-item"><a href="#external-links" class="toc-link">外部参考链接</a></li>
                             <li class="toc-item"><a href="#reading" class="toc-link">延伸阅读</a></li>
                             <li class="toc-item"><a href="#questions" class="toc-link">思考题</a></li>
                         </ul>
                     </div>
 
-                    <div class="card meta-box" style="margin-top: 1.5rem;">
-                        <h4 style="margin-bottom: 0.5rem; font-size: 0.875rem;">章节信息</h4>
+                    <div class="card meta-box" style="margin-top:1.5rem;">
+                        <h4 style="margin-bottom:0.5rem; font-size:0.875rem;">章节信息</h4>
                         <p>对应课时：2课时</p>
                         <p>建议学时：90分钟</p>
+                        <p>教材定位：感知链条与质量意识核心章</p>
+                        <p>后续衔接：第5-7章的数据基础</p>
                     </div>
                 </aside>
             </div>
@@ -158,4 +562,3 @@
     <script src="../../assets/js/main.js"></script>
 </body>
 </html>
-
