@@ -223,6 +223,77 @@
                         </div>
                     </section>
 
+                    <section class="slide-section" id="wsn-topology">
+                        <h2><span class="section-kicker">1.2A</span>传感器网络不是单点采集</h2>
+                        <p class="section-summary">教材在这一部分强调的，不只是“有很多传感器”，而是这些节点如何组成网络、如何把局部采样变成区域性观测，以及为什么多跳转发会带来新的瓶颈。</p>
+                        <div class="two-col-grid">
+                            <div class="slide-card">
+                                <h3>典型拓扑结构</h3>
+                                <ul>
+                                    <li>传感器节点负责采样和短距离通信</li>
+                                    <li>汇聚节点负责收集区域数据并上传管理平台</li>
+                                    <li>远离汇聚节点的设备需要依赖中间节点多跳转发</li>
+                                    <li>主路径与备份路径共同决定容错能力</li>
+                                </ul>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>为什么靠近网关的节点最累</h3>
+                                <p>教材专门强调，多跳网络里靠近汇聚节点的设备不仅要上传自己的采样，还要替别人转发流量，因此能耗更快、故障影响更大，也更容易成为全网瓶颈。</p>
+                            </div>
+                        </div>
+                        <div class="four-col-grid" style="margin-top: 1rem;">
+                            <div class="slide-card"><h4>节点多</h4><p>单节点能力弱，但整体覆盖广。</p></div>
+                            <div class="slide-card"><h4>带宽小</h4><p>无线链路受干扰，突发流量容易拥塞。</p></div>
+                            <div class="slide-card"><h4>供电难</h4><p>电池供电更换困难，能耗就是设计约束。</p></div>
+                            <div class="slide-card"><h4>拓扑变</h4><p>节点掉线或失效会改变全网路径。</p></div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="wsn-sampling-depth">
+                        <h2><span class="section-kicker">1.2B</span>采样频率决定你能看到什么</h2>
+                        <p class="section-summary">这一张 slide 应该让学生看到一个非常工程化的事实：采样频率不是越高越好，而是在“信息保留、算力消耗、链路压力”之间做取舍。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card">
+                                <h3>采样过低</h3>
+                                <p>会丢失快速变化，无法观察高频现象。例如振动、姿态变化、快速故障冲击。</p>
+                            </div>
+                            <div class="slide-card">
+                                <h3>采样过高</h3>
+                                <p>数据量暴涨，边缘存储和上行带宽承压，尤其在通信受限场景下会直接影响系统可用性。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>合理采样</h3>
+                                <p>按现象变化速度决定频率，把真正需要高频的数据留在本地，把摘要或事件上传。</p>
+                            </div>
+                        </div>
+                        <div class="teacher-note">
+                            <strong>课堂延伸：</strong>可以让学生比较温度、GNSS、振动、图像四类数据，判断哪类适合低频上报，哪类必须先在边缘侧做预处理。
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="wsn-quality-depth">
+                        <h2><span class="section-kicker">1.2C</span>误差控制不只是“去噪”</h2>
+                        <p class="section-summary">教材这里的深度在于把误差来源拆开。学生不能只知道“数据有噪声”，而要知道噪声、漂移、时钟偏差、链路中断分别属于哪一层问题。</p>
+                        <div class="two-col-grid">
+                            <div class="slide-card">
+                                <h3>系统误差与随机误差</h3>
+                                <ul>
+                                    <li>系统误差：零点偏移、灵敏度误差、非线性误差、温度漂移</li>
+                                    <li>随机误差：噪声和干扰导致的随机波动</li>
+                                    <li>系统误差靠校准修正，随机误差靠滤波和统计平均削弱</li>
+                                </ul>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>采集链路也会制造问题</h3>
+                                <ul>
+                                    <li>时钟不准：时间戳偏差，影响多源对齐</li>
+                                    <li>通信中断：数据缺失，破坏连续性</li>
+                                    <li>传输延迟：到达时间与发生时间错位</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
                     <section class="slide-section">
                         <h2><span class="section-kicker">1.3</span>嵌入式平台与物联网操作系统</h2>
                         <p class="section-summary">这部分回答“设备如何长期稳定运行”。现场设备不是缩小版 PC，而是资源受限、需长期值守的专用系统。</p>
@@ -246,6 +317,62 @@
                                 <div class="slide-card accent-card"><h4>软件分层</h4><p>硬件抽象层、驱动层、系统层、中间件层、应用层的价值是隔离变化。</p></div>
                                 <div class="slide-card accent-card"><h4>时间同步</h4><p>NTP、PTP、GNSS 授时帮助多设备数据对齐，时间状态本身也应被记录。</p></div>
                                 <div class="slide-card accent-card"><h4>远程运维</h4><p>状态监测、配置管理、OTA、回滚和 A/B 分区决定系统能否长期可维护。</p></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="embedded-resource">
+                        <h2><span class="section-kicker">1.3A</span>嵌入式系统为什么不能照搬桌面软件</h2>
+                        <p class="section-summary">教材这部分的核心深度是“资源约束决定软件形态”。不是因为嵌入式设备落后，而是因为它们面对的任务、功耗和现场条件完全不同。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card">
+                                <h3>算力约束</h3>
+                                <p>MCU 主频通常只有几十到几百 MHz，无法无节制堆算法。</p>
+                            </div>
+                            <div class="slide-card">
+                                <h3>内存约束</h3>
+                                <p>RAM 常常只有几十 KB 到几百 KB，碎片和泄漏都可能直接变成故障。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>功耗约束</h3>
+                                <p>电池供电设备要求毫瓦级甚至微瓦级功耗，设计目标和桌面系统完全不同。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="embedded-stack-depth">
+                        <h2><span class="section-kicker">1.3B</span>软件栈不是概念图，而是故障定位图</h2>
+                        <p class="section-summary">教材用分层架构说明：数据从硬件到应用会跨越多个层次。对教学来说，这一张最重要的价值是帮助学生形成“分层排障”的习惯。</p>
+                        <div class="four-col-grid">
+                            <div class="slide-card"><h4>硬件/驱动</h4><p>负责把原始电信号转成可读工程量。</p></div>
+                            <div class="slide-card"><h4>操作系统</h4><p>调度任务、管理缓冲区、处理并发和资源。</p></div>
+                            <div class="slide-card"><h4>中间件</h4><p>封装 MQTT/CoAP 等协议，实现安全和消息组织。</p></div>
+                            <div class="slide-card accent-card"><h4>应用层</h4><p>根据业务规则做告警、控制和上报。</p></div>
+                        </div>
+                        <div class="teacher-note">
+                            <strong>课堂问题：</strong>如果更换传感器型号，主要该改哪一层？如果切换通信协议，又该改哪一层？这正是分层设计存在的意义。
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="embedded-sync-ops">
+                        <h2><span class="section-kicker">1.3C</span>时间同步与远程运维是“长期可用”的基础</h2>
+                        <p class="section-summary">教材把时间同步和远程运维单独展开，是因为系统不是搭起来就结束，而是要在现场长期无人值守地稳定跑下去。</p>
+                        <div class="two-col-grid">
+                            <div class="slide-card">
+                                <h3>时间同步的三类方法</h3>
+                                <ul>
+                                    <li>NTP：毫秒级，适合一般联网场景</li>
+                                    <li>PTP：亚微秒级，适合高精度工业控制</li>
+                                    <li>GNSS 授时：可作为区域时间基准源</li>
+                                </ul>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>远程运维的三项关键能力</h3>
+                                <ul>
+                                    <li>状态监测：知道设备是否健康</li>
+                                    <li>配置管理：能远程改采样频率和阈值</li>
+                                    <li>软件升级：支持签名验证、断点续传、回滚</li>
+                                </ul>
                             </div>
                         </div>
                     </section>
@@ -274,6 +401,68 @@
                         </div>
                     </section>
 
+                    <section class="slide-section" id="cloud-service-models">
+                        <h2><span class="section-kicker">1.4A</span>云平台提供的不是“服务器”，而是能力层</h2>
+                        <p class="section-summary">教材专门讲 IaaS、PaaS、SaaS，是为了让学生理解：物联网上云时，真正购买和复用的往往不是硬件，而是平台能力。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card">
+                                <h3>IaaS</h3>
+                                <p>提供虚拟机、存储、网络。你自己管理操作系统和应用。</p>
+                            </div>
+                            <div class="slide-card">
+                                <h3>PaaS</h3>
+                                <p>提供数据库、中间件、设备接入、规则引擎。物联网平台大多在这一层。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>SaaS</h3>
+                                <p>直接提供可用应用，用户主要消费功能而不是搭系统。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="edge-deployment">
+                        <h2><span class="section-kicker">1.4B</span>边缘不只有一种位置</h2>
+                        <p class="section-summary">教材把边缘计算分成设备边缘、现场边缘和区域边缘，这一点非常重要，因为“边缘”不是固定指某一台盒子，而是一个离数据源更近的算力层次。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card">
+                                <h3>设备边缘</h3>
+                                <p>算力最小，离数据源最近，时延最低，适合即时响应。</p>
+                            </div>
+                            <div class="slide-card">
+                                <h3>现场边缘</h3>
+                                <p>常见于网关或边缘服务器，可汇聚多终端并做更复杂处理。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>区域边缘</h3>
+                                <p>靠近用户的边缘数据中心，兼顾更强算力与较低网络时延。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="offline-policy-depth">
+                        <h2><span class="section-kicker">1.4C</span>断网运行不是补丁，而是设计前提</h2>
+                        <p class="section-summary">教材对“断网运行与数据分级”写得很细，因为一旦网络不稳，系统能否继续提供最低可用能力，决定了它是不是工程系统。</p>
+                        <div class="two-col-grid">
+                            <div class="slide-card">
+                                <h3>哪些能力必须本地保障</h3>
+                                <ul>
+                                    <li>安全关键告警</li>
+                                    <li>基本运行监测</li>
+                                    <li>关键控制或保护动作</li>
+                                </ul>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>数据分级策略</h3>
+                                <ul>
+                                    <li>关键告警：本地即时处理并缓存待传</li>
+                                    <li>运行状态：降频汇总并保留趋势</li>
+                                    <li>高频原始数据：优先保留异常时段详细记录</li>
+                                    <li>运维日志：本地持久化，恢复后按序补传</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
                     <section class="slide-section" id="to-ios">
                         <h2><span class="section-kicker">1.5</span>从物联网到船联网</h2>
                         <p class="section-summary">这一幕是整章收束。关键判断只有一句话：船联网不是全新的技术物种，而是物联网在“高受限、高风险、难运维”行业中的特化形态。</p>
@@ -290,6 +479,71 @@
                                 <h3>为什么它是后续七章的总入口</h3>
                                 <p>第二章讲概念边界，第三章讲架构，第四章讲感知系统，第五章讲通信，第六章讲数据治理，第七章讲安全与可靠运行，第八章讲典型应用。本章提供的是理解这七章所需的共同语言。</p>
                             </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="industry-compare">
+                        <h2><span class="section-kicker">1.5A</span>行业差异真正改变的是设计优先级</h2>
+                        <p class="section-summary">教材拿智慧城市、制造、农业、车联网和海上物联网做对比，不是为了列案例，而是为了说明：同样是物联网，不同行业首先变的不是技术名称，而是约束条件和优先级。</p>
+                        <div class="comparison-table table-responsive">
+                            <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                                <thead>
+                                    <tr style="background: var(--color-background-alt);">
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">场景</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">通信条件</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">运维条件</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">设计重心</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">智慧城市</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">覆盖较稳定</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">可周期维护</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">规模化接入、低成本运维</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">智能制造</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">工厂内网稳定</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">可随时维护</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">实时性、协议兼容性</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">智慧农业</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">低带宽或覆盖不足</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">维护窗口有限</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">低功耗、免维护、边缘自主</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">海上物联网</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">高时延、低带宽、费用高</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">航次长，现场支持少</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">断链运行、数据分级、远程运维</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="ship-challenges">
+                        <h2><span class="section-kicker">1.5B</span>船联网的特殊挑战会直接改写架构</h2>
+                        <p class="section-summary">教材最后一层深度在于指出：海上场景的通信、运维和安全约束不是“附加困难”，而是会反过来决定体系结构、缓存策略、边缘职责和可靠性要求。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card">
+                                <h3>通信挑战</h3>
+                                <p>远洋依赖卫星链路，带宽有限、时延高、成本高，近海网络又存在覆盖断续问题。</p>
+                            </div>
+                            <div class="slide-card">
+                                <h3>运维挑战</h3>
+                                <p>设备出海后很难现场维护，升级、回滚、配置调整都要通过受限链路远程完成。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>安全挑战</h3>
+                                <p>错误信息可能直接影响驾驶台态势判断，系统失效的后果比陆上场景严重得多。</p>
+                            </div>
+                        </div>
+                        <div class="teacher-note">
+                            <strong>收束判断：</strong>正因为这些约束存在，船端边缘能力必须更强，数据分级策略必须更明确，远程运维和可靠性设计必须在架构阶段就写进去。
                         </div>
                     </section>
 
@@ -374,17 +628,28 @@
                             <li class="toc-item toc-h3"><a href="#wsn-basic" class="toc-link">1.2.1 基本概念</a></li>
                             <li class="toc-item toc-h3"><a href="#sensor-principle" class="toc-link">1.2.2 传感器原理</a></li>
                             <li class="toc-item toc-h3"><a href="#sampling" class="toc-link">1.2.3 采样与质量</a></li>
+                            <li class="toc-item toc-h3"><a href="#wsn-topology" class="toc-link">1.2A 拓扑与瓶颈</a></li>
+                            <li class="toc-item toc-h3"><a href="#wsn-sampling-depth" class="toc-link">1.2B 采样频率</a></li>
+                            <li class="toc-item toc-h3"><a href="#wsn-quality-depth" class="toc-link">1.2C 误差控制</a></li>
                             <li class="toc-item"><a href="#embedded" class="toc-link">1.3 嵌入式平台</a></li>
                             <li class="toc-item toc-h3"><a href="#platform" class="toc-link">1.3.1 平台角色</a></li>
                             <li class="toc-item toc-h3"><a href="#iot-os" class="toc-link">1.3.2 操作系统</a></li>
                             <li class="toc-item toc-h3"><a href="#software-stack" class="toc-link">1.3.3 分层与运维</a></li>
+                            <li class="toc-item toc-h3"><a href="#embedded-resource" class="toc-link">1.3A 资源约束</a></li>
+                            <li class="toc-item toc-h3"><a href="#embedded-stack-depth" class="toc-link">1.3B 软件栈</a></li>
+                            <li class="toc-item toc-h3"><a href="#embedded-sync-ops" class="toc-link">1.3C 同步与运维</a></li>
                             <li class="toc-item"><a href="#cloud-edge" class="toc-link">1.4 云边协同</a></li>
                             <li class="toc-item toc-h3"><a href="#cloud" class="toc-link">1.4.1 云计算</a></li>
                             <li class="toc-item toc-h3"><a href="#edge" class="toc-link">1.4.2 边缘计算</a></li>
                             <li class="toc-item toc-h3"><a href="#cooperation" class="toc-link">1.4.3 协同与断网</a></li>
+                            <li class="toc-item toc-h3"><a href="#cloud-service-models" class="toc-link">1.4A 服务层次</a></li>
+                            <li class="toc-item toc-h3"><a href="#edge-deployment" class="toc-link">1.4B 边缘位置</a></li>
+                            <li class="toc-item toc-h3"><a href="#offline-policy-depth" class="toc-link">1.4C 断网策略</a></li>
                             <li class="toc-item"><a href="#to-ios" class="toc-link">1.5 船联网衔接</a></li>
                             <li class="toc-item toc-h3"><a href="#industry" class="toc-link">1.5.1 行业约束</a></li>
                             <li class="toc-item toc-h3"><a href="#ios-bridge" class="toc-link">1.5.2 课程衔接</a></li>
+                            <li class="toc-item toc-h3"><a href="#industry-compare" class="toc-link">1.5A 行业对比</a></li>
+                            <li class="toc-item toc-h3"><a href="#ship-challenges" class="toc-link">1.5B 船联网挑战</a></li>
                             <li class="toc-item"><a href="#terms" class="toc-link">术语速览</a></li>
                             <li class="toc-item"><a href="#reading" class="toc-link">延伸阅读</a></li>
                             <li class="toc-item"><a href="#questions" class="toc-link">思考题</a></li>
