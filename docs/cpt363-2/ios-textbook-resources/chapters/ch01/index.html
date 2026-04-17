@@ -294,6 +294,76 @@
                         </div>
                     </section>
 
+                    <section class="slide-section" id="wsn-topology-diagram">
+                        <h2><span class="section-kicker">1.2D</span>传感器网络拓扑图</h2>
+                        <p class="section-summary">这张图把教材中的“节点-汇聚-平台”关系直接画出来。重点不是记住位置，而是看出三件事：越远的节点越依赖多跳路径，越靠近汇聚节点的设备负担越重，备份路径的存在决定网络有没有基本容错能力。</p>
+                        <div class="diagram-frame">
+                            <svg viewBox="0 0 980 430" width="100%" role="img" aria-label="传感器网络拓扑结构示意图">
+                                <defs>
+                                    <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                                        <path d="M0,0 L0,6 L9,3 z" fill="#4682b4"></path>
+                                    </marker>
+                                    <marker id="arrow-gray" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                                        <path d="M0,0 L0,6 L9,3 z" fill="#90a0b0"></path>
+                                    </marker>
+                                </defs>
+
+                                <rect x="30" y="40" width="600" height="320" rx="24" fill="#f7fbfe" stroke="#d7e4ef"></rect>
+                                <text x="54" y="72" font-size="24" fill="#2f528f" font-weight="700">监测区域</text>
+
+                                <circle cx="150" cy="135" r="34" fill="#ffffff" stroke="#4682b4" stroke-width="3"></circle>
+                                <text x="132" y="141" font-size="20" fill="#2f528f" font-weight="700">S1</text>
+                                <text x="116" y="185" font-size="15" fill="#808a96">温度节点</text>
+
+                                <circle cx="285" cy="105" r="34" fill="#ffffff" stroke="#4682b4" stroke-width="3"></circle>
+                                <text x="267" y="111" font-size="20" fill="#2f528f" font-weight="700">S2</text>
+                                <text x="248" y="154" font-size="15" fill="#808a96">湿度节点</text>
+
+                                <circle cx="390" cy="180" r="34" fill="#ffffff" stroke="#4682b4" stroke-width="3"></circle>
+                                <text x="372" y="186" font-size="20" fill="#2f528f" font-weight="700">S3</text>
+                                <text x="350" y="230" font-size="15" fill="#808a96">压力节点</text>
+
+                                <circle cx="215" cy="250" r="34" fill="#ffffff" stroke="#4682b4" stroke-width="3"></circle>
+                                <text x="197" y="256" font-size="20" fill="#2f528f" font-weight="700">S4</text>
+                                <text x="178" y="300" font-size="15" fill="#808a96">振动节点</text>
+
+                                <circle cx="365" cy="285" r="34" fill="#ffffff" stroke="#4682b4" stroke-width="3"></circle>
+                                <text x="347" y="291" font-size="20" fill="#2f528f" font-weight="700">S5</text>
+                                <text x="318" y="334" font-size="15" fill="#808a96">视觉/图像节点</text>
+
+                                <circle cx="505" cy="125" r="34" fill="#ffffff" stroke="#4682b4" stroke-width="3"></circle>
+                                <text x="487" y="131" font-size="20" fill="#2f528f" font-weight="700">S6</text>
+                                <text x="472" y="174" font-size="15" fill="#808a96">流量节点</text>
+
+                                <circle cx="545" cy="250" r="38" fill="#b0cee6" stroke="#2f528f" stroke-width="4"></circle>
+                                <text x="508" y="257" font-size="22" fill="#1f355f" font-weight="700">汇聚节点</text>
+                                <text x="504" y="300" font-size="15" fill="#556271">网关 / Sink</text>
+
+                                <line x1="184" y1="126" x2="251" y2="112" stroke="#4682b4" stroke-width="4" marker-end="url(#arrow-blue)"></line>
+                                <line x1="319" y1="118" x2="356" y2="163" stroke="#4682b4" stroke-width="4" marker-end="url(#arrow-blue)"></line>
+                                <line x1="248" y1="233" x2="332" y2="197" stroke="#4682b4" stroke-width="4" marker-end="url(#arrow-blue)"></line>
+                                <line x1="399" y1="214" x2="518" y2="235" stroke="#4682b4" stroke-width="4" marker-end="url(#arrow-blue)"></line>
+                                <line x1="399" y1="279" x2="503" y2="257" stroke="#4682b4" stroke-width="4" marker-end="url(#arrow-blue)"></line>
+                                <line x1="533" y1="157" x2="541" y2="208" stroke="#4682b4" stroke-width="4" marker-end="url(#arrow-blue)"></line>
+
+                                <line x1="170" y1="161" x2="197" y2="223" stroke="#90a0b0" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrow-gray)"></line>
+                                <line x1="315" y1="101" x2="472" y2="122" stroke="#90a0b0" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrow-gray)"></line>
+                                <line x1="241" y1="263" x2="327" y2="280" stroke="#90a0b0" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrow-gray)"></line>
+
+                                <rect x="700" y="120" width="220" height="84" rx="20" fill="#d8e9f7" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="770" y="155" font-size="24" fill="#2f528f" font-weight="700">管理平台</text>
+                                <text x="728" y="185" font-size="15" fill="#556271">存储 · 分析 · 应用服务</text>
+                                <line x1="583" y1="238" x2="700" y2="178" stroke="#2f528f" stroke-width="5" marker-end="url(#arrow-blue)"></line>
+
+                                <rect x="700" y="245" width="220" height="92" rx="20" fill="#fff7ec" stroke="#dc9656" stroke-width="3"></rect>
+                                <text x="742" y="280" font-size="21" fill="#9d5b24" font-weight="700">关键观察</text>
+                                <text x="722" y="307" font-size="15" fill="#7b5c43">1. 网关附近节点转发最多</text>
+                                <text x="722" y="329" font-size="15" fill="#7b5c43">2. 多跳提高覆盖，也带来瓶颈</text>
+                            </svg>
+                            <p class="diagram-caption">粗实线表示主路径，虚线表示备份路径。课堂上可以直接指着这张图讲“为什么离网关最近的节点最先成为故障热点”。</p>
+                        </div>
+                    </section>
+
                     <section class="slide-section">
                         <h2><span class="section-kicker">1.3</span>嵌入式平台与物联网操作系统</h2>
                         <p class="section-summary">这部分回答“设备如何长期稳定运行”。现场设备不是缩小版 PC，而是资源受限、需长期值守的专用系统。</p>
@@ -460,6 +530,69 @@
                                     <li>运维日志：本地持久化，恢复后按序补传</li>
                                 </ul>
                             </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="cloud-edge-diagram">
+                        <h2><span class="section-kicker">1.4D</span>云边协同数据流图</h2>
+                        <p class="section-summary">这张图把教材里“设备边缘-现场边缘-云端”的职责和数据流放在同一画面里。讲这一张时，关键是让学生一眼看出：实时闭环为什么必须留在边缘，历史归档和复杂分析为什么更适合上云。</p>
+                        <div class="diagram-frame">
+                            <svg viewBox="0 0 1080 430" width="100%" role="img" aria-label="云边协同数据流示意图">
+                                <defs>
+                                    <marker id="arrow-main-blue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                                        <path d="M0,0 L0,6 L9,3 z" fill="#4682b4"></path>
+                                    </marker>
+                                    <marker id="arrow-main-orange" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                                        <path d="M0,0 L0,6 L9,3 z" fill="#dc9656"></path>
+                                    </marker>
+                                </defs>
+
+                                <rect x="40" y="110" width="210" height="180" rx="24" fill="#f8fbfe" stroke="#d7e4ef"></rect>
+                                <text x="95" y="150" font-size="24" fill="#2f528f" font-weight="700">终端设备</text>
+                                <text x="72" y="186" font-size="16" fill="#556271">传感器 / 执行器 / 采样程序</text>
+                                <text x="72" y="216" font-size="16" fill="#556271">生成原始数据与即时状态</text>
+                                <text x="72" y="246" font-size="16" fill="#556271">最靠近数据源，时延最低</text>
+
+                                <rect x="310" y="72" width="300" height="255" rx="28" fill="#eef7fd" stroke="#7aa7cf" stroke-width="3"></rect>
+                                <text x="405" y="113" font-size="28" fill="#2f528f" font-weight="700">边缘侧</text>
+                                <rect x="342" y="138" width="236" height="48" rx="14" fill="#ffffff" stroke="#b8d0e4"></rect>
+                                <text x="380" y="168" font-size="18" fill="#33435a">实时响应 / 本地告警</text>
+                                <rect x="342" y="198" width="236" height="48" rx="14" fill="#ffffff" stroke="#b8d0e4"></rect>
+                                <text x="372" y="228" font-size="18" fill="#33435a">预处理 / 压缩 / 缓存</text>
+                                <rect x="342" y="258" width="236" height="48" rx="14" fill="#ffffff" stroke="#b8d0e4"></rect>
+                                <text x="365" y="288" font-size="18" fill="#33435a">断网运行 / 最低可用</text>
+
+                                <rect x="690" y="72" width="330" height="255" rx="28" fill="#f5f8fd" stroke="#8ea9c8" stroke-width="3"></rect>
+                                <text x="822" y="113" font-size="28" fill="#2f528f" font-weight="700">云端</text>
+                                <rect x="725" y="138" width="260" height="48" rx="14" fill="#ffffff" stroke="#ccd9e7"></rect>
+                                <text x="770" y="168" font-size="18" fill="#33435a">海量存储 / 历史归档</text>
+                                <rect x="725" y="198" width="260" height="48" rx="14" fill="#ffffff" stroke="#ccd9e7"></rect>
+                                <text x="770" y="228" font-size="18" fill="#33435a">复杂分析 / 跨域协同</text>
+                                <rect x="725" y="258" width="260" height="48" rx="14" fill="#ffffff" stroke="#ccd9e7"></rect>
+                                <text x="760" y="288" font-size="18" fill="#33435a">设备管理 / 应用托管</text>
+
+                                <line x1="250" y1="200" x2="310" y2="200" stroke="#4682b4" stroke-width="5" marker-end="url(#arrow-main-blue)"></line>
+                                <text x="258" y="185" font-size="14" fill="#556271">原始数据上送</text>
+
+                                <line x1="610" y1="165" x2="690" y2="165" stroke="#4682b4" stroke-width="5" marker-end="url(#arrow-main-blue)"></line>
+                                <text x="612" y="148" font-size="14" fill="#556271">汇总数据 / 事件</text>
+
+                                <line x1="690" y1="235" x2="610" y2="235" stroke="#dc9656" stroke-width="5" marker-end="url(#arrow-main-orange)"></line>
+                                <text x="618" y="257" font-size="14" fill="#7b5c43">配置 / 模型 / 策略下发</text>
+
+                                <line x1="418" y1="186" x2="418" y2="198" stroke="#2f528f" stroke-width="3"></line>
+                                <line x1="418" y1="246" x2="418" y2="258" stroke="#2f528f" stroke-width="3"></line>
+
+                                <rect x="318" y="344" width="280" height="50" rx="16" fill="#fff7ec" stroke="#dc9656" stroke-width="3"></rect>
+                                <text x="354" y="375" font-size="18" fill="#9d5b24" font-weight="700">断网时，边缘侧仍需独立运行</text>
+
+                                <rect x="40" y="344" width="210" height="50" rx="16" fill="#f3fbf5" stroke="#5ca078" stroke-width="3"></rect>
+                                <text x="66" y="375" font-size="18" fill="#3f6d54" font-weight="700">设备边缘：最低时延</text>
+
+                                <rect x="735" y="344" width="250" height="50" rx="16" fill="#f4f4fb" stroke="#8c78a5" stroke-width="3"></rect>
+                                <text x="768" y="375" font-size="18" fill="#605273" font-weight="700">云端：全局视野与长期价值</text>
+                            </svg>
+                            <p class="diagram-caption">蓝色箭头表示数据上行，橙色箭头表示配置与策略下行。课堂上可以用这张图讲清楚“为什么安全关键逻辑要锚定在边缘侧”。</p>
                         </div>
                     </section>
 
@@ -631,6 +764,7 @@
                             <li class="toc-item toc-h3"><a href="#wsn-topology" class="toc-link">1.2A 拓扑与瓶颈</a></li>
                             <li class="toc-item toc-h3"><a href="#wsn-sampling-depth" class="toc-link">1.2B 采样频率</a></li>
                             <li class="toc-item toc-h3"><a href="#wsn-quality-depth" class="toc-link">1.2C 误差控制</a></li>
+                            <li class="toc-item toc-h3"><a href="#wsn-topology-diagram" class="toc-link">1.2D 拓扑图解</a></li>
                             <li class="toc-item"><a href="#embedded" class="toc-link">1.3 嵌入式平台</a></li>
                             <li class="toc-item toc-h3"><a href="#platform" class="toc-link">1.3.1 平台角色</a></li>
                             <li class="toc-item toc-h3"><a href="#iot-os" class="toc-link">1.3.2 操作系统</a></li>
@@ -645,6 +779,7 @@
                             <li class="toc-item toc-h3"><a href="#cloud-service-models" class="toc-link">1.4A 服务层次</a></li>
                             <li class="toc-item toc-h3"><a href="#edge-deployment" class="toc-link">1.4B 边缘位置</a></li>
                             <li class="toc-item toc-h3"><a href="#offline-policy-depth" class="toc-link">1.4C 断网策略</a></li>
+                            <li class="toc-item toc-h3"><a href="#cloud-edge-diagram" class="toc-link">1.4D 数据流图</a></li>
                             <li class="toc-item"><a href="#to-ios" class="toc-link">1.5 船联网衔接</a></li>
                             <li class="toc-item toc-h3"><a href="#industry" class="toc-link">1.5.1 行业约束</a></li>
                             <li class="toc-item toc-h3"><a href="#ios-bridge" class="toc-link">1.5.2 课程衔接</a></li>

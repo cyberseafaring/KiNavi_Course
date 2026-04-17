@@ -67,6 +67,9 @@
 .sidebar-sticky {
     position: sticky;
     top: calc(var(--header-height) + 2rem);
+    max-height: calc(100vh - var(--header-height) - 2.5rem);
+    overflow-y: auto;
+    padding-right: 0.35rem;
 }
 
 .toc-list {
@@ -87,6 +90,11 @@
 
 .toc-link:hover {
     color: var(--color-primary);
+}
+
+.toc-link.active {
+    color: var(--color-primary-dark);
+    font-weight: 700;
 }
 
 .toc-h3 {
@@ -316,6 +324,22 @@
 
 .comparison-table table td strong {
     color: var(--color-primary-dark);
+}
+
+.diagram-frame {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(244, 248, 251, 0.98) 100%);
+    box-shadow: var(--shadow-sm);
+}
+
+.diagram-caption {
+    margin-top: 0.85rem;
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
 }
 
 .error {

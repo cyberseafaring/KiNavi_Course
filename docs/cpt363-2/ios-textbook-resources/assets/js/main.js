@@ -11,6 +11,7 @@
         initNavigation();
         initSmoothScroll();
         initActiveNavHighlight();
+        initTOCSpy();
     });
 
     /**
@@ -124,6 +125,66 @@
                 }
             }
         });
+    }
+
+    /**
+     * 章节目录滚动高亮
+     */
+    function initTOCSpy() {
+        const tocLinks = Array.from(document.querySelectorAll('.toc-link[href^="#"]'));
+        if (!tocLinks.length) return;
+
+        const targets = tocLinks
+            .map(function(link) {
+                const selector = link.getAttribute('href');
+                return document.querySelector(selector);
+            })
+            .filter(Boolean);
+
+        if (!targets.length) return;
+
+        const tocContainer = document.querySelector('.sidebar-sticky');
+
+        function setActiveLink(id) {
+            tocLinks.forEach(function(link) {
+                const isActive = link.getAttribute('href') === '#' + id;
+                link.classList.toggle('active', isActive);
+
+                if (isActive && tocContainer) {
+                    const top = link.offsetTop - tocContainer.clientHeight / 2;
+                    tocContainer.scrollTo({
+                        top: Math.max(0, top),
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        }
+
+        const observer = new IntersectionObserver(function(entries) {
+            const visible = entries
+                .filter(function(entry) {
+                    return entry.isIntersecting;
+                })
+                .sort(function(a, b) {
+                    return a.boundingClientRect.top - b.boundingClientRect.top;
+                });
+
+            if (visible.length) {
+                setActiveLink(visible[0].target.id);
+            }
+        }, {
+            rootMargin: '-100px 0px -65% 0px',
+            threshold: [0, 0.1, 0.25, 0.5]
+        });
+
+        targets.forEach(function(target) {
+            observer.observe(target);
+        });
+
+        const initial = targets.find(function(target) {
+            return target.getBoundingClientRect().top >= 0;
+        }) || targets[0];
+        setActiveLink(initial.id);
     }
 
     /**
