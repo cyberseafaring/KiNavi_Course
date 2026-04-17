@@ -50,46 +50,439 @@
                         <span class="chapter-number">3</span>
                         <div>
                             <h1 style="margin-bottom: 0.25rem; font-size: 1.75rem;">船联网体系架构</h1>
-                            <p class="text-muted">分层模型、接口边界、协同机制</p>
+                            <p class="text-muted">分层模型、船端结构、岸端结构、接口类型、运行策略</p>
                         </div>
                     </div>
 
-                    <h2 id="objectives">学习目标</h2>
-                    <p>本章回答一个问题：船联网系统如何分层，分层的边界在哪里，船端岸端如何在约束条件下协同运行。</p>
-                    <ul>
-                        <li>能够说明分层架构的目的和典型层次职责</li>
-                        <li>能够解释时延、带宽与可用性对应用能力的约束</li>
-                        <li>能够描述船端边缘计算与岸端服务的分工逻辑</li>
-                    </ul>
+                    <section class="slide-hero">
+                        <span class="slide-eyebrow">CHAPTER 03</span>
+                        <h2 class="slide-title">船联网体系架构</h2>
+                        <p class="slide-lead">体系架构把分散的技术点组织成可运行系统。对船联网而言，架构不仅要说明模块如何连接，还要把链路波动、安全关键、接口异构和长期运维这些现实约束落实到数据路径、分层边界和运行模式上。</p>
+                        <div class="highlight-strip">
+                            <div class="highlight-pill"><strong>分层</strong>先明确职责边界，再讨论模块能力</div>
+                            <div class="highlight-pill"><strong>船端</strong>本地闭环、网关汇聚、边缘计算</div>
+                            <div class="highlight-pill"><strong>岸端</strong>接入、治理、编排、服务交付</div>
+                            <div class="highlight-pill"><strong>运行</strong>缓存补传、多链路、降级运行</div>
+                        </div>
+                    </section>
 
-                    <h2 id="key">知识要点</h2>
+                    <section class="slide-section" id="objectives">
+                        <h2><span class="section-kicker">GO</span>学习目标</h2>
+                        <p class="section-summary">本章的目标是把“系统怎么拼起来”和“在真实海上条件下如何继续运行”讲清楚。读完后，应能用统一的架构视角理解后续感知、通信、数据治理和安全章节。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card accent-card">
+                                <h3>理解分层</h3>
+                                <p>画出船联网分层模型，并解释每一层的职责边界与输入输出。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>理解角色</h3>
+                                <p>区分船端、岸端、监管服务和第三方服务在架构中的位置。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>理解运行</h3>
+                                <p>解释时延、带宽、可靠性如何改变接口设计和运行模式。</p>
+                            </div>
+                        </div>
+                    </section>
 
-                    <h3 id="layering">3.1 分层架构</h3>
-                    <p>分层的直接目的，是把复杂系统拆成可讨论的职责边界与接口边界。工程上更关心的是数据在各层之间如何流动，哪些信息需要在船端完成闭环，哪些信息可以在岸端进行汇聚分析。</p>
-                    <ul>
-                        <li><strong>感知层</strong>负责采集与质量线索记录</li>
-                        <li><strong>传输层</strong>负责链路接入、消息组织与弱网适配</li>
-                        <li><strong>计算层</strong>负责加工、融合、存储与服务编排</li>
-                        <li><strong>应用层</strong>负责信息交付与决策支持</li>
-                    </ul>
+                    <section class="slide-section" id="roadmap">
+                        <h2><span class="section-kicker">MAP</span>章节路线图</h2>
+                        <p class="section-summary">本章先给出分层模型，再进入船端结构和岸端结构，随后把设备接口、消息接口、服务接口放进同一框架，最后收束到运行策略。</p>
+                        <div class="flow-steps">
+                            <div class="flow-step">
+                                <span class="step-index">1</span>
+                                <h3 id="layers">分层模型</h3>
+                                <p>先确定感知、传输、计算、应用各层的职责。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">2</span>
+                                <h3 id="ship-side">船端系统</h3>
+                                <p>网关、边缘节点和本地闭环如何组织。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">3</span>
+                                <h3 id="shore-side">岸端系统</h3>
+                                <p>接入平台、治理能力和服务门户如何分工。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">4</span>
+                                <h3 id="run-strategy">运行策略</h3>
+                                <p>弱网、断链和多链路条件下如何保持系统可用。</p>
+                            </div>
+                        </div>
+                    </section>
 
-                    <h3 id="constraints">3.2 约束条件</h3>
-                    <p>海上通信条件具有明显的时延与带宽波动。系统设计需要把“信息产品的时效窗口”和“可接受的降级形态”写成明确规则，否则容易把网络波动误解为算法失效。</p>
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">3.1</span>船联网分层模型</h2>
+                        <p class="section-summary">分层的目标不是把系统拆得越细越好，而是把职责边界和接口边界明确下来，使系统扩展时不会牵一发而动全身。</p>
+                        <div class="four-col-grid">
+                            <div class="slide-card" id="sense-layer">
+                                <h3>感知层</h3>
+                                <p>把物理世界转成数据，并记录基本质量信息与时间信息。</p>
+                            </div>
+                            <div class="slide-card" id="transport-layer">
+                                <h3>传输层</h3>
+                                <p>解决链路接入、消息组织、优先级和弱网适配。</p>
+                            </div>
+                            <div class="slide-card" id="compute-layer">
+                                <h3>计算层</h3>
+                                <p>完成治理、融合、存储、汇总和服务编排。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="app-layer">
+                                <h3>应用层</h3>
+                                <p>把信息产品交付给航行支持、监管、运维和绿色航运应用。</p>
+                            </div>
+                        </div>
 
-                    <h3 id="ship-shore">3.3 船端岸端协同</h3>
-                    <p>船端更适合承担实时性强、断链也要可用的任务，岸端更适合承担跨船队分析、规模化存储与服务编排。协同的关键不在于把所有数据都上传，而在于定义信息产品、证据链和回传闭环。</p>
+                        <div class="comparison-table table-responsive" style="margin-top: 1rem;" id="layer-metrics">
+                            <table style="width:100%; border-collapse:collapse; font-size:0.95rem;">
+                                <thead>
+                                    <tr style="background: var(--color-background-alt);">
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">层级</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">典型输出</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">典型时延范围</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">主要约束</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">感知层</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">原始采样、设备状态、质量标记</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">10-100 ms</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">采样频率、接口带宽、异构设备</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">传输层</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">消息流、缓存队列、状态通知</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">100 ms 到数秒</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">覆盖、带宽、抖动、补传</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">计算层</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">融合态势、统计摘要、事件记录</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">秒级到分钟级</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">汇聚规模、治理规则、算力位置</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">应用层</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">告警、服务响应、决策支持</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">秒级到分钟级</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">业务时效、可解释性、人机交互</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="layer-diagram">
+                        <h2><span class="section-kicker">3.1A</span>分层模型与接口类型图</h2>
+                        <p class="section-summary">这张图同时展示了分层结构、船岸边界和三类接口。重点是看出：设备接口收敛异构，消息接口组织数据流，服务接口封装跨域协同能力。</p>
+                        <div class="diagram-frame">
+                            <svg viewBox="0 0 980 460" width="100%" role="img" aria-label="船联网分层架构与接口类型图">
+                                <rect x="90" y="310" width="420" height="70" rx="20" fill="#d8e9f7" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="255" y="352" font-size="24" fill="#2f528f" font-weight="700">感知层</text>
+                                <text x="160" y="374" font-size="14" fill="#556271">传感器采样 · 设备状态 · 质量标记</text>
+
+                                <rect x="90" y="225" width="420" height="70" rx="20" fill="#cfe2f3" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="250" y="268" font-size="24" fill="#2f528f" font-weight="700">传输层</text>
+                                <text x="142" y="289" font-size="14" fill="#556271">多链路接入 · 消息组织 · 优先级调度 · 缓存补传</text>
+
+                                <rect x="90" y="140" width="420" height="70" rx="20" fill="#c2d9ef" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="250" y="183" font-size="24" fill="#2f528f" font-weight="700">计算层</text>
+                                <text x="150" y="204" font-size="14" fill="#556271">数据治理 · 融合分析 · 存储管理 · 服务编排</text>
+
+                                <rect x="90" y="55" width="420" height="70" rx="20" fill="#adc8dd" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="250" y="98" font-size="24" fill="#2f528f" font-weight="700">应用层</text>
+                                <text x="120" y="120" font-size="14" fill="#556271">航行支持 · 监管服务 · 运维服务 · 绿色航运</text>
+
+                                <line x1="540" y1="40" x2="540" y2="395" stroke="#8a9fb3" stroke-width="3" stroke-dasharray="10 8"></line>
+                                <text x="552" y="220" font-size="16" fill="#6f8090" transform="rotate(90 552,220)">船端 / 岸端边界</text>
+
+                                <rect x="620" y="110" width="280" height="240" rx="24" fill="#f7fbfe" stroke="#d7e4ef"></rect>
+                                <text x="712" y="148" font-size="24" fill="#2f528f" font-weight="700">接口类型</text>
+                                <rect x="655" y="170" width="210" height="42" rx="12" fill="#ffffff" stroke="#b8d0e4"></rect>
+                                <text x="725" y="197" font-size="17" fill="#33435a">设备接口</text>
+                                <rect x="655" y="225" width="210" height="42" rx="12" fill="#ffffff" stroke="#b8d0e4"></rect>
+                                <text x="725" y="252" font-size="17" fill="#33435a">消息接口</text>
+                                <rect x="655" y="280" width="210" height="42" rx="12" fill="#ffffff" stroke="#b8d0e4"></rect>
+                                <text x="725" y="307" font-size="17" fill="#33435a">服务接口</text>
+
+                                <line x1="510" y1="345" x2="655" y2="190" stroke="#4682b4" stroke-width="4"></line>
+                                <line x1="510" y1="260" x2="655" y2="245" stroke="#4682b4" stroke-width="4"></line>
+                                <line x1="510" y1="90" x2="655" y2="300" stroke="#4682b4" stroke-width="4"></line>
+                            </svg>
+                            <p class="diagram-caption">设备接口连接具体设备与网关，消息接口组织数据生产者与消费者，服务接口把结果封装成可调用能力。分层和接口一起决定系统是否能长期运行。</p>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">3.2</span>船端系统结构</h2>
+                        <p class="section-summary">船端系统由驾驶台相关系统、机舱相关系统、货物相关系统以及通信与计算节点组成。不同子系统产生的数据类型不同，时效要求不同，失效后果也不同，因此必须分级管理。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card" id="bridge-systems">
+                                <h3>驾驶台系统</h3>
+                                <p>关注航行态势与导航决策，数据更新频率较高，对时间一致和显示一致要求严格。</p>
+                            </div>
+                            <div class="slide-card" id="engine-systems">
+                                <h3>机舱系统</h3>
+                                <p>关注设备工况与安全保护，异常检测比绝对高频更重要。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="cargo-systems">
+                                <h3>货物系统</h3>
+                                <p>关注载荷状态和作业过程，完整性与追溯能力尤为重要。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="gateway-edge">
+                        <h2><span class="section-kicker">3.2A</span>船端网关与边缘计算节点</h2>
+                        <p class="section-summary">网关和边缘节点并不是同一个概念。网关负责稳定接入和组织数据，边缘节点负责把链路不确定性隔离在应用层之外。</p>
+                        <div class="two-col-grid">
+                            <div class="slide-card">
+                                <h3>网关的职责</h3>
+                                <ul>
+                                    <li>协议适配与字段统一</li>
+                                    <li>缓存转发与优先级调度</li>
+                                    <li>断链条件下承担缓冲责任</li>
+                                </ul>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>边缘节点的职责</h3>
+                                <ul>
+                                    <li>数据清洗、汇总压缩、事件检测</li>
+                                    <li>生成本地态势摘要与健康状态</li>
+                                    <li>支持断链期间的本地可观测与闭环运行</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="ship-diagram">
+                        <h2><span class="section-kicker">3.2B</span>船端结构与数据汇聚路径图</h2>
+                        <p class="section-summary">这张图把驾驶台、机舱、货物系统、船端网关和边缘节点放在同一数据路径上。重点是看清数据如何逐级压缩，关键功能为什么必须在船端闭环。</p>
+                        <div class="diagram-frame">
+                            <svg viewBox="0 0 980 430" width="100%" role="img" aria-label="船端结构与数据汇聚路径图">
+                                <rect x="70" y="60" width="180" height="82" rx="20" fill="#ffffff" stroke="#7aa7cf" stroke-width="3"></rect>
+                                <text x="118" y="98" font-size="22" fill="#2f528f" font-weight="700">驾驶台系统</text>
+                                <text x="102" y="123" font-size="14" fill="#556271">ECDIS · 雷达 · 自动舵</text>
+
+                                <rect x="70" y="182" width="180" height="82" rx="20" fill="#ffffff" stroke="#7aa7cf" stroke-width="3"></rect>
+                                <text x="118" y="220" font-size="22" fill="#2f528f" font-weight="700">机舱系统</text>
+                                <text x="92" y="245" font-size="14" fill="#556271">主机监测 · 温度 · 振动</text>
+
+                                <rect x="70" y="304" width="180" height="82" rx="20" fill="#ffffff" stroke="#7aa7cf" stroke-width="3"></rect>
+                                <text x="118" y="342" font-size="22" fill="#2f528f" font-weight="700">货物系统</text>
+                                <text x="94" y="367" font-size="14" fill="#556271">液位 · 温湿度 · 作业状态</text>
+
+                                <rect x="350" y="130" width="240" height="64" rx="20" fill="#d8e9f7" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="425" y="169" font-size="24" fill="#2f528f" font-weight="700">船端网关</text>
+                                <text x="386" y="192" font-size="14" fill="#556271">协议适配 · 字段统一 · 缓存管理</text>
+
+                                <rect x="350" y="230" width="240" height="64" rx="20" fill="#c2d9ef" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="390" y="269" font-size="24" fill="#2f528f" font-weight="700">边缘计算节点</text>
+                                <text x="378" y="292" font-size="14" fill="#556271">清洗汇总 · 事件检测 · 态势摘要</text>
+
+                                <rect x="690" y="165" width="200" height="92" rx="22" fill="#f5f8fd" stroke="#8ea9c8" stroke-width="3"></rect>
+                                <text x="748" y="203" font-size="24" fill="#2f528f" font-weight="700">通信模块</text>
+                                <text x="718" y="228" font-size="14" fill="#556271">VHF · 蜂窝 · 卫星链路</text>
+
+                                <line x1="250" y1="102" x2="350" y2="150" stroke="#4682b4" stroke-width="4"></line>
+                                <line x1="250" y1="223" x2="350" y2="163" stroke="#4682b4" stroke-width="4"></line>
+                                <line x1="250" y1="345" x2="350" y2="176" stroke="#4682b4" stroke-width="4"></line>
+                                <line x1="470" y1="194" x2="470" y2="230" stroke="#2f528f" stroke-width="4"></line>
+                                <line x1="590" y1="262" x2="690" y2="215" stroke="#4682b4" stroke-width="4"></line>
+
+                                <rect x="690" y="300" width="210" height="72" rx="18" fill="#fff7ec" stroke="#dc9656" stroke-width="3"></rect>
+                                <text x="730" y="332" font-size="20" fill="#9d5b24" font-weight="700">本地闭环重点</text>
+                                <text x="713" y="356" font-size="14" fill="#7b5c43">驾驶台告警与设备保护不能依赖岸端响应</text>
+                            </svg>
+                            <p class="diagram-caption">数据先在船端网关汇聚，再由边缘节点完成压缩和事件化处理。链路受限时，关键功能仍需依靠本地闭环维持可用。</p>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">3.3</span>岸端系统结构</h2>
+                        <p class="section-summary">岸端系统的角色通常包含监管服务提供方、航道与港口管理方、船队运营方以及第三方信息服务方。不同角色对数据时效、精度和可追溯要求不同，因此岸端必须把服务对象和权限边界明确化。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card" id="access-platform">
+                                <h3>接入平台</h3>
+                                <p>负责身份校验、基本格式校验和流量控制，把外部不确定性隔离在边界层。</p>
+                            </div>
+                            <div class="slide-card" id="governance-platform">
+                                <h3>治理与存储</h3>
+                                <p>负责数据字典、口径一致、版本管理、质量规则和多类存储结构。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="service-portal">
+                                <h3>服务门户</h3>
+                                <p>向监管、运营、港口和第三方系统交付态势、回放、告警和远程运维服务。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="shore-roles">
+                        <h2><span class="section-kicker">3.3A</span>岸端角色与服务对象</h2>
+                        <p class="section-summary">不同岸端角色对同一批数据的需求并不相同。监管强调区域态势和事件回溯，运营强调跨船队对比和远程诊断，港口更关注计划与调度，第三方服务则关注信息产品交付。</p>
+                        <div class="four-col-grid">
+                            <div class="slide-card"><h4>监管服务</h4><p>区域态势、风险预警、事件复盘。</p></div>
+                            <div class="slide-card"><h4>航道与港口</h4><p>通航秩序、资源调度、靠离泊协同。</p></div>
+                            <div class="slide-card"><h4>船队运营</h4><p>远程运维、经营分析、跨船队对比。</p></div>
+                            <div class="slide-card accent-card"><h4>第三方服务</h4><p>信息产品交付、能力增强和开放接口。</p></div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">3.4</span>船联网接口类型</h2>
+                        <p class="section-summary">接口问题不只是协议名词问题，而是长期运行问题。设备接口、消息接口和服务接口分别解决不同层次的稳定性与协同问题。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card" id="device-interfaces">
+                                <h3>设备接口</h3>
+                                <p>连接设备与网关，重点是异构适配、字段口径和时间戳写入。</p>
+                            </div>
+                            <div class="slide-card" id="message-interfaces">
+                                <h3>消息接口</h3>
+                                <p>组织可订阅、可缓冲、可路由的数据流，重点是主题划分、优先级和重传。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="service-interfaces">
+                                <h3>服务接口</h3>
+                                <p>封装能力调用，重点是权限控制、审计记录和责任边界。</p>
+                            </div>
+                        </div>
+
+                        <div class="comparison-table table-responsive" style="margin-top: 1rem;" id="interface-table">
+                            <table style="width:100%; border-collapse:collapse; font-size:0.95rem;">
+                                <thead>
+                                    <tr style="background: var(--color-background-alt);">
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">接口类型</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">常见协议</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">主要目标</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">工程关注点</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">设备接口</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">NMEA 0183/2000, Modbus, CAN</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">设备输出可接入</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">异构适配、字段口径、时间戳写入</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">消息接口</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">MQTT, AMQP, HTTP/REST</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">数据可组织可缓冲</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">主题划分、优先级、采集时间保留</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">服务接口</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">REST API, gRPC</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">能力可调用可审计</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">权限控制、审计记录、责任边界</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="nmea-case">
+                        <h2><span class="section-kicker">3.4A</span>NMEA 与 IEC 61162 接口案例</h2>
+                        <p class="section-summary">NMEA 和 IEC 61162 的价值不只在于“能连上”，更在于它们让异构船用设备在长期运行中保持相对稳定的字段口径、时间语义和适配成本。</p>
+                        <div class="two-col-grid">
+                            <div class="slide-card">
+                                <h3>NMEA 0183 / 2000</h3>
+                                <p>分别对应串行语句格式和基于 CAN 总线的网络化连接，是船用电子设备长期使用的主流接口体系。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>IEC 61162</h3>
+                                <p>在 NMEA 基础上进行国际标准化，使设备互联、时间语义和字段解释更适合长期工程协作。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">3.5</span>体系运行策略</h2>
+                        <p class="section-summary">架构不是图画完就结束，真正的考验发生在链路波动、拥塞、断链和变更条件下。缓存补传、多链路调度和降级运行决定系统是否真正可用。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card" id="performance-intuition">
+                                <h3>性能指标影响直觉</h3>
+                                <p>许多航行应用更依赖稳定更新周期，而不是瞬时高吞吐。</p>
+                            </div>
+                            <div class="slide-card" id="cache-replay">
+                                <h3>缓存补传与一致性</h3>
+                                <p>断链期间保留关键数据，恢复后按策略补传并对账。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="degrade-run">
+                                <h3>降级运行与可追溯运维</h3>
+                                <p>网络变差时系统应进入更保守模式，而不是直接失去可用性。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="run-modes">
+                        <h2><span class="section-kicker">3.5A</span>正常、弱网、断链三种模式</h2>
+                        <p class="section-summary">船联网系统至少要定义三种运行模式，并明确每种模式下各层该如何调整行为。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card">
+                                <h3>正常联网</h3>
+                                <p>船岸双向同步，岸端增强服务可完整启用。</p>
+                            </div>
+                            <div class="slide-card">
+                                <h3>弱网模式</h3>
+                                <p>降低非关键上报频率，优先保障关键消息可达。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>断链模式</h3>
+                                <p>维持本地闭环运行，并把关键数据分级缓存等待补传。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="external-links">
+                        <h2><span class="section-kicker">LINK</span>外部参考链接</h2>
+                        <div class="resource-list" style="grid-template-columns: 1fr;">
+                            <a href="https://support.marinetraffic.com/en/articles/9552642-what-is-vessel-traffic-services-vts" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">VTS</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">MarineTraffic: What is VTS?</h5>
+                                    <p class="resource-meta">岸端监管与态势服务的公开说明</p>
+                                </div>
+                            </a>
+                            <a href="https://www.kongsberg.com/maritime/products/navigation/" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">Kongsberg</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">Kongsberg Maritime Navigation</h5>
+                                    <p class="resource-meta">综合船桥与导航系统产品线入口</p>
+                                </div>
+                            </a>
+                            <a href="https://www.iec.ch/standards" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">IEC</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">IEC Standards Portal</h5>
+                                    <p class="resource-meta">IEC 61162 等国际标准检索入口</p>
+                                </div>
+                            </a>
+                            <a href="https://www.dnv.com/maritime/insights/topics/smart-maritime/" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">DNV</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">DNV Smart Maritime</h5>
+                                    <p class="resource-meta">智能海事架构与行业趋势资料页</p>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
 
                     <h2 id="reading">延伸阅读</h2>
                     <ul>
                         <li>IMO e-Navigation 相关文件</li>
                         <li>中国船级社智能船舶相关规范</li>
+                        <li>IEC 61162 船用设备接口系列标准</li>
                     </ul>
 
                     <h2 id="questions">思考题</h2>
                     <ol>
-                        <li>为什么船联网需要分层架构，而不直接讨论某一种通信技术。</li>
-                        <li>举例说明一个航行应用的时效窗口，并给出可接受的降级形态。</li>
-                        <li>在船端与岸端之间划分功能时，你会优先考虑哪些约束。</li>
+                        <li>为什么体系架构章节必须先明确分层边界，再讨论某一种通信技术或某一种设备能力？</li>
+                        <li>对协同避碰类应用而言，为什么低时延通常比高带宽更关键？</li>
+                        <li>如果船端算力有限，哪些处理适合上移到岸端，哪些处理必须留在船端？</li>
+                        <li>为什么需要在接口层面明确采集时间和到达时间，而不能放到应用层临时处理？</li>
+                        <li>选择一个岸端角色，说明它最需要的三类信息产品，并解释其时效和可追溯要求。</li>
                     </ol>
 
                     <div class="callout">
@@ -109,17 +502,17 @@
                                     <p class="resource-meta">云边分工与降级运行</p>
                                 </div>
                             </a>
-                            <a href="../../interactive/diagrams/index.html" class="resource-item">
+                            <a href="../../interactive/diagrams/layered-architecture/index.html" class="resource-item">
                                 <span class="resource-number">图示</span>
                                 <div class="resource-content">
                                     <h5 class="resource-title">交互式架构图</h5>
-                                    <p class="resource-meta">点击查看分层要点与数据流</p>
+                                    <p class="resource-meta">查看分层要点与数据流</p>
                                 </div>
                             </a>
                         </div>
                     </div>
 
-                    <div style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border);">
+                    <div style="display:flex; justify-content:space-between; margin-top:3rem; padding-top:1.5rem; border-top:1px solid var(--color-border);">
                         <a href="../ch02/index.html" class="btn btn-secondary">← 上一章：船联网技术演变</a>
                         <a href="../ch04/index.html" class="btn btn-secondary">下一章：船载感知信息采集 →</a>
                     </div>
@@ -127,22 +520,50 @@
 
                 <aside class="sidebar-sticky">
                     <div class="card">
-                        <h4 style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--color-text-muted);">本章目录</h4>
+                        <h4 style="margin-bottom:1rem; font-size:0.875rem; color:var(--color-text-muted);">本章目录</h4>
                         <ul class="toc-list">
                             <li class="toc-item"><a href="#objectives" class="toc-link">学习目标</a></li>
-                            <li class="toc-item"><a href="#key" class="toc-link">知识要点</a></li>
-                            <li class="toc-item toc-h3"><a href="#layering" class="toc-link">3.1 分层架构</a></li>
-                            <li class="toc-item toc-h3"><a href="#constraints" class="toc-link">3.2 约束条件</a></li>
-                            <li class="toc-item toc-h3"><a href="#ship-shore" class="toc-link">3.3 船端岸端协同</a></li>
+                            <li class="toc-item"><a href="#roadmap" class="toc-link">章节路线图</a></li>
+                            <li class="toc-item"><a href="#layers" class="toc-link">3.1 分层模型</a></li>
+                            <li class="toc-item toc-h3"><a href="#sense-layer" class="toc-link">3.1.1 感知层</a></li>
+                            <li class="toc-item toc-h3"><a href="#transport-layer" class="toc-link">3.1.2 传输层</a></li>
+                            <li class="toc-item toc-h3"><a href="#compute-layer" class="toc-link">3.1.3 计算层</a></li>
+                            <li class="toc-item toc-h3"><a href="#app-layer" class="toc-link">3.1.4 应用层</a></li>
+                            <li class="toc-item toc-h3"><a href="#layer-metrics" class="toc-link">3.1A 层级指标</a></li>
+                            <li class="toc-item toc-h3"><a href="#layer-diagram" class="toc-link">3.1B 分层图</a></li>
+                            <li class="toc-item"><a href="#ship-side" class="toc-link">3.2 船端系统</a></li>
+                            <li class="toc-item toc-h3"><a href="#bridge-systems" class="toc-link">3.2.1 驾驶台系统</a></li>
+                            <li class="toc-item toc-h3"><a href="#engine-systems" class="toc-link">3.2.2 机舱系统</a></li>
+                            <li class="toc-item toc-h3"><a href="#cargo-systems" class="toc-link">3.2.3 货物系统</a></li>
+                            <li class="toc-item toc-h3"><a href="#gateway-edge" class="toc-link">3.2A 网关与边缘</a></li>
+                            <li class="toc-item toc-h3"><a href="#ship-diagram" class="toc-link">3.2B 船端结构图</a></li>
+                            <li class="toc-item"><a href="#shore-side" class="toc-link">3.3 岸端系统</a></li>
+                            <li class="toc-item toc-h3"><a href="#access-platform" class="toc-link">3.3.1 接入平台</a></li>
+                            <li class="toc-item toc-h3"><a href="#governance-platform" class="toc-link">3.3.2 治理与存储</a></li>
+                            <li class="toc-item toc-h3"><a href="#service-portal" class="toc-link">3.3.3 服务门户</a></li>
+                            <li class="toc-item toc-h3"><a href="#shore-roles" class="toc-link">3.3A 岸端角色</a></li>
+                            <li class="toc-item"><a href="#device-interfaces" class="toc-link">3.4 接口类型</a></li>
+                            <li class="toc-item toc-h3"><a href="#message-interfaces" class="toc-link">3.4.2 消息接口</a></li>
+                            <li class="toc-item toc-h3"><a href="#service-interfaces" class="toc-link">3.4.3 服务接口</a></li>
+                            <li class="toc-item toc-h3"><a href="#interface-table" class="toc-link">3.4A 接口表</a></li>
+                            <li class="toc-item toc-h3"><a href="#nmea-case" class="toc-link">3.4B NMEA/IEC 61162</a></li>
+                            <li class="toc-item"><a href="#run-strategy" class="toc-link">3.5 运行策略</a></li>
+                            <li class="toc-item toc-h3"><a href="#performance-intuition" class="toc-link">3.5.1 性能直觉</a></li>
+                            <li class="toc-item toc-h3"><a href="#cache-replay" class="toc-link">3.5.2 缓存补传</a></li>
+                            <li class="toc-item toc-h3"><a href="#degrade-run" class="toc-link">3.5.3 降级运行</a></li>
+                            <li class="toc-item toc-h3"><a href="#run-modes" class="toc-link">3.5A 三种模式</a></li>
+                            <li class="toc-item"><a href="#external-links" class="toc-link">外部参考链接</a></li>
                             <li class="toc-item"><a href="#reading" class="toc-link">延伸阅读</a></li>
                             <li class="toc-item"><a href="#questions" class="toc-link">思考题</a></li>
                         </ul>
                     </div>
 
-                    <div class="card meta-box" style="margin-top: 1.5rem;">
-                        <h4 style="margin-bottom: 0.5rem; font-size: 0.875rem;">章节信息</h4>
+                    <div class="card meta-box" style="margin-top:1.5rem;">
+                        <h4 style="margin-bottom:0.5rem; font-size:0.875rem;">章节信息</h4>
                         <p>对应课时：2课时</p>
                         <p>建议学时：90分钟</p>
+                        <p>教材定位：全书结构中轴</p>
+                        <p>后续衔接：第4-7章的共同结构前提</p>
                     </div>
                 </aside>
             </div>
@@ -164,4 +585,3 @@
     <script src="../../assets/js/main.js"></script>
 </body>
 </html>
-
