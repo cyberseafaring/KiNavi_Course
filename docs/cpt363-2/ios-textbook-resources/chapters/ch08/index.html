@@ -50,40 +50,549 @@
                         <span class="chapter-number">8</span>
                         <div>
                             <h1 style="margin-bottom: 0.25rem; font-size: 1.75rem;">典型应用发展趋势</h1>
-                            <p class="text-muted">智能航海、绿色航运、未来展望</p>
+                            <p class="text-muted">船岸协同、监管服务、远程运维、绿色航运、智能航海与标准约束</p>
                         </div>
                     </div>
 
-                    <h2 id="objectives">学习目标</h2>
-                    <p>本章把前面章节的技术链条落到应用场景，强调系统边界、运行特征和发展趋势判断。</p>
-                    <ul>
-                        <li>能够描述船岸协同的信息流与运行边界</li>
-                        <li>能够理解绿色航运对数据采集与报告的需求</li>
-                        <li>能够对典型趋势做基本判断并说明依据</li>
-                    </ul>
+                    <section class="slide-hero">
+                        <span class="slide-eyebrow">CHAPTER 08</span>
+                        <h2 class="slide-title">典型应用发展趋势</h2>
+                        <p class="slide-lead">前七章给出的是能力链条，本章把这些能力放进真实业务系统中理解。重点不在于记住系统名称，而在于读懂每类应用依赖哪些输入数据、完成哪些关键处理、输出什么信息、在什么边界下可靠运行，以及为什么某些应用在实验室可行而在海上必须重新定义约束。</p>
+                        <div class="highlight-strip">
+                            <div class="highlight-pill"><strong>航行支持</strong>船岸协同、动态优化、会遇管理</div>
+                            <div class="highlight-pill"><strong>监管服务</strong>区域态势、预警、指挥与取证</div>
+                            <div class="highlight-pill"><strong>运营服务</strong>远程运维、状态监控、预测性维护</div>
+                            <div class="highlight-pill"><strong>发展主线</strong>绿色航运、智能航海、标准与验证</div>
+                        </div>
+                    </section>
 
-                    <h2 id="key">知识要点</h2>
+                    <section class="slide-section" id="objectives">
+                        <h2><span class="section-kicker">GO</span>学习目标</h2>
+                        <p class="section-summary">本章围绕真实应用展开。读完后，应能用“输入数据、关键处理、输出信息、运行边界、可追溯性”这五个维度分析一个典型船联网系统。</p>
+                        <div class="four-col-grid">
+                            <div class="slide-card accent-card">
+                                <h3>识别应用类型</h3>
+                                <p>区分监管服务、航行支持、远程运维、绿色航运和智能航海应用。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>读懂信息流</h3>
+                                <p>说明每类系统的上行数据、下行服务和关键时效边界。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>把握运行边界</h3>
+                                <p>说明弱网、断链、数据退化和权限边界如何改变应用行为。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>形成趋势判断</h3>
+                                <p>结合约束条件而不是口号，判断哪些趋势值得长期关注。</p>
+                            </div>
+                        </div>
+                    </section>
 
-                    <h3 id="smart">8.1 船岸协同智能航海</h3>
-                    <p>船岸协同的关键在于把航行信息、运行状态和环境信息组织成可交付的信息产品，并在弱网条件下保持可用。协同边界需要清晰，避免把岸端建议当作船端自主决策的替代。</p>
+                    <section class="slide-section" id="roadmap">
+                        <h2><span class="section-kicker">MAP</span>章节路线图</h2>
+                        <p class="section-summary">本章依次展开船岸协同航行支持、海事监管、远程运维、绿色航运和智能航海展望，最后回到应用需求表达、标准约束与测试评估。</p>
+                        <div class="flow-steps">
+                            <div class="flow-step">
+                                <span class="step-index">1</span>
+                                <h3 id="ship-shore-support">船岸协同航行支持</h3>
+                                <p>看信息如何在船端与岸端之间流动并形成决策支持。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">2</span>
+                                <h3 id="regulatory-services">海事监管服务</h3>
+                                <p>看多源观测如何被组织成区域态势、预警和取证链条。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">3</span>
+                                <h3 id="remote-ops">远程运维与绿色航运</h3>
+                                <p>看状态闭环、能效数据和合规链条如何落地。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">4</span>
+                                <h3 id="smart-nav">智能航海与趋势</h3>
+                                <p>看能力边界、人机协同和标准框架如何约束未来应用。</p>
+                            </div>
+                        </div>
+                    </section>
 
-                    <h3 id="green">8.2 绿色航运</h3>
-                    <p>能效监测和碳排放管理把数据治理推向更加规范的层面。工程上更重要的是把数据来源、时间语义和审核链条写清楚，避免“指标好看但不可追溯”的数据产品。</p>
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">8.1</span>船岸协同航行支持</h2>
+                        <p class="section-summary">船岸协同航行支持把驾驶台决策与岸端信息服务连接起来。船端负责实时态势维护与操纵决策，岸端负责汇聚背景信息、区域服务和运行支持。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card" id="support-inputs">
+                                <h3>关键输入</h3>
+                                <p>航行态势摘要、关键运行状态、气象海况、航道与港口信息、监管提示。</p>
+                            </div>
+                            <div class="slide-card" id="support-process">
+                                <h3>关键处理</h3>
+                                <p>版本化计划管理、事件触发更新、协同会遇提示、岸端服务组织。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="support-outputs">
+                                <h3>关键输出</h3>
+                                <p>船端接收结构化服务提示，岸端接收态势摘要与关键告警，而不是全量原始数据流。</p>
+                            </div>
+                        </div>
+                    </section>
 
-                    <h3 id="trend">8.3 发展趋势</h3>
-                    <p>船联网的发展趋势可以从三条主线观察：更强的端侧智能、更稳定的多链路组织、更严格的数据与安全合规。趋势判断不依赖口号，而依赖约束条件是否发生变化。</p>
+                    <section class="slide-section" id="support-flow-diagram">
+                        <h2><span class="section-kicker">8.1A</span>船岸协同信息流图</h2>
+                        <p class="section-summary">这张图的重点是“数据产品化”。上行的不是所有原始数据，而是态势摘要、关键告警和运行状态；下行的也不是泛化指令，而是航道、港区、气象和协同提示等服务产品。</p>
+                        <div class="diagram-frame">
+                            <svg viewBox="0 0 1080 330" width="100%" role="img" aria-label="船岸协同航行支持信息流图">
+                                <rect x="80" y="95" width="220" height="120" rx="22" fill="#d8e9f7" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="145" y="138" font-size="26" fill="#2f528f" font-weight="700">船端</text>
+                                <text x="108" y="168" font-size="15" fill="#556271">态势显示 · 告警处理 · 本地决策</text>
+                                <text x="107" y="191" font-size="15" fill="#556271">关键功能断链可用</text>
+
+                                <rect x="430" y="65" width="250" height="180" rx="24" fill="#cfe2f3" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="505" y="105" font-size="26" fill="#2f528f" font-weight="700">船岸链路</text>
+                                <text x="462" y="135" font-size="15" fill="#556271">近岸：1-5 秒</text>
+                                <text x="462" y="157" font-size="15" fill="#556271">远洋：10-60 秒</text>
+                                <text x="462" y="179" font-size="15" fill="#556271">状态：正常 / 弱网 / 断链</text>
+                                <text x="462" y="201" font-size="15" fill="#556271">策略：摘要化 / 缓存 / 补传</text>
+
+                                <rect x="790" y="95" width="220" height="120" rx="22" fill="#adc8dd" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="855" y="138" font-size="26" fill="#2f528f" font-weight="700">岸端</text>
+                                <text x="824" y="168" font-size="15" fill="#556271">区域服务 · 优化建议 · 运行支持</text>
+                                <text x="832" y="191" font-size="15" fill="#556271">不替代船端操纵权</text>
+
+                                <line x1="300" y1="145" x2="430" y2="145" stroke="#4682b4" stroke-width="5"></line>
+                                <text x="314" y="128" font-size="14" fill="#556271">态势摘要 / 告警 / 状态上行</text>
+
+                                <line x1="790" y1="185" x2="680" y2="185" stroke="#dc9656" stroke-width="5"></line>
+                                <text x="688" y="206" font-size="14" fill="#7b5c43">航道 / 港区 / 气象 / 协同提示下行</text>
+                            </svg>
+                            <p class="diagram-caption">链路状态变化时，系统应自动调整同步策略。船端保持本地闭环，岸端服务在弱网和断链条件下转为增强能力而不是唯一依赖。</p>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="route-optimization">
+                        <h2><span class="section-kicker">8.1B</span>航线规划与动态优化</h2>
+                        <p class="section-summary">动态优化的关键不是“不断刷新建议”，而是按事件和版本更新，明确每次调整依据的海况、港口窗口和运行状态，并保留差异记录。</p>
+                        <div class="two-col-grid">
+                            <div class="slide-card">
+                                <h3>典型触发事件</h3>
+                                <ul>
+                                    <li>海况风险等级变化</li>
+                                    <li>港区通告更新</li>
+                                    <li>船舶状态异常</li>
+                                    <li>监管指令变化</li>
+                                </ul>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>核心边界</h3>
+                                <p>计划可以被建议、更新和比较，但应始终保留版本、差异和依据说明，使复盘能够回答“何时为何调整”。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="support-cases">
+                        <h2><span class="section-kicker">8.1C</span>案例：船岸协同航行支持</h2>
+                        <div class="resource-list" style="grid-template-columns: 1fr;">
+                            <a href="https://www.nyk.com/english/esg/safety/autonomous/" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">NYK</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">NYK Autonomous Ship / Remote Support</h5>
+                                    <p class="resource-meta">船岸协同、自主航行试验与远程支持背景资料</p>
+                                </div>
+                            </a>
+                            <a href="https://www.kongsberg.com/maritime/products/navigation/" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">Kongsberg</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">Kongsberg Maritime Navigation</h5>
+                                    <p class="resource-meta">综合船桥、协同导航和航行信息系统产品入口</p>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">8.2</span>海事监管服务</h2>
+                        <p class="section-summary">海事监管服务的核心是把多源观测组织成可解释的区域态势，并把监控、预警、指挥和回放串成一条连续证据链。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card" id="vts-monitor">
+                                <h3>目标监控</h3>
+                                <p>维护目标航迹和身份关联，形成区域态势底图。</p>
+                            </div>
+                            <div class="slide-card" id="vts-warning">
+                                <h3>风险预警</h3>
+                                <p>把 CPA/TCPA、偏航、禁区侵入等规则转为事件提示。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="vts-replay">
+                                <h3>回放取证</h3>
+                                <p>把时间轴、事件编号和关键证据片段连成可追溯链条。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="vts-chain-diagram">
+                        <h2><span class="section-kicker">8.2A</span>监管服务功能链条图</h2>
+                        <p class="section-summary">监管系统不是单纯的“大屏显示”，而是从多源观测、目标监控、风险预警、指挥协同到回放取证的一条功能链。</p>
+                        <div class="diagram-frame">
+                            <svg viewBox="0 0 1080 260" width="100%" role="img" aria-label="海事监管服务功能链条图">
+                                <rect x="40" y="90" width="180" height="60" rx="18" fill="#d8e9f7" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="79" y="127" font-size="22" fill="#2f528f" font-weight="700">多源观测</text>
+
+                                <rect x="260" y="90" width="180" height="60" rx="18" fill="#cfe2f3" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="305" y="127" font-size="22" fill="#2f528f" font-weight="700">目标监控</text>
+
+                                <rect x="480" y="90" width="180" height="60" rx="18" fill="#c2d9ef" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="525" y="127" font-size="22" fill="#2f528f" font-weight="700">风险预警</text>
+
+                                <rect x="700" y="90" width="180" height="60" rx="18" fill="#b8d0e4" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="745" y="127" font-size="22" fill="#2f528f" font-weight="700">指挥协同</text>
+
+                                <rect x="920" y="90" width="120" height="60" rx="18" fill="#adc8dd" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="940" y="127" font-size="22" fill="#2f528f" font-weight="700">回放取证</text>
+
+                                <line x1="220" y1="120" x2="260" y2="120" stroke="#4682b4" stroke-width="5"></line>
+                                <line x1="440" y1="120" x2="480" y2="120" stroke="#4682b4" stroke-width="5"></line>
+                                <line x1="660" y1="120" x2="700" y2="120" stroke="#4682b4" stroke-width="5"></line>
+                                <line x1="880" y1="120" x2="920" y2="120" stroke="#4682b4" stroke-width="5"></line>
+                            </svg>
+                            <p class="diagram-caption">链条上每一环都依赖统一时间轴、统一事件编号和统一证据索引。少了这些，预警、指挥和取证就会断开。</p>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="regulatory-cases">
+                        <h2><span class="section-kicker">8.2B</span>案例：监管服务与 VTS</h2>
+                        <div class="resource-list" style="grid-template-columns: 1fr;">
+                            <a href="https://www.iala.int/wiki/dictionary/index.php/Vessel_Traffic_Service_(VTS)" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">IALA</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">IALA VTS Definition</h5>
+                                    <p class="resource-meta">VTS 的国际定义与服务边界说明</p>
+                                </div>
+                            </a>
+                            <a href="https://www.shmsa.gov.cn/" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">SMSA</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">上海海事局</h5>
+                                    <p class="resource-meta">洋山港 VTS 与区域海事监管服务背景入口</p>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">8.3</span>远程运维与状态监控</h2>
+                        <p class="section-summary">远程运维的重点是形成发现、诊断、处置、验证的闭环，而不是简单把设备状态搬到岸端看板上。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card" id="ops-detect">
+                                <h3>发现</h3>
+                                <p>通过状态摘要、日志索引和趋势异常识别潜在问题。</p>
+                            </div>
+                            <div class="slide-card" id="ops-diagnose">
+                                <h3>诊断</h3>
+                                <p>区分设备退化、链路抖动和数据异常，避免误处置。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="ops-close-loop">
+                                <h3>处置与验证</h3>
+                                <p>处置必须可审计、可回滚，验证结果应能回到持续改进闭环。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="ops-loop-diagram">
+                        <h2><span class="section-kicker">8.3A</span>远程运维闭环图</h2>
+                        <p class="section-summary">远程运维闭环最关键的是证据链：从发现问题，到诊断，再到处置和验证，都要有时间、版本、操作主体和结果记录。</p>
+                        <div class="diagram-frame">
+                            <svg viewBox="0 0 980 260" width="100%" role="img" aria-label="远程运维闭环图">
+                                <rect x="80" y="90" width="160" height="60" rx="18" fill="#d8e9f7" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="126" y="127" font-size="22" fill="#2f528f" font-weight="700">发现</text>
+                                <rect x="290" y="90" width="160" height="60" rx="18" fill="#cfe2f3" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="336" y="127" font-size="22" fill="#2f528f" font-weight="700">诊断</text>
+                                <rect x="500" y="90" width="160" height="60" rx="18" fill="#c2d9ef" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="546" y="127" font-size="22" fill="#2f528f" font-weight="700">处置</text>
+                                <rect x="710" y="90" width="160" height="60" rx="18" fill="#adc8dd" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="756" y="127" font-size="22" fill="#2f528f" font-weight="700">验证</text>
+                                <line x1="240" y1="120" x2="290" y2="120" stroke="#4682b4" stroke-width="5"></line>
+                                <line x1="450" y1="120" x2="500" y2="120" stroke="#4682b4" stroke-width="5"></line>
+                                <line x1="660" y1="120" x2="710" y2="120" stroke="#4682b4" stroke-width="5"></line>
+                                <path d="M790 150 C790 220, 160 220, 160 150" fill="none" stroke="#5ca078" stroke-width="4"></path>
+                                <text x="425" y="235" font-size="18" fill="#3f6d54" font-weight="700">闭环：日志 · 快照 · 版本 · 工单 · 处置结果</text>
+                            </svg>
+                            <p class="diagram-caption">闭环不只是流程图，它决定单船经验能否沉淀为船队级改进能力，也决定误操作和重复故障能否被持续减少。</p>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="ops-cases">
+                        <h2><span class="section-kicker">8.3B</span>案例：远程运维平台</h2>
+                        <div class="resource-list" style="grid-template-columns: 1fr;">
+                            <a href="https://global.abb/group/en/industries/marine/service/abb-ability-marine-advisory-system" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">ABB</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">ABB Ability Marine Advisory</h5>
+                                    <p class="resource-meta">船队远程监控、状态监测与运维服务案例</p>
+                                </div>
+                            </a>
+                            <a href="https://www.man-es.com/marine/products/prime-serv" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">MAN</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">MAN PrimeServ Assist</h5>
+                                    <p class="resource-meta">发动机远程支持和健康管理服务</p>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">8.4</span>绿色航运服务</h2>
+                        <p class="section-summary">绿色航运应用把数据治理推向更严格的层次。重点不只是“算指标”，而是把能耗、航程、工况和环境背景组织成可核查、可回放、可解释的数据产品。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card" id="green-chain">
+                                <h3>数据链条</h3>
+                                <p>船端采集、船端汇总、岸端核算、对外上报和事后核查构成完整链条。</p>
+                            </div>
+                            <div class="slide-card" id="green-products">
+                                <h3>指标产品</h3>
+                                <p>摘要、航段对比、异常提示、合规报表都应具备时间范围和证据索引。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="green-risk">
+                                <h3>误差来源</h3>
+                                <p>计量点、校准状态、航程口径、环境背景和补传缺口都会影响解释结果。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="green-chain-diagram">
+                        <h2><span class="section-kicker">8.4A</span>绿色航运数据链条图</h2>
+                        <p class="section-summary">绿色航运链条从原始工况和消耗数据出发，一路经过汇总、核算、报送和核查。链条越长，口径一致、版本记录和证据索引越重要。</p>
+                        <div class="diagram-frame">
+                            <svg viewBox="0 0 1080 260" width="100%" role="img" aria-label="绿色航运数据链条图">
+                                <rect x="40" y="90" width="170" height="60" rx="18" fill="#d8e9f7" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="86" y="127" font-size="22" fill="#2f528f" font-weight="700">船端采集</text>
+                                <rect x="250" y="90" width="170" height="60" rx="18" fill="#cfe2f3" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="296" y="127" font-size="22" fill="#2f528f" font-weight="700">船端汇总</text>
+                                <rect x="460" y="90" width="170" height="60" rx="18" fill="#c2d9ef" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="506" y="127" font-size="22" fill="#2f528f" font-weight="700">岸端核算</text>
+                                <rect x="670" y="90" width="170" height="60" rx="18" fill="#b8d0e4" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="716" y="127" font-size="22" fill="#2f528f" font-weight="700">对外上报</text>
+                                <rect x="880" y="90" width="170" height="60" rx="18" fill="#adc8dd" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="926" y="127" font-size="22" fill="#2f528f" font-weight="700">核查追溯</text>
+                                <line x1="210" y1="120" x2="250" y2="120" stroke="#4682b4" stroke-width="5"></line>
+                                <line x1="420" y1="120" x2="460" y2="120" stroke="#4682b4" stroke-width="5"></line>
+                                <line x1="630" y1="120" x2="670" y2="120" stroke="#4682b4" stroke-width="5"></line>
+                                <line x1="840" y1="120" x2="880" y2="120" stroke="#4682b4" stroke-width="5"></line>
+                            </svg>
+                            <p class="diagram-caption">绿色指标产品必须回答“数据来自哪里、在什么工况下产生、是否经过校准与处理、是否存在缺口与补传”。少了这些元数据，指标只能算出来，不能被信任。</p>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="green-cases">
+                        <h2><span class="section-kicker">8.4B</span>案例：绿色航运与能效平台</h2>
+                        <div class="resource-list" style="grid-template-columns: 1fr;">
+                            <a href="https://www.mol.co.jp/en/technology/ishin/" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">MOL</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">MOL ISHIN</h5>
+                                    <p class="resource-meta">智能节能船舶与能效监控项目介绍</p>
+                                </div>
+                            </a>
+                            <a href="https://www.imo.org/en/OurWork/Environment/Pages/Carbon-Intensity-Indicator-(CII)-background.aspx" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">IMO</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">IMO CII Background</h5>
+                                    <p class="resource-meta">碳强度指标背景与合规框架</p>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">8.5</span>智能航海展望</h2>
+                        <p class="section-summary">智能航海可以理解为把更多一致性检查、态势组织、风险提示和远程支持交给系统，而把最终操纵权和关键责任留给人。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card" id="smart-capabilities">
+                                <h3>能力分解</h3>
+                                <p>多源感知、风险评估、意图协同、远程支持是智能航海的基础能力。</p>
+                            </div>
+                            <div class="slide-card" id="human-machine">
+                                <h3>人机协同</h3>
+                                <p>提示、建议和动作必须对应不同自动化等级和不同接管要求。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="validation-boundary">
+                                <h3>验证与边界</h3>
+                                <p>越接近动作执行，越需要可验证、可解释、可降级和可接管。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="smart-nav-diagram">
+                        <h2><span class="section-kicker">8.5A</span>智能航海能力分解图</h2>
+                        <p class="section-summary">能力分解图的重点是把底层能力和上层输出区分开。底层提供感知、评估和协同，上层输出提示、建议和动作。越往上，边界越严格。</p>
+                        <div class="diagram-frame">
+                            <svg viewBox="0 0 980 360" width="100%" role="img" aria-label="智能航海能力分解图">
+                                <rect x="110" y="230" width="180" height="58" rx="18" fill="#d8e9f7" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="150" y="264" font-size="20" fill="#2f528f" font-weight="700">多源感知</text>
+                                <rect x="320" y="230" width="180" height="58" rx="18" fill="#cfe2f3" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="360" y="264" font-size="20" fill="#2f528f" font-weight="700">风险评估</text>
+                                <rect x="530" y="230" width="180" height="58" rx="18" fill="#c2d9ef" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="570" y="264" font-size="20" fill="#2f528f" font-weight="700">意图协同</text>
+                                <rect x="740" y="230" width="180" height="58" rx="18" fill="#b8d0e4" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="780" y="264" font-size="20" fill="#2f528f" font-weight="700">远程支持</text>
+
+                                <rect x="210" y="90" width="160" height="56" rx="16" fill="#ffffff" stroke="#7aa7cf" stroke-width="3"></rect>
+                                <text x="255" y="123" font-size="22" fill="#2f528f" font-weight="700">提示</text>
+                                <rect x="420" y="90" width="160" height="56" rx="16" fill="#ffffff" stroke="#7aa7cf" stroke-width="3"></rect>
+                                <text x="465" y="123" font-size="22" fill="#2f528f" font-weight="700">建议</text>
+                                <rect x="630" y="90" width="160" height="56" rx="16" fill="#fff7ec" stroke="#dc9656" stroke-width="3"></rect>
+                                <text x="675" y="123" font-size="22" fill="#9d5b24" font-weight="700">动作</text>
+
+                                <line x1="200" y1="230" x2="290" y2="146" stroke="#4682b4" stroke-width="4"></line>
+                                <line x1="410" y1="230" x2="500" y2="146" stroke="#4682b4" stroke-width="4"></line>
+                                <line x1="620" y1="230" x2="710" y2="146" stroke="#dc9656" stroke-width="4"></line>
+                                <line x1="830" y1="230" x2="710" y2="146" stroke="#dc9656" stroke-width="4"></line>
+                            </svg>
+                            <p class="diagram-caption">提示和建议类输出在断链条件下更容易由船端独立生成；越靠近动作执行，越需要更严格的验证、审计和人工接管点。</p>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="smart-cases">
+                        <h2><span class="section-kicker">8.5B</span>案例：智能航海项目</h2>
+                        <div class="resource-list" style="grid-template-columns: 1fr;">
+                            <a href="https://www.yara.com/news-and-media/press-kits/yara-birkeland-press-kit/" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">Yara</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">Yara Birkeland Press Kit</h5>
+                                    <p class="resource-meta">零排放自主航行集装箱船项目资料</p>
+                                </div>
+                            </a>
+                            <a href="https://www.wartsila.com/marine/products/navigation-and-positioning/fleet-optimisation-solution" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">Wärtsilä</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">Fleet Optimisation Solution</h5>
+                                    <p class="resource-meta">航线优化、气象海况整合与建议输出</p>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">8.6</span>需求表达、标准约束与测试评估</h2>
+                        <p class="section-summary">应用系统长期运行的关键，不只是功能实现，而是把需求表达、标准框架、安全边界和测试评估放到同一个可持续演进的结构里。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card" id="requirement-form">
+                                <h3>需求表达</h3>
+                                <p>需求不仅要写功能，还要写输入输出、时效边界、降级行为和证据链要求。</p>
+                            </div>
+                            <div class="slide-card" id="standard-frame">
+                                <h3>标准框架</h3>
+                                <p>标准的意义在于降低跨主体协作成本，把语义一致和接口一致落到规则上。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="test-eval">
+                                <h3>测试评估</h3>
+                                <p>验收不应只看“能不能用”，还要看弱网、异常和边界条件下是否仍然可控。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="perf-req-table">
+                        <h2><span class="section-kicker">8.6A</span>典型应用的性能需求表</h2>
+                        <p class="section-summary">应用需求可以用更新周期、允许延迟、可用性目标和降级要求来表达。这样需求才能直接落到架构和测试上。</p>
+                        <div class="comparison-table table-responsive">
+                            <table style="width:100%; border-collapse:collapse; font-size:0.95rem;">
+                                <thead>
+                                    <tr style="background: var(--color-background-alt);">
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">应用类型</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">更新周期</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">允许延迟</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">降级要求</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">态势显示</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">秒级</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">&lt; 30 秒</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">标出时效不足与来源退化</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">协同避碰提示</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">秒级</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">&lt; 20 秒</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">超时后转保守模式或请求人工复核</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">远程运维监控</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">分钟级</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">&lt; 10 分钟</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">船端保持本地告警与日志</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">能效统计分析</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">10-30 分钟</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">&lt; 1 小时</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">允许延迟计算，但必须标注缺口与补传</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="external-links">
+                        <h2><span class="section-kicker">LINK</span>外部参考链接</h2>
+                        <div class="resource-list" style="grid-template-columns: 1fr;">
+                            <a href="https://www.imo.org/en/OurWork/Environment/Pages/Carbon-Intensity-Indicator-(CII)-background.aspx" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">IMO</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">IMO CII Background</h5>
+                                    <p class="resource-meta">绿色航运与碳强度指标背景资料</p>
+                                </div>
+                            </a>
+                            <a href="https://iho.int/en/s-100-universal-hydrographic-data-model" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">IHO</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">IHO S-100</h5>
+                                    <p class="resource-meta">海事数据交换框架与产品规范入口</p>
+                                </div>
+                            </a>
+                            <a href="https://www.nyk.com/english/esg/safety/autonomous/" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">NYK</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">NYK Autonomous Ship Initiatives</h5>
+                                    <p class="resource-meta">自主航行与远程支持项目页</p>
+                                </div>
+                            </a>
+                            <a href="https://www.yara.com/news-and-media/press-kits/yara-birkeland-press-kit/" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">Yara</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">Yara Birkeland</h5>
+                                    <p class="resource-meta">自主航行零排放船项目资料</p>
+                                </div>
+                            </a>
+                            <a href="https://www.mol.co.jp/en/technology/ishin/" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">MOL</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">MOL ISHIN</h5>
+                                    <p class="resource-meta">智能节能船舶与绿色航运案例</p>
+                                </div>
+                            </a>
+                            <a href="https://www.wartsila.com/marine/products/navigation-and-positioning/fleet-optimisation-solution" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">Wärtsilä</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">Fleet Optimisation Solution</h5>
+                                    <p class="resource-meta">航线优化与运营建议产品页</p>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
 
                     <h2 id="reading">延伸阅读</h2>
                     <ul>
-                        <li>IMO 温室气体减排相关公开文件</li>
-                        <li>智能航运与智慧海事相关政策资料</li>
+                        <li>IMO 温室气体减排与 CII 相关公开文件</li>
+                        <li>IHO S-100 及其相关产品规范</li>
+                        <li>智能航运与智慧海事相关政策和项目资料</li>
                     </ul>
 
                     <h2 id="questions">思考题</h2>
                     <ol>
-                        <li>船岸协同的边界应如何定义，哪些信息不适合由岸端直接指令化。</li>
-                        <li>绿色航运场景下，为什么证据链比单次实时性更重要。</li>
-                        <li>结合本书内容，给出一个你认为最关键的技术趋势并说明依据。</li>
+                        <li>选择一个典型应用系统，列出其最关键的输入数据产品与最容易失效的环节。</li>
+                        <li>对绿色航运应用而言，为什么需要把指标做成可追溯的数据产品而不是单一数值？</li>
+                        <li>对协同避碰提示类应用而言，哪些输出只能做建议，哪些动作必须保留人工确认？</li>
+                        <li>监管服务为什么比一般显示系统更依赖统一事件编号和证据链？</li>
+                        <li>你认为未来五年最值得关注的应用方向是什么？请说明依据和边界条件。</li>
                     </ol>
 
                     <div class="callout">
@@ -93,50 +602,91 @@
                                 <span class="resource-number">L15</span>
                                 <div class="resource-content">
                                     <h5 class="resource-title">船岸协同智能航海应用</h5>
-                                    <p class="resource-meta">协同避碰与远程运维</p>
+                                    <p class="resource-meta">协同避碰、航行支持与远程运维</p>
                                 </div>
                             </a>
                             <a href="../../lectures/L16/index.html" class="resource-item">
                                 <span class="resource-number">L16</span>
                                 <div class="resource-content">
                                     <h5 class="resource-title">绿色航运未来展望</h5>
-                                    <p class="resource-meta">能效监测与趋势研讨</p>
+                                    <p class="resource-meta">能效数据、趋势与合规要求</p>
+                                </div>
+                            </a>
+                            <a href="../../interactive/simulations/trajectory-player/index.html" class="resource-item">
+                                <span class="resource-number">Sim</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">轨迹回放模拟</h5>
+                                    <p class="resource-meta">用于理解态势摘要、延迟与回放边界</p>
                                 </div>
                             </a>
                             <a href="../../interactive/quizzes/index.html" class="resource-item">
-                                <span class="resource-number">测验</span>
+                                <span class="resource-number">Quiz</span>
                                 <div class="resource-content">
                                     <h5 class="resource-title">章节测验</h5>
-                                    <p class="resource-meta">用小题检验关键概念</p>
+                                    <p class="resource-meta">用小题检验输入、输出与边界理解</p>
                                 </div>
                             </a>
                         </div>
                     </div>
 
-                    <div style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border);">
+                    <div style="display:flex; justify-content:space-between; margin-top:3rem; padding-top:1.5rem; border-top:1px solid var(--color-border);">
                         <a href="../ch07/index.html" class="btn btn-secondary">← 上一章：船联网安全机制</a>
-                        <span class="text-muted">下一章 →</span>
+                        <span class="text-muted">课程章节到此结束</span>
                     </div>
                 </article>
 
                 <aside class="sidebar-sticky">
                     <div class="card">
-                        <h4 style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--color-text-muted);">本章目录</h4>
+                        <h4 style="margin-bottom:1rem; font-size:0.875rem; color:var(--color-text-muted);">本章目录</h4>
                         <ul class="toc-list">
                             <li class="toc-item"><a href="#objectives" class="toc-link">学习目标</a></li>
-                            <li class="toc-item"><a href="#key" class="toc-link">知识要点</a></li>
-                            <li class="toc-item toc-h3"><a href="#smart" class="toc-link">8.1 船岸协同智能航海</a></li>
-                            <li class="toc-item toc-h3"><a href="#green" class="toc-link">8.2 绿色航运</a></li>
-                            <li class="toc-item toc-h3"><a href="#trend" class="toc-link">8.3 发展趋势</a></li>
+                            <li class="toc-item"><a href="#roadmap" class="toc-link">章节路线图</a></li>
+                            <li class="toc-item"><a href="#ship-shore-support" class="toc-link">8.1 船岸协同支持</a></li>
+                            <li class="toc-item toc-h3"><a href="#support-inputs" class="toc-link">8.1.1 输入</a></li>
+                            <li class="toc-item toc-h3"><a href="#support-process" class="toc-link">8.1.2 处理</a></li>
+                            <li class="toc-item toc-h3"><a href="#support-outputs" class="toc-link">8.1.3 输出</a></li>
+                            <li class="toc-item toc-h3"><a href="#support-flow-diagram" class="toc-link">8.1A 信息流图</a></li>
+                            <li class="toc-item toc-h3"><a href="#route-optimization" class="toc-link">8.1B 动态优化</a></li>
+                            <li class="toc-item toc-h3"><a href="#support-cases" class="toc-link">8.1C 案例链接</a></li>
+                            <li class="toc-item"><a href="#regulatory-services" class="toc-link">8.2 海事监管服务</a></li>
+                            <li class="toc-item toc-h3"><a href="#vts-monitor" class="toc-link">8.2.1 目标监控</a></li>
+                            <li class="toc-item toc-h3"><a href="#vts-warning" class="toc-link">8.2.2 风险预警</a></li>
+                            <li class="toc-item toc-h3"><a href="#vts-replay" class="toc-link">8.2.3 回放取证</a></li>
+                            <li class="toc-item toc-h3"><a href="#vts-chain-diagram" class="toc-link">8.2A 功能链条图</a></li>
+                            <li class="toc-item toc-h3"><a href="#regulatory-cases" class="toc-link">8.2B VTS 案例</a></li>
+                            <li class="toc-item"><a href="#remote-ops" class="toc-link">8.3 远程运维</a></li>
+                            <li class="toc-item toc-h3"><a href="#ops-detect" class="toc-link">8.3.1 发现</a></li>
+                            <li class="toc-item toc-h3"><a href="#ops-diagnose" class="toc-link">8.3.2 诊断</a></li>
+                            <li class="toc-item toc-h3"><a href="#ops-close-loop" class="toc-link">8.3.3 闭环</a></li>
+                            <li class="toc-item toc-h3"><a href="#ops-loop-diagram" class="toc-link">8.3A 运维闭环图</a></li>
+                            <li class="toc-item toc-h3"><a href="#ops-cases" class="toc-link">8.3B 运维案例</a></li>
+                            <li class="toc-item"><a href="#green-chain" class="toc-link">8.4 绿色航运</a></li>
+                            <li class="toc-item toc-h3"><a href="#green-products" class="toc-link">8.4.2 指标产品</a></li>
+                            <li class="toc-item toc-h3"><a href="#green-risk" class="toc-link">8.4.3 误差来源</a></li>
+                            <li class="toc-item toc-h3"><a href="#green-chain-diagram" class="toc-link">8.4A 绿色链条图</a></li>
+                            <li class="toc-item toc-h3"><a href="#green-cases" class="toc-link">8.4B 绿色案例</a></li>
+                            <li class="toc-item"><a href="#smart-nav" class="toc-link">8.5 智能航海</a></li>
+                            <li class="toc-item toc-h3"><a href="#smart-capabilities" class="toc-link">8.5.1 能力分解</a></li>
+                            <li class="toc-item toc-h3"><a href="#human-machine" class="toc-link">8.5.2 人机协同</a></li>
+                            <li class="toc-item toc-h3"><a href="#validation-boundary" class="toc-link">8.5.3 验证边界</a></li>
+                            <li class="toc-item toc-h3"><a href="#smart-nav-diagram" class="toc-link">8.5A 能力图</a></li>
+                            <li class="toc-item toc-h3"><a href="#smart-cases" class="toc-link">8.5B 智能案例</a></li>
+                            <li class="toc-item"><a href="#requirement-form" class="toc-link">8.6 需求与标准</a></li>
+                            <li class="toc-item toc-h3"><a href="#standard-frame" class="toc-link">8.6.2 标准框架</a></li>
+                            <li class="toc-item toc-h3"><a href="#test-eval" class="toc-link">8.6.3 测试评估</a></li>
+                            <li class="toc-item toc-h3"><a href="#perf-req-table" class="toc-link">8.6A 性能需求表</a></li>
+                            <li class="toc-item"><a href="#external-links" class="toc-link">外部参考链接</a></li>
                             <li class="toc-item"><a href="#reading" class="toc-link">延伸阅读</a></li>
                             <li class="toc-item"><a href="#questions" class="toc-link">思考题</a></li>
                         </ul>
                     </div>
 
-                    <div class="card meta-box" style="margin-top: 1.5rem;">
-                        <h4 style="margin-bottom: 0.5rem; font-size: 0.875rem;">章节信息</h4>
+                    <div class="card meta-box" style="margin-top:1.5rem;">
+                        <h4 style="margin-bottom:0.5rem; font-size:0.875rem;">章节信息</h4>
                         <p>对应课时：2课时</p>
-                        <p>建议学时：90分钟</p>
+                        <p>建议学时：120 分钟</p>
+                        <p>教材定位：全书应用收束章</p>
+                        <p>新增特点：案例更多、外链更多、每类应用边界更明确</p>
                     </div>
                 </aside>
             </div>
@@ -158,4 +708,3 @@
     <script src="../../assets/js/main.js"></script>
 </body>
 </html>
-
