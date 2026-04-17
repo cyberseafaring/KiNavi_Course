@@ -1,0 +1,7 @@
+record_time,data_product,dict_version,parser_version,ship_side_version,status,notes
+2026-04-10T09:00:00Z,ais_track_summary,v1.9,p2.4,s3.1,active,baseline release
+2026-04-12T09:00:00Z,ais_track_summary,v2.0,p2.5,s3.1,gray,added sog_quality field
+2026-04-13T09:00:00Z,engine_health_index,v1.2,p1.8,s2.7,active,thresholds aligned
+2026-04-14T09:00:00Z,engine_health_index,v1.3,p1.9,s2.8,gray,unit normalization changed
+2026-04-15T09:00:00Z,route_event_log,v1.0,p1.1,s1.4,active,first production use
+2026-04-16T09:00:00Z,ais_track_summary,v2.0,p2.5,s3.1,active,full fleet rollout

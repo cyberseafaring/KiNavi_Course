@@ -50,40 +50,534 @@
                         <span class="chapter-number">6</span>
                         <div>
                             <h1 style="margin-bottom: 0.25rem; font-size: 1.75rem;">船联网数据治理</h1>
-                            <p class="text-muted">解析存储、时间语义、融合共享</p>
+                            <p class="text-muted">解析、存储、融合、分析、共享、一致性与样本数据示例</p>
                         </div>
                     </div>
 
-                    <h2 id="objectives">学习目标</h2>
-                    <p>本章回答一个问题：船联网数据如何从报文变成可复用的信息产品，并在多系统之间保持一致与可追溯。</p>
-                    <ul>
-                        <li>能够区分采集时间、到达时间、处理时间等时间语义</li>
-                        <li>能够理解解析、存储、融合、共享的处理链条</li>
-                        <li>能够说明数据字典与版本管理在工程中的作用</li>
-                    </ul>
+                    <section class="slide-hero">
+                        <span class="slide-eyebrow">CHAPTER 06</span>
+                        <h2 class="slide-title">船联网数据治理</h2>
+                        <p class="slide-lead">船联网的数据处理不是“把数据存起来”这么简单，而是要在链路受限、多源异构和多方协作条件下，让数据可用、可追溯、可共享、可回放，并在必要时支撑实时应用。真正稳定的系统，靠的不是单次解析成功，而是贯穿全链路的数据字典、时间语义、版本管理、质量标注和补传规则。</p>
+                        <div class="highlight-strip">
+                            <div class="highlight-pill"><strong>解析</strong>把原始输入变成结构化字段并附加质量语义</div>
+                            <div class="highlight-pill"><strong>存储</strong>原始层、清洗层、产品层分层留存</div>
+                            <div class="highlight-pill"><strong>融合分析</strong>对齐时间轴、关联目标、生成指标与异常</div>
+                            <div class="highlight-pill"><strong>共享一致性</strong>让数据产品在弱网条件下仍可解释、可审计</div>
+                        </div>
+                    </section>
 
-                    <h2 id="key">知识要点</h2>
+                    <section class="slide-section" id="objectives">
+                        <h2><span class="section-kicker">GO</span>学习目标</h2>
+                        <p class="section-summary">本章把数据从产生到共享的整个治理链条拆开。读完后，应能解释每个环节解决的问题、输入输出是什么，以及为什么数据治理决定系统长期可用性。</p>
+                        <div class="four-col-grid">
+                            <div class="slide-card accent-card">
+                                <h3>理解时间语义</h3>
+                                <p>区分采集时间、到达时间、处理时间和时间来源状态。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>理解字典与口径</h3>
+                                <p>知道同一字段为何会因参考系、单位和来源不同而不可比。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>理解样本分析</h3>
+                                <p>能用简单统计识别缺测、延迟、重复、超界和版本漂移。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>理解一致性</h3>
+                                <p>解释断链补传、去重乱序、版本对账如何共同形成长期可用的数据底座。</p>
+                            </div>
+                        </div>
+                    </section>
 
-                    <h3 id="types">6.1 数据类型分层</h3>
-                    <p>船联网数据可按航行态势、运行状态、环境信息和业务数据进行分层。分层的目的是把采集频率、时效窗口与存储成本放在同一框架下讨论，避免把所有数据都当作“实时数据”。</p>
+                    <section class="slide-section" id="roadmap">
+                        <h2><span class="section-kicker">MAP</span>章节路线图</h2>
+                        <p class="section-summary">本章先给出数据处理链条，再依次进入数据类型与时间语义、数据字典、解析异常、存储分层、融合分析、共享机制和一致性来源，最后用样本数据做最基础的分析示例。</p>
+                        <div class="flow-steps">
+                            <div class="flow-step">
+                                <span class="step-index">1</span>
+                                <h3 id="data-chain">数据链条</h3>
+                                <p>从解析、存储、融合、分析到共享的完整路径。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">2</span>
+                                <h3 id="parse-govern">解析与治理</h3>
+                                <p>时间语义、字典、异常表达与质量标注。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">3</span>
+                                <h3 id="store-fuse">存储与融合</h3>
+                                <p>原始层、清洗层、产品层与多源融合流程。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">4</span>
+                                <h3 id="share-consistency">共享与一致性</h3>
+                                <p>共享边界、断链补传、去重乱序、版本对账。</p>
+                            </div>
+                        </div>
+                    </section>
 
-                    <h3 id="time">6.2 时间语义</h3>
-                    <p>同一条数据在系统中可能同时存在多种时间戳。没有清晰的时间语义，融合与回放会出现系统性偏差。工程上应明确每个时间戳的来源与含义，并把同步策略作为系统能力的一部分。</p>
+                    <section class="slide-section" id="data-chain-diagram">
+                        <h2><span class="section-kicker">6.1</span>数据处理链条图</h2>
+                        <p class="section-summary">这张图把第六章的核心问题放在一条线上。解析让数据可读，存储让数据可留，融合让数据可比，分析让数据可用，共享让数据可交付；贯穿其中的是时间语义、数据字典、版本管理和审计追溯。</p>
+                        <div class="diagram-frame">
+                            <svg viewBox="0 0 1080 300" width="100%" role="img" aria-label="船联网数据处理链条图">
+                                <rect x="40" y="90" width="150" height="80" rx="20" fill="#d8e9f7" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="86" y="137" font-size="26" fill="#2f528f" font-weight="700">解析</text>
+                                <text x="72" y="160" font-size="14" fill="#556271">结构化 + 质量标注</text>
 
-                    <h3 id="pipeline">6.3 解析存储融合</h3>
-                    <p>数据处理链条通常经历解析、清洗、结构化存储、融合加工和共享交付。关键不在于使用哪一种数据库，而在于明确原始层、清洗层和产品层的边界，并保持证据链可追溯。</p>
+                                <rect x="235" y="90" width="150" height="80" rx="20" fill="#cfe2f3" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="281" y="137" font-size="26" fill="#2f528f" font-weight="700">存储</text>
+                                <text x="257" y="160" font-size="14" fill="#556271">原始层 / 清洗层 / 产品层</text>
+
+                                <rect x="430" y="90" width="150" height="80" rx="20" fill="#c2d9ef" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="476" y="137" font-size="26" fill="#2f528f" font-weight="700">融合</text>
+                                <text x="454" y="160" font-size="14" fill="#556271">对齐 + 关联 + 降权</text>
+
+                                <rect x="625" y="90" width="150" height="80" rx="20" fill="#b8d0e4" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="671" y="137" font-size="26" fill="#2f528f" font-weight="700">分析</text>
+                                <text x="650" y="160" font-size="14" fill="#556271">指标 + 趋势 + 异常</text>
+
+                                <rect x="820" y="90" width="150" height="80" rx="20" fill="#adc8dd" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="866" y="137" font-size="26" fill="#2f528f" font-weight="700">共享</text>
+                                <text x="843" y="160" font-size="14" fill="#556271">数据产品 + 审计追溯</text>
+
+                                <line x1="190" y1="130" x2="235" y2="130" stroke="#4682b4" stroke-width="5"></line>
+                                <line x1="385" y1="130" x2="430" y2="130" stroke="#4682b4" stroke-width="5"></line>
+                                <line x1="580" y1="130" x2="625" y2="130" stroke="#4682b4" stroke-width="5"></line>
+                                <line x1="775" y1="130" x2="820" y2="130" stroke="#4682b4" stroke-width="5"></line>
+
+                                <rect x="150" y="220" width="700" height="40" rx="16" fill="#fff7ec" stroke="#dc9656" stroke-width="3"></rect>
+                                <text x="255" y="246" font-size="18" fill="#9d5b24" font-weight="700">数据字典 · 时间语义 · 版本管理 · 审计追溯</text>
+                            </svg>
+                            <p class="diagram-caption">数据量从原始输入逐步精炼为高价值数据产品，异常也会沿链条反馈回前序环节。没有贯穿全链路的一致规则，后续每一步都难以稳定工作。</p>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">6.2</span>数据类型与时间语义</h2>
+                        <p class="section-summary">数据治理的核心不是先分数据库，而是先分数据形态和时间语义。不同形态的数据，治理机制也不同。</p>
+                        <div class="four-col-grid">
+                            <div class="slide-card" id="state-streams">
+                                <h3>连续状态流</h3>
+                                <p>GNSS、机舱参数、链路指标等，强调更新周期与缺测处理。</p>
+                            </div>
+                            <div class="slide-card" id="event-streams">
+                                <h3>事件流</h3>
+                                <p>告警、状态切换、操作审计等，强调唯一标识和时间顺序。</p>
+                            </div>
+                            <div class="slide-card" id="batch-files">
+                                <h3>批量文件</h3>
+                                <p>日志、报表、更新包等，强调校验和、断点续传和对账。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="service-data">
+                                <h3>服务数据</h3>
+                                <p>配置、规则、区域服务等，强调生效时间、版本和权限控制。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="time-semantics">
+                        <h2><span class="section-kicker">6.2A</span>时间语义是融合与回放的基础</h2>
+                        <p class="section-summary">同一条数据可能同时拥有采集时间、到达时间、处理时间和时间来源状态。若这些信息不清楚，断链补传、融合关联和回放排序都会出现系统性偏差。</p>
+                        <div class="comparison-table table-responsive">
+                            <table style="width:100%; border-collapse:collapse; font-size:0.95rem;">
+                                <thead>
+                                    <tr style="background: var(--color-background-alt);">
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">时间类型</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">含义</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">主要用途</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">采集时间</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">物理事件发生时刻</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">融合、回放、趋势分析主时间轴</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">到达时间</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">系统收到数据时刻</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">评估链路延迟、补传与乱序</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">处理时间</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">系统完成处理时刻</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">诊断系统状态与处理开销</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">时间来源状态</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">GNSS 授时、保持模式、人工修正等</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">解释时间轴可靠性与时钟退化</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">6.3</span>数据字典与口径统一</h2>
+                        <p class="section-summary">数据字典不是文档工作，而是运行工作。字段名称、单位、参考系、缺测表达、来源标识和版本号共同决定一条数据能否长期可解释、跨船可比、跨版本可追溯。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card" id="dict-elements">
+                                <h3>最小元数据集合</h3>
+                                <p>字段名、单位、参考基准、缺测表达、来源和版本，是数据字典最基本的六类要素。</p>
+                            </div>
+                            <div class="slide-card" id="dict-drift">
+                                <h3>口径漂移的来源</h3>
+                                <p>对地/对水速度混用、相对风/真风混用、单位换算丢精度、字段含义变更不留痕。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="dict-versioning">
+                                <h3>版本管理的作用</h3>
+                                <p>让解析规则和数据字典变化可追溯、可回滚、可对账，而不是让问题在几周后才暴露。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="dict-flow">
+                        <h2><span class="section-kicker">6.3A</span>字典变更的基本流程</h2>
+                        <p class="section-summary">字典治理最怕“口头变更”。稳妥做法是：提出变更、发布版本、灰度验证、全量切换、保留证据。</p>
+                        <div class="flow-steps">
+                            <div class="flow-step">
+                                <span class="step-index">1</span>
+                                <h3>提出变更</h3>
+                                <p>说明新增、修改或废弃的字段及原因。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">2</span>
+                                <h3>发布版本</h3>
+                                <p>生成新版本号，并同步船岸解析配置。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">3</span>
+                                <h3>灰度验证</h3>
+                                <p>在小范围航次中比对关键指标与质量指标。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">4</span>
+                                <h3>全量切换</h3>
+                                <p>验证通过后全船队切换，并保留回滚路径。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">6.4</span>解析流程与异常处理</h2>
+                        <p class="section-summary">解析的目标不仅是把原始输入拆成字段，还要给每个字段附加时间语义和质量标注。解析层不应静默修正异常，而应把异常转换成可传递、可追溯的状态。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card" id="parse-steps">
+                                <h3>解析步骤</h3>
+                                <p>格式校验、字段提取、单位换算、枚举映射、时间戳写入、质量标注。</p>
+                            </div>
+                            <div class="slide-card" id="parse-errors">
+                                <h3>常见异常</h3>
+                                <p>校验失败、字段超界、时间戳回退、消息重复、乱序到达、不可用编码。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="parse-severity">
+                                <h3>异常分级</h3>
+                                <p>严重错误阻断、可疑值降权、信息提示留给运维与复盘。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="sample-data">
+                        <h2><span class="section-kicker">6.4A</span>样本数据集</h2>
+                        <p class="section-summary">为了让这一章不只停留在概念层面，页面直接挂了几组可点击的数据样本。它们覆盖 AIS 质量问题、时间对齐、多源融合、机舱监测和版本审计。</p>
+                        <div class="resource-list" style="grid-template-columns: 1fr;">
+                            <a href="../../datasets/governance/ais_quality_batch.csv" class="resource-item">
+                                <span class="resource-number">CSV</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">AIS 质量批样本</h5>
+                                    <p class="resource-meta">包含正常、延迟、超界、重复、不可用编码等情况</p>
+                                </div>
+                            </a>
+                            <a href="../../datasets/governance/fusion_alignment_sample.csv" class="resource-item">
+                                <span class="resource-number">CSV</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">融合时间对齐样本</h5>
+                                    <p class="resource-meta">AIS / 雷达 / 光电三源对齐与关联示例</p>
+                                </div>
+                            </a>
+                            <a href="../../datasets/governance/engine_monitor_sample.csv" class="resource-item">
+                                <span class="resource-number">CSV</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">机舱监测样本</h5>
+                                    <p class="resource-meta">RPM、燃油流量、温度与告警标志</p>
+                                </div>
+                            </a>
+                            <a href="../../datasets/governance/version_audit_sample.csv" class="resource-item">
+                                <span class="resource-number">CSV</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">版本审计样本</h5>
+                                    <p class="resource-meta">数据产品版本、解析版本与灰度状态记录</p>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="analysis-ais">
+                        <h2><span class="section-kicker">6.4B</span>简单分析样例 1：AIS 质量统计</h2>
+                        <p class="section-summary">先看 `ais_quality_batch.csv`。这组样本只有 15 行，但已经足够展示治理系统最常见的四类问题：延迟、超界、重复和不可用编码。</p>
+                        <div class="comparison-table table-responsive">
+                            <table style="width:100%; border-collapse:collapse; font-size:0.95rem;">
+                                <thead>
+                                    <tr style="background: var(--color-background-alt);">
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">质量状态</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">样本数</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">占比</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">典型问题</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">normal</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">8</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">53.3%</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">可直接进入清洗层</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">delayed</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">4</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">26.7%</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">队列积压、卫星延迟</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">suspect</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">2</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">13.3%</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">坐标超界、航速不合理</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">missing / duplicate</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">1 / 1</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">6.7% / 6.7%</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">航向不可用、重试后重复写入</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="teacher-note">
+                            <strong>解释方式：</strong>这类统计不是为了“挑出坏数据”，而是为了让系统知道当前数据链条里哪一类问题最常见，应该先去修哪一段。
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="analysis-fusion">
+                        <h2><span class="section-kicker">6.4C</span>简单分析样例 2：三源时间对齐</h2>
+                        <p class="section-summary">再看 `fusion_alignment_sample.csv`。其中 `T002` 的 AIS 位置和雷达/光电差异明显，说明单源观测不能直接作为融合结果；`T004` 的 AIS 明显延迟，但雷达和光电仍可维持目标连续。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card">
+                                <h3>T001</h3>
+                                <p>AIS、雷达、光电三源对齐良好，可形成高置信融合航迹。</p>
+                            </div>
+                            <div class="slide-card">
+                                <h3>T002</h3>
+                                <p>AIS 出现异常位置与速度，若不先降权，融合会把错误带进主航迹。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>T004</h3>
+                                <p>AIS 延迟较大，但雷达和光电保持连续，可用作延迟补偿与降权依据。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="analysis-engine">
+                        <h2><span class="section-kicker">6.4D</span>简单分析样例 3：机舱监测趋势</h2>
+                        <p class="section-summary">`engine_monitor_sample.csv` 展示了一段连续机舱监测序列。`08:07` 到 `08:09` RPM、燃油流量和温度同步升高，同时告警标志被置位，这类“多字段联动”比单个字段超界更适合用于健康趋势判断。</p>
+                        <div class="two-col-grid">
+                            <div class="slide-card">
+                                <h3>样本中能看到什么</h3>
+                                <ul>
+                                    <li>08:06 行是重复记录，不能直接计入统计</li>
+                                    <li>08:07-08:09 进入可疑区间</li>
+                                    <li>08:10 之后恢复正常，说明不是持续性故障</li>
+                                </ul>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>分析结论如何写</h3>
+                                <p>不要只写“温度高了”，而要写“在 rpm 和 fuel_flow 同步抬升的背景下，jacket_temp 和 lube_oil_temp 连续上升，且报警位有效，建议作为短时高负荷或冷却异常候选事件保留证据片段”。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="sample-code">
+                        <h2><span class="section-kicker">6.4E</span>最简单的分析代码样例</h2>
+                        <p class="section-summary">下面这段 Python 示例足够让学生把“质量状态计数”和“平均延迟”跑出来，作为理解数据治理入门的最小实践。</p>
+                        <pre style="padding:1rem; border-radius:12px; background:#0f1720; color:#e8eef5; overflow:auto;"><code>import pandas as pd
+
+df = pd.read_csv("ais_quality_batch.csv")
+
+quality_counts = df["quality_status"].value_counts()
+avg_delay = df.groupby("quality_status")["delay_s"].mean().round(2)
+
+print("quality counts:")
+print(quality_counts)
+print("\naverage delay by quality:")
+print(avg_delay)</code></pre>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">6.5</span>存储分层与数据产品</h2>
+                        <p class="section-summary">更可控的存储方式是区分原始层、清洗层和产品层。这样一来，指标异常时可以回到原始层追溯来源，规则变化时也能从原始层重新生成后续层。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card" id="raw-layer">
+                                <h3>原始层</h3>
+                                <p>保存解析后的最原始字段及质量标注，尽量不做不可逆修正。</p>
+                            </div>
+                            <div class="slide-card" id="clean-layer">
+                                <h3>清洗层</h3>
+                                <p>完成去重、缺测处理、单位统一、异常标记，使数据可用于统计和融合。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="product-layer">
+                                <h3>产品层</h3>
+                                <p>保存态势摘要、风险等级、能效指标、事件回放索引等业务产品。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="fusion-flow">
+                        <h2><span class="section-kicker">6.5A</span>多源融合流程图</h2>
+                        <p class="section-summary">AIS、雷达和光电数据在进入融合前，需要先解析、标注、时间对齐，再做目标关联和置信度判断。融合失败时，系统应降级输出而不是伪装成高可信结果。</p>
+                        <div class="diagram-frame">
+                            <svg viewBox="0 0 1080 300" width="100%" role="img" aria-label="多源融合流程图">
+                                <rect x="50" y="120" width="120" height="56" rx="16" fill="#d8e9f7" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="91" y="154" font-size="22" fill="#2f528f" font-weight="700">AIS</text>
+                                <rect x="195" y="120" width="120" height="56" rx="16" fill="#d8e9f7" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="224" y="154" font-size="22" fill="#2f528f" font-weight="700">雷达</text>
+                                <rect x="340" y="120" width="120" height="56" rx="16" fill="#d8e9f7" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="366" y="154" font-size="22" fill="#2f528f" font-weight="700">光电</text>
+
+                                <rect x="500" y="120" width="140" height="56" rx="16" fill="#cfe2f3" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="530" y="154" font-size="22" fill="#2f528f" font-weight="700">解析标注</text>
+
+                                <rect x="680" y="120" width="140" height="56" rx="16" fill="#c2d9ef" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="707" y="154" font-size="22" fill="#2f528f" font-weight="700">时间对齐</text>
+
+                                <rect x="860" y="120" width="150" height="56" rx="16" fill="#b8d0e4" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="885" y="154" font-size="22" fill="#2f528f" font-weight="700">目标关联</text>
+
+                                <line x1="170" y1="148" x2="195" y2="148" stroke="#4682b4" stroke-width="4"></line>
+                                <line x1="315" y1="148" x2="340" y2="148" stroke="#4682b4" stroke-width="4"></line>
+                                <line x1="460" y1="148" x2="500" y2="148" stroke="#4682b4" stroke-width="4"></line>
+                                <line x1="640" y1="148" x2="680" y2="148" stroke="#4682b4" stroke-width="4"></line>
+                                <line x1="820" y1="148" x2="860" y2="148" stroke="#4682b4" stroke-width="4"></line>
+
+                                <rect x="760" y="220" width="250" height="48" rx="16" fill="#fff7ec" stroke="#dc9656" stroke-width="3"></rect>
+                                <text x="804" y="250" font-size="18" fill="#9d5b24" font-weight="700">输出高 / 中 / 低置信航迹</text>
+                            </svg>
+                            <p class="diagram-caption">融合输出需要携带来源贡献和置信度等级。来源越完整、时间越一致，输出越可靠；当某一来源退化时，系统应显式降级而不是静默掩盖不确定性。</p>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">6.6</span>数据分析与展示</h2>
+                        <p class="section-summary">统计与展示的价值，不在于图表多，而在于口径稳定、时间轴一致、异常可解释。实时监测指标和航次评价指标通常要分开设计。</p>
+                        <div class="two-col-grid">
+                            <div class="slide-card" id="metrics-system">
+                                <h3>质量评估指标</h3>
+                                <p>完整性、时效性、准确性、一致性，构成数据治理最常见的四类评估指标。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="anomaly-chain">
+                                <h3>异常检测与告警链条</h3>
+                                <p>先识别数据异常，再判断运行异常；告警需要可确认、可记录、可复盘。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="display-guidelines">
+                        <h2><span class="section-kicker">6.6A</span>面向航行的信息表达</h2>
+                        <p class="section-summary">展示系统要把治理结果转成可理解提示，而不是只在后台保存标注。驾驶台需要看懂风险和不确定性，岸端需要顺着证据链回到原始层。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card"><h4>驾驶台视角</h4><p>突出关键风险、时效不足和来源退化。</p></div>
+                            <div class="slide-card"><h4>岸端运维视角</h4><p>突出证据链、版本、回放和对比分析。</p></div>
+                            <div class="slide-card accent-card"><h4>一致时间轴</h4><p>回放必须按采集时间排序，并显式标出补传与延迟。</p></div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">6.7</span>数据共享机制</h2>
+                        <p class="section-summary">共享的核心不是“能不能看到表”，而是“谁在什么时间看到什么粒度的数据，并且能不能追溯其来源、版本和权限依据”。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card" id="share-roles">
+                                <h3>共享角色</h3>
+                                <p>船端、岸端、监管服务和第三方服务对同一数据的需求并不相同。</p>
+                            </div>
+                            <div class="slide-card" id="share-forms">
+                                <h3>共享接口形式</h3>
+                                <p>文件批量、消息流和服务调用，各自适配不同业务时效与链路条件。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="product-evidence">
+                                <h3>数据产品与证据链</h3>
+                                <p>合格的数据产品应包含字段、时间范围、来源标识、质量标注和版本信息。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">6.8</span>一致性与断链补传机制</h2>
+                        <p class="section-summary">船联网的一致性主要来自时间一致、口径一致和版本一致。链路波动条件下，更现实的目标是最终一致，而不是强一致的实时全局视图。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card" id="consistency-source">
+                                <h3>一致性的工程来源</h3>
+                                <p>统一授时、数据字典、版本号写入和对账机制共同决定一致性水平。</p>
+                            </div>
+                            <div class="slide-card" id="offline-cache">
+                                <h3>断链缓存与补传</h3>
+                                <p>缓存容量、淘汰规则、补传顺序和延迟标记决定恢复后能否正确回放。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="dedupe-version">
+                                <h3>去重、乱序与版本对账</h3>
+                                <p>唯一标识、幂等处理和灰度验证共同支撑长期演进。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="external-links">
+                        <h2><span class="section-kicker">LINK</span>外部参考链接</h2>
+                        <div class="resource-list" style="grid-template-columns: 1fr;">
+                            <a href="https://pandas.pydata.org/docs/" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">pandas</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">Pandas Documentation</h5>
+                                    <p class="resource-meta">表格数据清洗与统计分析常用工具文档</p>
+                                </div>
+                            </a>
+                            <a href="https://libais.readthedocs.io/en/latest/" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">libais</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">libais</h5>
+                                    <p class="resource-meta">AIS 报文解析开源项目文档</p>
+                                </div>
+                            </a>
+                            <a href="https://www.ndbc.noaa.gov/" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">NDBC</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">NOAA NDBC</h5>
+                                    <p class="resource-meta">海洋环境观测公开数据服务</p>
+                                </div>
+                            </a>
+                            <a href="https://www.coscoshipping.com/" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">COSCO</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">COSCO Shipping</h5>
+                                    <p class="resource-meta">大型船队数字化与运营背景参考</p>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
 
                     <h2 id="reading">延伸阅读</h2>
                     <ul>
-                        <li>NMEA 相关公开字段说明资料</li>
-                        <li>公开 AIS 数据解析资料</li>
+                        <li>NMEA 与 AIS 字段说明资料</li>
+                        <li>真实海洋环境观测公开数据资料</li>
+                        <li>Pandas / SQL 在时序数据治理中的基础用法</li>
                     </ul>
 
                     <h2 id="questions">思考题</h2>
                     <ol>
-                        <li>为什么需要区分采集时间与到达时间，它们会如何影响融合。</li>
-                        <li>原始层与产品层数据的保存策略应如何权衡。</li>
-                        <li>当数据字典版本发生变化时，如何保持历史数据可用。</li>
+                        <li>为什么同一类数据在船端和岸端可能需要不同的存储结构？</li>
+                        <li>AIS、雷达和光电融合中，时间戳不一致会造成哪些可观察的误差现象？</li>
+                        <li>解析阶段遇到坐标超界和不可用编码时，系统应如何标注并向上游传递？</li>
+                        <li>为什么版本对账不能只比记录数，还要比关键业务指标和质量指标？</li>
+                        <li>如果只能保留一套最小治理机制，你会优先保留哪些元数据字段，为什么？</li>
                     </ol>
 
                     <div class="callout">
@@ -107,13 +601,20 @@
                                 <span class="resource-number">Lab05</span>
                                 <div class="resource-content">
                                     <h5 class="resource-title">船舶轨迹可视化</h5>
-                                    <p class="resource-meta">回放与指标计算</p>
+                                    <p class="resource-meta">回放、清洗与指标计算</p>
+                                </div>
+                            </a>
+                            <a href="../../labs/lab07/index.html" class="resource-item">
+                                <span class="resource-number">Lab07</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">多源数据融合实践</h5>
+                                    <p class="resource-meta">把时间对齐和关联流程落到数据上</p>
                                 </div>
                             </a>
                         </div>
                     </div>
 
-                    <div style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border);">
+                    <div style="display:flex; justify-content:space-between; margin-top:3rem; padding-top:1.5rem; border-top:1px solid var(--color-border);">
                         <a href="../ch05/index.html" class="btn btn-secondary">← 上一章：海上通信网络基础</a>
                         <a href="../ch07/index.html" class="btn btn-secondary">下一章：船联网安全机制 →</a>
                     </div>
@@ -121,22 +622,57 @@
 
                 <aside class="sidebar-sticky">
                     <div class="card">
-                        <h4 style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--color-text-muted);">本章目录</h4>
+                        <h4 style="margin-bottom:1rem; font-size:0.875rem; color:var(--color-text-muted);">本章目录</h4>
                         <ul class="toc-list">
                             <li class="toc-item"><a href="#objectives" class="toc-link">学习目标</a></li>
-                            <li class="toc-item"><a href="#key" class="toc-link">知识要点</a></li>
-                            <li class="toc-item toc-h3"><a href="#types" class="toc-link">6.1 数据类型分层</a></li>
-                            <li class="toc-item toc-h3"><a href="#time" class="toc-link">6.2 时间语义</a></li>
-                            <li class="toc-item toc-h3"><a href="#pipeline" class="toc-link">6.3 解析存储融合</a></li>
+                            <li class="toc-item"><a href="#roadmap" class="toc-link">章节路线图</a></li>
+                            <li class="toc-item"><a href="#data-chain" class="toc-link">6.1 数据链条</a></li>
+                            <li class="toc-item toc-h3"><a href="#data-chain-diagram" class="toc-link">6.1A 处理链条图</a></li>
+                            <li class="toc-item"><a href="#parse-govern" class="toc-link">6.2 类型与时间语义</a></li>
+                            <li class="toc-item toc-h3"><a href="#state-streams" class="toc-link">6.2.1 连续状态流</a></li>
+                            <li class="toc-item toc-h3"><a href="#event-streams" class="toc-link">6.2.2 事件流</a></li>
+                            <li class="toc-item toc-h3"><a href="#batch-files" class="toc-link">6.2.3 批量文件</a></li>
+                            <li class="toc-item toc-h3"><a href="#service-data" class="toc-link">6.2.4 服务数据</a></li>
+                            <li class="toc-item toc-h3"><a href="#time-semantics" class="toc-link">6.2A 时间语义</a></li>
+                            <li class="toc-item"><a href="#dict-elements" class="toc-link">6.3 数据字典</a></li>
+                            <li class="toc-item toc-h3"><a href="#dict-drift" class="toc-link">6.3.2 口径漂移</a></li>
+                            <li class="toc-item toc-h3"><a href="#dict-versioning" class="toc-link">6.3.3 版本管理</a></li>
+                            <li class="toc-item toc-h3"><a href="#dict-flow" class="toc-link">6.3A 变更流程</a></li>
+                            <li class="toc-item"><a href="#parse-steps" class="toc-link">6.4 解析流程</a></li>
+                            <li class="toc-item toc-h3"><a href="#parse-errors" class="toc-link">6.4.2 常见异常</a></li>
+                            <li class="toc-item toc-h3"><a href="#parse-severity" class="toc-link">6.4.3 异常分级</a></li>
+                            <li class="toc-item toc-h3"><a href="#sample-data" class="toc-link">6.4A 样本数据集</a></li>
+                            <li class="toc-item toc-h3"><a href="#analysis-ais" class="toc-link">6.4B AIS 统计</a></li>
+                            <li class="toc-item toc-h3"><a href="#analysis-fusion" class="toc-link">6.4C 融合对齐</a></li>
+                            <li class="toc-item toc-h3"><a href="#analysis-engine" class="toc-link">6.4D 机舱趋势</a></li>
+                            <li class="toc-item toc-h3"><a href="#sample-code" class="toc-link">6.4E 代码示例</a></li>
+                            <li class="toc-item"><a href="#store-fuse" class="toc-link">6.5 存储与融合</a></li>
+                            <li class="toc-item toc-h3"><a href="#raw-layer" class="toc-link">6.5.1 原始层</a></li>
+                            <li class="toc-item toc-h3"><a href="#clean-layer" class="toc-link">6.5.2 清洗层</a></li>
+                            <li class="toc-item toc-h3"><a href="#product-layer" class="toc-link">6.5.3 产品层</a></li>
+                            <li class="toc-item toc-h3"><a href="#fusion-flow" class="toc-link">6.5A 融合流程图</a></li>
+                            <li class="toc-item"><a href="#metrics-system" class="toc-link">6.6 分析与展示</a></li>
+                            <li class="toc-item toc-h3"><a href="#anomaly-chain" class="toc-link">6.6.2 异常链条</a></li>
+                            <li class="toc-item toc-h3"><a href="#display-guidelines" class="toc-link">6.6A 展示规范</a></li>
+                            <li class="toc-item"><a href="#share-consistency" class="toc-link">6.7 共享机制</a></li>
+                            <li class="toc-item toc-h3"><a href="#share-roles" class="toc-link">6.7.1 共享角色</a></li>
+                            <li class="toc-item toc-h3"><a href="#share-forms" class="toc-link">6.7.2 接口形式</a></li>
+                            <li class="toc-item toc-h3"><a href="#product-evidence" class="toc-link">6.7.3 数据产品</a></li>
+                            <li class="toc-item"><a href="#consistency-source" class="toc-link">6.8 一致性与补传</a></li>
+                            <li class="toc-item toc-h3"><a href="#offline-cache" class="toc-link">6.8.2 断链缓存</a></li>
+                            <li class="toc-item toc-h3"><a href="#dedupe-version" class="toc-link">6.8.3 去重与对账</a></li>
+                            <li class="toc-item"><a href="#external-links" class="toc-link">外部参考链接</a></li>
                             <li class="toc-item"><a href="#reading" class="toc-link">延伸阅读</a></li>
                             <li class="toc-item"><a href="#questions" class="toc-link">思考题</a></li>
                         </ul>
                     </div>
 
-                    <div class="card meta-box" style="margin-top: 1.5rem;">
-                        <h4 style="margin-bottom: 0.5rem; font-size: 0.875rem;">章节信息</h4>
+                    <div class="card meta-box" style="margin-top:1.5rem;">
+                        <h4 style="margin-bottom:0.5rem; font-size:0.875rem;">章节信息</h4>
                         <p>对应课时：2课时</p>
-                        <p>建议学时：90分钟</p>
+                        <p>建议学时：120 分钟</p>
+                        <p>教材定位：数据治理与系统可持续运行核心章</p>
+                        <p>新增样本：4 组治理数据样本 + 分析示例</p>
                     </div>
                 </aside>
             </div>
@@ -158,4 +694,3 @@
     <script src="../../assets/js/main.js"></script>
 </body>
 </html>
-
