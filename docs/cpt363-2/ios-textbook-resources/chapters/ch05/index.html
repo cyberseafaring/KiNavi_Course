@@ -50,40 +50,622 @@
                         <span class="chapter-number">5</span>
                         <div>
                             <h1 style="margin-bottom: 0.25rem; font-size: 1.75rem;">海上通信网络基础</h1>
-                            <p class="text-muted">链路特性、多链路组织、降级策略</p>
+                            <p class="text-muted">通信基础补课、海上链路差异、多链路策略与选型方法</p>
                         </div>
                     </div>
 
-                    <h2 id="objectives">学习目标</h2>
-                    <p>本章聚焦海上通信的工程特性，说明链路指标如何影响航行应用，并给出多链路组织与降级运行的基本思路。</p>
-                    <ul>
-                        <li>能够用带宽、时延、抖动、丢包、可用性描述链路状态</li>
-                        <li>能够比较 VHF、卫星、蜂窝、港区专网的适用条件</li>
-                        <li>能够解释多链路组织与降级策略的基本原则</li>
-                    </ul>
+                    <section class="slide-hero">
+                        <span class="slide-eyebrow">CHAPTER 05</span>
+                        <h2 class="slide-title">海上通信网络基础</h2>
+                        <p class="slide-lead">船联网最容易出问题的环节，往往不是算法，而是链路。近岸和远洋的覆盖、带宽、时延、费用差异巨大，系统若不承认这些差异，就会把通信问题伪装成应用问题，最终在航行监控、船岸协同和远程运维中表现为不可解释的失效。</p>
+                        <div class="highlight-strip">
+                            <div class="highlight-pill"><strong>基础概念</strong>先把带宽、时延、抖动、丢包、吞吐讲清楚</div>
+                            <div class="highlight-pill"><strong>链路类型</strong>船内、船船、船岸、卫星、蜂窝、短报文</div>
+                            <div class="highlight-pill"><strong>组织方法</strong>分级、缓存、补传、主备切换、费用控制</div>
+                            <div class="highlight-pill"><strong>工程判断</strong>让学生能解释为什么近岸能跑、远洋难持续</div>
+                        </div>
+                    </section>
 
-                    <h2 id="key">知识要点</h2>
+                    <section class="slide-section" id="objectives">
+                        <h2><span class="section-kicker">GO</span>学习目标</h2>
+                        <p class="section-summary">本章除了讲海上通信链路，也补足通信基础。目标不是做复杂推导，而是让读者具备足够的工程直觉，能从链路指标和业务需求出发解释系统表现。</p>
+                        <div class="four-col-grid">
+                            <div class="slide-card accent-card">
+                                <h3>理解指标</h3>
+                                <p>用带宽、吞吐、时延、抖动、丢包、可用性描述链路状态。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>理解协议</h3>
+                                <p>理解 TCP、UDP、HTTP、MQTT、请求响应与发布订阅的工程含义。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>理解海上差异</h3>
+                                <p>比较船内网络、船船通信、船岸通信、卫星、蜂窝和短报文链路。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>理解选型</h3>
+                                <p>能根据业务分级、海区条件和费用约束给出可解释的链路选型方案。</p>
+                            </div>
+                        </div>
+                    </section>
 
-                    <h3 id="metrics">5.1 指标与表现</h3>
-                    <p>通信指标对航行应用的影响往往以“信息迟到”“信息丢失”和“信息不连续”的形式出现。把这些表现映射回带宽、时延、抖动与丢包，可以更直接地定位问题属于链路还是属于应用设计。</p>
+                    <section class="slide-section" id="roadmap">
+                        <h2><span class="section-kicker">MAP</span>章节路线图</h2>
+                        <p class="section-summary">本章先补通信基础，再进入海上链路差异，随后讨论船内网络、船船与船岸通信、多链路组织、缓存补传、安全接入，最后收束到一套可执行的链路选型方法。</p>
+                        <div class="flow-steps">
+                            <div class="flow-step">
+                                <span class="step-index">1</span>
+                                <h3 id="basics">通信基础</h3>
+                                <p>先把指标、分层和常见协议的工程直觉建立起来。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">2</span>
+                                <h3 id="links">链路类型</h3>
+                                <p>看船内、船船、船岸和不同海区主链路的差异。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">3</span>
+                                <h3 id="multilink">多链路组织</h3>
+                                <p>看主备切换、分流并行、分级队列和补传机制。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">4</span>
+                                <h3 id="selection">选型方法</h3>
+                                <p>把应用需求、海区窗口和运行策略合并成可执行方案。</p>
+                            </div>
+                        </div>
+                    </section>
 
-                    <h3 id="links">5.2 链路类型</h3>
-                    <p>海上通信往往同时存在多种链路。近岸阶段可以使用蜂窝网络，远洋阶段更依赖卫星通信，港区可能存在专用网络。链路选型应由业务需求驱动，并把费用、覆盖和可靠性纳入同一套权衡框架。</p>
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">5.1</span>通信基础概念</h2>
+                        <p class="section-summary">对航海技术专业学生而言，通信基础最重要的是建立“现象和指标”的对应关系。系统卡顿、断续、错序，不是抽象问题，而是链路指标在应用层的具体表现。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card" id="bit-byte">
+                                <h3>比特、字节与速率</h3>
+                                <p>比特是最小信息单位，字节通常等于 8 比特。链路速率常用 bps、kbps、Mbps 描述，表示单位时间最多能传多少数据。</p>
+                            </div>
+                            <div class="slide-card" id="throughput-vs-bandwidth">
+                                <h3>带宽与吞吐</h3>
+                                <p>带宽表示理论上限，吞吐表示实际有效传输量。系统真正感受到的是吞吐，而不是宣传参数。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="latency-family">
+                                <h3>时延、抖动、丢包</h3>
+                                <p>时延决定信息到达快慢，抖动决定节奏是否稳定，丢包决定连续性是否被破坏。</p>
+                            </div>
+                        </div>
+                    </section>
 
-                    <h3 id="multi">5.3 多链路组织</h3>
-                    <p>多链路并不是简单的并联叠加。系统需要明确优先级、切换条件和缓存补传策略，避免频繁切换引起的抖动放大。对于关键信息，更可取的方式是定义摘要模式与低频保底通道。</p>
+                    <section class="slide-section" id="metrics">
+                        <h2><span class="section-kicker">5.1A</span>把指标和现象对应起来</h2>
+                        <p class="section-summary">读链路状态时，最重要的是把数字和应用表现联系起来。这样当系统出现“迟到、丢失、不连续”时，才能先判断是链路问题还是应用设计问题。</p>
+                        <div class="comparison-table table-responsive">
+                            <table style="width:100%; border-collapse:collapse; font-size:0.95rem;">
+                                <thead>
+                                    <tr style="background: var(--color-background-alt);">
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">指标</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">直观含义</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">常见现象</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">工程动作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">带宽</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">单位时间最大可传输量</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">视频卡顿，大包上传失败</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">摘要化、压缩、拆包</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">时延</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">数据到达所需时间</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">远程交互滞后，态势过期</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">降低交互频率，转摘要模式</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">抖动</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">时延波动程度</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">显示节奏忽快忽慢，时间错序</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">缓冲、时间戳对齐</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">丢包</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">传输中数据被丢失</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">轨迹断点、重传变慢</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">重传、分级发送、切换链路</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">可用性</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">链路在时间上能否持续使用</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">海区切换中断、长时间掉线</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">本地闭环、缓存补传</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="metric-actions">
+                        <h2><span class="section-kicker">5.1B</span>指标退化时系统该怎么做</h2>
+                        <p class="section-summary">当链路退化时，最稳妥的策略通常不是强行维持原模式，而是先减压、再分级、最后切换。这样能把退化控制在可解释范围内。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card">
+                                <h3>时延突然升高</h3>
+                                <p>先降低上报频率，保留关键告警与态势摘要，再判断是否切换链路。</p>
+                            </div>
+                            <div class="slide-card">
+                                <h3>丢包与抖动上升</h3>
+                                <p>先引入缓冲和时间对齐，再限制低优先级数据，避免队列积压继续恶化。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>带宽和可用性下降</h3>
+                                <p>优先让系统进入弱网模式或断链模式，而不是让所有业务一起失控。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="protocol-stack">
+                        <h2><span class="section-kicker">5.1C</span>通信分层与常见协议</h2>
+                        <p class="section-summary">通信协议可以按层次理解。零基础阶段最重要的是知道每一层在解决什么问题，而不是记住所有标准细节。</p>
+                        <div class="four-col-grid">
+                            <div class="slide-card"><h4>链路层</h4><p>解决比特传输和接入方式，例如以太网、Wi-Fi、LTE。</p></div>
+                            <div class="slide-card"><h4>网络层</h4><p>解决寻址和路由，例如 IPv4/IPv6。</p></div>
+                            <div class="slide-card"><h4>传输层</h4><p>解决端到端传输控制，例如 TCP、UDP、QUIC。</p></div>
+                            <div class="slide-card accent-card"><h4>应用层</h4><p>组织业务语义，例如 HTTP、MQTT、AMQP、CoAP。</p></div>
+                        </div>
+                        <div class="teacher-note">
+                            <strong>理解重点：</strong>问题定位要先分层。应用层超时不一定是物理链路坏了，物理链路稳定也不代表应用层一定可靠。
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="tcp-udp">
+                        <h2><span class="section-kicker">5.1D</span>TCP 与 UDP 的工程直觉</h2>
+                        <p class="section-summary">TCP 更强调可靠交付，UDP 更强调低开销和低时延。它们没有绝对优劣，关键是业务更需要“可靠”还是“时效”。</p>
+                        <div class="two-col-grid">
+                            <div class="slide-card">
+                                <h3>TCP</h3>
+                                <ul>
+                                    <li>通过确认与重传尽量保证数据到达</li>
+                                    <li>在高时延链路上，握手和重传会放大等待时间</li>
+                                    <li>适合文件下载、更新包、关键日志回传等任务</li>
+                                </ul>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>UDP</h3>
+                                <ul>
+                                    <li>不保证到达，但开销更小</li>
+                                    <li>更适合对时效要求更高、上层可容错的场景</li>
+                                    <li>常用于实时性更重要的监控与态势分发</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="patterns">
+                        <h2><span class="section-kicker">5.1E</span>请求响应和发布订阅</h2>
+                        <p class="section-summary">HTTP 更接近请求响应，MQTT 更接近发布订阅。海上链路高时延、易中断，频繁短连接往往会放大等待时间，因此连接复用和持续会话非常重要。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card">
+                                <h3>请求响应</h3>
+                                <p>适合不频繁的查询、配置、文件下载和回执操作。</p>
+                            </div>
+                            <div class="slide-card">
+                                <h3>发布订阅</h3>
+                                <p>适合持续上报、事件推送和状态广播，天然适配分级主题管理。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>海上使用提示</h3>
+                                <p>能复用连接时尽量复用连接，能做长会话时尽量减少反复握手。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">5.2</span>海上链路类型与地理差异</h2>
+                        <p class="section-summary">海上通信的关键不在于某种链路先进与否，而在于不同海区可用链路组合持续变化。港区、近岸、近海和远洋的主链路往往不同。</p>
+                        <div class="diagram-frame">
+                            <svg viewBox="0 0 980 430" width="100%" role="img" aria-label="海上通信链路覆盖与海区变化图">
+                                <line x1="80" y1="330" x2="900" y2="330" stroke="#8fa0b0" stroke-width="4"></line>
+                                <text x="82" y="360" font-size="16" fill="#556271">港区</text>
+                                <text x="235" y="360" font-size="16" fill="#556271">近岸</text>
+                                <text x="430" y="360" font-size="16" fill="#556271">近海</text>
+                                <text x="700" y="360" font-size="16" fill="#556271">远洋</text>
+
+                                <path d="M80 250 C150 190, 220 160, 320 160 C380 160, 410 185, 430 230" fill="none" stroke="#5ca078" stroke-width="10" stroke-linecap="round"></path>
+                                <text x="160" y="142" font-size="20" fill="#3f6d54" font-weight="700">蜂窝网络</text>
+
+                                <path d="M110 205 C180 185, 250 185, 320 205" fill="none" stroke="#489196" stroke-width="8" stroke-linecap="round"></path>
+                                <text x="155" y="188" font-size="18" fill="#2a666b" font-weight="700">港区专网 / Wi-Fi</text>
+
+                                <path d="M150 120 C340 115, 520 115, 900 115" fill="none" stroke="#4682b4" stroke-width="10" stroke-linecap="round"></path>
+                                <text x="560" y="98" font-size="20" fill="#2f528f" font-weight="700">卫星链路</text>
+
+                                <path d="M80 285 C300 280, 520 280, 900 280" fill="none" stroke="#dc9656" stroke-width="7" stroke-linecap="round" stroke-dasharray="14 10"></path>
+                                <text x="640" y="264" font-size="18" fill="#9d5b24" font-weight="700">北斗短报文 / 低速率兜底</text>
+
+                                <rect x="720" y="165" width="160" height="80" rx="18" fill="#fff7ec" stroke="#dc9656" stroke-width="3"></rect>
+                                <text x="748" y="195" font-size="20" fill="#9d5b24" font-weight="700">阅读重点</text>
+                                <text x="735" y="220" font-size="14" fill="#7b5c43">进入远洋后，</text>
+                                <text x="735" y="240" font-size="14" fill="#7b5c43">高带宽链路显著减少</text>
+                            </svg>
+                            <p class="diagram-caption">蜂窝和港区专网主要适用于港区和近岸，卫星覆盖最广但时延和费用更高，短报文链路适合作为兜底通道承载最小关键消息集。</p>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="link-metrics">
+                        <h2><span class="section-kicker">5.2A</span>不同链路要用不同指标直觉去看</h2>
+                        <p class="section-summary">同样是“网络可用”，不同链路的含义并不一样。近岸链路常看高频交互能力，远洋链路更看持续可用、摘要上报和费用约束。</p>
+                        <div class="comparison-table table-responsive">
+                            <table style="width:100%; border-collapse:collapse; font-size:0.95rem;">
+                                <thead>
+                                    <tr style="background: var(--color-background-alt);">
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">链路类型</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">典型带宽</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">典型时延</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">工程直觉</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">港区专网 / Wi-Fi</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">Mbps 到十几 Mbps</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">低时延</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">适合批量回传、更新下载和高频同步</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">蜂窝网络</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">10-100 Mbps</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">几十毫秒到数百毫秒</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">近岸主链路，覆盖边缘切换频繁</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">卫星链路</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">kbps 到 Mbps</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">数百毫秒到更高</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">适合关键摘要、远程运维和持续连通</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">北斗短报文等低速率通道</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">bps 到极低 kbps</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">秒级到更高</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">适合兜底上报、位置、求助和关键告警摘要</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="shipboard-network">
+                        <h2><span class="section-kicker">5.3</span>船内网络与本地汇聚</h2>
+                        <p class="section-summary">船内网络不是简单把所有设备接到一个交换机上，而是要按功能和安全等级做分区，并通过网关把异构设备输出统一起来。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card">
+                                <h3>航海设备分区</h3>
+                                <p>强调时间戳一致性、接入受控和安全关键数据持续可用。</p>
+                            </div>
+                            <div class="slide-card">
+                                <h3>船端汇聚分区</h3>
+                                <p>网关和边缘节点进行协议转换、字段统一、队列调度和缓存管理。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>办公与服务分区</h3>
+                                <p>带宽需求较高但可容错，不应挤压航海与安全关键链路。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="shipboard-diagram">
+                        <h2><span class="section-kicker">5.3A</span>船内网络功能分区图</h2>
+                        <p class="section-summary">阅读这张图时，重点看“隔离”和“汇聚”两件事：办公网络的异常不应影响驾驶台和机舱关键数据链，异构接口应尽量在网关处收敛。</p>
+                        <div class="diagram-frame">
+                            <svg viewBox="0 0 980 430" width="100%" role="img" aria-label="船内网络分区与汇聚结构图">
+                                <rect x="60" y="80" width="200" height="100" rx="20" fill="#d8e9f7" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="108" y="118" font-size="22" fill="#2f528f" font-weight="700">航海设备分区</text>
+                                <text x="95" y="145" font-size="14" fill="#556271">GNSS · AIS · 雷达 · 罗经</text>
+
+                                <rect x="60" y="225" width="200" height="100" rx="20" fill="#cfe2f3" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="108" y="263" font-size="22" fill="#2f528f" font-weight="700">机舱控制分区</text>
+                                <text x="88" y="290" font-size="14" fill="#556271">PLC · 温度 · 振动 · 状态量</text>
+
+                                <rect x="60" y="350" width="200" height="55" rx="18" fill="#f4f7fb" stroke="#8ea9c8" stroke-width="3"></rect>
+                                <text x="115" y="384" font-size="18" fill="#2f528f" font-weight="700">办公与服务分区</text>
+
+                                <rect x="360" y="150" width="240" height="92" rx="22" fill="#c2d9ef" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="440" y="188" font-size="24" fill="#2f528f" font-weight="700">船端网关</text>
+                                <text x="398" y="214" font-size="14" fill="#556271">协议转换 · 字段统一 · 队列调度</text>
+
+                                <rect x="700" y="160" width="180" height="72" rx="20" fill="#adc8dd" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="750" y="201" font-size="22" fill="#2f528f" font-weight="700">船岸链路</text>
+
+                                <line x1="260" y1="130" x2="360" y2="170" stroke="#4682b4" stroke-width="4"></line>
+                                <line x1="260" y1="275" x2="360" y2="210" stroke="#4682b4" stroke-width="4"></line>
+                                <line x1="260" y1="378" x2="360" y2="222" stroke="#90a0b0" stroke-width="4" stroke-dasharray="10 6"></line>
+                                <line x1="600" y1="196" x2="700" y2="196" stroke="#4682b4" stroke-width="5"></line>
+
+                                <rect x="680" y="285" width="220" height="92" rx="18" fill="#fff7ec" stroke="#dc9656" stroke-width="3"></rect>
+                                <text x="728" y="318" font-size="20" fill="#9d5b24" font-weight="700">运行原则</text>
+                                <text x="700" y="342" font-size="14" fill="#7b5c43">关键数据优先保障</text>
+                                <text x="700" y="362" font-size="14" fill="#7b5c43">办公流量不能挤压安全链路</text>
+                            </svg>
+                            <p class="diagram-caption">分区的核心价值在于故障隔离和责任边界清晰。船端网关是把异构接口收敛成统一数据模型的关键节点。</p>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="ship-ship">
+                        <h2><span class="section-kicker">5.4</span>船船通信链路</h2>
+                        <p class="section-summary">船船通信更关注态势共享而不是大流量传输。它通常要求可达、连续、足够及时，但不要求高吞吐。</p>
+                        <div class="two-col-grid">
+                            <div class="slide-card">
+                                <h3>VHF / AIS / VDES</h3>
+                                <p>受视距约束，适合承载船船之间的态势信息、短消息和区域数据广播。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>工程判断</h3>
+                                <p>船船通信的关键不是带宽大，而是能否在密集航区保持稳定交换，并把更新间隔和目标类别一起解释清楚。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="ship-shore">
+                        <h2><span class="section-kicker">5.5</span>船岸通信链路</h2>
+                        <p class="section-summary">船岸通信的可用链路随海区变化最明显。系统设计时要把港区、近岸、近海和远洋当作不同的通信窗口，而不是当作一条稳定管道。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card">
+                                <h3>蜂窝网络</h3>
+                                <p>近岸主链路，适合高频上报、远程服务和批量回传。</p>
+                            </div>
+                            <div class="slide-card">
+                                <h3>卫星通信</h3>
+                                <p>远洋主链路，适合持续连通、监控摘要和关键运维指令。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>低速率兜底通道</h3>
+                                <p>适合位置、求助和关键摘要，不能承担大数据源。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="satellite-types">
+                        <h2><span class="section-kicker">5.5A</span>GEO 与 LEO 卫星要怎么理解</h2>
+                        <p class="section-summary">两种轨道都能支撑海上通信，但使用体验不同。GEO 覆盖更稳定、时延更大，LEO 时延更低、切换更频繁。</p>
+                        <div class="two-col-grid">
+                            <div class="slide-card">
+                                <h3>GEO</h3>
+                                <ul>
+                                    <li>覆盖稳定，终端指向相对固定</li>
+                                    <li>时延较高，交互体验更差</li>
+                                    <li>适合稳定监控与业务分级传输</li>
+                                </ul>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>LEO</h3>
+                                <ul>
+                                    <li>时延更低</li>
+                                    <li>依赖更频繁的卫星切换</li>
+                                    <li>更适合对交互性要求更高的场景</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="short-message">
+                        <h2><span class="section-kicker">5.5B</span>北斗短报文等低速率通道</h2>
+                        <p class="section-summary">低速率通道的价值不在于提升带宽，而在于在极端条件下仍能让关键信息可达。它更像兜底通道，而不是主业务通道。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card">
+                                <h3>适合发送什么</h3>
+                                <p>位置上报、求助消息、关键告警摘要、简短状态。</p>
+                            </div>
+                            <div class="slide-card">
+                                <h3>不适合发送什么</h3>
+                                <p>连续轨迹、图像、日志大包、高频监控流。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>系统设计重点</h3>
+                                <p>预先定义消息模板和触发规则，确保在紧急条件下能快速发送有效内容。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">5.6</span>多链路管理与业务分级</h2>
+                        <p class="section-summary">多链路管理的目标不是让所有链路同时满负荷工作，而是在保证关键业务可用的前提下控制费用和复杂度。业务分级是最有效的组织方法之一。</p>
+                        <div class="two-col-grid">
+                            <div class="slide-card" id="multilink">
+                                <h3>多链路策略</h3>
+                                <ul>
+                                    <li>主备切换：1 主 + 1 备，强调可用性</li>
+                                    <li>分流并行：按消息类型分链路，强调业务隔离</li>
+                                    <li>条件聚合：在高带宽窗口临时提高吞吐</li>
+                                </ul>
+                            </div>
+                            <div class="slide-card accent-card" id="priority-queues">
+                                <h3>业务分级</h3>
+                                <ul>
+                                    <li>P1：关键告警</li>
+                                    <li>P2：态势摘要与关键状态</li>
+                                    <li>P3：一般监控与统计</li>
+                                    <li>P4：批量日志、回放和更新包</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="replay-cache">
+                        <h2><span class="section-kicker">5.6A</span>缓存补传不是“补齐数据”那么简单</h2>
+                        <p class="section-summary">断链补传除了恢复完整性，还必须保证顺序和语义正确。若只把缓存数据批量塞回岸端而不记录时间、去重和延迟，复盘结果会失真。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card">
+                                <h3>乱序风险</h3>
+                                <p>恢复后缓存集中到达，若按到达时间写入会打乱事件顺序。</p>
+                            </div>
+                            <div class="slide-card">
+                                <h3>重复风险</h3>
+                                <p>多链路并行与重试可能导致同一消息被重复计入。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>稳妥做法</h3>
+                                <p>引入唯一标识，以采集时间排序，并保留补传延迟和去重结果。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="security-observe">
+                        <h2><span class="section-kicker">5.6B</span>安全接入与运行可观测性</h2>
+                        <p class="section-summary">通信链路不仅传数据，也暴露攻击面。安全机制与链路策略必须一起设计；同时，链路状态和队列状态必须持续可观测，系统才能长期优化。</p>
+                        <div class="two-col-grid">
+                            <div class="slide-card">
+                                <h3>安全接入的四个问题</h3>
+                                <ul>
+                                    <li>谁在和谁通信</li>
+                                    <li>传的是什么</li>
+                                    <li>是否被篡改或窃听</li>
+                                    <li>出了问题能否追溯</li>
+                                </ul>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>运行可观测性</h3>
+                                <ul>
+                                    <li>链路可用性</li>
+                                    <li>RTT 时延</li>
+                                    <li>队列深度与重传次数</li>
+                                    <li>补传延迟与切换事件</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="selection-method">
+                        <h2><span class="section-kicker">5.7</span>一套可执行的链路选型方法</h2>
+                        <p class="section-summary">链路选型不能靠“哪个快就用哪个”。更合理的方法是从业务最小数据集出发，再结合海区窗口、主备链路和运行策略做分级设计。</p>
+                        <div class="flow-steps">
+                            <div class="flow-step">
+                                <span class="step-index">1</span>
+                                <h3>按业务分级</h3>
+                                <p>先明确关键告警、态势摘要、一般状态和批量数据。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">2</span>
+                                <h3>按海区划窗</h3>
+                                <p>区分港区、近岸、近海、远洋的通信窗口。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">3</span>
+                                <h3>主备链路配置</h3>
+                                <p>为每种窗口选择主链路、备链路和切换阈值。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">4</span>
+                                <h3>统一退化机制</h3>
+                                <p>把分级、缓存、补传、安全和审计一起固化为规则。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="sea-zone-template">
+                        <h2><span class="section-kicker">5.7A</span>按海区配置链路模板</h2>
+                        <p class="section-summary">链路选型更适合写成海区模板，而不是固定成一条永远不变的通道。海区变化意味着链路组合和上报频率也需要变化。</p>
+                        <div class="comparison-table table-responsive">
+                            <table style="width:100%; border-collapse:collapse; font-size:0.95rem;">
+                                <thead>
+                                    <tr style="background: var(--color-background-alt);">
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">海区</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">主链路</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">备用链路</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">策略重点</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">港区</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">专网 / Wi-Fi</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">蜂窝</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">批量回传、更新下载、对账同步</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">近岸</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">蜂窝</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">卫星</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">摘要上报、提前切换、保持连接</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">近海</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">卫星 / 蜂窝边缘</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">短报文</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">降采样、弱网模式、限流</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">远洋</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">卫星</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">短报文</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">关键告警优先、事件化上报、长周期补传</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="external-links">
+                        <h2><span class="section-kicker">LINK</span>外部参考链接</h2>
+                        <div class="resource-list" style="grid-template-columns: 1fr;">
+                            <a href="https://www.inmarsat.com/maritime/" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">Inmarsat</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">Inmarsat Maritime</h5>
+                                    <p class="resource-meta">海事卫星通信服务与产品入口</p>
+                                </div>
+                            </a>
+                            <a href="https://www.iridium.com/solutions/maritime/" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">Iridium</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">Iridium Maritime</h5>
+                                    <p class="resource-meta">LEO 卫星海事通信与覆盖说明</p>
+                                </div>
+                            </a>
+                            <a href="https://www.kvh.com/maritime" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">KVH</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">KVH Maritime Connectivity</h5>
+                                    <p class="resource-meta">多链路船载通信系统案例</p>
+                                </div>
+                            </a>
+                            <a href="https://www.starlink.com/business/maritime" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">Starlink</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">Starlink Maritime</h5>
+                                    <p class="resource-meta">海事宽带与新型 LEO 通信服务</p>
+                                </div>
+                            </a>
+                            <a href="http://www.beidou.gov.cn/xt/fwgz/" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">BDS</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">北斗服务工作</h5>
+                                    <p class="resource-meta">北斗短报文与公开服务资料入口</p>
+                                </div>
+                            </a>
+                            <a href="https://www.iala.int/technical/vdes/" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">IALA</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">VDES Overview</h5>
+                                    <p class="resource-meta">VHF 数据交换系统相关资料</p>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
 
                     <h2 id="reading">延伸阅读</h2>
                     <ul>
                         <li>海事卫星通信系统公开技术资料</li>
-                        <li>VHF 数据链相关综述资料</li>
+                        <li>VHF 数据链和 VDES 相关综述资料</li>
+                        <li>TCP / UDP、HTTP / MQTT 基础说明文档</li>
                     </ul>
 
                     <h2 id="questions">思考题</h2>
                     <ol>
-                        <li>在远洋航行阶段，哪些业务更适合在船端完成闭环，为什么。</li>
-                        <li>如果链路时延突然升高，你会从系统设计角度做哪些降级处理。</li>
-                        <li>举例说明多链路切换带来的副作用，并给出一种缓解方法。</li>
+                        <li>对同一艘船，近岸和远洋阶段的通信方案应有哪些本质差异？</li>
+                        <li>设想一个航行监控应用，哪些数据应在链路受限时优先传输，哪些可以延迟补传？</li>
+                        <li>在高时延链路上，为什么频繁建立连接会让系统更慢？系统应如何减少这种额外开销？</li>
+                        <li>链路恢复后为什么必须按采集时间补传，并标记补传延迟？</li>
+                        <li>如何向一个没有通信背景的同学解释“高带宽”和“低抖动”对航行支持业务并不是同一件事？</li>
                     </ol>
 
                     <div class="callout">
@@ -100,20 +682,27 @@
                                 <span class="resource-number">L10</span>
                                 <div class="resource-content">
                                     <h5 class="resource-title">多链路组织降级策略</h5>
-                                    <p class="resource-meta">弱网条件应对</p>
+                                    <p class="resource-meta">弱网条件下的组织方法</p>
                                 </div>
                             </a>
                             <a href="../../labs/lab04/index.html" class="resource-item">
                                 <span class="resource-number">Lab04</span>
                                 <div class="resource-content">
-                                    <h5 class="resource-title">NMEA-0183协议分析</h5>
-                                    <p class="resource-meta">从报文到字段的解析训练</p>
+                                    <h5 class="resource-title">NMEA-0183 协议分析</h5>
+                                    <p class="resource-meta">接口语义、报文结构与字段解析</p>
+                                </div>
+                            </a>
+                            <a href="../../datasets/comm-logs/comm_log_sample.csv" class="resource-item">
+                                <span class="resource-number">Data</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">通信日志样本</h5>
+                                    <p class="resource-meta">观察 RTT、丢包和退化现象</p>
                                 </div>
                             </a>
                         </div>
                     </div>
 
-                    <div style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border);">
+                    <div style="display:flex; justify-content:space-between; margin-top:3rem; padding-top:1.5rem; border-top:1px solid var(--color-border);">
                         <a href="../ch04/index.html" class="btn btn-secondary">← 上一章：船载感知信息采集</a>
                         <a href="../ch06/index.html" class="btn btn-secondary">下一章：船联网数据治理 →</a>
                     </div>
@@ -121,22 +710,46 @@
 
                 <aside class="sidebar-sticky">
                     <div class="card">
-                        <h4 style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--color-text-muted);">本章目录</h4>
+                        <h4 style="margin-bottom:1rem; font-size:0.875rem; color:var(--color-text-muted);">本章目录</h4>
                         <ul class="toc-list">
                             <li class="toc-item"><a href="#objectives" class="toc-link">学习目标</a></li>
-                            <li class="toc-item"><a href="#key" class="toc-link">知识要点</a></li>
-                            <li class="toc-item toc-h3"><a href="#metrics" class="toc-link">5.1 指标与表现</a></li>
-                            <li class="toc-item toc-h3"><a href="#links" class="toc-link">5.2 链路类型</a></li>
-                            <li class="toc-item toc-h3"><a href="#multi" class="toc-link">5.3 多链路组织</a></li>
+                            <li class="toc-item"><a href="#roadmap" class="toc-link">章节路线图</a></li>
+                            <li class="toc-item"><a href="#basics" class="toc-link">5.1 通信基础</a></li>
+                            <li class="toc-item toc-h3"><a href="#bit-byte" class="toc-link">5.1.1 比特与字节</a></li>
+                            <li class="toc-item toc-h3"><a href="#throughput-vs-bandwidth" class="toc-link">5.1.2 带宽与吞吐</a></li>
+                            <li class="toc-item toc-h3"><a href="#latency-family" class="toc-link">5.1.3 时延家族</a></li>
+                            <li class="toc-item toc-h3"><a href="#metrics" class="toc-link">5.1A 指标现象表</a></li>
+                            <li class="toc-item toc-h3"><a href="#metric-actions" class="toc-link">5.1B 退化动作</a></li>
+                            <li class="toc-item toc-h3"><a href="#protocol-stack" class="toc-link">5.1C 协议分层</a></li>
+                            <li class="toc-item toc-h3"><a href="#tcp-udp" class="toc-link">5.1D TCP 与 UDP</a></li>
+                            <li class="toc-item toc-h3"><a href="#patterns" class="toc-link">5.1E 交互模式</a></li>
+                            <li class="toc-item"><a href="#links" class="toc-link">5.2 链路类型</a></li>
+                            <li class="toc-item toc-h3"><a href="#link-metrics" class="toc-link">5.2A 链路比较</a></li>
+                            <li class="toc-item"><a href="#shipboard-network" class="toc-link">5.3 船内网络</a></li>
+                            <li class="toc-item toc-h3"><a href="#shipboard-diagram" class="toc-link">5.3A 分区结构图</a></li>
+                            <li class="toc-item"><a href="#ship-ship" class="toc-link">5.4 船船通信</a></li>
+                            <li class="toc-item"><a href="#ship-shore" class="toc-link">5.5 船岸通信</a></li>
+                            <li class="toc-item toc-h3"><a href="#satellite-types" class="toc-link">5.5A GEO 与 LEO</a></li>
+                            <li class="toc-item toc-h3"><a href="#short-message" class="toc-link">5.5B 低速率通道</a></li>
+                            <li class="toc-item"><a href="#multilink" class="toc-link">5.6 多链路管理</a></li>
+                            <li class="toc-item toc-h3"><a href="#priority-queues" class="toc-link">5.6A 业务分级</a></li>
+                            <li class="toc-item toc-h3"><a href="#replay-cache" class="toc-link">5.6B 缓存补传</a></li>
+                            <li class="toc-item toc-h3"><a href="#security-observe" class="toc-link">5.6C 安全与观测</a></li>
+                            <li class="toc-item"><a href="#selection" class="toc-link">5.7 选型方法</a></li>
+                            <li class="toc-item toc-h3"><a href="#selection-method" class="toc-link">5.7A 四步方法</a></li>
+                            <li class="toc-item toc-h3"><a href="#sea-zone-template" class="toc-link">5.7B 海区模板</a></li>
+                            <li class="toc-item"><a href="#external-links" class="toc-link">外部参考链接</a></li>
                             <li class="toc-item"><a href="#reading" class="toc-link">延伸阅读</a></li>
                             <li class="toc-item"><a href="#questions" class="toc-link">思考题</a></li>
                         </ul>
                     </div>
 
-                    <div class="card meta-box" style="margin-top: 1.5rem;">
-                        <h4 style="margin-bottom: 0.5rem; font-size: 0.875rem;">章节信息</h4>
+                    <div class="card meta-box" style="margin-top:1.5rem;">
+                        <h4 style="margin-bottom:0.5rem; font-size:0.875rem;">章节信息</h4>
                         <p>对应课时：2课时</p>
-                        <p>建议学时：90分钟</p>
+                        <p>建议学时：120-150 分钟</p>
+                        <p>教材定位：通信基础补课 + 海上链路工程章</p>
+                        <p>重点对象：通信基础薄弱的航海技术专业学生</p>
                     </div>
                 </aside>
             </div>
@@ -158,4 +771,3 @@
     <script src="../../assets/js/main.js"></script>
 </body>
 </html>
-
