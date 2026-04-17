@@ -50,40 +50,513 @@
                         <span class="chapter-number">7</span>
                         <div>
                             <h1 style="margin-bottom: 0.25rem; font-size: 1.75rem;">船联网安全机制</h1>
-                            <p class="text-muted">安全目标、威胁模型、降级运行</p>
+                            <p class="text-muted">安全目标、攻击面、纵深防御、降级运行、应急响应与运维边界</p>
                         </div>
                     </div>
 
-                    <h2 id="objectives">学习目标</h2>
-                    <p>本章把安全问题放回到航行风险与系统运行的语境中，说明安全机制的技术根源与工程边界。</p>
-                    <ul>
-                        <li>能够用保密性、完整性、可用性描述安全目标</li>
-                        <li>能够从攻击面角度理解威胁模型</li>
-                        <li>能够说明弱网条件下的安全策略与降级原则</li>
-                    </ul>
+                    <section class="slide-hero">
+                        <span class="slide-eyebrow">CHAPTER 07</span>
+                        <h2 class="slide-title">船联网安全机制</h2>
+                        <p class="slide-lead">船联网把船舶从相对封闭系统推向跨域协同环境，远程运维、数据共享和多链路接入成为常态，安全风险和运行风险一起上升。对航海系统而言，安全并不是追求绝对零风险，而是在风险客观存在的条件下保持可控运行，并在异常发生时能够快速定位、保全证据、进入可解释的降级模式，避免安全事件演化为航行事故。</p>
+                        <div class="highlight-strip">
+                            <div class="highlight-pill"><strong>目标</strong>保密、完整、可用、可追溯、可恢复</div>
+                            <div class="highlight-pill"><strong>攻击面</strong>设备、网络、数据、流程四类入口</div>
+                            <div class="highlight-pill"><strong>机制</strong>认证、访问控制、加密、校验、审计</div>
+                            <div class="highlight-pill"><strong>重点</strong>安全必须服务于航行安全与长期运维</div>
+                        </div>
+                    </section>
 
-                    <h2 id="key">知识要点</h2>
+                    <section class="slide-section" id="objectives">
+                        <h2><span class="section-kicker">GO</span>学习目标</h2>
+                        <p class="section-summary">本章的目标是用工程语言解释船联网安全，而不是停留在抽象术语层面。读完后，应能把安全事件和航行风险联系起来，并知道系统该如何降级、追溯和恢复。</p>
+                        <div class="four-col-grid">
+                            <div class="slide-card accent-card">
+                                <h3>理解目标</h3>
+                                <p>能用保密性、完整性、可用性、可追溯性和可恢复性描述安全目标。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>理解攻击面</h3>
+                                <p>按设备、网络、数据和流程四类入口识别主要风险。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>理解机制</h3>
+                                <p>知道身份认证、访问控制、加密、校验和日志审计分别解决什么问题。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>理解降级</h3>
+                                <p>能提出弱网与故障条件下的安全降级原则，并说明其航行含义。</p>
+                            </div>
+                        </div>
+                    </section>
 
-                    <h3 id="goals">7.1 安全目标</h3>
-                    <p>船联网安全的目标不仅是防止数据泄露，更重要的是防止信息被篡改和服务不可用引发的航行风险。对关键业务，安全机制需要与可用性一起设计，否则会出现“为了安全导致不可用”的系统性问题。</p>
+                    <section class="slide-section" id="roadmap">
+                        <h2><span class="section-kicker">MAP</span>章节路线图</h2>
+                        <p class="section-summary">本章先讲安全目标和威胁模型，再按攻击面梳理风险来源，随后进入纵深防御、基线与可信起点、弱网降级、运维与合规，最后把安全事件转译成航行风险。</p>
+                        <div class="flow-steps">
+                            <div class="flow-step">
+                                <span class="step-index">1</span>
+                                <h3 id="security-goals">安全目标</h3>
+                                <p>先明确系统到底要保护什么、优先保护什么。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">2</span>
+                                <h3 id="attack-surfaces">攻击面</h3>
+                                <p>从设备、网络、数据和流程四类入口理解风险来源。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">3</span>
+                                <h3 id="defense-stack">防御机制</h3>
+                                <p>看分区、认证、加密、审计和可信起点如何共同工作。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">4</span>
+                                <h3 id="risk-causality">风险转译</h3>
+                                <p>把安全事件转成态势偏差、操纵风险和运维失控的因果链。</p>
+                            </div>
+                        </div>
+                    </section>
 
-                    <h3 id="threats">7.2 威胁模型</h3>
-                    <p>威胁模型从资产与攻击面出发，识别可能的攻击路径。典型攻击面包括身份认证、链路传输、设备接口、软件供应链和运维通道。工程实践中，先识别最可能发生且影响最大的风险，再逐步加固，往往比一次性追求全覆盖更可行。</p>
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">7.1</span>安全目标与威胁模型</h2>
+                        <p class="section-summary">安全目标不能只停留在 CIA 三个字母上，更重要的是把它们翻译成船联网里的实际含义：哪些信息不能被偷看，哪些信息不能被篡改，哪些功能在弱网和攻击条件下也不能失效。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card" id="cia">
+                                <h3>保密性 / 完整性 / 可用性</h3>
+                                <p>保密性保护敏感信息，完整性保护数据和指令不被篡改，可用性保证关键业务不断线。</p>
+                            </div>
+                            <div class="slide-card" id="trace-recover">
+                                <h3>可追溯性 / 可恢复性</h3>
+                                <p>系统需要回答“发生了什么、谁做的、依据是什么”，并在异常后回到可信状态。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="threat-model">
+                                <h3>威胁模型</h3>
+                                <p>从接触位置、技术能力和攻击动机三个维度限制讨论范围，决定投入优先级。</p>
+                            </div>
+                        </div>
+                    </section>
 
-                    <h3 id="mechanisms">7.3 安全机制</h3>
-                    <p>常见机制包括身份认证、访问控制、加密与签名、审计与追溯。弱网条件下需要明确哪些机制必须保持，哪些机制可以在可控范围内降级，并通过日志与证据链保证事后可追溯。</p>
+                    <section class="slide-section" id="security-terms">
+                        <h2><span class="section-kicker">7.1A</span>把安全术语翻成航海语言</h2>
+                        <p class="section-summary">对初学者而言，安全术语更容易通过航海场景理解。只要能把术语对应到具体动作，就更容易理解机制存在的原因。</p>
+                        <div class="comparison-table table-responsive">
+                            <table style="width:100%; border-collapse:collapse; font-size:0.95rem;">
+                                <thead>
+                                    <tr style="background: var(--color-background-alt);">
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">术语</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">航海类比</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">系统中的作用</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">身份认证</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">登轮时出示海员证和许可</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">确认谁能接入设备、网关或远程运维入口</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">访问控制</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">不同人员进入不同区域</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">限制谁能看什么、改什么、操作什么</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">加密</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">密码本传递敏感信息</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">防止链路被监听后直接看懂内容</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">完整性校验</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">检查货物封条是否被打开</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">判断数据或更新包是否被篡改</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">审计日志</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">航海日志、轮机日志</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">事后追责、复盘和持续改进</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="risk-grading">
+                        <h2><span class="section-kicker">7.1B</span>风险分级与安全边界</h2>
+                        <p class="section-summary">安全目标不是平均分配给所有功能，而是要围绕航行关键链条做分级设计。安全关键功能优先保护完整性和可用性，非关键功能允许更高延迟与更强约束。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card">
+                                <h3>航行关键功能</h3>
+                                <p>态势显示、关键告警、关键操纵辅助。宁可少功能，也不能让错误信息进入决策链。</p>
+                            </div>
+                            <div class="slide-card">
+                                <h3>运行控制功能</h3>
+                                <p>机舱监测、运维代理、状态上报。需要审计、版本控制和可回滚。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>业务服务功能</h3>
+                                <p>运营分析、报表统计、离线同步。允许更大延迟，但仍需证据链和权限边界。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="zone-diagram">
+                        <h2><span class="section-kicker">7.1C</span>安全分区与纵深防御图</h2>
+                        <p class="section-summary">安全分区的目的不是把系统切成孤岛，而是让跨区访问必须经过受控通道，并在通道上完成鉴权、校验、限速和审计。</p>
+                        <div class="diagram-frame">
+                            <svg viewBox="0 0 980 440" width="100%" role="img" aria-label="船联网安全分区架构图">
+                                <rect x="290" y="120" width="180" height="80" rx="20" fill="#d8e9f7" stroke="#2f528f" stroke-width="4"></rect>
+                                <text x="334" y="165" font-size="24" fill="#2f528f" font-weight="700">航行关键区</text>
+
+                                <rect x="230" y="85" width="300" height="150" rx="26" fill="none" stroke="#7aa7cf" stroke-width="3"></rect>
+                                <text x="322" y="258" font-size="20" fill="#2f528f" font-weight="700">运行控制区</text>
+
+                                <rect x="170" y="50" width="420" height="220" rx="32" fill="none" stroke="#8fb2cf" stroke-width="3"></rect>
+                                <text x="330" y="293" font-size="20" fill="#2f528f" font-weight="700">业务服务区</text>
+
+                                <rect x="110" y="18" width="540" height="285" rx="38" fill="none" stroke="#dc9656" stroke-width="3.5" stroke-dasharray="10 8"></rect>
+                                <text x="282" y="326" font-size="20" fill="#9d5b24" font-weight="700">办公与外部接入区</text>
+
+                                <rect x="720" y="130" width="170" height="110" rx="18" fill="#fff7ec" stroke="#dc9656" stroke-width="3"></rect>
+                                <text x="758" y="163" font-size="20" fill="#9d5b24" font-weight="700">受控通道</text>
+                                <text x="742" y="190" font-size="14" fill="#7b5c43">鉴权 · 校验</text>
+                                <text x="742" y="212" font-size="14" fill="#7b5c43">限速 · 审计</text>
+                            </svg>
+                            <p class="diagram-caption">从外到内安全等级递增。即使外层被突破，内层仍保留独立防护和本地运行能力，为检测、降级和恢复争取时间。</p>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">7.2</span>风险来源与攻击面</h2>
+                        <p class="section-summary">攻击面可以按设备侧、网络侧、数据侧和人员流程侧四类理解。这样做的目的，是把安全问题从抽象“会被攻击”变成可定位的输入口。</p>
+                        <div class="four-col-grid">
+                            <div class="slide-card" id="device-risk">
+                                <h3>设备侧风险</h3>
+                                <p>默认口令、固件漏洞、调试接口暴露、离线介质导入、物理接触。</p>
+                            </div>
+                            <div class="slide-card" id="network-risk">
+                                <h3>网络侧风险</h3>
+                                <p>窃听、伪造、重放、中间人、拒绝服务、横向移动。</p>
+                            </div>
+                            <div class="slide-card" id="data-risk">
+                                <h3>数据侧风险</h3>
+                                <p>篡改、污染、越权共享、口径漂移、模型训练污染。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="process-risk">
+                                <h3>流程侧风险</h3>
+                                <p>账号共用、权限不回收、变更绕流程、外包边界不清。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="attack-surface-diagram">
+                        <h2><span class="section-kicker">7.2A</span>攻击面到航行风险的路径图</h2>
+                        <p class="section-summary">安全事件往往先表现为数据异常，再进入态势偏差，最后才影响驾驶员判断和运维控制。图里最重要的是看到因果链，而不是单个攻击名词。</p>
+                        <div class="diagram-frame">
+                            <svg viewBox="0 0 1080 360" width="100%" role="img" aria-label="攻击面到航行风险路径图">
+                                <rect x="40" y="60" width="180" height="48" rx="14" fill="#fff1e5" stroke="#dc9656" stroke-width="3"></rect>
+                                <text x="91" y="90" font-size="20" fill="#9d5b24" font-weight="700">设备侧风险</text>
+                                <rect x="40" y="125" width="180" height="48" rx="14" fill="#fff1e5" stroke="#dc9656" stroke-width="3"></rect>
+                                <text x="91" y="155" font-size="20" fill="#9d5b24" font-weight="700">网络侧风险</text>
+                                <rect x="40" y="190" width="180" height="48" rx="14" fill="#fff1e5" stroke="#dc9656" stroke-width="3"></rect>
+                                <text x="91" y="220" font-size="20" fill="#9d5b24" font-weight="700">数据侧风险</text>
+                                <rect x="40" y="255" width="180" height="48" rx="14" fill="#fff1e5" stroke="#dc9656" stroke-width="3"></rect>
+                                <text x="91" y="285" font-size="20" fill="#9d5b24" font-weight="700">流程侧风险</text>
+
+                                <rect x="330" y="140" width="200" height="78" rx="18" fill="#d8e9f7" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="386" y="180" font-size="24" fill="#2f528f" font-weight="700">数据异常</text>
+                                <text x="360" y="204" font-size="14" fill="#556271">伪造、缺失、错序、口径漂移</text>
+
+                                <rect x="620" y="140" width="200" height="78" rx="18" fill="#cfe2f3" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="676" y="180" font-size="24" fill="#2f528f" font-weight="700">态势偏差</text>
+                                <text x="646" y="204" font-size="14" fill="#556271">目标错配、告警失真、规则漂移</text>
+
+                                <rect x="880" y="140" width="160" height="78" rx="18" fill="#adc8dd" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="911" y="180" font-size="24" fill="#2f528f" font-weight="700">航行风险</text>
+                                <text x="902" y="204" font-size="14" fill="#556271">误判、漏判、运维失控</text>
+
+                                <line x1="220" y1="180" x2="330" y2="180" stroke="#4682b4" stroke-width="5"></line>
+                                <line x1="530" y1="180" x2="620" y2="180" stroke="#4682b4" stroke-width="5"></line>
+                                <line x1="820" y1="180" x2="880" y2="180" stroke="#4682b4" stroke-width="5"></line>
+                            </svg>
+                            <p class="diagram-caption">安全问题若不能在前端被监测和隔离，就会沿着数据链放大，最终转化为态势偏差和操纵风险。安全工程的重点就是在前几级把链条截断。</p>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">7.3</span>安全基线与可信起点</h2>
+                        <p class="section-summary">安全基线解决的是“上线前最低要做到什么”，可信起点解决的是“系统启动后能否证明自己仍处于可信状态”。它们是所有后续认证、加密和审计的基础。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card" id="baseline-items">
+                                <h3>安全基线</h3>
+                                <p>最小权限、默认口令清理、远程接入白名单、日志审计开启、关键配置可回滚。</p>
+                            </div>
+                            <div class="slide-card" id="trusted-boot">
+                                <h3>可信起点</h3>
+                                <p>引导链、系统镜像、关键服务和配置必须能被校验，校验失败应进入最小安全模式。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="asset-inventory">
+                                <h3>资产清单</h3>
+                                <p>知道有哪些设备、服务、端口、证书和版本，是后续加固、补丁和应急响应的前提。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="baseline-table">
+                        <h2><span class="section-kicker">7.3A</span>安全基线参数表</h2>
+                        <p class="section-summary">基线并不追求覆盖所有攻击，而是先把最常见、最低成本、最容易被忽视的风险压住。对海上系统来说，这往往比花哨机制更重要。</p>
+                        <div class="comparison-table table-responsive">
+                            <table style="width:100%; border-collapse:collapse; font-size:0.95rem;">
+                                <thead>
+                                    <tr style="background: var(--color-background-alt);">
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">基线项</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">典型参数</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">目的</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">口令复杂度</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">关键系统建议 12 位以上</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">抵御弱口令和暴力破解</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">账号锁定阈值</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">3-5 次失败</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">抑制持续尝试攻击</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">会话超时</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">远程运维 15-30 分钟</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">降低无人值守终端暴露时间</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">审计留痕</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">默认开启，关键动作必记</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">保证事后追责和复盘</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">7.4</span>安全机制与工程边界</h2>
+                        <p class="section-summary">安全机制不是越多越好，而是要放到合适位置、解决合适问题，并与链路条件和航行阶段相协调。</p>
+                        <div class="four-col-grid">
+                            <div class="slide-card" id="auth">
+                                <h3>身份认证</h3>
+                                <p>先确认谁能进入系统，再谈访问和操作。</p>
+                            </div>
+                            <div class="slide-card" id="access-control">
+                                <h3>访问控制</h3>
+                                <p>控制谁能看什么、改什么、调用什么服务。</p>
+                            </div>
+                            <div class="slide-card" id="crypto">
+                                <h3>加密与完整性</h3>
+                                <p>解决窃听和篡改问题，但会引入性能开销。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="audit">
+                                <h3>审计与追溯</h3>
+                                <p>让关键动作、关键数据和关键版本可回到证据链。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="degrade-strategy">
+                        <h2><span class="section-kicker">7.4A</span>弱网条件下的安全降级</h2>
+                        <p class="section-summary">弱网和断链时，某些安全机制会变得更难维持，但不能简单关闭。更合理的做法是：保护关键功能正确性，降低高风险动作强度，并把不确定性显式传递给人机界面。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card">
+                                <h3>链路降级</h3>
+                                <p>关键告警优先、业务限速、长连接优先保留。</p>
+                            </div>
+                            <div class="slide-card">
+                                <h3>数据降级</h3>
+                                <p>标注可疑、降低权重、提示来源退化和时效不足。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>功能降级</h3>
+                                <p>暂停高风险远程操作，保留本地闭环和人工接管入口。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="degrade-states">
+                        <h2><span class="section-kicker">7.4B</span>降级运行状态图</h2>
+                        <p class="section-summary">安全降级不应靠人工临时决定，而要在设计时定义触发阈值、状态切换和恢复窗口。只有这样，系统在异常条件下才会表现一致。</p>
+                        <div class="diagram-frame">
+                            <svg viewBox="0 0 980 360" width="100%" role="img" aria-label="安全降级状态转换图">
+                                <rect x="380" y="50" width="180" height="60" rx="18" fill="#d8e9f7" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="433" y="87" font-size="24" fill="#2f528f" font-weight="700">正常运行</text>
+
+                                <rect x="170" y="180" width="180" height="60" rx="18" fill="#fff1e5" stroke="#dc9656" stroke-width="3"></rect>
+                                <text x="224" y="217" font-size="24" fill="#9d5b24" font-weight="700">链路降级</text>
+
+                                <rect x="400" y="180" width="180" height="60" rx="18" fill="#fff1e5" stroke="#dc9656" stroke-width="3"></rect>
+                                <text x="454" y="217" font-size="24" fill="#9d5b24" font-weight="700">数据降级</text>
+
+                                <rect x="630" y="180" width="180" height="60" rx="18" fill="#fff1e5" stroke="#dc9656" stroke-width="3"></rect>
+                                <text x="684" y="217" font-size="24" fill="#9d5b24" font-weight="700">功能降级</text>
+
+                                <rect x="380" y="285" width="220" height="58" rx="18" fill="#f8fbfe" stroke="#8ea9c8" stroke-width="3"></rect>
+                                <text x="426" y="320" font-size="22" fill="#2f528f" font-weight="700">本地独立运行</text>
+
+                                <line x1="430" y1="110" x2="260" y2="180" stroke="#4682b4" stroke-width="4"></line>
+                                <line x1="470" y1="110" x2="490" y2="180" stroke="#4682b4" stroke-width="4"></line>
+                                <line x1="520" y1="110" x2="720" y2="180" stroke="#4682b4" stroke-width="4"></line>
+                                <line x1="260" y1="240" x2="440" y2="285" stroke="#4682b4" stroke-width="4"></line>
+                                <line x1="490" y1="240" x2="490" y2="285" stroke="#4682b4" stroke-width="4"></line>
+                                <line x1="720" y1="240" x2="540" y2="285" stroke="#4682b4" stroke-width="4"></line>
+                            </svg>
+                            <p class="diagram-caption">降级的目标不是保留全部功能，而是保护关键功能的正确性与可追溯性。恢复过程也应经过稳定窗口确认，避免因链路波动反复切换。</p>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">7.5</span>运维、补丁与合规</h2>
+                        <p class="section-summary">很多安全问题并不是“被攻破”，而是被误配、被绕过或在变更过程中被放大。远程运维、补丁管理、备份恢复和合规线索构成安全长期有效性的基础。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card" id="remote-ops">
+                                <h3>远程运维边界</h3>
+                                <p>把高风险动作限制在最小集合，并用审批、双人复核和审计机制约束。</p>
+                            </div>
+                            <div class="slide-card" id="patch-backup">
+                                <h3>补丁与备份</h3>
+                                <p>更新本身也是风险源，必须有校验、灰度、回滚、断点续传和离线恢复路径。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="compliance">
+                                <h3>合规与责任边界</h3>
+                                <p>把风险评估、审计、权限和持续改进落到可执行证据，而不是额外文书工作。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="response-flow">
+                        <h2><span class="section-kicker">7.5A</span>应急响应流程图</h2>
+                        <p class="section-summary">应急响应的关键是缩短从发现到控制的时间，并把整个过程变成可复盘的证据链。流程应与降级模式和航行阶段约束一致。</p>
+                        <div class="diagram-frame">
+                            <svg viewBox="0 0 1080 250" width="100%" role="img" aria-label="安全事件应急响应流程图">
+                                <rect x="40" y="90" width="180" height="60" rx="18" fill="#d8e9f7" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="93" y="127" font-size="22" fill="#2f528f" font-weight="700">发现与确认</text>
+
+                                <rect x="270" y="90" width="180" height="60" rx="18" fill="#cfe2f3" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="320" y="127" font-size="22" fill="#2f528f" font-weight="700">隔离与降级</text>
+
+                                <rect x="500" y="90" width="180" height="60" rx="18" fill="#c2d9ef" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="548" y="127" font-size="22" fill="#2f528f" font-weight="700">根因排查</text>
+
+                                <rect x="730" y="90" width="180" height="60" rx="18" fill="#adc8dd" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="778" y="127" font-size="22" fill="#2f528f" font-weight="700">恢复与验证</text>
+
+                                <line x1="220" y1="120" x2="270" y2="120" stroke="#4682b4" stroke-width="5"></line>
+                                <line x1="450" y1="120" x2="500" y2="120" stroke="#4682b4" stroke-width="5"></line>
+                                <line x1="680" y1="120" x2="730" y2="120" stroke="#4682b4" stroke-width="5"></line>
+
+                                <rect x="300" y="185" width="460" height="38" rx="14" fill="#fff7ec" stroke="#dc9656" stroke-width="3"></rect>
+                                <text x="380" y="210" font-size="18" fill="#9d5b24" font-weight="700">证据链：日志 · 配置摘要 · 版本信息 · 处置记录</text>
+                            </svg>
+                            <p class="diagram-caption">发现、隔离、排查和恢复四个阶段需要连续记录证据。高风险操纵期间的恢复动作应更保守，优先保护驾驶决策与关键告警链条。</p>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">7.6</span>从安全事件到航行风险</h2>
+                        <p class="section-summary">安全问题在船联网中往往不会直接以“系统崩溃”出现，而是先表现为数据异常、态势偏差、告警失真和运维失控，随后才进一步影响操纵和决策。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card" id="state-bias">
+                                <h3>从安全事件到态势偏差</h3>
+                                <p>伪造目标、时间错序、口径漂移会先改变系统“看到”的事实。</p>
+                            </div>
+                            <div class="slide-card" id="control-risk">
+                                <h3>从态势偏差到操纵风险</h3>
+                                <p>误导性信息比缺失信息更危险，因为它会让驾驶员形成错误预期。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="long-term-risk">
+                                <h3>从运维失控到长期风险</h3>
+                                <p>版本漂移、后门潜伏和配置失控会长期削弱系统可信度与可维护性。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="causal-table">
+                        <h2><span class="section-kicker">7.6A</span>把安全语言翻译成航行语言</h2>
+                        <p class="section-summary">安全机制真正有价值的标志，是它能把“攻击、篡改、滥用、潜伏”翻译成驾驶员和运维人员可观察、可行动的工程信号。</p>
+                        <div class="comparison-table table-responsive">
+                            <table style="width:100%; border-collapse:collapse; font-size:0.95rem;">
+                                <thead>
+                                    <tr style="background: var(--color-background-alt);">
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">安全事件线索</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">可观察表现</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">可执行处置</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">链路被注入</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">目标跳变、身份与运动不一致</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">降权、隔离来源、提示不确定性</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">权限被滥用</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">配置突变、服务策略被改</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">冻结变更、回滚版本、审计主体</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">长期潜伏后门</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">访问模式异常、日志缺口</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">轮换密钥、限制入口、做完整审计</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="external-links">
+                        <h2><span class="section-kicker">LINK</span>外部参考链接</h2>
+                        <div class="resource-list" style="grid-template-columns: 1fr;">
+                            <a href="https://www.bimco.org/safety-security/security-and-cyber-security/cyber-security" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">BIMCO</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">BIMCO Cyber Security</h5>
+                                    <p class="resource-meta">船舶网络安全指南与行业框架入口</p>
+                                </div>
+                            </a>
+                            <a href="https://www.dnv.com/maritime/insights/topics/cyber-security/" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">DNV</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">DNV Maritime Cyber Security</h5>
+                                    <p class="resource-meta">船级社视角的海事网络安全资料</p>
+                                </div>
+                            </a>
+                            <a href="https://www.enisa.europa.eu/topics/cybersecurity-education/maritime-cybersecurity" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">ENISA</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">ENISA Maritime Cybersecurity</h5>
+                                    <p class="resource-meta">海事网络安全公开研究与实践资料</p>
+                                </div>
+                            </a>
+                            <a href="https://www.wired.com/story/notpetya-cyberattack-ukraine-russia-code-crashed-the-world/" target="_blank" rel="noopener noreferrer" class="resource-item">
+                                <span class="resource-number">Case</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">Wired: NotPetya</h5>
+                                    <p class="resource-meta">马士基 NotPetya 事件公开报道</p>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
 
                     <h2 id="reading">延伸阅读</h2>
                     <ul>
                         <li>工业控制系统安全相关公开指南</li>
                         <li>船舶网络安全相关行业建议</li>
+                        <li>NIST、IEC 62443、ISO 22301 相关安全与连续性资料</li>
                     </ul>
 
                     <h2 id="questions">思考题</h2>
                     <ol>
-                        <li>举例说明完整性受损会如何转化为航行风险。</li>
-                        <li>在弱网条件下，哪些安全机制更难保持，原因是什么。</li>
-                        <li>如果只能优先解决一类安全风险，你会如何选择与论证。</li>
+                        <li>为什么安全机制需要同时关注可追溯性与可恢复性？</li>
+                        <li>结合弱网条件，设计一套降级策略并说明触发条件与提示方式。</li>
+                        <li>为什么运维变更必须可审计可回滚，若缺少这两点会带来哪些长期风险？</li>
+                        <li>为什么说误导性信息比缺失信息更危险？</li>
+                        <li>如果只能优先治理一类攻击面，你会如何选择并论证？</li>
                     </ol>
 
                     <div class="callout">
@@ -107,13 +580,20 @@
                                 <span class="resource-number">Lab08</span>
                                 <div class="resource-content">
                                     <h5 class="resource-title">安全威胁模拟防护</h5>
-                                    <p class="resource-meta">复现、分析、防护建议</p>
+                                    <p class="resource-meta">复现、分析与防护建议</p>
+                                </div>
+                            </a>
+                            <a href="../../datasets/security/security_log_sample.csv" class="resource-item">
+                                <span class="resource-number">Data</span>
+                                <div class="resource-content">
+                                    <h5 class="resource-title">安全日志样本</h5>
+                                    <p class="resource-meta">观察异常登录、告警与审计线索</p>
                                 </div>
                             </a>
                         </div>
                     </div>
 
-                    <div style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border);">
+                    <div style="display:flex; justify-content:space-between; margin-top:3rem; padding-top:1.5rem; border-top:1px solid var(--color-border);">
                         <a href="../ch06/index.html" class="btn btn-secondary">← 上一章：船联网数据治理</a>
                         <a href="../ch08/index.html" class="btn btn-secondary">下一章：典型应用发展趋势 →</a>
                     </div>
@@ -121,22 +601,55 @@
 
                 <aside class="sidebar-sticky">
                     <div class="card">
-                        <h4 style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--color-text-muted);">本章目录</h4>
+                        <h4 style="margin-bottom:1rem; font-size:0.875rem; color:var(--color-text-muted);">本章目录</h4>
                         <ul class="toc-list">
                             <li class="toc-item"><a href="#objectives" class="toc-link">学习目标</a></li>
-                            <li class="toc-item"><a href="#key" class="toc-link">知识要点</a></li>
-                            <li class="toc-item toc-h3"><a href="#goals" class="toc-link">7.1 安全目标</a></li>
-                            <li class="toc-item toc-h3"><a href="#threats" class="toc-link">7.2 威胁模型</a></li>
-                            <li class="toc-item toc-h3"><a href="#mechanisms" class="toc-link">7.3 安全机制</a></li>
+                            <li class="toc-item"><a href="#roadmap" class="toc-link">章节路线图</a></li>
+                            <li class="toc-item"><a href="#security-goals" class="toc-link">7.1 安全目标</a></li>
+                            <li class="toc-item toc-h3"><a href="#cia" class="toc-link">7.1.1 CIA</a></li>
+                            <li class="toc-item toc-h3"><a href="#trace-recover" class="toc-link">7.1.2 追溯与恢复</a></li>
+                            <li class="toc-item toc-h3"><a href="#threat-model" class="toc-link">7.1.3 威胁模型</a></li>
+                            <li class="toc-item toc-h3"><a href="#security-terms" class="toc-link">7.1A 术语翻译</a></li>
+                            <li class="toc-item toc-h3"><a href="#risk-grading" class="toc-link">7.1B 风险分级</a></li>
+                            <li class="toc-item toc-h3"><a href="#zone-diagram" class="toc-link">7.1C 安全分区图</a></li>
+                            <li class="toc-item"><a href="#attack-surfaces" class="toc-link">7.2 攻击面</a></li>
+                            <li class="toc-item toc-h3"><a href="#device-risk" class="toc-link">7.2.1 设备侧</a></li>
+                            <li class="toc-item toc-h3"><a href="#network-risk" class="toc-link">7.2.2 网络侧</a></li>
+                            <li class="toc-item toc-h3"><a href="#data-risk" class="toc-link">7.2.3 数据侧</a></li>
+                            <li class="toc-item toc-h3"><a href="#process-risk" class="toc-link">7.2.4 流程侧</a></li>
+                            <li class="toc-item toc-h3"><a href="#attack-surface-diagram" class="toc-link">7.2A 风险路径图</a></li>
+                            <li class="toc-item"><a href="#defense-stack" class="toc-link">7.3 防御机制</a></li>
+                            <li class="toc-item toc-h3"><a href="#baseline-items" class="toc-link">7.3.1 安全基线</a></li>
+                            <li class="toc-item toc-h3"><a href="#trusted-boot" class="toc-link">7.3.2 可信起点</a></li>
+                            <li class="toc-item toc-h3"><a href="#asset-inventory" class="toc-link">7.3.3 资产清单</a></li>
+                            <li class="toc-item toc-h3"><a href="#baseline-table" class="toc-link">7.3A 基线参数表</a></li>
+                            <li class="toc-item"><a href="#auth" class="toc-link">7.4 安全机制</a></li>
+                            <li class="toc-item toc-h3"><a href="#access-control" class="toc-link">7.4.2 访问控制</a></li>
+                            <li class="toc-item toc-h3"><a href="#crypto" class="toc-link">7.4.3 加密校验</a></li>
+                            <li class="toc-item toc-h3"><a href="#audit" class="toc-link">7.4.4 审计追溯</a></li>
+                            <li class="toc-item toc-h3"><a href="#degrade-strategy" class="toc-link">7.4A 安全降级</a></li>
+                            <li class="toc-item toc-h3"><a href="#degrade-states" class="toc-link">7.4B 状态图</a></li>
+                            <li class="toc-item"><a href="#remote-ops" class="toc-link">7.5 运维与合规</a></li>
+                            <li class="toc-item toc-h3"><a href="#patch-backup" class="toc-link">7.5.2 补丁备份</a></li>
+                            <li class="toc-item toc-h3"><a href="#compliance" class="toc-link">7.5.3 合规线索</a></li>
+                            <li class="toc-item toc-h3"><a href="#response-flow" class="toc-link">7.5A 应急流程图</a></li>
+                            <li class="toc-item"><a href="#risk-causality" class="toc-link">7.6 风险转译</a></li>
+                            <li class="toc-item toc-h3"><a href="#state-bias" class="toc-link">7.6.1 态势偏差</a></li>
+                            <li class="toc-item toc-h3"><a href="#control-risk" class="toc-link">7.6.2 操纵风险</a></li>
+                            <li class="toc-item toc-h3"><a href="#long-term-risk" class="toc-link">7.6.3 长期风险</a></li>
+                            <li class="toc-item toc-h3"><a href="#causal-table" class="toc-link">7.6A 因果转译表</a></li>
+                            <li class="toc-item"><a href="#external-links" class="toc-link">外部参考链接</a></li>
                             <li class="toc-item"><a href="#reading" class="toc-link">延伸阅读</a></li>
                             <li class="toc-item"><a href="#questions" class="toc-link">思考题</a></li>
                         </ul>
                     </div>
 
-                    <div class="card meta-box" style="margin-top: 1.5rem;">
-                        <h4 style="margin-bottom: 0.5rem; font-size: 0.875rem;">章节信息</h4>
+                    <div class="card meta-box" style="margin-top:1.5rem;">
+                        <h4 style="margin-bottom:0.5rem; font-size:0.875rem;">章节信息</h4>
                         <p>对应课时：2课时</p>
-                        <p>建议学时：90分钟</p>
+                        <p>建议学时：120 分钟</p>
+                        <p>教材定位：安全底线与运维韧性核心章</p>
+                        <p>后续衔接：第8章典型应用的风险边界</p>
                     </div>
                 </aside>
             </div>
@@ -158,4 +671,3 @@
     <script src="../../assets/js/main.js"></script>
 </body>
 </html>
-
