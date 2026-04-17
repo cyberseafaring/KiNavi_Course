@@ -54,203 +54,253 @@
                         </div>
                     </div>
 
+                    <section class="slide-hero">
+                        <span class="slide-eyebrow">CHAPTER 01 · ONLINE SLIDES</span>
+                        <h2 class="slide-title">物联网技术基础</h2>
+                        <p class="slide-lead">这一章不是把“物联网”当成抽象名词来讲，而是把它拆成一条完整技术链：为什么出现、数据从哪里来、设备如何持续运行、数据该放在哪里处理，以及这些通用机制为什么一到海上场景就会变得更严格。</p>
+                        <div class="highlight-strip">
+                            <div class="highlight-pill"><strong>概念</strong>从 RFID 到 IoT 的扩展逻辑</div>
+                            <div class="highlight-pill"><strong>感知</strong>传感器网络如何把物理世界变成数据</div>
+                            <div class="highlight-pill"><strong>运行</strong>嵌入式平台、RTOS、时间同步、OTA</div>
+                            <div class="highlight-pill"><strong>协同</strong>云边分工与船联网衔接</div>
+                        </div>
+                    </section>
+
                     <div class="callout" style="margin-top: 0;">
-                        <h4 style="margin-bottom: 0.75rem;">章节导览</h4>
-                        <p>这一章对应教材第一章的完整主线，不只是“物联网是什么”，而是回答五个连续问题：物联网为什么出现、数据从哪里来、设备如何长期运行、数据应该在哪里处理、这些通用机制为什么在船联网场景下会变得更严格。</p>
-                        <p style="margin-bottom: 0;">建议把本页当作线上版讲义浏览：先看“章节路线图”，再按 1.1 到 1.5 顺序学习，最后用“术语速览”和“思考题”完成收束。</p>
+                        <h4 style="margin-bottom: 0.75rem;">使用方式</h4>
+                        <p style="margin-bottom: 0;">这页现在按“PPT 分幕”组织。每一节都先给一句话结论，再给核心卡片、对比块和课堂提示。建议按 1.1 到 1.5 顺序滚动，像翻线上课件一样看完整章。</p>
                     </div>
 
-                    <h2 id="objectives">学习目标</h2>
-                    <p>本章用物联网的通用技术链条作为共同语言，为后续船联网内容建立可复用的认识框架。学完后，学生不应只会复述名词，而应能判断一个方案为什么可行、为什么会失效、以及它迁移到船联网后哪些约束会被放大。</p>
-                    <ul>
-                        <li>能够解释物联网概念起源、核心定义和四个基本特征</li>
-                        <li>能够用感知、网络、平台、应用四层描述物联网系统的数据闭环</li>
-                        <li>能够说明传感器网络、嵌入式平台、物联网操作系统各自解决的问题</li>
-                        <li>能够判断云计算和边缘计算的职责分工，并解释断网运行与数据分级的必要性</li>
-                        <li>能够把陆上物联网的一般规律映射到船联网场景，指出海上通信、运维和安全约束</li>
-                    </ul>
-
-                    <h2 id="roadmap">章节路线图</h2>
-                    <div class="card-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem;">
-                        <div class="card" style="padding: 1rem;">
-                            <h4 style="margin-bottom: 0.5rem;">1.1 概念发展</h4>
-                            <p style="margin-bottom: 0;">从 RFID 与自动识别出发，理解物联网的定义、特征、关键节点和典型应用。</p>
+                    <section class="slide-section" id="objectives">
+                        <h2><span class="section-kicker">GO</span>学习目标</h2>
+                        <p class="section-summary">这一章是全书的技术底座。读完后，学生应该能用一套统一语言描述物联网系统，并判断它迁移到船联网之后为什么会面临更强的通信、运维和安全约束。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card accent-card">
+                                <h3>理解概念</h3>
+                                <p>说清楚物联网的起源、定义、四个基本特征和发展阶段。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>理解系统</h3>
+                                <p>用感知、网络、平台、应用四层描述数据闭环，而不是只会背名词。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>理解迁移</h3>
+                                <p>把通用物联网机制映射到船联网，指出海上场景下哪些条件最先变严。</p>
+                            </div>
                         </div>
-                        <div class="card" style="padding: 1rem;">
-                            <h4 style="margin-bottom: 0.5rem;">1.2 传感器网络</h4>
-                            <p style="margin-bottom: 0;">明确数据从哪里来，理解采样、信号处理、误差控制和多节点协同。</p>
+                    </section>
+
+                    <section class="slide-section" id="roadmap">
+                        <h2><span class="section-kicker">MAP</span>章节路线图</h2>
+                        <p class="section-summary">教材第一章可以看成五张连续的 PPT：先定义物联网，再解释数据入口，再解释设备运行，再说明数据处理位置，最后收束到船联网。</p>
+                        <div class="flow-steps">
+                            <div class="flow-step">
+                                <span class="step-index">1</span>
+                                <h3 id="concept">概念发展</h3>
+                                <p>从 RFID 出发，理解 IoT 为什么从识别技术扩展成完整系统。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">2</span>
+                                <h3 id="wsn">传感器网络</h3>
+                                <p>理解数据从哪里来，为什么采样、同步和质量控制如此重要。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">3</span>
+                                <h3 id="embedded">嵌入式平台</h3>
+                                <p>理解设备如何稳定运行，包括 RTOS、驱动、中间件和 OTA。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">4</span>
+                                <h3 id="cloud-edge">云边协同</h3>
+                                <p>理解任务在哪里处理，什么时候边缘侧必须承担主责。</p>
+                            </div>
                         </div>
-                        <div class="card" style="padding: 1rem;">
-                            <h4 style="margin-bottom: 0.5rem;">1.3 嵌入式平台</h4>
-                            <p style="margin-bottom: 0;">理解设备侧如何运行，包括硬件平台、操作系统、中间件、时间同步和远程运维。</p>
+                        <div class="teacher-note">
+                            <strong>课堂总问题：</strong>如果把“物理世界变成可协同的信息系统”这件事拆开看，哪一环最容易在真实环境里失效？
                         </div>
-                        <div class="card" style="padding: 1rem;">
-                            <h4 style="margin-bottom: 0.5rem;">1.4 云边协同</h4>
-                            <p style="margin-bottom: 0;">理解数据在哪里处理，为什么边缘侧在受限场景下必须承担更重职责。</p>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">1.1</span>物联网概念发展</h2>
+                        <p class="section-summary">这部分要解决的不是“背一个定义”，而是理解物联网为什么会从供应链识别一路扩展到感知、连接、计算和协同的完整体系。</p>
+                        <div class="two-col-grid">
+                            <div class="slide-card" id="origin">
+                                <h3>概念起源与核心定义</h3>
+                                <p>1999 年 MIT Auto-ID Center 在 RFID 供应链研究中明确提出“物联网”术语，最初强调的是“物品可识别、可追踪”。后来概念不断扩展，今天更常用的定义是：通过传感器、通信网络和计算平台，把物理世界中的对象、环境和过程转化为可采集、可传输、可处理的数据，并在此基础上实现监测、控制、优化和协同。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="features">
+                                <h3>三个定义抓手</h3>
+                                <ul>
+                                    <li><strong>感知能力</strong>：能得到位置、温度、压力、速度、状态等外部世界信息</li>
+                                    <li><strong>连接能力</strong>：这些信息能在设备、网络和平台之间可靠传递</li>
+                                    <li><strong>计算能力</strong>：原始数据可被加工成信息、知识和决策依据</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card" style="margin-top: 1rem; padding: 1rem;">
-                        <h4 style="margin-bottom: 0.5rem;">1.5 向船联网衔接</h4>
-                        <p style="margin-bottom: 0;">把本章通用机制放到海上环境中，理解为什么船联网不能直接套用陆上物联网架构。</p>
-                    </div>
+                        <div class="comparison-table table-responsive" style="margin-top: 1rem;">
+                            <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                                <thead>
+                                    <tr style="background: var(--color-background-alt);">
+                                        <th style="text-align: left; padding: 0.75rem; border: 1px solid var(--color-border);">特征</th>
+                                        <th style="text-align: left; padding: 0.75rem; border: 1px solid var(--color-border);">一句话解释</th>
+                                        <th style="text-align: left; padding: 0.75rem; border: 1px solid var(--color-border);">工程含义</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 0.75rem; border: 1px solid var(--color-border);"><strong>全面感知</strong></td>
+                                        <td style="padding: 0.75rem; border: 1px solid var(--color-border);">持续获取对象、环境、过程状态</td>
+                                        <td style="padding: 0.75rem; border: 1px solid var(--color-border);">感知不稳，后续分析只会放大误差</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.75rem; border: 1px solid var(--color-border);"><strong>可靠传输</strong></td>
+                                        <td style="padding: 0.75rem; border: 1px solid var(--color-border);">在带宽、覆盖和成本约束下送达关键数据</td>
+                                        <td style="padding: 0.75rem; border: 1px solid var(--color-border);">关键数据优先、缓存补传、断链降级</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.75rem; border: 1px solid var(--color-border);"><strong>智能处理</strong></td>
+                                        <td style="padding: 0.75rem; border: 1px solid var(--color-border);">清洗、汇总、融合、告警、预测</td>
+                                        <td style="padding: 0.75rem; border: 1px solid var(--color-border);">算力位置决定时延、成本和可用性</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.75rem; border: 1px solid var(--color-border);"><strong>应用服务</strong></td>
+                                        <td style="padding: 0.75rem; border: 1px solid var(--color-border);">把结果交给人或系统使用</td>
+                                        <td style="padding: 0.75rem; border: 1px solid var(--color-border);">展示、告警、控制和共享都是输出</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="timeline-list" id="milestones">
+                            <div class="timeline-item">
+                                <div class="timeline-year">1990s-2005</div>
+                                <div><h3>概念萌芽期</h3><p>RFID、传感器网络为主，重点解决物品识别和基础采集。</p></div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-year">2005-2015</div>
+                                <div><h3>技术成熟期</h3><p>移动通信、嵌入式成本下降、云平台兴起，应用开始成规模。</p></div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-year">2015-至今</div>
+                                <div><h3>规模应用期</h3><p>云计算、大数据、AI 与边缘计算深度融合，形成系统化方案。</p></div>
+                            </div>
+                        </div>
+                        <div class="slide-card" style="margin-top: 1rem;" id="chain">
+                            <h3>系统要素与数据链条</h3>
+                            <p>教材将物联网抽象为感知层、网络层、平台层和应用层。关键不只是分层，而是闭环：应用层的判断会反过来影响采样频率、传输优先级和边缘侧策略，因此物联网更像“可自适应运行系统”，而不是静态采集通道。</p>
+                            <div class="four-col-grid">
+                                <div class="slide-card accent-card"><h4>感知层</h4><p>采样、识别、本地预处理，数据入口。</p></div>
+                                <div class="slide-card accent-card"><h4>网络层</h4><p>接入、路由、传输，数据通道。</p></div>
+                                <div class="slide-card accent-card"><h4>平台层</h4><p>存储、计算、规则和服务编排，数据加工中心。</p></div>
+                                <div class="slide-card accent-card"><h4>应用层</h4><p>展示、告警、优化和控制，数据出口。</p></div>
+                            </div>
+                        </div>
+                    </section>
 
-                    <h2 id="concept">1.1 物联网概念发展</h2>
-                    <p>教材第一章首先要解决“物联网到底是什么”。这里最重要的不是背定义，而是理解它为什么会从供应链识别发展成一个覆盖感知、连接、计算和协同的完整技术体系。</p>
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">1.2</span>传感器网络</h2>
+                        <p class="section-summary">这部分回答“数据从哪里来”。如果这一层不稳，后面的网络、平台和应用都只是建立在不透明输入上的放大器。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card" id="wsn-basic">
+                                <h3>基本概念</h3>
+                                <p>传感器网络由大量分布式节点、汇聚节点和管理平台组成。节点负责采样和短距离通信，汇聚节点负责汇总和上行，平台负责长期存储、分析和应用服务。</p>
+                            </div>
+                            <div class="slide-card" id="sensor-principle">
+                                <h3>传感器原理与选型</h3>
+                                <p>没有“万能传感器”，只有按测量对象、环境条件和成本约束做出的选型结果。</p>
+                                <ul>
+                                    <li>环境量：量程、精度、稳定性</li>
+                                    <li>定位/惯性：频率、精度、同步</li>
+                                    <li>视觉：分辨率、帧率、带宽</li>
+                                </ul>
+                            </div>
+                            <div class="slide-card accent-card" id="sampling">
+                                <h3>采样与质量控制</h3>
+                                <p>采样过低会丢信息，过高会压垮带宽和存储。滤波、校准、特征提取提升可用性；范围检查、一致性检查和趋势检查是最基础的质量控制动作。</p>
+                            </div>
+                        </div>
+                        <div class="teacher-note">
+                            <strong>课堂结论：</strong>“传感器数据问题”可以记成三类：传感器本体误差、采集与时钟问题、传输与缓存问题。后续船联网的数据质量标注、本地缓存和数据治理都从这里出发。
+                        </div>
+                    </section>
 
-                    <h3 id="origin">1.1.1 概念起源与核心定义</h3>
-                    <p>1999 年 MIT Auto-ID Center 在 RFID 供应链研究中明确提出“物联网”术语，最早强调的是“物品可识别、可追踪”。随后这个概念不断扩展，今天更常用的定义是：通过传感器、通信网络和计算平台，把物理世界中的对象、环境和过程转化为可采集、可传输、可处理的数据，并在此基础上实现监测、控制、优化和协同。</p>
-                    <ul>
-                        <li><strong>感知能力</strong>：系统能得到位置、温度、压力、速度、状态等外部世界信息</li>
-                        <li><strong>连接能力</strong>：这些信息能在设备、网络和平台之间可靠传递</li>
-                        <li><strong>计算能力</strong>：原始数据可以被加工成信息、知识和决策依据</li>
-                    </ul>
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">1.3</span>嵌入式平台与物联网操作系统</h2>
+                        <p class="section-summary">这部分回答“设备如何长期稳定运行”。现场设备不是缩小版 PC，而是资源受限、需长期值守的专用系统。</p>
+                        <div class="two-col-grid">
+                            <div class="slide-card" id="platform">
+                                <h3>嵌入式平台的角色</h3>
+                                <p>嵌入式平台承担感知、控制和边缘计算任务，必须在功耗、实时性、稳定性和可维护性之间做平衡。</p>
+                            </div>
+                            <div class="slide-card" id="iot-os">
+                                <h3>为什么需要 IoT 操作系统</h3>
+                                <ul>
+                                    <li>轻量级 RTOS：强调实时调度和低资源占用，适合传感器节点</li>
+                                    <li>嵌入式 Linux：适合运行复杂应用和多协议网关</li>
+                                    <li>中间件：负责协议、安全、数据封装等跨应用能力</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="slide-card" style="margin-top: 1rem;" id="software-stack">
+                            <h3>软件分层、时间同步与远程运维</h3>
+                            <div class="three-col-grid">
+                                <div class="slide-card accent-card"><h4>软件分层</h4><p>硬件抽象层、驱动层、系统层、中间件层、应用层的价值是隔离变化。</p></div>
+                                <div class="slide-card accent-card"><h4>时间同步</h4><p>NTP、PTP、GNSS 授时帮助多设备数据对齐，时间状态本身也应被记录。</p></div>
+                                <div class="slide-card accent-card"><h4>远程运维</h4><p>状态监测、配置管理、OTA、回滚和 A/B 分区决定系统能否长期可维护。</p></div>
+                            </div>
+                        </div>
+                    </section>
 
-                    <h3 id="features">1.1.2 四个基本特征</h3>
-                    <p>教材把物联网的能力链条归纳为四个环节。它们不是平行罗列关系，而是彼此依赖的工程链条。</p>
-                    <div class="table-responsive">
-                        <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
-                            <thead>
-                                <tr style="background: var(--color-background-alt);">
-                                    <th style="text-align: left; padding: 0.75rem; border: 1px solid var(--color-border);">特征</th>
-                                    <th style="text-align: left; padding: 0.75rem; border: 1px solid var(--color-border);">教材含义</th>
-                                    <th style="text-align: left; padding: 0.75rem; border: 1px solid var(--color-border);">工程提醒</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td style="padding: 0.75rem; border: 1px solid var(--color-border);">全面感知</td>
-                                    <td style="padding: 0.75rem; border: 1px solid var(--color-border);">持续获取对象、环境、过程状态</td>
-                                    <td style="padding: 0.75rem; border: 1px solid var(--color-border);">没有可靠感知，后续分析只是放大误差</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 0.75rem; border: 1px solid var(--color-border);">可靠传输</td>
-                                    <td style="padding: 0.75rem; border: 1px solid var(--color-border);">在带宽、覆盖和成本约束下送达关键数据</td>
-                                    <td style="padding: 0.75rem; border: 1px solid var(--color-border);">关键数据优先、缓存补传、断链降级是常见策略</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 0.75rem; border: 1px solid var(--color-border);">智能处理</td>
-                                    <td style="padding: 0.75rem; border: 1px solid var(--color-border);">清洗、汇总、融合、告警、预测</td>
-                                    <td style="padding: 0.75rem; border: 1px solid var(--color-border);">算力位置决定时延、成本和可用性</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 0.75rem; border: 1px solid var(--color-border);">应用服务</td>
-                                    <td style="padding: 0.75rem; border: 1px solid var(--color-border);">把结果交给人或系统使用</td>
-                                    <td style="padding: 0.75rem; border: 1px solid var(--color-border);">展示、告警、控制和共享都属于服务输出</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">1.4</span>云计算与边缘计算</h2>
+                        <p class="section-summary">这部分回答“数据应该在哪里处理”。后续船联网强调边缘侧，就是因为海上场景会把这个分工问题推到最严苛的边界。</p>
+                        <div class="two-col-grid">
+                            <div class="slide-card" id="cloud">
+                                <h3>云计算提供什么</h3>
+                                <p>弹性算力、海量存储、统一设备管理、复杂分析和跨区域协同。物联网平台常位于 PaaS 层，负责认证、消息路由、数据存储、规则引擎和 API。</p>
+                            </div>
+                            <div class="slide-card" id="edge">
+                                <h3>边缘计算为什么兴起</h3>
+                                <p>教材把原因收敛为四个词：时延、带宽、可靠性、隐私。如果任务对毫秒级响应敏感、原始数据量巨大、网络可能中断、或数据不宜全上云，那么边缘处理就是基础项。</p>
+                            </div>
+                        </div>
+                        <div class="slide-card" style="margin-top: 1rem;" id="cooperation">
+                            <h3>云边协同、断网运行与数据分级</h3>
+                            <div class="four-col-grid">
+                                <div class="slide-card accent-card"><h4>边缘主责</h4><p>预处理、缓存、本地告警、断网保底。</p></div>
+                                <div class="slide-card accent-card"><h4>云端主责</h4><p>长期归档、复杂分析、跨域管理、应用托管。</p></div>
+                                <div class="slide-card accent-card"><h4>断网策略</h4><p>关键告警即时处理，运行状态降频汇总。</p></div>
+                                <div class="slide-card accent-card"><h4>数据分级</h4><p>高频原始数据不必完整缓存，异常时段优先保留详细记录。</p></div>
+                            </div>
+                        </div>
+                    </section>
 
-                    <h3 id="milestones">1.1.3 发展关键节点与典型领域</h3>
-                    <p>教材把发展历程拆成概念萌芽、技术成熟和规模应用三个阶段。观察这条时间线，学生应看到两条主线：一条是技术能力增强，另一条是应用范围扩展。</p>
-                    <ul>
-                        <li><strong>1990s 中后期至 2005</strong>：RFID、传感器网络，重点解决识别和基础采集</li>
-                        <li><strong>2005 至 2015</strong>：移动通信、嵌入式系统成本下降、云平台兴起，应用开始成规模</li>
-                        <li><strong>2015 至今</strong>：云计算、大数据、人工智能与边缘计算深度融合，形成系统化解决方案</li>
-                    </ul>
-                    <p>智慧城市、智能制造、智慧农业、智慧医疗、智慧物流等行业虽然目标不同，但本质上都遵循相同逻辑：通过感知获取数据，通过传输汇聚数据，通过处理挖掘价值，通过应用实现目标。</p>
+                    <section class="slide-section" id="to-ios">
+                        <h2><span class="section-kicker">1.5</span>从物联网到船联网</h2>
+                        <p class="section-summary">这一幕是整章收束。关键判断只有一句话：船联网不是全新的技术物种，而是物联网在“高受限、高风险、难运维”行业中的特化形态。</p>
+                        <div class="two-col-grid">
+                            <div class="slide-card" id="industry">
+                                <h3>行业约束为什么会改变架构</h3>
+                                <ul>
+                                    <li><strong>通信受限</strong>：远洋主要依赖高时延、高费用、低带宽卫星链路</li>
+                                    <li><strong>运维困难</strong>：航次长、现场支持少，设备要长期无人值守</li>
+                                    <li><strong>安全敏感</strong>：错误信息可能直接影响航行判断和应急处置</li>
+                                </ul>
+                            </div>
+                            <div class="slide-card accent-card" id="ios-bridge">
+                                <h3>为什么它是后续七章的总入口</h3>
+                                <p>第二章讲概念边界，第三章讲架构，第四章讲感知系统，第五章讲通信，第六章讲数据治理，第七章讲安全与可靠运行，第八章讲典型应用。本章提供的是理解这七章所需的共同语言。</p>
+                            </div>
+                        </div>
+                    </section>
 
-                    <h3 id="chain">1.1.4 系统要素与数据链条</h3>
-                    <p>教材把物联网工程系统抽象为感知层、网络层、平台层和应用层。这个四层结构特别适合在线上教学中做“总图”，因为它同时解释了系统边界和数据闭环。</p>
-                    <ul>
-                        <li><strong>感知层</strong>：负责采样、识别、本地预处理，是数据入口</li>
-                        <li><strong>网络层</strong>：负责接入、路由、传输，是数据通道</li>
-                        <li><strong>平台层</strong>：负责存储、计算、规则和服务编排，是数据加工中心</li>
-                        <li><strong>应用层</strong>：负责展示、告警、优化和控制，是数据出口</li>
-                    </ul>
-                    <p>关键点在于：数据链条不是单向上报。应用层的判断会反过来影响采样频率、传输优先级和边缘侧策略，因此物联网更像“可自适应的闭环系统”，而不是静态数据采集通道。</p>
-
-                    <h2 id="wsn">1.2 传感器网络</h2>
-                    <p>教材第二条主线回答“数据从哪里来”。传感器网络是物联网感知层的核心基础，它决定系统能否在空间上覆盖目标、在时间上持续观测目标。</p>
-
-                    <h3 id="wsn-basic">1.2.1 传感器网络的基本概念</h3>
-                    <p>传感器网络由大量分布式节点、汇聚节点和管理平台组成。节点负责采样和短距离通信，汇聚节点负责汇总和上行，管理平台负责长期存储、分析和应用服务。它的典型特点是：节点多、单节点能力弱、供电受限、带宽受限、拓扑可能动态变化。</p>
-                    <ul>
-                        <li>节点数量大，但算力、存储和电池容量有限</li>
-                        <li>无线链路易受干扰，多跳转发会形成瓶颈节点</li>
-                        <li>系统设计必须关注能耗、容错和负载均衡</li>
-                    </ul>
-
-                    <h3 id="sensor-principle">1.2.2 传感器工作原理与选型</h3>
-                    <p>教材强调，传感器是物理量到数字信号的入口。温度、压力、位置、惯性、图像等不同对象，需要不同的传感器和不同的信号转换原理。学生在这里应建立一个基本判断：没有“万能传感器”，只有按测量对象、环境条件和成本约束做出的选型结果。</p>
-                    <ul>
-                        <li>温度、湿度、压力等环境量：关注量程、精度和长期稳定性</li>
-                        <li>定位和惯性类传感器：关注采样频率、精度和时间同步</li>
-                        <li>视觉类传感器：关注分辨率、帧率、光照条件和带宽压力</li>
-                    </ul>
-
-                    <h3 id="sampling">1.2.3 数据采集、信号处理与误差控制</h3>
-                    <p>教材这里很关键，因为它把“数据并非天然可信”说得很清楚。采样频率过低会丢失快速变化，过高又会增加带宽和存储负担；滤波、校准和特征提取是提高可用性的常见手段；范围检查、一致性检查和趋势检查则是最基础的质量控制方法。</p>
-                    <div class="card" style="padding: 1rem; margin-top: 1rem;">
-                        <h4 style="margin-bottom: 0.5rem;">课堂提示</h4>
-                        <p style="margin-bottom: 0;">可以让学生把“传感器数据质量问题”分成三类记忆：一类来自传感器本体误差，一类来自采集与时钟问题，一类来自传输与缓存问题。后续船联网的质量标注、本地缓存和数据治理都从这里展开。</p>
-                    </div>
-
-                    <h2 id="embedded">1.3 嵌入式平台与物联网操作系统</h2>
-                    <p>教材第三条主线回答“设备如何可靠运行”。物联网不是只有云平台，真正长期暴露在现场环境中的，是大量边缘设备、网关和嵌入式终端。</p>
-
-                    <h3 id="platform">1.3.1 嵌入式平台的角色</h3>
-                    <p>嵌入式平台承担感知、控制和边缘计算任务，通常资源比通用计算机更受限，因此必须在功耗、实时性、稳定性和可维护性之间做平衡。它们不是“缩小版 PC”，而是面向特定任务设计的专用运行环境。</p>
-
-                    <h3 id="iot-os">1.3.2 物联网操作系统的功能边界</h3>
-                    <p>教材把嵌入式 Linux、FreeRTOS、Zephyr、LiteOS 等系统拿来对比，目的不是要求背型号，而是理解它们解决的问题不同：</p>
-                    <ul>
-                        <li>轻量级 RTOS 更强调实时调度、低资源占用，适合传感器节点</li>
-                        <li>嵌入式 Linux 更适合运行复杂应用和多协议网关</li>
-                        <li>中间件位于操作系统和业务应用之间，负责协议、安全、数据封装等跨应用能力</li>
-                    </ul>
-
-                    <h3 id="software-stack">1.3.3 软件分层、时间同步与远程运维</h3>
-                    <p>教材把设备软件从底到上拆成硬件抽象层、驱动层、操作系统层、中间件层和应用层。这个分层最重要的价值是“隔离变化”：更换传感器主要影响驱动层，切换协议主要影响中间件层，而不应该把所有改动扩散到整个系统。</p>
-                    <ul>
-                        <li><strong>时间同步</strong>：NTP、PTP、GNSS 授时帮助多设备数据对齐，时间状态本身也应被记录</li>
-                        <li><strong>状态监测</strong>：CPU、内存、通信质量、传感器状态等指标支撑远程诊断</li>
-                        <li><strong>OTA 升级</strong>：升级包签名、断点续传、回滚机制、A/B 分区是可靠升级关键</li>
-                    </ul>
-
-                    <h2 id="cloud-edge">1.4 云计算与边缘计算</h2>
-                    <p>教材第四条主线回答“数据在哪里处理”。这部分是后续船联网学习的关键，因为海上场景会把云边协同的取舍推到更极端的位置。</p>
-
-                    <h3 id="cloud">1.4.1 云计算提供什么</h3>
-                    <p>云计算提供弹性算力、海量存储、平台能力和统一设备管理，非常适合长周期历史数据保存、复杂分析、跨区域协同和应用托管。物联网平台常位于 PaaS 层，提供设备认证、消息路由、数据存储、规则引擎和 API 服务。</p>
-
-                    <h3 id="edge">1.4.2 边缘计算为什么兴起</h3>
-                    <p>教材把边缘计算兴起归因于四个因素：时延要求、带宽限制、可靠性需求和隐私保护。课堂上最好把这四点变成判断题：如果任务对毫秒级响应敏感、原始数据量巨大、网络可能中断、或数据不宜全部上云，那么边缘处理就不是优化项，而是基础项。</p>
-
-                    <h3 id="cooperation">1.4.3 云边协同、断网运行与数据分级</h3>
-                    <p>云和边缘不是替代关系，而是协同关系。教材给出的基本原则非常清晰：</p>
-                    <ul>
-                        <li>时延敏感和安全关键任务放在边缘</li>
-                        <li>计算密集和全局优化任务放在云端</li>
-                        <li>边缘侧负责预处理、缓存、本地告警和断网保底</li>
-                        <li>云端负责长期归档、复杂分析、跨域管理和应用托管</li>
-                    </ul>
-                    <p>断网运行与数据分级是这一节最值得带到船联网的两个概念。关键告警应本地即时处理，运行状态可降频汇总，高频原始数据不必完整缓存，异常时段详细记录应优先保留。</p>
-
-                    <h2 id="to-ios">1.5 从物联网到船联网</h2>
-                    <p>教材最后把本章内容往船联网场景收束。学生应在这里建立一个核心判断：船联网不是一个新发明，而是物联网在“高受限、高风险、难运维”行业中的特化形态。</p>
-
-                    <h3 id="industry">1.5.1 行业适配与海上约束</h3>
-                    <p>不同行业的约束不同，会改变技术优先级。相比智慧城市、制造、农业和车联网，海上物联网的通信条件最受限、运维窗口最稀缺、失效后果最敏感，因此对边缘能力、远程运维和可靠性设计要求最高。</p>
-                    <ul>
-                        <li><strong>通信受限</strong>：远洋主要依赖高时延、高费用、低带宽卫星链路</li>
-                        <li><strong>运维困难</strong>：航次长、现场支持少，设备要长期无人值守</li>
-                        <li><strong>安全敏感</strong>：错误信息可能直接影响航行判断和应急处置</li>
-                    </ul>
-
-                    <h3 id="ios-bridge">1.5.2 对后续船联网学习的衔接</h3>
-                    <p>这一章建立的知识基础会在后续章节逐步展开：第二章解释概念边界，第三章解释体系架构，第四章进入船舶感知系统，第五章进入海上通信，第六章进入数据治理，第七章进入安全与可靠运行，第八章进入典型应用。也就是说，本章是后续七章的总入口。</p>
-
-                    <h2 id="terms">术语速览</h2>
-                    <ul>
-                        <li><strong>IoT</strong>：Internet of Things，物联网</li>
-                        <li><strong>WSN</strong>：Wireless Sensor Network，传感器网络</li>
-                        <li><strong>RFID</strong>：Radio Frequency Identification，射频识别</li>
-                        <li><strong>RTOS</strong>：Real-Time Operating System，实时操作系统</li>
-                        <li><strong>OTA</strong>：Over-The-Air，空中升级/远程升级</li>
-                        <li><strong>NTP / PTP</strong>：常见时间同步机制</li>
-                        <li><strong>Cloud-Edge Collaboration</strong>：云边协同</li>
-                    </ul>
+                    <section class="slide-section" id="terms">
+                        <h2><span class="section-kicker">KEY</span>术语速览</h2>
+                        <div class="three-col-grid">
+                            <div class="slide-card"><h3>IoT / WSN / RFID</h3><p>分别对应物联网、传感器网络、射频识别，是第一章最常见的三组基础词。</p></div>
+                            <div class="slide-card"><h3>RTOS / OTA</h3><p>分别对应实时操作系统和远程升级，是设备长期运行的核心概念。</p></div>
+                            <div class="slide-card"><h3>NTP / PTP / Cloud-Edge</h3><p>分别对应时间同步和云边协同，是后续章节的公共基础。</p></div>
+                        </div>
+                    </section>
 
                     <h2 id="reading">延伸阅读</h2>
                     <ul>
