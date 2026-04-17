@@ -50,43 +50,445 @@
                         <span class="chapter-number">2</span>
                         <div>
                             <h1 style="margin-bottom: 0.25rem; font-size: 1.75rem;">船联网技术演变</h1>
-                            <p class="text-muted">概念边界、演进脉络、AIS基础</p>
+                            <p class="text-muted">概念边界、发展脉络、AIS 作用、典型形态与趋势</p>
                         </div>
                     </div>
 
-                    <h2 id="objectives">学习目标</h2>
-                    <p>本章回答一个问题：船联网从哪里来，边界在哪里，哪些系统构成了海上信息协同的历史基础。</p>
-                    <ul>
-                        <li>能够区分船内联网、船船通信、船岸通信的对象边界</li>
-                        <li>能够用演进主线解释从单点数字化到跨域协同的变化</li>
-                        <li>能够概括 AIS 的系统构成、信息内容和局限</li>
-                    </ul>
+                    <section class="slide-hero">
+                        <span class="slide-eyebrow">CHAPTER 02</span>
+                        <h2 class="slide-title">船联网技术演变</h2>
+                        <p class="slide-lead">船联网把船舶、航道、港口、监管服务和岸端支撑组织成跨域协同系统。理解它的概念边界、演进过程和典型形态，才能读懂后续架构、感知、通信、数据治理与安全机制的真实作用。</p>
+                        <div class="highlight-strip">
+                            <div class="highlight-pill"><strong>边界</strong>先明确对象范围，再讨论系统能力</div>
+                            <div class="highlight-pill"><strong>演进</strong>从单点数字化走向跨域协同</div>
+                            <div class="highlight-pill"><strong>AIS</strong>基础信息层，支撑协同但不覆盖全部能力</div>
+                            <div class="highlight-pill"><strong>趋势</strong>绿色航运与智能航海推动能力外延</div>
+                        </div>
+                    </section>
 
-                    <h2 id="key">知识要点</h2>
+                    <section class="slide-section" id="objectives">
+                        <h2><span class="section-kicker">GO</span>学习目标</h2>
+                        <p class="section-summary">本章关注三个核心问题：船联网讨论的对象范围是什么，AIS 等系统为什么能成为海上信息协同的重要基础，以及绿色航运和智能航海提出的业务目标如何转化为系统能力要求。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card accent-card">
+                                <h3>明确边界</h3>
+                                <p>区分船内联网、船船通信、船岸协同和基础设施连接的对象范围。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>理解演进</h3>
+                                <p>解释船舶数字化如何从单点能力积累扩展为跨域协同体系。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>理解定位</h3>
+                                <p>把 AIS、e-Navigation、绿色航运、智能航海放回系统语境中理解。</p>
+                            </div>
+                        </div>
+                    </section>
 
-                    <h3 id="boundary">2.1 概念边界</h3>
-                    <p>船联网可以用广义和狭义两种视角理解。广义视角关注船舶、航道要素、港口物流、监管服务和第三方服务的跨域协同。狭义视角更强调船舶作为节点的联网能力，以及船端数据在岸端形成服务的过程。工程讨论时需要先选定视角，避免把“通信手段”当作“系统能力”。</p>
+                    <section class="slide-section" id="roadmap">
+                        <h2><span class="section-kicker">MAP</span>章节路线图</h2>
+                        <p class="section-summary">本章先界定船联网的范围，再梳理发展脉络，接着解释 AIS 和 e-Navigation 的基础作用，最后落到典型形态与技术趋势。</p>
+                        <div class="flow-steps">
+                            <div class="flow-step">
+                                <span class="step-index">1</span>
+                                <h3 id="boundary">概念边界</h3>
+                                <p>先说明系统讨论的对象是谁，边界放多大。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">2</span>
+                                <h3 id="evolution">发展脉络</h3>
+                                <p>看船舶数字化如何逐步形成船联网能力。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">3</span>
+                                <h3 id="ais-enav">AIS 与 e-Navigation</h3>
+                                <p>理解基础信息交换和服务化组织方式。</p>
+                            </div>
+                            <div class="flow-step">
+                                <span class="step-index">4</span>
+                                <h3 id="forms-trends">形态与趋势</h3>
+                                <p>把典型工程形态和未来能力方向放到一起看。</p>
+                            </div>
+                        </div>
+                    </section>
 
-                    <h3 id="evolution">2.2 演进脉络</h3>
-                    <p>从演进角度看，船联网不是一次性替换传统系统，而是在既有航海设备数字化的基础上，逐步形成跨系统、跨船队、跨岸端机构的信息协同。推动因素包括监管要求、效率提升需求、远程运维与安全风险控制。演进的结果是信息产品从“单船可用”走向“跨域可共享”。</p>
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">2.1</span>船联网概念边界</h2>
+                        <p class="section-summary">概念边界决定后续章节讨论的对象、接口和性能指标。边界不清，系统能力和风险边界就会一起变得模糊。</p>
+                        <div class="two-col-grid">
+                            <div class="slide-card" id="boundary-wide-narrow">
+                                <h3>广义与狭义两种视角</h3>
+                                <ul>
+                                    <li><strong>广义视角</strong>：把船舶、航道设施、港口系统、监管服务和第三方服务都纳入协同范围</li>
+                                    <li><strong>狭义视角</strong>：以船端为核心，强调船上数据获取、通信接入、边缘计算和应用闭环</li>
+                                </ul>
+                            </div>
+                            <div class="slide-card accent-card" id="boundary-choice">
+                                <h3>边界取舍带来的差异</h3>
+                                <p>边界偏狭义时，更适合讨论采集哪些数据、哪些信息必须可靠、断链时如何运行；边界偏广义时，更适合讨论权限边界、责任边界、共享精度和审计追溯。</p>
+                            </div>
+                        </div>
 
-                    <h3 id="ais">2.3 AIS 基础作用</h3>
-                    <p>AIS 提供了标准化的船舶身份、动态与航行相关信息，是海上态势共享的重要基础。它的意义在于用统一的数据结构降低了协同门槛，但它并不等价于船联网。AIS 只覆盖了部分信息维度，且存在可用性与可信度的边界条件。</p>
+                        <div class="comparison-table table-responsive" style="margin-top: 1rem;" id="objects">
+                            <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                                <thead>
+                                    <tr style="background: var(--color-background-alt);">
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">对象范围</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">典型对象</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">协同信息类型</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">船端系统</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">驾驶台、机舱、货舱、能效管理设备</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">定位、姿态、工况、告警、能耗</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">航道与海区要素</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">航标、水文、气象、航道通告</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">环境状态、风险提示、通航约束</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">港口与物流系统</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">靠离泊服务、港口生产、物流协同平台</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">计划、作业状态、资源调度信息</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">监管与公共服务</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">VTS、搜救协调、海事服务</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">态势监管、预警信息、回溯记录</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
 
-                    <h3 id="limits">2.4 局限补充思路</h3>
-                    <p>当 AIS 信息缺失、延迟或被误用时，系统需要引入互补手段，例如雷达、视觉和岸基服务，并通过数据质量标注与一致性校验降低误判风险。这个思路会在后续章节逐步展开。</p>
+                    <section class="slide-section" id="boundary-diagram">
+                        <h2><span class="section-kicker">2.1A</span>协同对象与权限边界图</h2>
+                        <p class="section-summary">船端位于中心，周围是航道、港口、监管、第三方服务等协同对象。共享范围越大，权限控制和责任边界越重要。</p>
+                        <div class="diagram-frame">
+                            <svg viewBox="0 0 980 430" width="100%" role="img" aria-label="船联网协同对象与权限边界示意图">
+                                <circle cx="360" cy="215" r="82" fill="#d8e9f7" stroke="#2f528f" stroke-width="4"></circle>
+                                <text x="304" y="208" font-size="28" fill="#2f528f" font-weight="700">船端系统</text>
+                                <text x="290" y="240" font-size="16" fill="#556271">感知 · 汇聚 · 边缘计算</text>
+
+                                <circle cx="360" cy="215" r="145" fill="none" stroke="#8fb2cf" stroke-width="2" stroke-dasharray="8 8"></circle>
+                                <circle cx="360" cy="215" r="195" fill="none" stroke="#dc9656" stroke-width="2.5" stroke-dasharray="12 10"></circle>
+                                <text x="502" y="84" font-size="16" fill="#7b5c43">权限边界</text>
+
+                                <rect x="110" y="65" width="140" height="62" rx="18" fill="#ffffff" stroke="#7aa7cf" stroke-width="3"></rect>
+                                <text x="145" y="103" font-size="20" fill="#2f528f" font-weight="700">航道海区</text>
+
+                                <rect x="90" y="300" width="155" height="62" rx="18" fill="#ffffff" stroke="#7aa7cf" stroke-width="3"></rect>
+                                <text x="126" y="338" font-size="20" fill="#2f528f" font-weight="700">港口物流</text>
+
+                                <rect x="520" y="72" width="160" height="62" rx="18" fill="#ffffff" stroke="#7aa7cf" stroke-width="3"></rect>
+                                <text x="560" y="110" font-size="20" fill="#2f528f" font-weight="700">监管服务</text>
+
+                                <rect x="550" y="290" width="185" height="62" rx="18" fill="#ffffff" stroke="#7aa7cf" stroke-width="3"></rect>
+                                <text x="584" y="328" font-size="20" fill="#2f528f" font-weight="700">第三方服务</text>
+
+                                <line x1="250" y1="127" x2="305" y2="160" stroke="#4682b4" stroke-width="4"></line>
+                                <line x1="245" y1="300" x2="305" y2="258" stroke="#4682b4" stroke-width="4"></line>
+                                <line x1="520" y1="130" x2="418" y2="170" stroke="#4682b4" stroke-width="4"></line>
+                                <line x1="550" y1="300" x2="430" y2="255" stroke="#4682b4" stroke-width="4"></line>
+
+                                <rect x="760" y="96" width="165" height="98" rx="18" fill="#fff7ec" stroke="#dc9656" stroke-width="3"></rect>
+                                <text x="794" y="128" font-size="20" fill="#9d5b24" font-weight="700">观察重点</text>
+                                <text x="778" y="156" font-size="15" fill="#7b5c43">1. 对象越多，边界越复杂</text>
+                                <text x="778" y="178" font-size="15" fill="#7b5c43">2. 共享越广，审计越重要</text>
+                            </svg>
+                            <p class="diagram-caption">内圈表示船端闭环关注范围，外圈表示跨域协同带来的权限与责任边界。协同不是无条件的数据互通，而是在规则约束下的信息交换。</p>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">2.2</span>发展脉络要点</h2>
+                        <p class="section-summary">船联网能力从单点设备数字化、船端集成、岸端服务体系逐步扩展到跨域协同，是一个持续积累的过程。</p>
+                        <div class="timeline-list" id="evolution">
+                            <div class="timeline-item">
+                                <div class="timeline-year">阶段 1</div>
+                                <div>
+                                    <h3>船端数字化积累</h3>
+                                    <p>早期重点是信息表达方式改变和计算能力增强，使关键航行信息能够稳定获得、显示并记录。</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-year">阶段 2</div>
+                                <div>
+                                    <h3>岸端服务体系发展</h3>
+                                    <p>航道监测、水文气象、港口生产和监管服务逐步信息化，反过来提升了对船端数据一致性的要求。</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-year">阶段 3</div>
+                                <div>
+                                    <h3>协同能力扩展</h3>
+                                    <p>从单船走向船队、岸端和基础设施协同，信息开始以更结构化方式被交付和复用。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="evolution-ladder">
+                        <h2><span class="section-kicker">2.2A</span>能力演进阶梯</h2>
+                        <p class="section-summary">能力每向外扩展一级，系统价值会增加，但风险和约束也会同步累积。高阶能力依赖低阶能力稳定存在。</p>
+                        <div class="diagram-frame">
+                            <svg viewBox="0 0 980 420" width="100%" role="img" aria-label="船联网能力演进阶梯图">
+                                <rect x="60" y="292" width="160" height="88" rx="18" fill="#d8e9f7" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="96" y="330" font-size="22" fill="#2f528f" font-weight="700">独立运行</text>
+                                <text x="90" y="356" font-size="15" fill="#556271">单船设备数字化</text>
+
+                                <rect x="220" y="242" width="165" height="138" rx="18" fill="#cfe2f3" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="254" y="285" font-size="22" fill="#2f528f" font-weight="700">局部联网</text>
+                                <text x="248" y="313" font-size="15" fill="#556271">船内数据汇聚</text>
+                                <text x="246" y="336" font-size="15" fill="#556271">本地闭环运行</text>
+
+                                <rect x="385" y="188" width="175" height="192" rx="18" fill="#c2d9ef" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="425" y="235" font-size="22" fill="#2f528f" font-weight="700">广域互联</text>
+                                <text x="417" y="264" font-size="15" fill="#556271">船岸协同</text>
+                                <text x="412" y="287" font-size="15" fill="#556271">远程运维 / 信息上岸</text>
+
+                                <rect x="560" y="132" width="180" height="248" rx="18" fill="#b8d0e4" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="603" y="184" font-size="22" fill="#2f528f" font-weight="700">平台服务化</text>
+                                <text x="606" y="214" font-size="15" fill="#556271">数据治理</text>
+                                <text x="596" y="237" font-size="15" fill="#556271">服务编排 / 权限边界</text>
+
+                                <rect x="740" y="76" width="180" height="304" rx="18" fill="#adc8dd" stroke="#2f528f" stroke-width="3"></rect>
+                                <text x="785" y="134" font-size="22" fill="#2f528f" font-weight="700">智能增强</text>
+                                <text x="786" y="165" font-size="15" fill="#556271">态势理解</text>
+                                <text x="775" y="188" font-size="15" fill="#556271">协同决策 / 风险预测</text>
+
+                                <text x="92" y="404" font-size="14" fill="#7b5c43">设备异构</text>
+                                <text x="266" y="404" font-size="14" fill="#7b5c43">误差传播</text>
+                                <text x="442" y="404" font-size="14" fill="#7b5c43">链路波动</text>
+                                <text x="623" y="404" font-size="14" fill="#7b5c43">权限边界</text>
+                                <text x="801" y="404" font-size="14" fill="#7b5c43">可验证性</text>
+                            </svg>
+                            <p class="diagram-caption">每一级能力扩展都带来新的价值，也引入新的风险与约束。高阶能力建立在低阶能力长期稳定运行的基础上。</p>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">2.3</span>AIS 基础作用与局限</h2>
+                        <p class="section-summary">AIS 之所以重要，是因为它让船舶动态与静态信息能够被交换；AIS 之所以不能等同于船联网，是因为它只覆盖了协同所需信息的一部分，而且存在缺失、延迟和可信度边界。</p>
+                        <div class="two-col-grid">
+                            <div class="slide-card" id="ais-role">
+                                <h3>AIS 的基础作用</h3>
+                                <ul>
+                                    <li>提供可交换的船舶动态与静态信息</li>
+                                    <li>支撑船船态势共享和岸端监管服务</li>
+                                    <li>降低海上信息协同的接口门槛</li>
+                                </ul>
+                            </div>
+                            <div class="slide-card accent-card" id="ais-limits">
+                                <h3>AIS 的局限</h3>
+                                <ul>
+                                    <li>自报属性带来缺失、延迟和被伪造风险</li>
+                                    <li>复杂航区可能出现信息拥塞和覆盖受限</li>
+                                    <li>单一来源不能被直接等同于真实态势</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="teacher-note">
+                            <strong>要点归纳：</strong>AIS 更适合作为态势理解的底座信息之一。系统越依赖 AIS，越要显式表达其时效边界和可信度边界。
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="ais-intervals">
+                        <h2><span class="section-kicker">2.3A</span>AIS 报告间隔说明了什么</h2>
+                        <p class="section-summary">AIS 报告间隔会随船舶状态变化而调整。重点在于理解信道资源有限时，系统如何优先传递变化更剧烈的目标信息。</p>
+                        <div class="three-col-grid">
+                            <div class="slide-card">
+                                <h3>锚泊状态</h3>
+                                <p>更新较慢，常见为分钟级，说明状态变化较缓慢。</p>
+                            </div>
+                            <div class="slide-card">
+                                <h3>正常航行</h3>
+                                <p>通常为数秒到数十秒，兼顾态势更新与信道占用。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>高速转向</h3>
+                                <p>更新最频繁，用更高采样密度反映快速变化目标。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="enavigation">
+                        <h2><span class="section-kicker">2.3B</span>e-Navigation 提供的是协同框架</h2>
+                        <p class="section-summary">e-Navigation 的意义不在于某一台设备，而在于把海事信息的收集、融合、交换和呈现放到一致框架下协调，使船端、岸端和监管服务能够在更稳定的接口和语义体系上协同运行。</p>
+                        <div class="two-col-grid">
+                            <div class="slide-card">
+                                <h3>核心目标</h3>
+                                <p>让信息在合适的时间、以合适的形式，到达合适的角色，减少信息过载和接口混乱。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>工程含义</h3>
+                                <p>协同越多，接口越多，越需要统一语义、稳定流程和清晰权限边界，否则系统将被对接成本和运行风险拖累。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">2.4</span>船联网典型形态</h2>
+                        <p class="section-summary">在工程实践中，船联网常以若干典型形态出现。不同形态关注的对象、性能约束和失效模式不同，它们通常由内向外逐层叠加。</p>
+                        <div class="four-col-grid" id="forms-trends">
+                            <div class="slide-card">
+                                <h3>船内联网</h3>
+                                <p>关注设备互联、数据汇聚和本地闭环。</p>
+                            </div>
+                            <div class="slide-card">
+                                <h3>船船交换</h3>
+                                <p>关注态势共享、信息延迟风险和互补来源。</p>
+                            </div>
+                            <div class="slide-card">
+                                <h3>船岸协同</h3>
+                                <p>关注监管服务、远程运维、缓存补传和审计追溯。</p>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>连接基础设施</h3>
+                                <p>关注语义一致、服务编排和跨域责任边界。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="forms-diagram">
+                        <h2><span class="section-kicker">2.4A</span>典型形态嵌套结构图</h2>
+                        <p class="section-summary">四种典型形态可用嵌套结构理解：从内到外逐层扩展，信息共享范围变大，控制与治理要求也随之提高。</p>
+                        <div class="diagram-frame">
+                            <svg viewBox="0 0 980 440" width="100%" role="img" aria-label="船联网典型形态嵌套结构图">
+                                <rect x="110" y="110" width="220" height="190" rx="24" fill="#d8e9f7" stroke="#2f528f" stroke-width="4"></rect>
+                                <text x="165" y="165" font-size="26" fill="#2f528f" font-weight="700">船内联网</text>
+                                <text x="146" y="200" font-size="15" fill="#556271">数据汇聚 · 本地闭环</text>
+                                <text x="136" y="224" font-size="15" fill="#556271">关注：接口兼容 / 时间一致</text>
+
+                                <rect x="80" y="80" width="360" height="250" rx="28" fill="none" stroke="#7aa7cf" stroke-width="3"></rect>
+                                <text x="170" y="355" font-size="22" fill="#2f528f" font-weight="700">船船交换</text>
+                                <text x="122" y="382" font-size="15" fill="#556271">关注：态势共享 / 延迟风险 / 误判控制</text>
+
+                                <rect x="50" y="50" width="520" height="310" rx="32" fill="none" stroke="#8fb2cf" stroke-width="3"></rect>
+                                <text x="322" y="390" font-size="22" fill="#2f528f" font-weight="700">船岸协同</text>
+                                <text x="254" y="416" font-size="15" fill="#556271">关注：缓存补传 / 权限边界 / 审计追溯</text>
+
+                                <rect x="20" y="20" width="710" height="370" rx="36" fill="none" stroke="#dc9656" stroke-width="3.5" stroke-dasharray="10 8"></rect>
+                                <text x="538" y="62" font-size="22" fill="#9d5b24" font-weight="700">基础设施连接</text>
+                                <text x="500" y="88" font-size="15" fill="#7b5c43">关注：语义一致 / 服务编排 / 责任边界</text>
+
+                                <rect x="770" y="120" width="150" height="170" rx="20" fill="#fff7ec" stroke="#dc9656" stroke-width="3"></rect>
+                                <text x="802" y="154" font-size="20" fill="#9d5b24" font-weight="700">理解方式</text>
+                                <text x="788" y="184" font-size="15" fill="#7b5c43">1. 由内向外</text>
+                                <text x="788" y="206" font-size="15" fill="#7b5c43">共享范围扩大</text>
+                                <text x="788" y="232" font-size="15" fill="#7b5c43">2. 每跨一层</text>
+                                <text x="788" y="254" font-size="15" fill="#7b5c43">治理要求更高</text>
+                            </svg>
+                            <p class="diagram-caption">船联网形态通常不是互斥选择，而是由内向外逐层叠加的能力体系。共享范围越大，语义一致、权限边界和审计追溯的重要性越高。</p>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="sailing-diff">
+                        <h2><span class="section-kicker">2.4B</span>航区差异会改变运行模式</h2>
+                        <p class="section-summary">近岸和远洋的通信条件、服务密度和运维窗口不同，因此上报策略、协同方式和风险控制重点也会随之改变。</p>
+                        <div class="two-col-grid">
+                            <div class="slide-card">
+                                <h3>近岸模式</h3>
+                                <ul>
+                                    <li>链路条件相对较好</li>
+                                    <li>岸端服务更密集</li>
+                                    <li>适合更高频的实时协同</li>
+                                </ul>
+                            </div>
+                            <div class="slide-card accent-card">
+                                <h3>远洋模式</h3>
+                                <ul>
+                                    <li>链路更受限，断链更常见</li>
+                                    <li>船端闭环能力更重要</li>
+                                    <li>更依赖事件化上报和汇总压缩</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section">
+                        <h2><span class="section-kicker">2.5</span>技术发展趋势</h2>
+                        <p class="section-summary">船联网的发展趋势通常沿两条线展开：一条来自绿色航运和智能航海的业务目标，另一条来自海上通信、运维和安全约束的长期存在。</p>
+                        <div class="two-col-grid">
+                            <div class="slide-card" id="green-shipping">
+                                <h3>绿色航运</h3>
+                                <p>强调能耗、排放和工况数据的可测量、可核查、可追溯，因此更依赖数据治理、对账和权限边界。</p>
+                            </div>
+                            <div class="slide-card accent-card" id="smart-navigation">
+                                <h3>智能航海</h3>
+                                <p>强调态势理解、风险识别、协同决策和远程支持，因此更依赖多源信息协同、时间一致性和可降级运行。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="goal-mapping">
+                        <h2><span class="section-kicker">2.5A</span>业务目标到基础能力的映射</h2>
+                        <p class="section-summary">把业务目标落到系统设计时，应先明确需要什么数据特征和什么基础能力，再讨论具体技术实现方式。</p>
+                        <div class="comparison-table table-responsive">
+                            <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                                <thead>
+                                    <tr style="background: var(--color-background-alt);">
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">业务目标</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">需要的数据特征</th>
+                                        <th style="text-align:left; padding:0.75rem; border:1px solid var(--color-border);">对应基础能力</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">能效分析与核查</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">长周期完整、来源可追溯、口径一致</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">数据治理、对账、审计</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">远程运维</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">状态连续、过程留痕、版本可回滚</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">缓存补传、配置管理、审计追溯</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">协同决策支持</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">时序一致、共享边界清晰、过程可复盘</td>
+                                        <td style="padding:0.75rem; border:1px solid var(--color-border);">接口一致、服务编排、日志与回放</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="slide-section" id="terms">
+                        <h2><span class="section-kicker">KEY</span>术语速览</h2>
+                        <div class="three-col-grid">
+                            <div class="slide-card">
+                                <h3>AIS / VTS</h3>
+                                <p>分别对应自动识别系统和船舶交通服务，是海上协同的基础信息系统。</p>
+                            </div>
+                            <div class="slide-card">
+                                <h3>e-Navigation</h3>
+                                <p>海事信息服务的组织框架，强调一致语义、一致接口和可持续协同。</p>
+                            </div>
+                            <div class="slide-card">
+                                <h3>绿色航运 / 智能航海</h3>
+                                <p>两个重要业务牵引方向，分别推动数据治理和协同决策能力增强。</p>
+                            </div>
+                        </div>
+                    </section>
 
                     <h2 id="reading">延伸阅读</h2>
                     <ul>
                         <li>IMO e-Navigation Strategy Implementation Plan</li>
                         <li>IALA e-Navigation 相关建议书</li>
+                        <li>ITU-R M.1371 AIS 技术特性建议书</li>
                     </ul>
 
                     <h2 id="questions">思考题</h2>
                     <ol>
-                        <li>举例说明广义船联网与狭义船联网在对象范围上的区别。</li>
-                        <li>为什么 AIS 在海上信息协同中重要，但仍不能覆盖船联网的全部需求。</li>
-                        <li>在港区和远洋两种场景下，船联网演进的主要约束分别是什么。</li>
+                        <li>为什么说船联网讨论的关键是协同能力，而不只是通信接入能力？</li>
+                        <li>若仅依赖 AIS 数据构建航行态势，会在哪些条件下出现误判风险？</li>
+                        <li>为什么绿色航运相关应用会更强调可追溯、口径一致和对账能力？</li>
+                        <li>为什么智能航海相关应用必须强调可降级运行，而不能只强调能力增强？</li>
+                        <li>近岸和远洋两种运行模式下，系统在数据上报和风险控制上的重点有何差异？</li>
                     </ol>
 
                     <div class="callout">
@@ -102,14 +504,14 @@
                             <a href="../../lectures/L04/index.html" class="resource-item">
                                 <span class="resource-number">L04</span>
                                 <div class="resource-content">
-                                    <h5 class="resource-title">AIS系统海上信息协同基础</h5>
+                                    <h5 class="resource-title">AIS 系统海上信息协同基础</h5>
                                     <p class="resource-meta">系统构成与信息内容</p>
                                 </div>
                             </a>
                             <a href="../../labs/lab03/index.html" class="resource-item">
                                 <span class="resource-number">Lab03</span>
                                 <div class="resource-content">
-                                    <h5 class="resource-title">AIS报文解析实验</h5>
+                                    <h5 class="resource-title">AIS 报文解析实验</h5>
                                     <p class="resource-meta">从报文到字段的验证流程</p>
                                 </div>
                             </a>
@@ -127,11 +529,26 @@
                         <h4 style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--color-text-muted);">本章目录</h4>
                         <ul class="toc-list">
                             <li class="toc-item"><a href="#objectives" class="toc-link">学习目标</a></li>
-                            <li class="toc-item"><a href="#key" class="toc-link">知识要点</a></li>
-                            <li class="toc-item toc-h3"><a href="#boundary" class="toc-link">2.1 概念边界</a></li>
-                            <li class="toc-item toc-h3"><a href="#evolution" class="toc-link">2.2 演进脉络</a></li>
-                            <li class="toc-item toc-h3"><a href="#ais" class="toc-link">2.3 AIS 基础作用</a></li>
-                            <li class="toc-item toc-h3"><a href="#limits" class="toc-link">2.4 局限补充思路</a></li>
+                            <li class="toc-item"><a href="#roadmap" class="toc-link">章节路线图</a></li>
+                            <li class="toc-item"><a href="#boundary" class="toc-link">2.1 概念边界</a></li>
+                            <li class="toc-item toc-h3"><a href="#boundary-wide-narrow" class="toc-link">2.1.1 视角差异</a></li>
+                            <li class="toc-item toc-h3"><a href="#boundary-choice" class="toc-link">2.1.2 边界取舍</a></li>
+                            <li class="toc-item toc-h3"><a href="#objects" class="toc-link">2.1.3 对象范围</a></li>
+                            <li class="toc-item toc-h3"><a href="#boundary-diagram" class="toc-link">2.1A 协同边界图</a></li>
+                            <li class="toc-item"><a href="#evolution" class="toc-link">2.2 发展脉络</a></li>
+                            <li class="toc-item toc-h3"><a href="#evolution-ladder" class="toc-link">2.2A 能力阶梯</a></li>
+                            <li class="toc-item"><a href="#ais-enav" class="toc-link">2.3 AIS 与 e-Navigation</a></li>
+                            <li class="toc-item toc-h3"><a href="#ais-role" class="toc-link">2.3.1 AIS 作用</a></li>
+                            <li class="toc-item toc-h3"><a href="#ais-limits" class="toc-link">2.3.2 AIS 局限</a></li>
+                            <li class="toc-item toc-h3"><a href="#ais-intervals" class="toc-link">2.3A 报告间隔</a></li>
+                            <li class="toc-item toc-h3"><a href="#enavigation" class="toc-link">2.3B e-Navigation</a></li>
+                            <li class="toc-item"><a href="#forms-trends" class="toc-link">2.4 典型形态</a></li>
+                            <li class="toc-item toc-h3"><a href="#forms-diagram" class="toc-link">2.4A 嵌套结构图</a></li>
+                            <li class="toc-item toc-h3"><a href="#sailing-diff" class="toc-link">2.4B 航区差异</a></li>
+                            <li class="toc-item"><a href="#green-shipping" class="toc-link">2.5 技术趋势</a></li>
+                            <li class="toc-item toc-h3"><a href="#smart-navigation" class="toc-link">2.5.1 智能航海</a></li>
+                            <li class="toc-item toc-h3"><a href="#goal-mapping" class="toc-link">2.5A 目标映射</a></li>
+                            <li class="toc-item"><a href="#terms" class="toc-link">术语速览</a></li>
                             <li class="toc-item"><a href="#reading" class="toc-link">延伸阅读</a></li>
                             <li class="toc-item"><a href="#questions" class="toc-link">思考题</a></li>
                         </ul>
@@ -141,6 +558,8 @@
                         <h4 style="margin-bottom: 0.5rem; font-size: 0.875rem;">章节信息</h4>
                         <p>对应课时：2课时</p>
                         <p>建议学时：90分钟</p>
+                        <p>教材定位：概念边界与演进总览</p>
+                        <p>后续衔接：第3-8章的问题定义入口</p>
                     </div>
                 </aside>
             </div>
@@ -162,4 +581,3 @@
     <script src="../../assets/js/main.js"></script>
 </body>
 </html>
-

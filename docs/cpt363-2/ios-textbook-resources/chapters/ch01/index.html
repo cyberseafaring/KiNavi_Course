@@ -55,9 +55,9 @@
                     </div>
 
                     <section class="slide-hero">
-                        <span class="slide-eyebrow">CHAPTER 01 · ONLINE SLIDES</span>
+                        <span class="slide-eyebrow">CHAPTER 01</span>
                         <h2 class="slide-title">物联网技术基础</h2>
-                        <p class="slide-lead">这一章不是把“物联网”当成抽象名词来讲，而是把它拆成一条完整技术链：为什么出现、数据从哪里来、设备如何持续运行、数据该放在哪里处理，以及这些通用机制为什么一到海上场景就会变得更严格。</p>
+                        <p class="slide-lead">物联网把物理世界中的状态转化为可采集、可传输、可处理的数据，再把处理结果交给人或系统使用。理解这条技术链，是后续学习船联网架构、感知、通信、数据治理和安全机制的共同基础。</p>
                         <div class="highlight-strip">
                             <div class="highlight-pill"><strong>概念</strong>从 RFID 到 IoT 的扩展逻辑</div>
                             <div class="highlight-pill"><strong>感知</strong>传感器网络如何把物理世界变成数据</div>
@@ -65,11 +65,6 @@
                             <div class="highlight-pill"><strong>协同</strong>云边分工与船联网衔接</div>
                         </div>
                     </section>
-
-                    <div class="callout" style="margin-top: 0;">
-                        <h4 style="margin-bottom: 0.75rem;">使用方式</h4>
-                        <p style="margin-bottom: 0;">这页现在按“PPT 分幕”组织。每一节都先给一句话结论，再给核心卡片、对比块和课堂提示。建议按 1.1 到 1.5 顺序滚动，像翻线上课件一样看完整章。</p>
-                    </div>
 
                     <section class="slide-section" id="objectives">
                         <h2><span class="section-kicker">GO</span>学习目标</h2>
@@ -81,7 +76,7 @@
                             </div>
                             <div class="slide-card accent-card">
                                 <h3>理解系统</h3>
-                                <p>用感知、网络、平台、应用四层描述数据闭环，而不是只会背名词。</p>
+                                <p>用感知、网络、平台、应用四层描述数据闭环，并说明各层的职责与联系。</p>
                             </div>
                             <div class="slide-card accent-card">
                                 <h3>理解迁移</h3>
@@ -92,7 +87,7 @@
 
                     <section class="slide-section" id="roadmap">
                         <h2><span class="section-kicker">MAP</span>章节路线图</h2>
-                        <p class="section-summary">教材第一章可以看成五张连续的 PPT：先定义物联网，再解释数据入口，再解释设备运行，再说明数据处理位置，最后收束到船联网。</p>
+                        <p class="section-summary">本章从概念发展出发，依次进入传感器网络、嵌入式平台、云边协同，再过渡到船联网场景，形成从通用机制到行业约束的完整认识路径。</p>
                         <div class="flow-steps">
                             <div class="flow-step">
                                 <span class="step-index">1</span>
@@ -116,13 +111,13 @@
                             </div>
                         </div>
                         <div class="teacher-note">
-                            <strong>课堂总问题：</strong>如果把“物理世界变成可协同的信息系统”这件事拆开看，哪一环最容易在真实环境里失效？
+                            <strong>重点问题：</strong>如果把物理世界转化为可协同的信息系统，最容易在真实环境中失效的环节通常是哪一层，原因是什么？
                         </div>
                     </section>
 
                     <section class="slide-section">
                         <h2><span class="section-kicker">1.1</span>物联网概念发展</h2>
-                        <p class="section-summary">这部分要解决的不是“背一个定义”，而是理解物联网为什么会从供应链识别一路扩展到感知、连接、计算和协同的完整体系。</p>
+                        <p class="section-summary">这一部分关注物联网为何会从供应链识别逐步扩展为覆盖感知、连接、计算和协同的完整体系。</p>
                         <div class="two-col-grid">
                             <div class="slide-card" id="origin">
                                 <h3>概念起源与核心定义</h3>
@@ -186,7 +181,7 @@
                         </div>
                         <div class="slide-card" style="margin-top: 1rem;" id="chain">
                             <h3>系统要素与数据链条</h3>
-                            <p>教材将物联网抽象为感知层、网络层、平台层和应用层。关键不只是分层，而是闭环：应用层的判断会反过来影响采样频率、传输优先级和边缘侧策略，因此物联网更像“可自适应运行系统”，而不是静态采集通道。</p>
+                            <p>物联网系统通常可抽象为感知层、网络层、平台层和应用层。更重要的是它构成闭环：应用层的判断会反过来影响采样频率、传输优先级和边缘侧策略，使系统在约束条件下持续调整运行方式。</p>
                             <div class="four-col-grid">
                                 <div class="slide-card accent-card"><h4>感知层</h4><p>采样、识别、本地预处理，数据入口。</p></div>
                                 <div class="slide-card accent-card"><h4>网络层</h4><p>接入、路由、传输，数据通道。</p></div>
@@ -198,7 +193,7 @@
 
                     <section class="slide-section">
                         <h2><span class="section-kicker">1.2</span>传感器网络</h2>
-                        <p class="section-summary">这部分回答“数据从哪里来”。如果这一层不稳，后面的网络、平台和应用都只是建立在不透明输入上的放大器。</p>
+                        <p class="section-summary">这一部分关注数据从哪里来，以及为什么采样、同步和质量控制会直接决定后续系统能力的上限。</p>
                         <div class="three-col-grid">
                             <div class="slide-card" id="wsn-basic">
                                 <h3>基本概念</h3>
@@ -219,12 +214,12 @@
                             </div>
                         </div>
                         <div class="teacher-note">
-                            <strong>课堂结论：</strong>“传感器数据问题”可以记成三类：传感器本体误差、采集与时钟问题、传输与缓存问题。后续船联网的数据质量标注、本地缓存和数据治理都从这里出发。
+                            <strong>要点归纳：</strong>传感器数据问题通常可分为三类：传感器本体误差、采集与时钟问题、传输与缓存问题。后续船联网的数据质量标注、本地缓存和数据治理都从这里展开。
                         </div>
                     </section>
 
                     <section class="slide-section" id="wsn-topology">
-                        <h2><span class="section-kicker">1.2A</span>传感器网络不是单点采集</h2>
+                        <h2><span class="section-kicker">1.2A</span>传感器网络的拓扑与瓶颈</h2>
                         <p class="section-summary">教材在这一部分强调的，不只是“有很多传感器”，而是这些节点如何组成网络、如何把局部采样变成区域性观测，以及为什么多跳转发会带来新的瓶颈。</p>
                         <div class="two-col-grid">
                             <div class="slide-card">
@@ -251,7 +246,7 @@
 
                     <section class="slide-section" id="wsn-sampling-depth">
                         <h2><span class="section-kicker">1.2B</span>采样频率决定你能看到什么</h2>
-                        <p class="section-summary">这一张 slide 应该让学生看到一个非常工程化的事实：采样频率不是越高越好，而是在“信息保留、算力消耗、链路压力”之间做取舍。</p>
+                        <p class="section-summary">采样频率需要在信息保留、算力消耗和链路压力之间做取舍。不同类型的数据变化速度不同，因此合理频率也不同。</p>
                         <div class="three-col-grid">
                             <div class="slide-card">
                                 <h3>采样过低</h3>
@@ -267,7 +262,7 @@
                             </div>
                         </div>
                         <div class="teacher-note">
-                            <strong>课堂延伸：</strong>可以让学生比较温度、GNSS、振动、图像四类数据，判断哪类适合低频上报，哪类必须先在边缘侧做预处理。
+                            <strong>比较观察：</strong>温度、GNSS、振动、图像四类数据在采样频率、数据量和链路压力上差异明显，因此上报策略也应不同。
                         </div>
                     </section>
 
@@ -296,7 +291,7 @@
 
                     <section class="slide-section" id="wsn-topology-diagram">
                         <h2><span class="section-kicker">1.2D</span>传感器网络拓扑图</h2>
-                        <p class="section-summary">这张图把教材中的“节点-汇聚-平台”关系直接画出来。重点不是记住位置，而是看出三件事：越远的节点越依赖多跳路径，越靠近汇聚节点的设备负担越重，备份路径的存在决定网络有没有基本容错能力。</p>
+                        <p class="section-summary">“节点-汇聚-平台”的关系可概括为三点：越远的节点越依赖多跳路径，越靠近汇聚节点的设备负担越重，备份路径决定网络是否具备基本容错能力。</p>
                         <div class="diagram-frame">
                             <svg viewBox="0 0 980 430" width="100%" role="img" aria-label="传感器网络拓扑结构示意图">
                                 <defs>
@@ -360,13 +355,13 @@
                                 <text x="722" y="307" font-size="15" fill="#7b5c43">1. 网关附近节点转发最多</text>
                                 <text x="722" y="329" font-size="15" fill="#7b5c43">2. 多跳提高覆盖，也带来瓶颈</text>
                             </svg>
-                            <p class="diagram-caption">粗实线表示主路径，虚线表示备份路径。课堂上可以直接指着这张图讲“为什么离网关最近的节点最先成为故障热点”。</p>
+                            <p class="diagram-caption">粗实线表示主路径，虚线表示备份路径。靠近汇聚节点的设备承担更多转发任务，因此更容易成为能耗和故障热点。</p>
                         </div>
                     </section>
 
                     <section class="slide-section">
                         <h2><span class="section-kicker">1.3</span>嵌入式平台与物联网操作系统</h2>
-                        <p class="section-summary">这部分回答“设备如何长期稳定运行”。现场设备不是缩小版 PC，而是资源受限、需长期值守的专用系统。</p>
+                        <p class="section-summary">这一部分关注设备如何长期稳定运行。现场设备通常资源受限、长期值守，因此软件和硬件的组织方式与通用计算机明显不同。</p>
                         <div class="two-col-grid">
                             <div class="slide-card" id="platform">
                                 <h3>嵌入式平台的角色</h3>
@@ -393,7 +388,7 @@
 
                     <section class="slide-section" id="embedded-resource">
                         <h2><span class="section-kicker">1.3A</span>嵌入式系统为什么不能照搬桌面软件</h2>
-                        <p class="section-summary">教材这部分的核心深度是“资源约束决定软件形态”。不是因为嵌入式设备落后，而是因为它们面对的任务、功耗和现场条件完全不同。</p>
+                        <p class="section-summary">嵌入式系统的资源约束决定了它的软件形态。它们面对的任务、功耗和现场条件与通用计算机不同，因此设计目标也不同。</p>
                         <div class="three-col-grid">
                             <div class="slide-card">
                                 <h3>算力约束</h3>
@@ -411,8 +406,8 @@
                     </section>
 
                     <section class="slide-section" id="embedded-stack-depth">
-                        <h2><span class="section-kicker">1.3B</span>软件栈不是概念图，而是故障定位图</h2>
-                        <p class="section-summary">教材用分层架构说明：数据从硬件到应用会跨越多个层次。对教学来说，这一张最重要的价值是帮助学生形成“分层排障”的习惯。</p>
+                        <h2><span class="section-kicker">1.3B</span>软件栈与数据旅程</h2>
+                        <p class="section-summary">分层架构说明了数据从硬件到应用会跨越多个层次。理解这些层次有助于在系统出现问题时更快定位原因。</p>
                         <div class="four-col-grid">
                             <div class="slide-card"><h4>硬件/驱动</h4><p>负责把原始电信号转成可读工程量。</p></div>
                             <div class="slide-card"><h4>操作系统</h4><p>调度任务、管理缓冲区、处理并发和资源。</p></div>
@@ -420,13 +415,13 @@
                             <div class="slide-card accent-card"><h4>应用层</h4><p>根据业务规则做告警、控制和上报。</p></div>
                         </div>
                         <div class="teacher-note">
-                            <strong>课堂问题：</strong>如果更换传感器型号，主要该改哪一层？如果切换通信协议，又该改哪一层？这正是分层设计存在的意义。
+                            <strong>观察：</strong>更换传感器型号主要影响驱动层，切换通信协议主要影响中间件层。分层设计的意义就在于把变化控制在可管理范围内。
                         </div>
                     </section>
 
                     <section class="slide-section" id="embedded-sync-ops">
                         <h2><span class="section-kicker">1.3C</span>时间同步与远程运维是“长期可用”的基础</h2>
-                        <p class="section-summary">教材把时间同步和远程运维单独展开，是因为系统不是搭起来就结束，而是要在现场长期无人值守地稳定跑下去。</p>
+                        <p class="section-summary">时间同步和远程运维决定系统能否长期稳定运行。设备不仅要搭起来，还要在现场持续可用、可管、可升级。</p>
                         <div class="two-col-grid">
                             <div class="slide-card">
                                 <h3>时间同步的三类方法</h3>
@@ -449,7 +444,7 @@
 
                     <section class="slide-section">
                         <h2><span class="section-kicker">1.4</span>云计算与边缘计算</h2>
-                        <p class="section-summary">这部分回答“数据应该在哪里处理”。后续船联网强调边缘侧，就是因为海上场景会把这个分工问题推到最严苛的边界。</p>
+                        <p class="section-summary">这一部分关注数据应放在哪里处理。任务放在设备侧、边缘侧还是云端，会直接影响时延、带宽占用、可用性和运维方式。</p>
                         <div class="two-col-grid">
                             <div class="slide-card" id="cloud">
                                 <h3>云计算提供什么</h3>
@@ -472,8 +467,8 @@
                     </section>
 
                     <section class="slide-section" id="cloud-service-models">
-                        <h2><span class="section-kicker">1.4A</span>云平台提供的不是“服务器”，而是能力层</h2>
-                        <p class="section-summary">教材专门讲 IaaS、PaaS、SaaS，是为了让学生理解：物联网上云时，真正购买和复用的往往不是硬件，而是平台能力。</p>
+                        <h2><span class="section-kicker">1.4A</span>云平台提供的是能力层</h2>
+                        <p class="section-summary">IaaS、PaaS、SaaS 三种模式说明，上云时真正被复用的通常不是单纯的硬件资源，而是平台能力和服务能力。</p>
                         <div class="three-col-grid">
                             <div class="slide-card">
                                 <h3>IaaS</h3>
@@ -485,14 +480,14 @@
                             </div>
                             <div class="slide-card accent-card">
                                 <h3>SaaS</h3>
-                                <p>直接提供可用应用，用户主要消费功能而不是搭系统。</p>
+                                <p>直接提供可用应用，用户主要消费功能本身。</p>
                             </div>
                         </div>
                     </section>
 
                     <section class="slide-section" id="edge-deployment">
                         <h2><span class="section-kicker">1.4B</span>边缘不只有一种位置</h2>
-                        <p class="section-summary">教材把边缘计算分成设备边缘、现场边缘和区域边缘，这一点非常重要，因为“边缘”不是固定指某一台盒子，而是一个离数据源更近的算力层次。</p>
+                        <p class="section-summary">边缘计算可分为设备边缘、现场边缘和区域边缘。这里的“边缘”并不指某一台固定设备，而是指更靠近数据源的算力层次。</p>
                         <div class="three-col-grid">
                             <div class="slide-card">
                                 <h3>设备边缘</h3>
@@ -510,8 +505,8 @@
                     </section>
 
                     <section class="slide-section" id="offline-policy-depth">
-                        <h2><span class="section-kicker">1.4C</span>断网运行不是补丁，而是设计前提</h2>
-                        <p class="section-summary">教材对“断网运行与数据分级”写得很细，因为一旦网络不稳，系统能否继续提供最低可用能力，决定了它是不是工程系统。</p>
+                        <h2><span class="section-kicker">1.4C</span>断网运行与数据分级</h2>
+                        <p class="section-summary">断网运行与数据分级决定系统在链路受限时是否还能维持最低可用能力，这是物联网系统能否落地的关键条件之一。</p>
                         <div class="two-col-grid">
                             <div class="slide-card">
                                 <h3>哪些能力必须本地保障</h3>
@@ -535,7 +530,7 @@
 
                     <section class="slide-section" id="cloud-edge-diagram">
                         <h2><span class="section-kicker">1.4D</span>云边协同数据流图</h2>
-                        <p class="section-summary">这张图把教材里“设备边缘-现场边缘-云端”的职责和数据流放在同一画面里。讲这一张时，关键是让学生一眼看出：实时闭环为什么必须留在边缘，历史归档和复杂分析为什么更适合上云。</p>
+                        <p class="section-summary">“设备边缘-现场边缘-云端”的职责和数据流可以概括为：实时闭环留在边缘，历史归档和复杂分析放在云端。</p>
                         <div class="diagram-frame">
                             <svg viewBox="0 0 1080 430" width="100%" role="img" aria-label="云边协同数据流示意图">
                                 <defs>
@@ -592,13 +587,13 @@
                                 <rect x="735" y="344" width="250" height="50" rx="16" fill="#f4f4fb" stroke="#8c78a5" stroke-width="3"></rect>
                                 <text x="768" y="375" font-size="18" fill="#605273" font-weight="700">云端：全局视野与长期价值</text>
                             </svg>
-                            <p class="diagram-caption">蓝色箭头表示数据上行，橙色箭头表示配置与策略下行。课堂上可以用这张图讲清楚“为什么安全关键逻辑要锚定在边缘侧”。</p>
+                            <p class="diagram-caption">蓝色箭头表示数据上行，橙色箭头表示配置与策略下行。安全关键逻辑通常需要锚定在边缘侧，以保证断网条件下仍具备基本可用性。</p>
                         </div>
                     </section>
 
                     <section class="slide-section" id="to-ios">
                         <h2><span class="section-kicker">1.5</span>从物联网到船联网</h2>
-                        <p class="section-summary">这一幕是整章收束。关键判断只有一句话：船联网不是全新的技术物种，而是物联网在“高受限、高风险、难运维”行业中的特化形态。</p>
+                        <p class="section-summary">这一部分将通用物联网机制收束到船联网场景。船联网建立在物联网通用技术之上，但通信、运维和安全条件更严格，因此系统设计重点也会发生变化。</p>
                         <div class="two-col-grid">
                             <div class="slide-card" id="industry">
                                 <h3>行业约束为什么会改变架构</h3>
@@ -617,7 +612,7 @@
 
                     <section class="slide-section" id="industry-compare">
                         <h2><span class="section-kicker">1.5A</span>行业差异真正改变的是设计优先级</h2>
-                        <p class="section-summary">教材拿智慧城市、制造、农业、车联网和海上物联网做对比，不是为了列案例，而是为了说明：同样是物联网，不同行业首先变的不是技术名称，而是约束条件和优先级。</p>
+                        <p class="section-summary">不同行业的物联网系统面临的约束条件不同，因此设计优先级也不同。比较这些差异，有助于理解为什么海上场景会更强调边缘能力、断链运行和远程运维。</p>
                         <div class="comparison-table table-responsive">
                             <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
                                 <thead>
@@ -660,7 +655,7 @@
 
                     <section class="slide-section" id="ship-challenges">
                         <h2><span class="section-kicker">1.5B</span>船联网的特殊挑战会直接改写架构</h2>
-                        <p class="section-summary">教材最后一层深度在于指出：海上场景的通信、运维和安全约束不是“附加困难”，而是会反过来决定体系结构、缓存策略、边缘职责和可靠性要求。</p>
+                        <p class="section-summary">海上场景的通信、运维和安全约束会直接影响体系结构、缓存策略、边缘职责和可靠性要求，因此船联网不能简单照搬陆上物联网方案。</p>
                         <div class="three-col-grid">
                             <div class="slide-card">
                                 <h3>通信挑战</h3>
@@ -676,7 +671,7 @@
                             </div>
                         </div>
                         <div class="teacher-note">
-                            <strong>收束判断：</strong>正因为这些约束存在，船端边缘能力必须更强，数据分级策略必须更明确，远程运维和可靠性设计必须在架构阶段就写进去。
+                            <strong>要点归纳：</strong>通信受限、运维困难和安全敏感使船端边缘能力、数据分级策略、远程运维和可靠性设计成为架构阶段必须明确的基础能力。
                         </div>
                     </section>
 
