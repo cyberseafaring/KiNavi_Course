@@ -20,6 +20,12 @@
 - [Chapter 7 船联网安全机制](cpt363-2/module-07)
 - [Chapter 8 典型应用发展趋势](cpt363-2/module-08)
 
+## Recommended Entry Paths
+
+- `按教材顺序`：先进入 [章节资源总览](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/chapters/index.html)，逐章学习在线 slide，再进入对应的两节范例课程。
+- `按能力训练`：从实验和数据入口进入，例如 AIS / NMEA / 轨迹 / 安全日志 / 数据治理样本，再回到章节理解机制。
+- `按案例扩展`：从第 8 章开始，进入各章挂载的项目、公司、标准和产品链接，看真实系统如何落地。
+
 ## Digital Resource Portals
 
 以下链接会直接打开静态资源页面，不再经过 docsify 的 `#/...` 路由：

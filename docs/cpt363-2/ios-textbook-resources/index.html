@@ -154,58 +154,113 @@
     <section class="section section-alt" id="overview">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">章节概览</h2>
-                <p class="section-subtitle">教材共8章，涵盖船联网技术的完整知识体系</p>
+                <h2 class="section-title">课程骨架</h2>
+                <p class="section-subtitle">8 个章节均已重构为在线 slide 讲义，并连接讲义、实验、数据和案例入口</p>
             </div>
 
             <div class="chapter-grid">
                 <a href="chapters/ch01/index.html" class="chapter-card">
                     <span class="chapter-number">1</span>
                     <h4 class="chapter-title">物联网技术基础</h4>
-                    <p class="chapter-meta">概念、特征、技术链条</p>
+                    <p class="chapter-meta">技术底座：IoT、传感器网络、RTOS、云边协同</p>
+                    <div class="chapter-links">
+                        <span class="chapter-link-pill">L01-L02</span>
+                        <span class="chapter-link-pill">Lab01</span>
+                    </div>
                 </a>
 
                 <a href="chapters/ch02/index.html" class="chapter-card">
                     <span class="chapter-number">2</span>
                     <h4 class="chapter-title">船联网技术演变</h4>
-                    <p class="chapter-meta">概念边界、演进脉络、AIS基础</p>
+                    <p class="chapter-meta">边界与演进：AIS、e-Navigation、典型形态</p>
+                    <div class="chapter-links">
+                        <span class="chapter-link-pill">L03-L04</span>
+                        <span class="chapter-link-pill">AIS 数据</span>
+                    </div>
                 </a>
 
                 <a href="chapters/ch03/index.html" class="chapter-card">
                     <span class="chapter-number">3</span>
                     <h4 class="chapter-title">船联网体系架构</h4>
-                    <p class="chapter-meta">分层模型、接口边界、协同机制</p>
+                    <p class="chapter-meta">结构中轴：分层、船端 / 岸端、接口、运行策略</p>
+                    <div class="chapter-links">
+                        <span class="chapter-link-pill">L05-L06</span>
+                        <span class="chapter-link-pill">架构图</span>
+                    </div>
                 </a>
 
                 <a href="chapters/ch04/index.html" class="chapter-card">
                     <span class="chapter-number">4</span>
                     <h4 class="chapter-title">船载感知信息采集</h4>
-                    <p class="chapter-meta">定位姿态、态势感知、质量标注</p>
+                    <p class="chapter-meta">感知链条：定位、AIS、雷达、视觉、质量标注</p>
+                    <div class="chapter-links">
+                        <span class="chapter-link-pill">L07-L08</span>
+                        <span class="chapter-link-pill">Lab02/Lab06</span>
+                    </div>
                 </a>
 
                 <a href="chapters/ch05/index.html" class="chapter-card">
                     <span class="chapter-number">5</span>
                     <h4 class="chapter-title">海上通信网络基础</h4>
-                    <p class="chapter-meta">链路特性、多链路组织、降级策略</p>
+                    <p class="chapter-meta">通信补课：TCP/UDP、海上链路、多链路、选型</p>
+                    <div class="chapter-links">
+                        <span class="chapter-link-pill">L09-L10</span>
+                        <span class="chapter-link-pill">通信日志</span>
+                    </div>
                 </a>
 
                 <a href="chapters/ch06/index.html" class="chapter-card">
                     <span class="chapter-number">6</span>
                     <h4 class="chapter-title">船联网数据治理</h4>
-                    <p class="chapter-meta">解析存储、时间语义、融合共享</p>
+                    <p class="chapter-meta">治理链条：字典、解析、样本分析、共享一致性</p>
+                    <div class="chapter-links">
+                        <span class="chapter-link-pill">L11-L12</span>
+                        <span class="chapter-link-pill">治理样本</span>
+                    </div>
                 </a>
 
                 <a href="chapters/ch07/index.html" class="chapter-card">
                     <span class="chapter-number">7</span>
                     <h4 class="chapter-title">船联网安全机制</h4>
-                    <p class="chapter-meta">安全目标、威胁模型、降级运行</p>
+                    <p class="chapter-meta">安全底线：攻击面、分区、降级、应急、运维</p>
+                    <div class="chapter-links">
+                        <span class="chapter-link-pill">L13-L14</span>
+                        <span class="chapter-link-pill">安全日志</span>
+                    </div>
                 </a>
 
                 <a href="chapters/ch08/index.html" class="chapter-card">
                     <span class="chapter-number">8</span>
                     <h4 class="chapter-title">典型应用发展趋势</h4>
-                    <p class="chapter-meta">智能航海、绿色航运、未来展望</p>
+                    <p class="chapter-meta">应用总汇：协同、监管、运维、绿色、智能航海</p>
+                    <div class="chapter-links">
+                        <span class="chapter-link-pill">L15-L16</span>
+                        <span class="chapter-link-pill">案例入口</span>
+                    </div>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">入口建议</h2>
+                <p class="section-subtitle">按你的学习目标，优先走不同入口</p>
+            </div>
+            <div class="card-grid" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="card">
+                    <h4 class="card-title">按教材顺序学</h4>
+                    <p class="card-description">从 `章节资源` 进入，每章先看在线 slide，再看对应两节范例课程。</p>
+                </div>
+                <div class="card">
+                    <h4 class="card-title">按技能训练学</h4>
+                    <p class="card-description">从 `实验项目 + 数据资源` 进入，把 AIS、NMEA、轨迹、日志样本配合章节一起练。</p>
+                </div>
+                <div class="card">
+                    <h4 class="card-title">按案例扩展学</h4>
+                    <p class="card-description">从第 8 章和各章外部链接进入，看真实公司、产品、标准和项目案例。</p>
+                </div>
             </div>
         </div>
     </section>

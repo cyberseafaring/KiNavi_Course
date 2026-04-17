@@ -297,6 +297,41 @@ p {
     color: var(--color-text-muted);
 }
 
+.chapter-highlights {
+    margin-top: var(--space-md);
+    padding-left: 1.1rem;
+    font-size: var(--font-size-xs);
+    color: var(--color-text);
+    line-height: 1.7;
+}
+
+.chapter-highlights li {
+    margin-bottom: 0.2rem;
+}
+
+.chapter-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-top: var(--space-md);
+}
+
+.chapter-link-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.65rem;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.86);
+    color: var(--color-primary-dark);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    border: 1px solid rgba(70, 130, 180, 0.12);
+}
+
+.chapter-link-pill:hover {
+    background: var(--ios-sky-blue);
+}
+
 /* ===== Lecture/Lab Cards ===== */
 .resource-list {
     display: grid;
