@@ -13,6 +13,7 @@
 
 ## Core Teaching Pages
 
+- [本章 HTML 课件](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/slides/chapter-03.html)
 - [教材章节资源](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/chapters/ch03/index.html)
 - [L05 船联网分层架构详解](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/lectures/L05/index.html)
 - [L06 船端岸端协同机制](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/lectures/L06/index.html)

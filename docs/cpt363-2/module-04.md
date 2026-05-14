@@ -13,6 +13,7 @@
 
 ## Core Teaching Pages
 
+- [本章 HTML 课件](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/slides/chapter-04.html)
 - [教材章节资源](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/chapters/ch04/index.html)
 - [L07 船载感知链条与多源采集](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/lectures/L07/index.html)
 - [L08 多源感知数据质量标注](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/lectures/L08/index.html)

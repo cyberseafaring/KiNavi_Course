@@ -1,13 +1,13 @@
 # Nautical Internet of Things
 
-这门课现在按教材《船联网技术基础》主线重新组织。课程主页不再把静态 HTML 资源直接塞进 docsify 路由，而是把 `课程说明 -> 章节地图 -> 课时安排 -> 配套资源` 串成一条清晰学习链。
+这门课按教材《船联网技术基础》八章主线组织。主页保留短链接入口、八章教材页和八套 HTML 课件，方便直接分享给学生。
 
 ## Start Here
 
 - [Course Welcome](cpt363-2/course-welcome)
-- [Textbook Map](cpt363-2/topics.md)
-- [Schedule](cpt363-2/schedule.md)
-- [Resources](cpt363-2/resources.md)
+- [数字教材短链接](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/)
+- [八章 HTML 课件](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/slides/)
+- [章节地图](cpt363-2/topics.md)
 
 ## Eight Textbook Chapters
 
@@ -22,31 +22,21 @@
 
 ## Recommended Entry Paths
 
-- `按教材顺序`：先进入 [章节资源总览](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/chapters/index.html)，逐章学习在线 slide，再进入对应的两节范例课程。
-- `按能力训练`：从实验和数据入口进入，例如 AIS / NMEA / 轨迹 / 安全日志 / 数据治理样本，再回到章节理解机制。
-- `按案例扩展`：从第 8 章开始，进入各章挂载的项目、公司、标准和产品链接，看真实系统如何落地。
+- `按教材顺序`：先进入 [数字教材短链接](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/)，再逐章进入教材资源。
+- `按课件顺序`：进入 [八章 HTML 课件](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/slides/)，每章 36 页，对应 4 个课时。
+- `按数据样本`：从教材平台中的 AIS、NMEA、轨迹、日志和治理样本进入，再回到对应章节理解机制。
 
-## Digital Resource Portals
+## Digital Resource Portal
 
-以下链接会直接打开静态资源页面，不再经过 docsify 的 `#/...` 路由：
+分享给学生时优先使用短链接：
 
-- [教材数字资源平台首页](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/index.html)
-- [章节资源总览](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/chapters/index.html)
-- [16 节范例课程](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/lectures/index.html)
-- [8 个实验项目](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/labs/index.html)
-- [扩展教程](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/tutorials/index.html)
-- [数据资源](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/datasets/index.html)
-- [交互内容](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/interactive/index.html)
+[https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/)
+
+短链接页面保留八章教材入口，并继续连接到原有的章节资源、范例课程、实验、数据和交互内容。
 
 ## How This Course Is Structured
 
 1. `教材章节` 提供概念边界、系统机制和工程约束。
-2. `范例课程` 把每章拆成两节 45 分钟课时，便于教学组织。
+2. `HTML 课件` 把每章扩展为 36 页，对应 4 个课时。
 3. `实验项目 + 数据资源 + 交互测验` 用来巩固每章的核心能力。
 4. `扩展教程` 负责把 Python、树莓派、视觉、海事数据处理这些能力接到主线知识上。
-
-## What Changed
-
-- 原来残留的 UX 课程周次、主题词和阅读材料已不再作为主导航逻辑。
-- `cpt363-2` 现以教材 8 章为主骨架，一章对应一个课程模块页。
-- 每个模块页都明确对应的章节资源、课时、实验、测验和延展学习方向。

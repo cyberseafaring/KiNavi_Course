@@ -6,27 +6,26 @@
 
 - 面向航海技术、海事信息工程、交通信息工程等相关专业本科生
 - 以船联网系统如何运行、如何失效、如何降级为核心问题
-- 强调工程边界、证据链、数据质量和可用性，而不是抽象概念堆砌
+- 强调工程边界、资料链条、数据质量和可用性
 
 ## Learning Objectives
 
 - 能从教材 8 章建立完整的船联网技术框架
 - 能把船端、岸端、链路、数据和应用之间的关系讲清楚
 - 能基于样例数据完成 AIS/NMEA 解析、轨迹可视化、数据融合和安全分析
-- 能把配套数字资源与教材章节一一对应使用，而不是碎片化跳读
+- 能把配套数字资源与教材章节一一对应使用，形成连续学习路径
 
 ## Learning Path
 
-1. 先看 [Textbook Map](cpt363-2/topics.md) 理解全书结构。
-2. 再按 [Schedule](cpt363-2/schedule.md) 的 16 节课时推进学习。
-3. 每学完一章，进入对应 `module-*` 页面完成章节资源、测验、实验和延展任务。
+1. 先打开 [数字教材短链接](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/) 理解八章结构。
+2. 再进入 [八章 HTML 课件](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/slides/) 查看每章 36 页课件。
+3. 需要细读时，进入对应 `module-*` 页面获取教材资源、实验、数据和扩展教程。
 
 ## Core Resource Entrances
 
-- [教材数字资源平台首页](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/index.html)
-- [章节资源总览](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/chapters/index.html)
-- [范例课程总览](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/lectures/index.html)
-- [实验项目总览](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/labs/index.html)
+- [数字教材短链接](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/)
+- [八章 HTML 课件](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/slides/)
+- [原始教材资源平台](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/index.html)
 
 ## Suggested Use In Class
 

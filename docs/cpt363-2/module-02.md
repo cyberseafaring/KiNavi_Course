@@ -13,6 +13,7 @@
 
 ## Core Teaching Pages
 
+- [本章 HTML 课件](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/slides/chapter-02.html)
 - [教材章节资源](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/chapters/ch02/index.html)
 - [L03 船联网概念边界演进脉络](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/lectures/L03/index.html)
 - [L04 AIS 系统海上信息协同基础](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/lectures/L04/index.html)

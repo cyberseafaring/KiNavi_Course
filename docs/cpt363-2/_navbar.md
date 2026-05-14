@@ -1,5 +1,5 @@
 * [Home](cpt363-2/home.md)
-* [Textbook Map](cpt363-2/topics.md)
-* [Schedule](cpt363-2/schedule.md)
-* [Resources](cpt363-2/resources.md)
+* [数字教材](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/)
+* [HTML 课件](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/slides/)
+* [章节地图](cpt363-2/topics.md)
 * [Contact](cpt363-2/contact.md)

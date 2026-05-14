@@ -13,6 +13,7 @@
 
 ## Core Teaching Pages
 
+- [本章 HTML 课件](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/slides/chapter-05.html)
 - [教材章节资源](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/chapters/ch05/index.html)
 - [L09 海上通信链路特性分析](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/lectures/L09/index.html)
 - [L10 多链路组织降级策略](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/lectures/L10/index.html)

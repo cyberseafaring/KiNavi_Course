@@ -13,6 +13,7 @@
 
 ## Core Teaching Pages
 
+- [本章 HTML 课件](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/slides/chapter-01.html)
 - [教材章节资源](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/chapters/ch01/index.html)
 - [L01 物联网概念发展历程](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/lectures/L01/index.html)
 - [L02 物联网核心技术栈](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/ios-textbook-resources/lectures/L02/index.html)
