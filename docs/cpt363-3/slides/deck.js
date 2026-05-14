@@ -7,7 +7,6 @@
   }
 
   const root = document.getElementById("deck");
-  const notes = document.getElementById("notes");
   const counter = document.getElementById("counter");
   const bar = document.getElementById("progress-bar");
   const overview = document.getElementById("overview");
@@ -24,10 +23,10 @@
 
   function renderSlide(slide, i) {
     const cls = ["slide", `type-${slide.type || "cards"}`].join(" ");
-    return `<section class="${cls}" data-notes="${escapeAttr(slide.notes || "")}">
+    return `<section class="${cls}">
       <div class="slide-inner layout-${slide.type || "cards"}">
         ${renderContent(slide, i)}
-        ${slide.type === "cover" ? "" : teachingNote(slide)}
+        ${studentContext(slide, i)}
       </div>
     </section>`;
   }
@@ -87,32 +86,28 @@
       {
         type: "cards",
         title: source.enrichment.conceptsTitle || "概念深化：把术语讲成问题",
-        tag: "讲授扩展",
-        items: source.enrichment.concepts || [],
-        notes: "这一页用于把前面出现的概念进一步展开，教师可以逐项追问学生：这个概念解决什么问题、依赖什么条件、失效后会带来什么风险。"
+        tag: "概念拓展",
+        items: source.enrichment.concepts || []
       },
       {
         type: "matrix",
         title: source.enrichment.comparisonTitle || "课堂辨析：三种情境对比",
-        tag: "讲授扩展",
-        cells: source.enrichment.comparison || [],
-        notes: "这一页适合组织对比讲授。先读第一列场景，再让学生说出差异，最后回到本专题的核心技术判断。"
+        tag: "课堂辨析",
+        cells: source.enrichment.comparison || []
       },
       {
         type: "process",
         title: source.enrichment.blackboardTitle || "板书推演：从现象到方案",
-        tag: "讲授扩展",
-        steps: source.enrichment.blackboard || [],
-        notes: "这一页可作为板书或白板推演脚本。教师按步骤把学生答案收束成可复用的分析框架。"
+        tag: "板书推演",
+        steps: source.enrichment.blackboard || []
       },
       {
         type: "activity",
         title: source.enrichment.discussionTitle || "延伸讨论：把案例讲深",
-        tag: "讲授扩展",
+        tag: "延伸讨论",
         label: source.enrichment.discussionLabel || "8分钟",
         lead: source.enrichment.discussionLead || "用本节课的框架重新解释一个真实项目。",
-        points: source.enrichment.discussionPoints || [],
-        notes: "这一页用于延长课堂互动时间。学生可以先独立写，再小组交换，最后请一组用 1 分钟汇报。"
+        points: source.enrichment.discussionPoints || []
       }
     ];
     slides.push(...extra);
@@ -120,9 +115,31 @@
     return slides;
   }
 
-  function teachingNote(slide) {
-    if (!slide.notes) return "";
-    return `<div class="teaching-note"><b>讲授展开</b><span>${escapeHtml(slide.notes)}</span></div>`;
+  function studentContext(slide, i) {
+    if (slide.type === "cover") return "";
+    const visual = slide.visual || deck.visual || {};
+    const points = slide.context || rotatingItems(deck.viewpoints, i, 3);
+    const links = slide.links || rotatingItems(deck.references, i, 2);
+    if (!points.length && !links.length && !visual.src) return "";
+    const image = visual.src
+      ? `<img src="${escapeAttr(visual.src)}" alt="${escapeAttr(visual.alt || deck.title)}">`
+      : `<div class="context-fallback">${escapeHtml(deck.code || "KiNavi")}</div>`;
+    return `<div class="student-context">
+      <div class="context-visual">${image}</div>
+      <div class="context-points">
+        <b>学生观察</b>
+        <ul>${points.map(point => `<li>${escapeHtml(point)}</li>`).join("")}</ul>
+      </div>
+      <div class="context-links">
+        <b>参考链接</b>
+        ${links.map(link => `<a href="${escapeAttr(link.url)}" target="_blank" rel="noopener">${escapeHtml(link.label)}</a>`).join("")}
+      </div>
+    </div>`;
+  }
+
+  function rotatingItems(items, i, count) {
+    if (!Array.isArray(items) || !items.length) return [];
+    return Array.from({ length: Math.min(count, items.length) }, (_, offset) => items[(i + offset) % items.length]);
   }
 
   function go(next) {
@@ -130,8 +147,6 @@
     slideEls.forEach((el, i) => el.classList.toggle("is-active", i === index));
     counter.textContent = `${index + 1} / ${deck.slides.length}`;
     bar.style.width = `${((index + 1) / deck.slides.length) * 100}%`;
-    notes.querySelector("h4").textContent = deck.slides[index].title || deck.title;
-    notes.querySelector("p").textContent = deck.slides[index].notes || "本页可作为课堂讨论提示。";
     location.hash = String(index + 1);
   }
 
@@ -144,13 +159,8 @@
     return String(value).replace(/[&<>"']/g, m => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" }[m]));
   }
 
-  function escapeAttr(value) {
-    return escapeHtml(value).replace(/\n/g, " ");
-  }
-
   document.getElementById("prev").addEventListener("click", () => go(index - 1));
   document.getElementById("next").addEventListener("click", () => go(index + 1));
-  document.getElementById("notes-toggle").addEventListener("click", () => notes.classList.toggle("is-open"));
   document.getElementById("overview-toggle").addEventListener("click", () => overview.classList.toggle("is-open"));
   overview.addEventListener("click", event => {
     const btn = event.target.closest("[data-goto]");
@@ -163,11 +173,14 @@
     if (event.key === "ArrowLeft" || event.key === "PageUp") go(index - 1);
     if (event.key === "Home") go(0);
     if (event.key === "End") go(deck.slides.length - 1);
-    if (event.key.toLowerCase() === "n") notes.classList.toggle("is-open");
     if (event.key.toLowerCase() === "o") overview.classList.toggle("is-open");
     if (event.key.toLowerCase() === "f" && document.fullscreenEnabled) document.documentElement.requestFullscreen();
     if (event.key === "Escape") overview.classList.remove("is-open");
   });
 
   go(index);
+
+  function escapeAttr(value) {
+    return escapeHtml(value).replace(/\n/g, " ");
+  }
 })();
