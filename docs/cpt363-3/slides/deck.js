@@ -28,6 +28,7 @@
         ${renderContent(slide, i)}
         ${studentContext(slide, i)}
       </div>
+      <div class="page-number">${i + 1} / ${deck.slides.length}</div>
     </section>`;
   }
 
