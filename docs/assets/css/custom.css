@@ -321,18 +321,25 @@ body .markdown-section {
     margin-bottom: 20px;
 }
 
-.chapter-grid-home {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 12px;
+.section-heading--wide {
+    max-width: 880px;
 }
 
-.markdown-section .chapter-tile {
+.course-section--intro {
+    padding-top: 34px;
+}
+
+.entry-grid {
     display: grid;
-    grid-template-rows: auto auto 1fr;
-    gap: 10px;
-    min-height: 184px;
-    padding: 18px;
+    grid-template-columns: 1.15fr 1fr 1fr;
+    gap: 14px;
+}
+
+.markdown-section .entry-card {
+    display: grid;
+    gap: 8px;
+    min-height: 136px;
+    padding: 22px;
     border: 1px solid rgba(13, 82, 97, .14);
     border-radius: 8px;
     background: #fff;
@@ -340,22 +347,120 @@ body .markdown-section {
     box-shadow: 0 12px 28px rgba(17, 43, 50, .07);
 }
 
-.chapter-tile b {
-    color: #b86335;
-    font-size: .9rem;
-    letter-spacing: .08em;
+.markdown-section .entry-card--primary {
+    background: #0d5261;
+    color: #fff;
 }
 
-.chapter-tile strong {
+.entry-card strong {
     color: #0d5261;
-    font-size: 1.16rem;
-    line-height: 1.2;
+    font-size: 1.22rem;
+    line-height: 1.25;
 }
 
-.chapter-tile span {
+.entry-card--primary strong {
+    color: #fff;
+}
+
+.entry-card span {
     color: #5b6d73;
-    font-size: .94rem;
-    line-height: 1.48;
+    font-size: .96rem;
+    line-height: 1.55;
+}
+
+.entry-card--primary span {
+    color: rgba(255, 255, 255, .84);
+}
+
+.chapter-resource-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.chapter-resource-card {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    gap: 14px;
+    min-height: 312px;
+    padding: 22px;
+    border: 1px solid rgba(13, 82, 97, .16);
+    border-radius: 8px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, .96), rgba(255, 255, 255, 1)),
+        linear-gradient(135deg, rgba(13, 82, 97, .09), rgba(212, 133, 74, .08));
+    box-shadow: 0 14px 34px rgba(17, 43, 50, .08);
+}
+
+.chapter-resource-head {
+    display: grid;
+    grid-template-columns: 54px minmax(0, 1fr);
+    gap: 14px;
+    align-items: center;
+}
+
+.chapter-resource-head span {
+    display: grid;
+    place-items: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 8px;
+    background: #12313a;
+    color: #fff;
+    font-weight: 900;
+    letter-spacing: .05em;
+}
+
+.chapter-resource-card h3 {
+    margin: 0;
+    color: #0d5261;
+    font-size: 1.28rem;
+    line-height: 1.22;
+}
+
+.chapter-resource-card p {
+    color: #445d64;
+    font-size: .98rem;
+    line-height: 1.58;
+}
+
+.chapter-resource-card ul {
+    display: grid;
+    gap: 6px;
+    margin: 0;
+    padding-left: 1.1rem;
+}
+
+.chapter-resource-card li {
+    color: #52656c;
+    font-size: .95rem;
+    line-height: 1.45;
+}
+
+.chapter-resource-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-self: end;
+}
+
+.markdown-section .chapter-resource-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 7px 11px;
+    border: 1px solid rgba(13, 82, 97, .16);
+    border-radius: 999px;
+    background: #eef5f4;
+    color: #0d5261;
+    font-size: .86rem;
+    font-weight: 800;
+}
+
+.markdown-section .chapter-resource-links a:first-child {
+    background: #d4854a;
+    border-color: #d4854a;
+    color: #fff;
 }
 
 .resource-panel {
@@ -382,6 +487,39 @@ body .markdown-section {
     overflow-wrap: anywhere;
 }
 
+.course-section--compact {
+    padding-top: 18px;
+}
+
+.quick-resource-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.markdown-section .quick-resource-grid a {
+    display: grid;
+    gap: 8px;
+    min-height: 116px;
+    padding: 18px;
+    border: 1px solid rgba(13, 82, 97, .14);
+    border-radius: 8px;
+    background: #fff;
+    color: #17272f;
+}
+
+.quick-resource-grid strong {
+    color: #0d5261;
+    font-size: 1.04rem;
+    line-height: 1.25;
+}
+
+.quick-resource-grid span {
+    color: #5b6d73;
+    font-size: .92rem;
+    line-height: 1.45;
+}
+
 @media (max-width: 980px) {
     .markdown-section .course-home {
         margin-left: -24px;
@@ -398,7 +536,8 @@ body .markdown-section {
         grid-template-columns: 1fr 1fr;
     }
 
-    .chapter-grid-home {
+    .entry-grid,
+    .quick-resource-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
@@ -408,6 +547,14 @@ body .markdown-section {
 }
 
 @media (max-width: 640px) {
+    body:not(.close) .sidebar {
+        transform: translateX(-100%);
+    }
+
+    body:not(.close) .content {
+        left: 0;
+    }
+
     .markdown-section .course-home {
         margin-left: -16px;
         margin-right: -16px;
@@ -421,7 +568,9 @@ body .markdown-section {
     .course-statbar,
     .course-section--split,
     .course-section--resources,
-    .chapter-grid-home,
+    .entry-grid,
+    .chapter-resource-grid,
+    .quick-resource-grid,
     .course-path {
         grid-template-columns: 1fr;
     }
