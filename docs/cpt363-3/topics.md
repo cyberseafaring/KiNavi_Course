@@ -1,185 +1,111 @@
-# Topics
+# 课程专题
 
-### [A](#a) [B](#b) [C](#c) [D](#d) [E](#e) [F](#f) [G](#g) [H](#h) [I](#i) [J](#j) [K](#k) [L](#l) [M](#m) [N](#n) [O](#o) [P](#p) [Q](#q) [R](#r) [S](#s) [T](#t) [U](#u) [V](#v) [W](#w) [X](#x) [Y](#y) [Z](#z)
+本页用于学生选题、小论文和课堂展示。每个专题都可以对应到“南京到鹿特丹”完整航次中的一个技术挑战。
 
-## A
-### Advancements in Radar Antenna Technology
-Explore the latest developments in radar antenna technology, focusing on how advancements like phased array antennas and metamaterials are enhancing performance and reliability in marine radar systems.
+## A. MASS 基础与自主等级
 
-### AI-Driven Predictive Maintenance
-Investigate how AI algorithms can analyze sensor data to predict equipment failures and optimize maintenance schedules, reducing downtime and maintenance costs in maritime operations.
+**核心问题**：自动化、远程控制和自主航行有什么区别？
 
-## B
-### Benefits of Solid-State Radar in Maritime Navigation
-Examine the advantages of solid-state radar systems over traditional magnetron-based systems, including improved reliability, reduced maintenance, and enhanced performance in maritime environments.
+可讨论内容：
 
-### Blockchain for Secure Maritime Logistics
-Explore how blockchain technology can enhance transparency, security, and efficiency in maritime logistics, focusing on applications such as smart contracts and supply chain tracking.
+- IMO MASS 四级自主框架。
+- 辅助决策系统与真正自主系统的差异。
+- 远程操作中心在不同自主等级中的作用。
+- 自主船舶的运行条件和限制。
 
-## C
-### Cybersecurity Threats in Smart Shipping
-Analyze the cybersecurity threats facing smart shipping systems, including hacking, data breaches, and ransomware attacks, and discuss strategies for mitigating these risks.
+## B. 航行环境感知
 
-### Cloud Computing in Maritime Operations
-Investigate the role of cloud computing in maritime, focusing on data storage, processing, and analytics, and how it can enhance operational efficiency and decision-making.
+**核心问题**：船舶如何“看见”周围世界？
 
-## D
-### Data Analytics for Maritime Traffic Management
-Examine how data analytics can be used to optimize maritime traffic management, including real-time monitoring, predictive modeling, and route optimization.
+可讨论内容：
 
-### Digital Twins in Ship Design and Maintenance
-Explore the use of digital twins in ship design and maintenance, focusing on how virtual models can enhance design accuracy, predictive maintenance, and overall operational efficiency.
+- 雷达、AIS、视觉、红外和电子海图的互补关系。
+- 长江、港口、远洋和北海场景下的目标识别差异。
+- 小目标、恶劣天气、夜间航行和遮挡问题。
+- AI 视觉系统在船桥自动瞭望中的应用。
 
-## E
-### Environmental Impact of Smart Shipping
-Analyze the environmental benefits of smart shipping technologies, such as reduced emissions, energy efficiency, and sustainable practices, and discuss their impact on global maritime operations.
+## C. 船岸通信与远程控制
 
-### Emerging Technologies in Marine Renewable Energy
-Investigate the latest developments in marine renewable energy, including wave, tidal, and wind energy systems, and their potential applications in maritime operations.
+**核心问题**：船上无人时，岸上人员怎样保持有效监控？
 
-## F
-### Future Trends in Maritime Autonomous Systems
-Explore the future trends in maritime autonomous systems, including advancements in AI, robotics, and communication technologies, and their potential impact on the industry.
+可讨论内容：
 
-### Fault Detection and Diagnostics in Marine Systems
-Investigate advanced fault detection and diagnostic systems for marine equipment, focusing on real-time monitoring, predictive maintenance, and reducing operational downtime.
+- 卫星通信、5G、VDES、岸基网络和多通道备份。
+- 通信时延、带宽、稳定性和安全性。
+- 远程操作中心的信息显示和人机交互。
+- 通信中断时的降级运行策略。
 
-## G
-### Geospatial Data in Maritime Navigation
-Examine the role of geospatial data in maritime navigation, including real-time positioning, route planning, and environmental monitoring, and how it enhances operational efficiency and safety.
+## D. 自动避碰与航线规划
 
-### Green Shipping Initiatives and Policies
-Analyze global green shipping initiatives and policies aimed at reducing the environmental impact of maritime operations, focusing on regulatory frameworks and industry best practices.
+**核心问题**：机器怎样做出安全、合规、可解释的航行决策？
 
-## H
-### Human-Machine Interaction in Smart Shipping
-Explore the principles of human-machine interaction in smart shipping, focusing on user interface design, situational awareness, and the integration of AI and automation.
+可讨论内容：
 
-### Hybrid Propulsion Systems for Ships
-Investigate the development and implementation of hybrid propulsion systems in ships, focusing on their energy efficiency, environmental benefits, and operational challenges.
+- COLREGs 与真实交通场景。
+- 会遇、追越、交叉相遇和狭水道航行。
+- 航线优化中的安全、时间、能耗和排放权衡。
+- 机器学习、规则系统和混合决策方法。
 
-## I
-### IoT Integration in Maritime Operations
-Examine the integration of IoT devices in maritime operations, focusing on real-time data collection, monitoring, and analytics, and how they enhance operational efficiency and safety.
+## E. 船舶控制、动力与可靠性
 
-### Impact of Smart Technologies on Maritime Jobs
-Analyze the impact of smart technologies on maritime jobs, including changes in skill requirements, career opportunities, and the need for workforce development programs.
+**核心问题**：算法决策怎样变成真实船舶运动？
 
-## J
-### Just-in-Time Shipping and Logistics
-Explore the concept of just-in-time shipping and logistics, focusing on real-time data analytics, route optimization, and the integration of smart technologies to enhance efficiency.
+可讨论内容：
 
-### Job Market Analysis for Smart Shipping
-Investigate the current and future job market for smart shipping, including emerging roles, skill requirements, and career development opportunities.
+- 自动舵、推进控制、动力管理和定位控制。
+- 低速靠泊、运河航行和港区操纵。
+- 设备状态监测、故障诊断和预测性维护。
+- 冗余设计和应急控制。
 
-## K
-### Knowledge Management in Maritime Organizations
-Examine the role of knowledge management in maritime organizations, focusing on data sharing, collaboration, and the use of digital tools to enhance decision-making and operational efficiency.
+## F. 智能港口与船岸协同
 
-### Key Performance Indicators for Smart Ships
-Identify and analyze key performance indicators (KPIs) for smart ships, focusing on metrics for operational efficiency, safety, and environmental impact.
+**核心问题**：港口如何接纳一艘自主船舶？
 
-## L
-### Lean Operations in Maritime
-Explore the principles and practices of lean operations in maritime, focusing on waste reduction, process optimization, and continuous improvement.
+可讨论内容：
 
-### Legal and Regulatory Challenges for Autonomous Shipping
-Analyze the legal and regulatory challenges associated with autonomous shipping, including international regulations, liability issues, and safety standards.
+- 鹿特丹数字港口、MASS Port Network 和港口 AI。
+- VTS、引航、拖轮、码头、海关和船公司协同。
+- 自动化码头、AGV、岸桥和堆场调度。
+- 船岸数据交换标准。
 
-## M
-### Machine Learning for Maritime Safety
-Investigate the applications of machine learning in maritime safety, focusing on predictive analytics, risk assessment, and real-time monitoring systems.
+## G. 网络安全与数据可信
 
-### Maritime Cybersecurity Standards and Best Practices
-Examine the cybersecurity standards and best practices for maritime operations, focusing on data protection, network security, and regulatory compliance.
+**核心问题**：自主船舶如何抵御错误数据和网络攻击？
 
-## N
-### Navigation Systems for Autonomous Vessels
-Explore the advanced navigation systems required for autonomous vessels, including sensor integration, real-time data processing, and collision avoidance systems.
+可讨论内容：
 
-### Networked Maritime Operations and Communication
-Investigate the role of networked operations and communication technologies in maritime, focusing on real-time data sharing, remote monitoring, and collaborative decision-making.
+- AIS 欺骗、GNSS 干扰、恶意软件和远程控制风险。
+- 数据完整性、访问控制、身份认证和日志审计。
+- 船岸系统的网络分区和安全监测。
+- 网络安全事件的应急响应。
 
-## O
-### Operational Efficiency in Smart Shipping
-Analyze the strategies and technologies used to enhance operational efficiency in smart shipping, including automation, data analytics, and process optimization.
+## H. 法规、认证与责任
 
-### Offshore Renewable Energy Integration
-Explore the integration of offshore renewable energy sources into maritime operations, focusing on energy storage, distribution, and the potential for zero-emission shipping.
+**核心问题**：自主船舶商业化运行需要怎样的制度支撑？
 
-## P
-### Port Automation and Its Impact on Efficiency
-Examine the technologies and practices of port automation, focusing on how automated systems enhance efficiency, reduce congestion, and improve overall port operations.
+可讨论内容：
 
-### Privacy Concerns in Maritime Data
-Analyze the privacy concerns associated with maritime data, including data protection regulations, best practices for data management, and the impact on stakeholders.
+- IMO MASS Code 的目标和覆盖范围。
+- 远程操作员、船长、船东和系统供应商的责任。
+- 跨境航行、港口国监管和保险问题。
+- 认证、测试、运行限制和安全案例。
 
-## Q
-### Quality Assurance in Maritime Technology
-Examine the quality assurance processes and standards for maritime technology, focusing on testing, validation, and regulatory compliance.
+## I. 教育与未来职业
 
-### Quantitative Analysis of Maritime Traffic Patterns
-Investigate the use of quantitative analysis to study maritime traffic patterns, focusing on data collection, modeling, and the impact on port operations and shipping routes.
+**核心问题**：未来航海人才需要哪些新能力？
 
-## R
-### Remote Monitoring and Maintenance in Maritime Operations
-Investigate how remote monitoring and maintenance technologies are transforming maritime operations, focusing on real-time data analytics, predictive maintenance, and the integration of IoT devices to enhance vessel efficiency and reliability.
+可讨论内容：
 
-### Regulatory Frameworks for Remote Operations
-Examine the regulatory challenges and frameworks governing remote monitoring and maintenance in the maritime industry, including international regulations and guidelines that ensure safety and compliance.
+- 航海知识与 AI、数据、通信、控制技术的结合。
+- 远程操作员、智能航运工程师和海事数据分析岗位。
+- 航海教育中的模拟器、数字孪生和案例教学。
+- 本科生可以从哪些方向进入智能航运领域。
 
-## S
-### Smart Port Infrastructure and Its Impact on Efficiency
-Explore the components of smart port infrastructure, such as automated cranes, real-time traffic management, and integrated data systems, and analyze how these technologies contribute to increased port efficiency and reduced congestion.
+## 选题建议
 
-### Smart Ship Design Principles and Human-Centered Design
-Discuss the fundamental design principles for smart ships, focusing on the integration of advanced technologies and human-centered design approaches to enhance operational efficiency and crew safety.
-
-## T
-### Technology Adoption Barriers in the Maritime Industry
-Identify the key barriers to adopting new technologies in the maritime industry, such as cost, regulatory hurdles, and crew training requirements, and explore strategies for overcoming these challenges.
-
-### Training Programs for Smart Shipping Technologies
-Investigate the training needs and programs available for maritime workers to effectively operate and maintain smart shipping technologies, including skill requirements and certification processes.
-
-## U
-### User Experience (UX) in Maritime Operations
-Examine how user experience principles can be applied to maritime interfaces to improve efficiency and safety, focusing on enhancing situational awareness and reducing human error.
-
-### Unmanned Vessel Operations and Autonomous Navigation
-Explore the operational challenges and benefits of unmanned vessel operations, including autonomous navigation systems, regulatory considerations, and safety protocols.
-
-## V
-### Value Creation Through Smart Shipping Technologies
-Analyze how smart shipping technologies create value for maritime stakeholders, including economic benefits, environmental improvements, and enhanced operational efficiency.
-
-### Virtual Reality (VR) in Maritime Training and Education
-Investigate the applications of virtual reality in maritime training, focusing on immersive training environments and their benefits compared to traditional training methods.
-
-## W
-### Wireless Communication Technologies in Maritime
-Explore the key wireless communication technologies used in maritime operations, such as satellite communication and 5G, and discuss how they enhance real-time data transmission and integration with existing systems.
-
-### Workforce Development for the Smart Shipping Era
-Examine workforce development programs aimed at preparing the maritime industry for the transition to smart shipping, including training initiatives and career development opportunities.
-
-## X
-### XAI (Explainable AI) in Maritime Decision-Making
-Investigate the applications of explainable AI in maritime operations, focusing on how transparent AI systems can build trust and enhance decision-making processes.
-
-### X-Link: Cross-Platform Data Sharing in Maritime
-Explore the concept of X-Link, a cross-platform data-sharing protocol designed to enhance interoperability and data exchange between different maritime systems and stakeholders.
-
-## Y
-### Young Professionals in the Maritime Industry
-Identify the challenges and opportunities for young professionals entering the maritime industry, particularly in the context of smart shipping, and discuss career opportunities and skill development needs.
-
-### Yield Optimization in Maritime Logistics
-Analyze strategies for yield optimization in maritime logistics, focusing on real-time data analytics, route planning, and the integration of smart technologies to maximize efficiency and profitability.
-
-## Z
-### Zoning Regulations for Efficient Maritime Operations
-Examine zoning regulations that govern maritime operations, focusing on how they can be optimized to support efficiency and environmental protection, and discuss the environmental considerations that influence zoning decisions.
-
-### Zero-Emission Shipping: Challenges and Opportunities
-Investigate the challenges and opportunities associated with zero-emission shipping, including technological advancements, regulatory frameworks, and the potential for sustainable maritime operations.
+1. 以一个真实项目为例，分析其对应的 MASS 自主等级。
+2. 以南京到鹿特丹航线为背景，识别三个关键技术挑战。
+3. 比较 Yara Birkeland 与 Mayflower Autonomous Ship 的应用场景。
+4. 分析远程操作中心需要显示哪些关键信息。
+5. 讨论鹿特丹数字港口如何支持未来自主船舶。
+6. 结合 IMO MASS Code，说明自主船舶对航海教育的新要求。

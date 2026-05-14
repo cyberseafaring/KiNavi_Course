@@ -1,13 +1,10 @@
-**CPT363-3**
+**智能航海**
 
-- [Course Welcome](cpt363-3/course-welcome)
-- [Week 1 (May 9 - 15)](cpt363-3/module-01)
-- [Week 2 (May 16 - 22)](cpt363-3/module-02)
-- [Week 3 (May 23 - 29)](cpt363-3/module-03)
-- [Week 4 (May 30 - Jun 5)](cpt363-3/module-04)
-- **LMS Links**
-- [![Calendar](https://icongr.am/fontawesome/calendar.svg?size=16&color=808080)Calendar](https://jwc.dlmu.edu.cn/info/1128/5053.htm)
-- [![Assignments Icon](https://icongr.am/fontawesome/pencil.svg?size=16&color=808080)Assignments](https://canvas.sfu.ca/courses/44038/assignments )
-- [![Quizzes Icon](https://icongr.am/fontawesome/check-circle.svg?size=16&color=808080)Quizzes](https://canvas.sfu.ca/courses/44038/quizzes)
-- [![Class Discussions Icon](https://icongr.am/fontawesome/comments-o.svg?size=16&color=808080)Class Discussions](https://canvas.sfu.ca/courses/44038/discussion_topics)
-- [![Syllabus Icon](https://icongr.am/fontawesome/list.svg?size=16&color=808080)Syllabus](https://canvas.sfu.ca/courses/44038/assignments/syllabus)
+- [课程主页](cpt363-3/home.md)
+- [教学思路](cpt363-3/teaching-logic.md)
+- [内容架构](cpt363-3/contents.md)
+- [航次挑战图谱](cpt363-3/mass-voyage-challenges.md)
+- [课程安排](cpt363-3/schedule.md)
+- [课堂资源](cpt363-3/resources.md)
+- [课程专题](cpt363-3/topics.md)
+- [联系方式](cpt363-3/contact.md)
