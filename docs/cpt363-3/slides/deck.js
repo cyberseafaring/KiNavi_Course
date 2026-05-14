@@ -14,6 +14,7 @@
   let index = readIndex();
 
   document.title = deck.title + " - 智能航海";
+  deck.slides = enrichDeck(deck);
   root.innerHTML = deck.slides.map(renderSlide).join("");
   overview.innerHTML = deck.slides
     .map((slide, i) => `<button class="thumb" data-goto="${i}"><b>${String(i + 1).padStart(2, "0")}</b>${escapeHtml(slide.title || slide.kicker || deck.title)}</button>`)
@@ -24,8 +25,9 @@
   function renderSlide(slide, i) {
     const cls = ["slide", `type-${slide.type || "cards"}`].join(" ");
     return `<section class="${cls}" data-notes="${escapeAttr(slide.notes || "")}">
-      <div class="slide-inner ${slide.type || "cards"}">
+      <div class="slide-inner layout-${slide.type || "cards"}">
         ${renderContent(slide, i)}
+        ${slide.type === "cover" ? "" : teachingNote(slide)}
       </div>
     </section>`;
   }
@@ -75,6 +77,52 @@
       return `${header(slide)}<div class="activity-panel"><div class="label">${escapeHtml(slide.label || "课堂")}</div><div><p class="lead">${escapeHtml(slide.lead || "")}</p><ul class="bullets" style="margin-top:22px">${(slide.points || []).map(p => `<li>${escapeHtml(p)}</li>`).join("")}</ul></div></div>`;
     }
     return `${header(slide)}<div class="${(slide.items || []).length > 3 ? "grid-4" : "grid-3"}">${(slide.items || []).map(item => `<div class="card"><strong>${escapeHtml(item[0])}</strong><p>${escapeHtml(item[1])}</p></div>`).join("")}</div>`;
+  }
+
+  function enrichDeck(source) {
+    const slides = [...source.slides];
+    if (!source.enrichment) return slides;
+    const final = slides.pop();
+    const extra = [
+      {
+        type: "cards",
+        title: source.enrichment.conceptsTitle || "概念深化：把术语讲成问题",
+        tag: "讲授扩展",
+        items: source.enrichment.concepts || [],
+        notes: "这一页用于把前面出现的概念进一步展开，教师可以逐项追问学生：这个概念解决什么问题、依赖什么条件、失效后会带来什么风险。"
+      },
+      {
+        type: "matrix",
+        title: source.enrichment.comparisonTitle || "课堂辨析：三种情境对比",
+        tag: "讲授扩展",
+        cells: source.enrichment.comparison || [],
+        notes: "这一页适合组织对比讲授。先读第一列场景，再让学生说出差异，最后回到本专题的核心技术判断。"
+      },
+      {
+        type: "process",
+        title: source.enrichment.blackboardTitle || "板书推演：从现象到方案",
+        tag: "讲授扩展",
+        steps: source.enrichment.blackboard || [],
+        notes: "这一页可作为板书或白板推演脚本。教师按步骤把学生答案收束成可复用的分析框架。"
+      },
+      {
+        type: "activity",
+        title: source.enrichment.discussionTitle || "延伸讨论：把案例讲深",
+        tag: "讲授扩展",
+        label: source.enrichment.discussionLabel || "8分钟",
+        lead: source.enrichment.discussionLead || "用本节课的框架重新解释一个真实项目。",
+        points: source.enrichment.discussionPoints || [],
+        notes: "这一页用于延长课堂互动时间。学生可以先独立写，再小组交换，最后请一组用 1 分钟汇报。"
+      }
+    ];
+    slides.push(...extra);
+    if (final) slides.push(final);
+    return slides;
+  }
+
+  function teachingNote(slide) {
+    if (!slide.notes) return "";
+    return `<div class="teaching-note"><b>讲授展开</b><span>${escapeHtml(slide.notes)}</span></div>`;
   }
 
   function go(next) {
