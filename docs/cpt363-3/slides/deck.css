@@ -453,6 +453,10 @@ h3 {
   box-shadow: 0 8px 28px rgba(17, 34, 44, 0.08);
 }
 
+.student-context.no-links {
+  grid-template-columns: 150px minmax(0, 1fr);
+}
+
 .context-visual {
   min-width: 0;
   overflow: hidden;

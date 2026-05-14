@@ -73,7 +73,7 @@
       return `${header(slide)}<div class="process" style="--steps:${slide.steps.length}">${slide.steps.map((s, idx) => `<div class="step"><b>${idx + 1}</b><strong>${escapeHtml(s[0])}</strong><p>${escapeHtml(s[1])}</p></div>`).join("")}</div>`;
     }
     if (slide.type === "activity") {
-      return `${header(slide)}<div class="activity-panel"><div class="label">${escapeHtml(slide.label || "课堂")}</div><div><p class="lead">${escapeHtml(slide.lead || "")}</p><ul class="bullets" style="margin-top:22px">${(slide.points || []).map(p => `<li>${escapeHtml(p)}</li>`).join("")}</ul></div></div>`;
+      return `${header(slide)}<div class="activity-panel"><div class="label">${escapeHtml(slide.label || "案例")}</div><div><p class="lead">${escapeHtml(slide.lead || "")}</p><ul class="bullets" style="margin-top:22px">${(slide.points || []).map(p => `<li>${escapeHtml(p)}</li>`).join("")}</ul></div></div>`;
     }
     return `${header(slide)}<div class="${(slide.items || []).length > 3 ? "grid-4" : "grid-3"}">${(slide.items || []).map(item => `<div class="card"><strong>${escapeHtml(item[0])}</strong><p>${escapeHtml(item[1])}</p></div>`).join("")}</div>`;
   }
@@ -91,8 +91,8 @@
       },
       {
         type: "matrix",
-        title: source.enrichment.comparisonTitle || "课堂辨析：三种情境对比",
-        tag: "课堂辨析",
+        title: source.enrichment.comparisonTitle || "场景辨析：三种情境对比",
+        tag: "场景辨析",
         cells: source.enrichment.comparison || []
       },
       {
@@ -105,8 +105,8 @@
         type: "activity",
         title: source.enrichment.discussionTitle || "延伸讨论：把案例讲深",
         tag: "延伸讨论",
-        label: source.enrichment.discussionLabel || "8分钟",
-        lead: source.enrichment.discussionLead || "用本节课的框架重新解释一个真实项目。",
+        label: source.enrichment.discussionLabel || "案例",
+        lead: source.enrichment.discussionLead || "真实项目的场景、能力边界和关键限制。",
         points: source.enrichment.discussionPoints || []
       }
     ];
@@ -119,27 +119,39 @@
     if (slide.type === "cover") return "";
     const visual = slide.visual || deck.visual || {};
     const points = slide.context || rotatingItems(deck.viewpoints, i, 3);
-    const links = slide.links || rotatingItems(deck.references, i, 2);
+    const links = slide.links || referenceLinksForSlide(deck.references, i);
     if (!points.length && !links.length && !visual.src) return "";
     const image = visual.src
       ? `<img src="${escapeAttr(visual.src)}" alt="${escapeAttr(visual.alt || deck.title)}">`
       : `<div class="context-fallback">${escapeHtml(deck.code || "KiNavi")}</div>`;
-    return `<div class="student-context">
+    return `<div class="student-context ${links.length ? "" : "no-links"}">
       <div class="context-visual">${image}</div>
       <div class="context-points">
-        <b>学生观察</b>
+        <b>关键内容</b>
         <ul>${points.map(point => `<li>${escapeHtml(point)}</li>`).join("")}</ul>
       </div>
-      <div class="context-links">
+      ${links.length ? `<div class="context-links">
         <b>参考链接</b>
         ${links.map(link => `<a href="${escapeAttr(link.url)}" target="_blank" rel="noopener">${escapeHtml(link.label)}</a>`).join("")}
-      </div>
+      </div>` : ""}
     </div>`;
   }
 
   function rotatingItems(items, i, count) {
     if (!Array.isArray(items) || !items.length) return [];
     return Array.from({ length: Math.min(count, items.length) }, (_, offset) => items[(i + offset) % items.length]);
+  }
+
+  function referenceLinksForSlide(items, i) {
+    if (!Array.isArray(items) || !items.length) return [];
+    const seen = new Set();
+    const unique = items.filter(item => {
+      if (!item || !item.url || seen.has(item.url)) return false;
+      seen.add(item.url);
+      return true;
+    });
+    const link = unique[i - 1];
+    return link ? [link] : [];
   }
 
   function go(next) {
