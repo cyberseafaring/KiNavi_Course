@@ -2,21 +2,21 @@
 
 本页用于学生选题、小论文和课堂展示。每个专题都对应“南京到鹿特丹”完整航次中的一类技术挑战，并配套一份 HTML/PPT 课件。每份课件约 12 页，设计为 45 分钟课堂讲授使用。
 
-?> HTML/PPT 支持方向键翻页、`N` 打开讲稿提示、`O` 打开页面总览、`F` 全屏。浏览器打印可导出 PDF。
+?> HTML/PPT 是独立静态页面，建议在新标签打开。课件支持方向键翻页、`N` 打开讲稿提示、`O` 打开页面总览、`F` 全屏；浏览器打印可导出 PDF。
 
 ## 专题课件入口
 
 | 专题 | 核心问题 | HTML/PPT |
 | --- | --- | --- |
-| A. MASS 基础与自主等级 | 自动化、远程控制和自主航行有什么区别？ | [打开课件](cpt363-3/slides/mass-basics.html) |
-| B. 航行环境感知 | 船舶如何“看见”周围世界？ | [打开课件](cpt363-3/slides/perception.html) |
-| C. 船岸通信与远程控制 | 船上无人时，岸上人员怎样保持有效监控？ | [打开课件](cpt363-3/slides/communication.html) |
-| D. 自动避碰与航线规划 | 机器怎样做出安全、合规、可解释的航行决策？ | [打开课件](cpt363-3/slides/collision-planning.html) |
-| E. 船舶控制、动力与可靠性 | 算法决策怎样变成真实船舶运动？ | [打开课件](cpt363-3/slides/control-reliability.html) |
-| F. 智能港口与船岸协同 | 港口如何接纳一艘自主船舶？ | [打开课件](cpt363-3/slides/smart-port.html) |
-| G. 网络安全与数据可信 | 自主船舶如何抵御错误数据和网络攻击？ | [打开课件](cpt363-3/slides/cyber-trust.html) |
-| H. 法规、认证与责任 | 自主船舶商业化运行需要怎样的制度支撑？ | [打开课件](cpt363-3/slides/law-certification.html) |
-| I. 教育与未来职业 | 未来航海人才需要哪些新能力？ | [打开课件](cpt363-3/slides/education-careers.html) |
+| A. MASS 基础与自主等级 | 自动化、远程控制和自主航行有什么区别？ | <a href="https://cyberseafaring.github.io/KiNavi_Course/cpt363-3/slides/mass-basics.html" target="_blank" rel="noopener">打开课件</a> |
+| B. 航行环境感知 | 船舶如何“看见”周围世界？ | <a href="https://cyberseafaring.github.io/KiNavi_Course/cpt363-3/slides/perception.html" target="_blank" rel="noopener">打开课件</a> |
+| C. 船岸通信与远程控制 | 船上无人时，岸上人员怎样保持有效监控？ | <a href="https://cyberseafaring.github.io/KiNavi_Course/cpt363-3/slides/communication.html" target="_blank" rel="noopener">打开课件</a> |
+| D. 自动避碰与航线规划 | 机器怎样做出安全、合规、可解释的航行决策？ | <a href="https://cyberseafaring.github.io/KiNavi_Course/cpt363-3/slides/collision-planning.html" target="_blank" rel="noopener">打开课件</a> |
+| E. 船舶控制、动力与可靠性 | 算法决策怎样变成真实船舶运动？ | <a href="https://cyberseafaring.github.io/KiNavi_Course/cpt363-3/slides/control-reliability.html" target="_blank" rel="noopener">打开课件</a> |
+| F. 智能港口与船岸协同 | 港口如何接纳一艘自主船舶？ | <a href="https://cyberseafaring.github.io/KiNavi_Course/cpt363-3/slides/smart-port.html" target="_blank" rel="noopener">打开课件</a> |
+| G. 网络安全与数据可信 | 自主船舶如何抵御错误数据和网络攻击？ | <a href="https://cyberseafaring.github.io/KiNavi_Course/cpt363-3/slides/cyber-trust.html" target="_blank" rel="noopener">打开课件</a> |
+| H. 法规、认证与责任 | 自主船舶商业化运行需要怎样的制度支撑？ | <a href="https://cyberseafaring.github.io/KiNavi_Course/cpt363-3/slides/law-certification.html" target="_blank" rel="noopener">打开课件</a> |
+| I. 教育与未来职业 | 未来航海人才需要哪些新能力？ | <a href="https://cyberseafaring.github.io/KiNavi_Course/cpt363-3/slides/education-careers.html" target="_blank" rel="noopener">打开课件</a> |
 
 ## A. MASS 基础与自主等级
 
