@@ -4,5 +4,6 @@
   - [Kinavi Lab](https://cyberseafaring.github.io/)
 
 - **Course Info**
+  - [课程层级架构](course-architecture.md)
   - [Online Radar Course](https://www.youtube.com/watch?v=Hw5IaS6-Fzw&list=PLUJAYadtuizA8RC2Qk8LfmiWA56HZsk9y)
   - [NIoT Book](https://cyberseafaring.github.io/NIoT/#/)
