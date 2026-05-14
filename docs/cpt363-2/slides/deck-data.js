@@ -40,13 +40,13 @@ window.KINAVI_CPT3632_DECKS = {
         "tag": "Chapter 1",
         "lead": "从物理世界到数字服务的数据链",
         "meta": [
-          "物联网与船联网技术",
+          "物联网与传感网技术",
           "4 课时",
           "本科课程"
         ],
         "links": [
           {
-            "label": "数字教材短链接",
+            "label": "数字教材与章节资源",
             "url": "https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/"
           }
         ]
@@ -655,12 +655,12 @@ window.KINAVI_CPT3632_DECKS = {
       },
       {
         "type": "resources",
-        "title": "数字教材短链接",
+        "title": "数字教材与章节资源",
         "tag": "主入口",
-        "lead": "分享给学生时优先使用短入口，长路径资源仍作为后台资料库保留。",
+        "lead": "数字教材与章节资源提供概念阅读、案例材料和实验入口。",
         "resources": [
           {
-            "label": "《物联网与船联网技术》数字教材",
+            "label": "《物联网与传感网技术》数字教材",
             "url": "https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/"
           },
           {
@@ -677,7 +677,7 @@ window.KINAVI_CPT3632_DECKS = {
         "points": [
           "核心链路：物理量 -> 传感器 -> 嵌入式节点 -> 网络传输 -> 云边处理 -> 应用服务",
           "关键指标：采样频率、误差范围、时间戳、功耗、网络可用率",
-          "下一步：进入数字教材短链接继续查看章节资源"
+          "下一步：进入数字教材与章节资源继续查看章节资源"
         ]
       }
     ]
@@ -723,13 +723,13 @@ window.KINAVI_CPT3632_DECKS = {
         "tag": "Chapter 2",
         "lead": "从船舶数字化到船岸协同服务",
         "meta": [
-          "物联网与船联网技术",
+          "物联网与传感网技术",
           "4 课时",
           "本科课程"
         ],
         "links": [
           {
-            "label": "数字教材短链接",
+            "label": "数字教材与章节资源",
             "url": "https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/"
           }
         ]
@@ -1338,12 +1338,12 @@ window.KINAVI_CPT3632_DECKS = {
       },
       {
         "type": "resources",
-        "title": "数字教材短链接",
+        "title": "数字教材与章节资源",
         "tag": "主入口",
-        "lead": "分享给学生时优先使用短入口，长路径资源仍作为后台资料库保留。",
+        "lead": "数字教材与章节资源提供概念阅读、案例材料和实验入口。",
         "resources": [
           {
-            "label": "《物联网与船联网技术》数字教材",
+            "label": "《物联网与传感网技术》数字教材",
             "url": "https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/"
           },
           {
@@ -1360,7 +1360,7 @@ window.KINAVI_CPT3632_DECKS = {
         "points": [
           "核心链路：船端数字化 -> 身份与位置共享 -> 岸端汇聚 -> 服务化协同 -> 标准化接口 -> 智能应用",
           "关键指标：覆盖范围、更新周期、可见对象、服务对象、链路条件",
-          "下一步：进入数字教材短链接继续查看章节资源"
+          "下一步：进入数字教材与章节资源继续查看章节资源"
         ]
       }
     ]
@@ -1402,13 +1402,13 @@ window.KINAVI_CPT3632_DECKS = {
         "tag": "Chapter 3",
         "lead": "船端、链路、岸端如何拼成系统",
         "meta": [
-          "物联网与船联网技术",
+          "物联网与传感网技术",
           "4 课时",
           "本科课程"
         ],
         "links": [
           {
-            "label": "数字教材短链接",
+            "label": "数字教材与章节资源",
             "url": "https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/"
           }
         ]
@@ -2013,12 +2013,12 @@ window.KINAVI_CPT3632_DECKS = {
       },
       {
         "type": "resources",
-        "title": "数字教材短链接",
+        "title": "数字教材与章节资源",
         "tag": "主入口",
-        "lead": "分享给学生时优先使用短入口，长路径资源仍作为后台资料库保留。",
+        "lead": "数字教材与章节资源提供概念阅读、案例材料和实验入口。",
         "resources": [
           {
-            "label": "《物联网与船联网技术》数字教材",
+            "label": "《物联网与传感网技术》数字教材",
             "url": "https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/"
           },
           {
@@ -2035,7 +2035,7 @@ window.KINAVI_CPT3632_DECKS = {
         "points": [
           "核心链路：设备接入 -> 船端网关 -> 链路调度 -> 岸端接入 -> 数据治理 -> 业务门户",
           "关键指标：接口类型、消息格式、缓存队列、重传次数、服务可用率",
-          "下一步：进入数字教材短链接继续查看章节资源"
+          "下一步：进入数字教材与章节资源继续查看章节资源"
         ]
       }
     ]
@@ -2085,13 +2085,13 @@ window.KINAVI_CPT3632_DECKS = {
         "tag": "Chapter 4",
         "lead": "船上数据从哪里来，为什么需要标注质量",
         "meta": [
-          "物联网与船联网技术",
+          "物联网与传感网技术",
           "4 课时",
           "本科课程"
         ],
         "links": [
           {
-            "label": "数字教材短链接",
+            "label": "数字教材与章节资源",
             "url": "https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/"
           }
         ]
@@ -2704,12 +2704,12 @@ window.KINAVI_CPT3632_DECKS = {
       },
       {
         "type": "resources",
-        "title": "数字教材短链接",
+        "title": "数字教材与章节资源",
         "tag": "主入口",
-        "lead": "分享给学生时优先使用短入口，长路径资源仍作为后台资料库保留。",
+        "lead": "数字教材与章节资源提供概念阅读、案例材料和实验入口。",
         "resources": [
           {
-            "label": "《物联网与船联网技术》数字教材",
+            "label": "《物联网与传感网技术》数字教材",
             "url": "https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/"
           },
           {
@@ -2726,7 +2726,7 @@ window.KINAVI_CPT3632_DECKS = {
         "points": [
           "核心链路：自身状态 -> 周边态势 -> 运行状态 -> 时间同步 -> 质量标注 -> 融合使用",
           "关键指标：时间精度、空间误差、目标置信度、缺失率、漂移程度",
-          "下一步：进入数字教材短链接继续查看章节资源"
+          "下一步：进入数字教材与章节资源继续查看章节资源"
         ]
       }
     ]
@@ -2776,13 +2776,13 @@ window.KINAVI_CPT3632_DECKS = {
         "tag": "Chapter 5",
         "lead": "覆盖、时延、费用和可靠性的工程取舍",
         "meta": [
-          "物联网与船联网技术",
+          "物联网与传感网技术",
           "4 课时",
           "本科课程"
         ],
         "links": [
           {
-            "label": "数字教材短链接",
+            "label": "数字教材与章节资源",
             "url": "https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/"
           }
         ]
@@ -3395,12 +3395,12 @@ window.KINAVI_CPT3632_DECKS = {
       },
       {
         "type": "resources",
-        "title": "数字教材短链接",
+        "title": "数字教材与章节资源",
         "tag": "主入口",
-        "lead": "分享给学生时优先使用短入口，长路径资源仍作为后台资料库保留。",
+        "lead": "数字教材与章节资源提供概念阅读、案例材料和实验入口。",
         "resources": [
           {
-            "label": "《物联网与船联网技术》数字教材",
+            "label": "《物联网与传感网技术》数字教材",
             "url": "https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/"
           },
           {
@@ -3417,7 +3417,7 @@ window.KINAVI_CPT3632_DECKS = {
         "points": [
           "核心链路：船内采集 -> 本地汇聚 -> 链路探测 -> 业务分级 -> 多链路选择 -> 补传对账",
           "关键指标：带宽、时延、抖动、费用、覆盖",
-          "下一步：进入数字教材短链接继续查看章节资源"
+          "下一步：进入数字教材与章节资源继续查看章节资源"
         ]
       }
     ]
@@ -3471,13 +3471,13 @@ window.KINAVI_CPT3632_DECKS = {
         "tag": "Chapter 6",
         "lead": "把原始数据变成可共享、可分析、可追溯的信息产品",
         "meta": [
-          "物联网与船联网技术",
+          "物联网与传感网技术",
           "4 课时",
           "本科课程"
         ],
         "links": [
           {
-            "label": "数字教材短链接",
+            "label": "数字教材与章节资源",
             "url": "https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/"
           }
         ]
@@ -4094,12 +4094,12 @@ window.KINAVI_CPT3632_DECKS = {
       },
       {
         "type": "resources",
-        "title": "数字教材短链接",
+        "title": "数字教材与章节资源",
         "tag": "主入口",
-        "lead": "分享给学生时优先使用短入口，长路径资源仍作为后台资料库保留。",
+        "lead": "数字教材与章节资源提供概念阅读、案例材料和实验入口。",
         "resources": [
           {
-            "label": "《物联网与船联网技术》数字教材",
+            "label": "《物联网与传感网技术》数字教材",
             "url": "https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/"
           },
           {
@@ -4116,7 +4116,7 @@ window.KINAVI_CPT3632_DECKS = {
         "points": [
           "核心链路：原始采集 -> 解析校验 -> 字典映射 -> 异常处理 -> 融合分析 -> 共享服务",
           "关键指标：字段单位、时间语义、缺失率、重复率、版本号",
-          "下一步：进入数字教材短链接继续查看章节资源"
+          "下一步：进入数字教材与章节资源继续查看章节资源"
         ]
       }
     ]
@@ -4162,13 +4162,13 @@ window.KINAVI_CPT3632_DECKS = {
         "tag": "Chapter 7",
         "lead": "在攻击、误操作和弱网条件下保持可信与可用",
         "meta": [
-          "物联网与船联网技术",
+          "物联网与传感网技术",
           "4 课时",
           "本科课程"
         ],
         "links": [
           {
-            "label": "数字教材短链接",
+            "label": "数字教材与章节资源",
             "url": "https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/"
           }
         ]
@@ -4777,12 +4777,12 @@ window.KINAVI_CPT3632_DECKS = {
       },
       {
         "type": "resources",
-        "title": "数字教材短链接",
+        "title": "数字教材与章节资源",
         "tag": "主入口",
-        "lead": "分享给学生时优先使用短入口，长路径资源仍作为后台资料库保留。",
+        "lead": "数字教材与章节资源提供概念阅读、案例材料和实验入口。",
         "resources": [
           {
-            "label": "《物联网与船联网技术》数字教材",
+            "label": "《物联网与传感网技术》数字教材",
             "url": "https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/"
           },
           {
@@ -4799,7 +4799,7 @@ window.KINAVI_CPT3632_DECKS = {
         "points": [
           "核心链路：资产识别 -> 威胁建模 -> 分区隔离 -> 访问控制 -> 日志审计 -> 应急恢复",
           "关键指标：资产等级、访问权限、加密状态、日志完整性、告警级别",
-          "下一步：进入数字教材短链接继续查看章节资源"
+          "下一步：进入数字教材与章节资源继续查看章节资源"
         ]
       }
     ]
@@ -4845,13 +4845,13 @@ window.KINAVI_CPT3632_DECKS = {
         "tag": "Chapter 8",
         "lead": "把前七章能力落到船岸协同、监管、运维和绿色航运",
         "meta": [
-          "物联网与船联网技术",
+          "物联网与传感网技术",
           "4 课时",
           "本科课程"
         ],
         "links": [
           {
-            "label": "数字教材短链接",
+            "label": "数字教材与章节资源",
             "url": "https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/"
           }
         ]
@@ -5460,12 +5460,12 @@ window.KINAVI_CPT3632_DECKS = {
       },
       {
         "type": "resources",
-        "title": "数字教材短链接",
+        "title": "数字教材与章节资源",
         "tag": "主入口",
-        "lead": "分享给学生时优先使用短入口，长路径资源仍作为后台资料库保留。",
+        "lead": "数字教材与章节资源提供概念阅读、案例材料和实验入口。",
         "resources": [
           {
-            "label": "《物联网与船联网技术》数字教材",
+            "label": "《物联网与传感网技术》数字教材",
             "url": "https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/"
           },
           {
@@ -5482,7 +5482,7 @@ window.KINAVI_CPT3632_DECKS = {
         "points": [
           "核心链路：业务需求 -> 数据输入 -> 模型处理 -> 服务输出 -> 边界说明 -> 评估改进",
           "关键指标：风险等级、响应时间、设备健康、燃油消耗、排放指标",
-          "下一步：进入数字教材短链接继续查看章节资源"
+          "下一步：进入数字教材与章节资源继续查看章节资源"
         ]
       }
     ]

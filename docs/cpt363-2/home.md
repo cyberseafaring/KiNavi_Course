@@ -2,8 +2,8 @@
   <div class="course-hero" style="--hero-image: url('../../cpt363-2/images/dave-hoefler-vl2uAIdBWJ8-unsplash.jpg');">
     <div class="course-hero__content">
       <p class="course-kicker">CPT363-2 · KiNavi Course</p>
-      <h1>物联网与船联网技术</h1>
-      <p class="course-hero__lead">以物联网基础、船端感知、海上通信、数据治理、安全机制和典型应用为主线，把通用 IoT 技术迁移到移动、弱网、高安全约束的船岸协同场景。</p>
+      <h1>物联网与传感网技术</h1>
+      <p class="course-hero__lead">课程从物联网系统、传感器网络、嵌入式节点和云边协同出发，进入船端感知、海上通信、数据治理、安全机制与典型应用，形成从数据采集到智能服务的完整技术链。</p>
       <div class="course-actions">
         <a class="course-button course-button--primary" href="https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/">数字教材</a>
         <a class="course-button" href="#/cpt363-2/home?id=course-chapters">章节资源</a>
@@ -14,61 +14,39 @@
 
   <div class="course-statbar" aria-label="course structure">
     <div><strong>8</strong><span>教材章节</span></div>
-    <div><strong>32</strong><span>课时主线</span></div>
+    <div><strong>16</strong><span>范例课程</span></div>
     <div><strong>288</strong><span>课件页面</span></div>
-    <div><strong>5</strong><span>能力链条</span></div>
+    <div><strong>8</strong><span>实验项目</span></div>
   </div>
 
   <section class="course-section course-section--split">
     <div>
       <p class="course-kicker">Course Logic</p>
-      <h2>从通用物联网到船岸协同系统</h2>
-      <p>课程先建立对象标识、传感器、嵌入式节点、网络传输和云边协同的基础，再转入船舶场景中的 AIS/NMEA、船载设备、海上链路、岸端平台、数据质量和安全防护。</p>
+      <h2>从感知节点到联网服务</h2>
+      <p>核心内容围绕物理对象、传感器节点、通信网络、边缘计算、云端平台和应用服务展开。船舶场景提供移动平台、弱网链路、高可靠和安全边界等典型约束，使物联网与传感网技术能够落到可分析的工程系统中。</p>
     </div>
     <div class="course-path">
+      <span>对象识别</span>
       <span>感知采集</span>
-      <span>通信链路</span>
+      <span>网络传输</span>
       <span>数据治理</span>
-      <span>安全机制</span>
-      <span>应用发展</span>
-    </div>
-  </section>
-
-  <section class="course-section course-section--intro">
-    <div class="section-heading">
-      <p class="course-kicker">Homepage Entry</p>
-      <h2>主页已经整合课程资源入口</h2>
-      <p>学生从本页即可进入教材章节、HTML 课件、范例课程、实验、数据和交互内容。原来的章节资源长链接继续保留，但日常分享可以直接使用本课程主页。</p>
-    </div>
-    <div class="entry-grid">
-      <a class="entry-card entry-card--primary" href="https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/">
-        <strong>数字教材</strong>
-        <span>按章阅读概念、机制、案例和课堂延伸。</span>
-      </a>
-      <a class="entry-card" href="#/cpt363-2/home?id=course-chapters">
-        <strong>章节资源</strong>
-        <span>8 章课件、范例课、实验和数据从这里进入。</span>
-      </a>
-      <a class="entry-card" href="#/cpt363-2/resources">
-        <strong>资源索引</strong>
-        <span>查看实验、数据、交互内容和扩展教程的完整清单。</span>
-      </a>
+      <span>应用服务</span>
     </div>
   </section>
 
   <section class="course-section" id="course-chapters">
     <div class="section-heading section-heading--wide">
-      <p class="course-kicker">Chapter Resource Hub</p>
-      <h2>八章资源总览</h2>
-      <p>每章都把在线 slide、范例课程、实验或数据入口放在同一张卡片里。进入课程时优先从这里选章，避免单独记忆很长的资源目录地址。</p>
+      <p class="course-kicker">Eight Chapters</p>
+      <h2>八章课程内容</h2>
+      <p>八章内容按“物联网基础 -> 船联网演进 -> 体系架构 -> 感知采集 -> 海上通信 -> 数据治理 -> 安全机制 -> 应用趋势”推进，逐步形成对象、节点、链路、数据与服务之间的系统关系。</p>
     </div>
     <div class="chapter-resource-grid">
       <article class="chapter-resource-card">
         <div class="chapter-resource-head"><span>01</span><h3>物联网技术基础</h3></div>
         <p>IoT 概念、传感器网络、嵌入式平台、云边协同。</p>
         <ul>
-          <li>建立技术底座与四层数据链。</li>
-          <li>补足 RTOS、云边协同基础概念。</li>
+          <li>物理量、传感器、嵌入式节点、网络传输、云边处理和应用服务。</li>
+          <li>对象标识、感知数据、可靠传输、边缘节点和应用闭环。</li>
         </ul>
         <div class="chapter-resource-links">
           <a href="cpt363-2/ios-textbook-resources/chapters/ch01/index.html">章节页</a>
@@ -81,8 +59,8 @@
         <div class="chapter-resource-head"><span>02</span><h3>船联网技术演变</h3></div>
         <p>概念边界、演进脉络、AIS、e-Navigation、典型形态。</p>
         <ul>
-          <li>交代对象范围与协同边界。</li>
-          <li>从 AIS 到服务化协同的历史主线。</li>
+          <li>广义船联网、狭义船联网、AIS、e-Navigation 与船岸协同。</li>
+          <li>港区、近岸和远洋场景下的信息共享对象与链路差异。</li>
         </ul>
         <div class="chapter-resource-links">
           <a href="cpt363-2/ios-textbook-resources/chapters/ch02/index.html">章节页</a>
@@ -95,8 +73,8 @@
         <div class="chapter-resource-head"><span>03</span><h3>船联网体系架构</h3></div>
         <p>分层模型、船端 / 岸端、接口类型、运行策略。</p>
         <ul>
-          <li>作为课程后续章节的结构中轴。</li>
-          <li>把分层、接口、缓存补传一起讲清。</li>
+          <li>感知层、传输层、计算层、应用层及其职责边界。</li>
+          <li>设备接口、消息接口、服务接口与缓存补传、降级运行、日志追溯。</li>
         </ul>
         <div class="chapter-resource-links">
           <a href="cpt363-2/ios-textbook-resources/chapters/ch03/index.html">章节页</a>
@@ -109,8 +87,8 @@
         <div class="chapter-resource-head"><span>04</span><h3>船载感知信息采集</h3></div>
         <p>定位、姿态、AIS、雷达、视觉、质量标注。</p>
         <ul>
-          <li>自身状态、周边态势、运行状态三条链。</li>
-          <li>建立多源互补与时间同步意识。</li>
+          <li>GNSS、AIS、雷达、视觉、声呐与设备监测构成多源感知链。</li>
+          <li>时间精度、空间误差、目标置信度、缺失率和同步偏差。</li>
         </ul>
         <div class="chapter-resource-links">
           <a href="cpt363-2/ios-textbook-resources/chapters/ch04/index.html">章节页</a>
@@ -123,8 +101,8 @@
         <div class="chapter-resource-head"><span>05</span><h3>海上通信网络基础</h3></div>
         <p>通信基础补课、海上链路、多链路与选型方法。</p>
         <ul>
-          <li>专门补充 TCP/UDP、时延、覆盖等通信基础。</li>
-          <li>形成面向不同海区的链路选择模板。</li>
+          <li>船内网络、船船通信、船岸通信、多链路管理与降级策略。</li>
+          <li>带宽、时延、抖动、费用、覆盖和安全接入共同决定链路选型。</li>
         </ul>
         <div class="chapter-resource-links">
           <a href="cpt363-2/ios-textbook-resources/chapters/ch05/index.html">章节页</a>
@@ -137,8 +115,8 @@
         <div class="chapter-resource-head"><span>06</span><h3>船联网数据治理</h3></div>
         <p>解析、存储、融合、共享、一致性与样本分析。</p>
         <ul>
-          <li>新增治理数据样本与分析示例。</li>
-          <li>串联原始层、清洗层、产品层的处理过程。</li>
+          <li>原始层、清洗层、融合层、产品层之间的处理关系。</li>
+          <li>时间语义、数据字典、异常处理、幂等标识和版本对账。</li>
         </ul>
         <div class="chapter-resource-links">
           <a href="cpt363-2/ios-textbook-resources/chapters/ch06/index.html">章节页</a>
@@ -151,8 +129,8 @@
         <div class="chapter-resource-head"><span>07</span><h3>船联网安全机制</h3></div>
         <p>安全目标、攻击面、纵深防御、降级与应急。</p>
         <ul>
-          <li>把安全术语转化为航行场景语言。</li>
-          <li>强调从安全事件到航行风险的因果链。</li>
+          <li>身份认证、访问控制、加密、完整性校验、审计日志和分区隔离。</li>
+          <li>远程运维、补丁管理、备份恢复和关键业务降级运行。</li>
         </ul>
         <div class="chapter-resource-links">
           <a href="cpt363-2/ios-textbook-resources/chapters/ch07/index.html">章节页</a>
@@ -165,8 +143,8 @@
         <div class="chapter-resource-head"><span>08</span><h3>典型应用发展趋势</h3></div>
         <p>船岸协同、监管、运维、绿色航运、智能航海。</p>
         <ul>
-          <li>用应用案例收束课程技术链条。</li>
-          <li>逐类说明输入、处理、输出和适用边界。</li>
+          <li>航行支持、海事监管、远程运维、能效优化和智能航海。</li>
+          <li>业务需求、数据输入、模型处理、服务输出、边界说明和评估改进。</li>
         </ul>
         <div class="chapter-resource-links">
           <a href="cpt363-2/ios-textbook-resources/chapters/ch08/index.html">章节页</a>
@@ -180,25 +158,27 @@
 
   <section class="course-section course-section--resources">
     <div class="resource-panel">
-      <p class="course-kicker">For Students</p>
-      <h2>推荐学习路径</h2>
-      <ol>
-        <li>从本页选择章节，先看章节页和 HTML 课件。</li>
-        <li>进入对应两节范例课程，按 45 分钟课堂节奏复习。</li>
-        <li>结合 AIS、NMEA、轨迹、通信日志和治理样本完成实验。</li>
-      </ol>
+      <p class="course-kicker">Knowledge Chain</p>
+      <h2>课程能力链</h2>
+      <div class="course-mini-chain">
+        <span>传感器与节点</span>
+        <span>通信与链路</span>
+        <span>解析与治理</span>
+        <span>安全与运维</span>
+        <span>应用与评估</span>
+      </div>
     </div>
     <div class="resource-panel">
-      <p class="course-kicker">Resource Portal</p>
-      <h2>主页短入口</h2>
-      <p>分享给学生时优先使用课程主页，主页内部已经承接章节资源、范例课程、实验、数据和交互内容。</p>
-      <a class="course-link-card" href="https://cyberseafaring.github.io/KiNavi_Course/#/cpt363-2/home">cyberseafaring.github.io/KiNavi_Course/#/cpt363-2/home</a>
+      <p class="course-kicker">Practical Work</p>
+      <h2>实验与数据对象</h2>
+      <p>AIS 报文、NMEA 日志、船舶轨迹、通信延迟、治理批次、安全日志和船舶图像样本共同构成课程实践对象。</p>
+      <a class="course-link-card" href="cpt363-2/ios-textbook-resources/datasets/index.html">数据资源</a>
     </div>
   </section>
 
   <section class="course-section course-section--compact">
     <div class="section-heading section-heading--wide">
-      <p class="course-kicker">All Resources</p>
+      <p class="course-kicker">Course Resources</p>
       <h2>常用资源快速入口</h2>
     </div>
     <div class="quick-resource-grid">

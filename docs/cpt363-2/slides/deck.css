@@ -31,6 +31,20 @@ body {
     linear-gradient(135deg, #081e27, #14383f 54%, #26372f);
 }
 
+body.theme-ink {
+  --paper: #f5f7f5;
+  --panel: rgba(255, 255, 255, .94);
+  --line: rgba(13, 82, 97, .18);
+}
+
+body.theme-night {
+  --ink: #eef6f4;
+  --muted: #c1d2d2;
+  --paper: #13262d;
+  --panel: rgba(24, 48, 55, .92);
+  --line: rgba(255, 255, 255, .16);
+}
+
 h1,
 h2,
 p {
@@ -68,15 +82,63 @@ p {
   background-size: 28px 28px, 28px 28px, 100% 100%;
 }
 
+body.theme-night .slide {
+  background:
+    linear-gradient(rgba(255, 255, 255, .035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px),
+    linear-gradient(135deg, #13262d 0%, #1b3940 58%, #182b35 100%);
+}
+
 .slide.is-active {
   display: grid;
   animation: enter .22s ease both;
+}
+
+.slide.is-active .card,
+.slide.is-active .step,
+.slide.is-active .pipe div,
+.slide.is-active .resource-list a,
+.slide.is-active .chapter-card {
+  animation: rise .28s ease both;
+}
+
+.slide.is-active .card:nth-child(2),
+.slide.is-active .step:nth-child(2),
+.slide.is-active .pipe div:nth-child(2),
+.slide.is-active .resource-list a:nth-child(2) {
+  animation-delay: .03s;
+}
+
+.slide.is-active .card:nth-child(3),
+.slide.is-active .step:nth-child(3),
+.slide.is-active .pipe div:nth-child(3),
+.slide.is-active .resource-list a:nth-child(3) {
+  animation-delay: .06s;
+}
+
+.slide.is-active .card:nth-child(4),
+.slide.is-active .step:nth-child(4),
+.slide.is-active .pipe div:nth-child(4),
+.slide.is-active .resource-list a:nth-child(4) {
+  animation-delay: .09s;
 }
 
 @keyframes enter {
   from {
     opacity: 0;
     transform: translateY(10px) scale(.996);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
   }
 
   to {
@@ -146,6 +208,18 @@ h2 {
   font-size: clamp(21px, 2.3vw, 27px);
   line-height: 1.36;
   font-weight: 700;
+}
+
+body.theme-night .lead,
+body.theme-night .card p,
+body.theme-night .card li,
+body.theme-night .major li,
+body.theme-night .step p,
+body.theme-night .scenario p,
+body.theme-night .resource-list small,
+body.theme-night .matrix div,
+body.theme-night .chapter-card p {
+  color: #d9e8e5;
 }
 
 .eyebrow {
@@ -245,8 +319,7 @@ h2 {
 .card,
 .step,
 .pipe div,
-.resource-list a,
-.teaching-note {
+.resource-list a {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
@@ -509,29 +582,43 @@ h2 {
   color: #fff;
 }
 
-.teaching-note {
-  display: grid;
-  grid-template-columns: 160px 1fr;
-  gap: 14px;
-  align-items: center;
-  align-self: start;
-  min-height: 64px;
-  padding: 12px 16px;
-  background: rgba(255, 255, 255, .86);
+.notes {
+  display: none;
 }
 
-.teaching-note strong {
-  color: var(--accent);
+.notes-panel {
+  position: fixed;
+  left: 50%;
+  bottom: 82px;
+  z-index: 11;
+  display: none;
+  width: min(720px, calc(100vw - 40px));
+  padding: 18px 20px;
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 8px;
+  background: rgba(10, 24, 30, .9);
+  color: #fff;
+  transform: translateX(-50%);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .28);
+  backdrop-filter: blur(12px);
+}
+
+.notes-panel.is-open {
+  display: grid;
+  gap: 8px;
+}
+
+.notes-panel strong {
+  color: #f3bd76;
   font-size: 15px;
-  letter-spacing: .05em;
+  letter-spacing: .08em;
   text-transform: uppercase;
 }
 
-.teaching-note span {
-  color: #2b4149;
-  font-size: clamp(16px, 1.7vw, 20px);
-  font-weight: 800;
-  line-height: 1.3;
+.notes-panel p {
+  color: #fff;
+  font-size: 20px;
+  line-height: 1.42;
 }
 
 .deck-nav {
@@ -558,6 +645,12 @@ h2 {
   color: var(--theme);
   font-size: 24px;
   font-weight: 900;
+}
+
+.deck-nav button.secondary {
+  background: rgba(255, 255, 255, .18);
+  color: #fff;
+  font-size: 16px;
 }
 
 .deck-nav span {
@@ -733,10 +826,6 @@ h2 {
 
   .pipe {
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  .teaching-note {
-    grid-template-columns: 1fr;
   }
 
   h1 {

@@ -1,5 +1,5 @@
 (function () {
-  const COURSE_TITLE = "物联网与船联网技术";
+  const COURSE_TITLE = "物联网与传感网技术";
   const id = window.KINAVI_CPT3632_DECK_ID;
   const deck = window.KINAVI_CPT3632_DECKS && window.KINAVI_CPT3632_DECKS[id];
 
@@ -15,7 +15,12 @@
   const counter = document.getElementById("counter");
   const bar = document.getElementById("progress-bar");
   const overview = document.getElementById("overview");
+  const notesPanel = createNotesPanel();
   let index = readIndex();
+  let themeIndex = Number(localStorage.getItem("kinavi-cpt3632-theme") || 0);
+  const themes = ["theme-paper", "theme-ink", "theme-night"];
+
+  applyTheme();
 
   document.title = deck.title + " - " + COURSE_TITLE;
   root.innerHTML = deck.slides.map(renderSlide).join("");
@@ -89,7 +94,7 @@
   }
 
   function withNote(slide, html) {
-    return html + "<div class='teaching-note'><strong>课堂展开</strong><span>" + esc(teachingCue(slide)) + "</span></div>";
+    return html + "<aside class='notes'>" + esc(teachingCue(slide)) + "</aside>";
   }
 
   function teachingCue(slide) {
@@ -99,7 +104,7 @@
     if (slide.type === "pipeline" && slide.steps && slide.steps.length) return "把每个环节映射到真实船岸场景，要求学生指出断链、延迟或质量问题会出现在哪里。";
     if (slide.type === "matrix") return "用矩阵比较概念、指标和应用入口，避免只记术语而缺少系统位置。";
     if (slide.type === "scenario") return "围绕场景拆解对象、链路、指标和风险，形成课堂讨论或小练习。";
-    if (slide.type === "resources") return "引导学生从教材章节进入实验、数据样本和测验，形成课前预习与课后复盘闭环。";
+    if (slide.type === "resources") return "把教材章节、实验、数据样本和测验连接到本页主题，形成概念、样本和应用之间的闭环。";
     if (slide.items && slide.items.length) return "逐项说明概念边界、工程作用和与后续章节的连接点。";
     return "补充一个现场例子或数据样本，让抽象概念落到可观察的系统行为。";
   }
@@ -110,6 +115,7 @@
     counter.textContent = (index + 1) + " / " + deck.slides.length;
     bar.style.width = ((index + 1) / deck.slides.length * 100) + "%";
     location.hash = String(index + 1);
+    updateNotes();
   }
 
   function readIndex() {
@@ -138,6 +144,10 @@
   document.getElementById("prev").addEventListener("click", () => go(index - 1));
   document.getElementById("next").addEventListener("click", () => go(index + 1));
   document.getElementById("overview-toggle").addEventListener("click", () => overview.classList.toggle("is-open"));
+  const themeToggle = document.getElementById("theme-toggle");
+  if (themeToggle) themeToggle.addEventListener("click", cycleTheme);
+  const notesToggle = document.getElementById("notes-toggle");
+  if (notesToggle) notesToggle.addEventListener("click", toggleNotes);
   overview.addEventListener("click", event => {
     const button = event.target.closest("[data-goto]");
     if (button) {
@@ -151,9 +161,45 @@
     if (event.key === "Home") go(0);
     if (event.key === "End") go(deck.slides.length - 1);
     if (event.key.toLowerCase() === "o") overview.classList.toggle("is-open");
+    if (event.key.toLowerCase() === "t") cycleTheme();
+    if (event.key.toLowerCase() === "s" || event.key.toLowerCase() === "n") toggleNotes();
     if (event.key.toLowerCase() === "f" && document.fullscreenEnabled) document.documentElement.requestFullscreen();
-    if (event.key === "Escape") overview.classList.remove("is-open");
+    if (event.key === "Escape") {
+      overview.classList.remove("is-open");
+      notesPanel.classList.remove("is-open");
+    }
   });
+
+  function createNotesPanel() {
+    const panel = document.createElement("div");
+    panel.id = "notes-panel";
+    panel.className = "notes-panel";
+    panel.innerHTML = "<strong>讲稿</strong><p></p>";
+    document.body.appendChild(panel);
+    return panel;
+  }
+
+  function updateNotes() {
+    const note = slides[index] && slides[index].querySelector(".notes");
+    const text = note ? note.textContent : "";
+    notesPanel.querySelector("p").textContent = text;
+  }
+
+  function toggleNotes() {
+    notesPanel.classList.toggle("is-open");
+    updateNotes();
+  }
+
+  function cycleTheme() {
+    themeIndex = (themeIndex + 1) % themes.length;
+    localStorage.setItem("kinavi-cpt3632-theme", String(themeIndex));
+    applyTheme();
+  }
+
+  function applyTheme() {
+    document.body.classList.remove(...themes);
+    document.body.classList.add(themes[themeIndex]);
+  }
 
   go(index);
 })();

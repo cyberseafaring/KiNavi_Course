@@ -475,6 +475,27 @@ body .markdown-section {
     padding-left: 1.2rem;
 }
 
+.course-mini-chain {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.course-mini-chain span {
+    min-height: 72px;
+    display: grid;
+    place-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    background: #12313a;
+    color: #fff;
+    font-size: .92rem;
+    font-weight: 800;
+    line-height: 1.25;
+    text-align: center;
+}
+
 .markdown-section .course-link-card {
     display: block;
     margin-top: 18px;
@@ -571,6 +592,7 @@ body .markdown-section {
     .entry-grid,
     .chapter-resource-grid,
     .quick-resource-grid,
+    .course-mini-chain,
     .course-path {
         grid-template-columns: 1fr;
     }

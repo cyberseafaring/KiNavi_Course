@@ -1,7 +1,7 @@
-**CPT363-2 物联网与船联网技术**
+**CPT363-2 物联网与传感网技术**
 
-- [Course Welcome](cpt363-2/course-welcome)
-- [数字教材短链接](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/)
+- [课程首页](cpt363-2/home)
+- [数字教材](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/)
 - [八章 HTML 课件](https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/slides/)
 - [Chapter 1 物联网技术基础](cpt363-2/module-01)
 - [Chapter 2 船联网技术演变](cpt363-2/module-02)
