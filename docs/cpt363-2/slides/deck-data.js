@@ -40,7 +40,7 @@ window.KINAVI_CPT3632_DECKS = {
         "tag": "Chapter 1",
         "lead": "从物理世界到数字服务的数据链",
         "meta": [
-          "船联网技术基础",
+          "物联网与船联网技术",
           "4 课时",
           "本科课程"
         ],
@@ -660,7 +660,7 @@ window.KINAVI_CPT3632_DECKS = {
         "lead": "分享给学生时优先使用短入口，长路径资源仍作为后台资料库保留。",
         "resources": [
           {
-            "label": "《船联网技术基础》数字教材",
+            "label": "《物联网与船联网技术》数字教材",
             "url": "https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/"
           },
           {
@@ -723,7 +723,7 @@ window.KINAVI_CPT3632_DECKS = {
         "tag": "Chapter 2",
         "lead": "从船舶数字化到船岸协同服务",
         "meta": [
-          "船联网技术基础",
+          "物联网与船联网技术",
           "4 课时",
           "本科课程"
         ],
@@ -1343,7 +1343,7 @@ window.KINAVI_CPT3632_DECKS = {
         "lead": "分享给学生时优先使用短入口，长路径资源仍作为后台资料库保留。",
         "resources": [
           {
-            "label": "《船联网技术基础》数字教材",
+            "label": "《物联网与船联网技术》数字教材",
             "url": "https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/"
           },
           {
@@ -1402,7 +1402,7 @@ window.KINAVI_CPT3632_DECKS = {
         "tag": "Chapter 3",
         "lead": "船端、链路、岸端如何拼成系统",
         "meta": [
-          "船联网技术基础",
+          "物联网与船联网技术",
           "4 课时",
           "本科课程"
         ],
@@ -2018,7 +2018,7 @@ window.KINAVI_CPT3632_DECKS = {
         "lead": "分享给学生时优先使用短入口，长路径资源仍作为后台资料库保留。",
         "resources": [
           {
-            "label": "《船联网技术基础》数字教材",
+            "label": "《物联网与船联网技术》数字教材",
             "url": "https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/"
           },
           {
@@ -2085,7 +2085,7 @@ window.KINAVI_CPT3632_DECKS = {
         "tag": "Chapter 4",
         "lead": "船上数据从哪里来，为什么需要标注质量",
         "meta": [
-          "船联网技术基础",
+          "物联网与船联网技术",
           "4 课时",
           "本科课程"
         ],
@@ -2709,7 +2709,7 @@ window.KINAVI_CPT3632_DECKS = {
         "lead": "分享给学生时优先使用短入口，长路径资源仍作为后台资料库保留。",
         "resources": [
           {
-            "label": "《船联网技术基础》数字教材",
+            "label": "《物联网与船联网技术》数字教材",
             "url": "https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/"
           },
           {
@@ -2776,7 +2776,7 @@ window.KINAVI_CPT3632_DECKS = {
         "tag": "Chapter 5",
         "lead": "覆盖、时延、费用和可靠性的工程取舍",
         "meta": [
-          "船联网技术基础",
+          "物联网与船联网技术",
           "4 课时",
           "本科课程"
         ],
@@ -3400,7 +3400,7 @@ window.KINAVI_CPT3632_DECKS = {
         "lead": "分享给学生时优先使用短入口，长路径资源仍作为后台资料库保留。",
         "resources": [
           {
-            "label": "《船联网技术基础》数字教材",
+            "label": "《物联网与船联网技术》数字教材",
             "url": "https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/"
           },
           {
@@ -3471,7 +3471,7 @@ window.KINAVI_CPT3632_DECKS = {
         "tag": "Chapter 6",
         "lead": "把原始数据变成可共享、可分析、可追溯的信息产品",
         "meta": [
-          "船联网技术基础",
+          "物联网与船联网技术",
           "4 课时",
           "本科课程"
         ],
@@ -4099,7 +4099,7 @@ window.KINAVI_CPT3632_DECKS = {
         "lead": "分享给学生时优先使用短入口，长路径资源仍作为后台资料库保留。",
         "resources": [
           {
-            "label": "《船联网技术基础》数字教材",
+            "label": "《物联网与船联网技术》数字教材",
             "url": "https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/"
           },
           {
@@ -4162,7 +4162,7 @@ window.KINAVI_CPT3632_DECKS = {
         "tag": "Chapter 7",
         "lead": "在攻击、误操作和弱网条件下保持可信与可用",
         "meta": [
-          "船联网技术基础",
+          "物联网与船联网技术",
           "4 课时",
           "本科课程"
         ],
@@ -4782,7 +4782,7 @@ window.KINAVI_CPT3632_DECKS = {
         "lead": "分享给学生时优先使用短入口，长路径资源仍作为后台资料库保留。",
         "resources": [
           {
-            "label": "《船联网技术基础》数字教材",
+            "label": "《物联网与船联网技术》数字教材",
             "url": "https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/"
           },
           {
@@ -4845,7 +4845,7 @@ window.KINAVI_CPT3632_DECKS = {
         "tag": "Chapter 8",
         "lead": "把前七章能力落到船岸协同、监管、运维和绿色航运",
         "meta": [
-          "船联网技术基础",
+          "物联网与船联网技术",
           "4 课时",
           "本科课程"
         ],
@@ -5465,7 +5465,7 @@ window.KINAVI_CPT3632_DECKS = {
         "lead": "分享给学生时优先使用短入口，长路径资源仍作为后台资料库保留。",
         "resources": [
           {
-            "label": "《船联网技术基础》数字教材",
+            "label": "《物联网与船联网技术》数字教材",
             "url": "https://cyberseafaring.github.io/KiNavi_Course/cpt363-2/book/"
           },
           {

@@ -1,5 +1,5 @@
 /**
- * Markdown Renderer Module - 船联网技术基础配套资源平台
+ * Markdown Renderer Module - 物联网与船联网技术配套资源平台
  * 基于 marked.js 的 Markdown 渲染
  */
 

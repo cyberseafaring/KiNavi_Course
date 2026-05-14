@@ -1,6 +1,6 @@
 # Course Welcome
 
-欢迎来到 `CPT363-2 / 船联网技术基础`。本课程以教材 `/Users/rowland/DMU/00-Research/005_books/ios-textbook/main.tex` 为主线，围绕“感知、通信、数据治理、安全、应用”五条技术链组织教学内容。
+欢迎来到 `CPT363-2 / 物联网与船联网技术`。本课程以教材 `/Users/rowland/DMU/00-Research/005_books/ios-textbook/main.tex` 为主线，围绕“感知、通信、数据治理、安全、应用”五条技术链组织教学内容。
 
 ## Course Positioning
 

@@ -1,5 +1,5 @@
 /**
- * Navigation Module - 船联网技术基础配套资源平台
+ * Navigation Module - 物联网与船联网技术配套资源平台
  * 导航组件与面包屑
  */
 

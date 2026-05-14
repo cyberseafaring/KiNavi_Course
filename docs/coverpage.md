@@ -5,5 +5,5 @@
 </h1>
 
 [Marine Radar](cpt363-1/home.md)
-[Nautical Internet of Things](cpt363-2/home.md)
+[物联网与船联网技术](cpt363-2/home.md)
 [Intelligent Navigation](cpt363-3/home.md)

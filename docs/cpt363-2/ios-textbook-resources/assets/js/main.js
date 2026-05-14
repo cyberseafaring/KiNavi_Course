@@ -1,5 +1,5 @@
 /**
- * Main JavaScript - 船联网技术基础配套资源平台
+ * Main JavaScript - 物联网与船联网技术配套资源平台
  * 核心交互逻辑
  */
 
