@@ -4,7 +4,7 @@
 
 ![MultiCourse Hub](assets/images/clark-van-der-beken-xApC8DIiD54-unsplash.jpg ':class=banner-tall-image')
 
-## [智能航海](cpt363-3/home.md)
+## [智能航海｜全校选修](cpt363-3/home.md)
 面向对智能船舶、人工智能、机器人、交通运输和未来航运感兴趣的全校本科生。课程以 MASS（海上自主水面船舶）技术挑战为主线，用“南京到鹿特丹”的完整航次串联港口离泊、内河航行、近海交通、远洋通信、智能避碰、远程控制和自动化码头。
 
 课程强调通识理解和案例判断。学生不需要先具备航海专业背景，将通过 Yara Birkeland、MEGURI2040、Mayflower、智能港口和远程操作中心等案例，理解自主船舶从辅助决策走向远程控制和高度自主航行所需的感知、通信、决策、控制、法规和人才条件。
