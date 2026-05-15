@@ -40,6 +40,6 @@
 
 ## 配套资源
 
-- [内容架构](cpt363-3/contents.md)
-- [AI 与船舶操纵地图](cpt363-3/ai-shiphandling-map.md)
-- [课堂资源](cpt363-3/resources.md)
+- [内容架构](cpt363-4/contents.md)
+- [AI 与船舶操纵地图](cpt363-4/ai-shiphandling-map.md)
+- [课堂资源](cpt363-4/resources.md)

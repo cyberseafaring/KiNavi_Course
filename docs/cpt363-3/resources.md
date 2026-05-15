@@ -1,56 +1,56 @@
 # 课堂资源
 
-本页整理《智能航海》课程所需的权威资料、AI 基础资料和智能航运案例。课堂使用时建议每次课只选择 1-2 个资源，重点讨论它如何影响舰船感知、决策、控制或人员职责。
+这些资源用于课堂点击演示和学生课后浏览。建议教师按课程进度选择 1-2 个链接展示，重点引导学生观察“项目解决了哪一类航次挑战”。
 
-## 1. 国际规则与可信 AI 框架
-
-| 资源 | 适合展示什么 |
-| --- | --- |
-| [IMO MSC 111：MASS Code 预期采纳](https://www.imo.org/en/mediacentre/meetingsummaries/pages/preview-msc-111.aspx) | 2026 年 IMO 对非强制 MASS Code 的推进，涵盖风险评估、运行条件、软件原则、连接性、远程操作、培训和值班等内容。 |
-| [IMO MSC 110：MASS Code 推进情况](https://www.imo.org/en/mediacentre/meetingsummaries/pages/msc-110th-session.aspx) | 2025 年 IMO 对自主船舶安全规则框架的推进路线。 |
-| [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) | 可信 AI、风险管理、生成式 AI 风险和关键基础设施 AI 风险。 |
-| [OECD AI Principles](https://www.oecd.org/en/topics/ai-principles.html) | 透明性、鲁棒性、安全性、问责和全生命周期风险管理。 |
-
-## 2. AI 基础与前沿方向
-
-| 主题 | 课堂用途 |
-| --- | --- |
-| 机器学习基础 | 分类、回归、聚类、异常检测，对应目标识别、风险预测和数据异常发现。 |
-| 深度学习 | CNN、Transformer、多模态模型，对应视觉瞭望、雷达图像理解和态势语义解释。 |
-| 强化学习 | 状态、动作、奖励、策略，对应避碰策略、航迹跟踪和低速操纵仿真训练。 |
-| 生成式 AI | 大语言模型、视觉语言模型、检索增强、智能体，对应航行解释、值更辅助问答和训练复盘。 |
-| 可信 AI | 可解释性、鲁棒性、安全降级、人工接管，对应高风险航行系统使用边界。 |
-
-## 3. 智能航运与自主船舶案例
+## 1. 规则与行业框架
 
 | 资源 | 适合展示什么 |
 | --- | --- |
-| [Kongsberg Maritime：Remote and autonomous vessels](https://www.kongsberg.com/maritime/ship-types/autonomous-ships/) | 自主船舶系统集成、远程操作、传感器和控制能力。 |
-| [Yara Birkeland](https://www.yara.com/knowledge-grows/game-changer-for-the-environment/) | 短途电动自主船舶的商业应用边界。 |
-| [Nippon Foundation：MEGURI2040](https://en.nippon-foundation.or.jp/what/projects/ocean/meguri2040) | 多船型、多航线无人运航验证。 |
-| [IBM：Mayflower Autonomous Ship](https://www.ibm.com/case-studies/mayflower) | AI 船长、边缘计算、远洋无人科研船和真实海况挑战。 |
-| [Sea Machines SM300](https://sea-machines.com/products/sm300-autonomous-command-control/) | 自主控制、远程指挥、动态路径规划和通信备份。 |
-| [Avikus HiNAS](https://www.avikus.ai/products-control) | 大型商船自主导航辅助系统，适合讨论辅助决策到自动控制的过渡。 |
-| [OpenBridge](https://www.openbridge.no/about-openbridge) | 智能船桥、远程操作中心和人机界面标准。 |
+| [IMO MSC 110：MASS Code 路线图](https://www.imo.org/en/MediaCentre/MeetingSummaries/Pages/msc-110th-session.aspx) | IMO 对 MASS Code 的最新推进情况，包括非强制性规则和未来强制性规则的时间表。 |
+| [IMO MSC 111 预告：MASS Code 内容范围](https://www.imo.org/en/mediacentre/meetingsummaries/pages/preview-msc-111.aspx) | 适合讲“自主船舶法规覆盖哪些功能”，如风险评估、软件原则、连接性、远程操作、培训和值班。 |
+| [Maritime UK MASS Code of Practice](https://www.maritimeuk.org/media-centre/news/news-maritime-uk-launches-version-7-industry-code-practice-maritime-autonomous-ship-systems/) | 适合展示行业如何在正式国际规则成熟前形成实践指南。 |
+| [One Sea Association](https://www.one-sea.org/) | 适合讲生态系统、标准、企业协作和北欧智能航运试验环境。 |
 
-## 4. 港口、通信与协同资源
+## 2. 典型自主船舶项目
 
 | 资源 | 适合展示什么 |
 | --- | --- |
-| [Port of Rotterdam：AI in the port](https://www.portofrotterdam.com/en/port-future/innovation/artificial-intelligence-port) | 港口 AI、物流预测、数字化运营。 |
-| [Port of Rotterdam：MASS Port Network](https://www.portofrotterdam.com/en/news-and-press-releases/mass-port-network-established) | 港口之间围绕 MASS 和数据交换的协同。 |
-| [Port of Rotterdam：5G Communication](https://www.portofrotterdam.com/sites/default/files/2023-06/5g-communication-port-of-rotterdam-en.pdf) | 港口 5G、低时延通信、高清视频和远程控制支撑。 |
+| [Kongsberg Maritime：Remote and autonomous vessels](https://www.kongsberg.com/maritime/ship-types/autonomous-ships/) | 适合讲自主船舶系统集成、远程操作、传感器和控制能力。 |
+| [Yara：The first ever zero emission, autonomous ship](https://www.yara.com/knowledge-grows/game-changer-for-the-environment/) | 适合补充 Yara Birkeland 的项目背景、船舶使命和零排放短途运输场景。 |
+| [Nippon Foundation：MEGURI2040](https://en.nippon-foundation.or.jp/what/projects/ocean/meguri2040) | 日本无人运航船项目，适合讲多船型、多航线、多企业协同验证。 |
+| [MEGURI2040：大型渡船自主航行演示](https://en.nippon-foundation.or.jp/news/articles/2022/20220118-66716.html) | 适合展示高速大型船舶自主航行、自动靠离泊和社会应用目标。 |
+| [IBM：Mayflower Autonomous Ship](https://www.ibm.com/case-studies/mayflower) | 适合讲 AI 船长、边缘计算、远洋无人科研船和真实海况挑战。 |
+| [IBM Newsroom：Mayflower 跨大西洋尝试](https://newsroom.ibm.com/Mayflower-Autonomous-Ship-2022-Transatlantic-Crossing-Attempt-Now-Underway) | 适合讨论无人船远洋航行中的设备可靠性、天气和远程监控。 |
+
+## 3. 核心技术公司与系统
+
+| 资源 | 适合展示什么 |
+| --- | --- |
+| [Sea Machines SM300](https://sea-machines.com/products/sm300-autonomous-command-control/) | 适合讲自主控制、远程指挥、传感器融合、动态路径规划和通信备份。 |
+| [Sea Machines：1000 海里自主航行](https://sea-machines.com/sea-machines-completes-worlds-first-1000-nautical-mile-autonomous-voyage/) | 适合展示长距离自主与远程指挥任务，讨论人机协同。 |
+| [Orca AI](https://www.orca-ai.io/) | 适合讲 AI 视觉、自动瞭望、航行态势感知和船队数据。 |
+| [Avikus HiNAS](https://www.avikus.ai/products-control) | 适合展示大型商船自主导航辅助系统，讨论从辅助决策到自动控制的过渡。 |
+| [OpenBridge](https://www.openbridge.no/about-openbridge) | 适合讲远程操作中心、船桥界面和工业人机交互标准。 |
+| [Massterly Operations](https://www.massterly.com/operation) | 适合讲自主船队运营、远程支持、技术管理和 24/7 监控。 |
+
+## 4. 港口、航道与船岸协同
+
+| 资源 | 适合展示什么 |
+| --- | --- |
+| [Port of Rotterdam：AI in the port](https://www.portofrotterdam.com/en/port-future/innovation/artificial-intelligence-port) | 适合讲数字港口、数据模型、物流预测和面向未来自主物流的准备。 |
+| [Port of Rotterdam：MASS Port Network](https://www.portofrotterdam.com/en/news-and-press-releases/mass-port-network-established) | 适合讲港口之间如何合作制定自主船舶与岸基系统的数据交换标准。 |
+| [Port of Rotterdam：5G Communication](https://www.portofrotterdam.com/sites/default/files/2023-06/5g-communication-port-of-rotterdam-en.pdf) | 适合讲港口 5G、高清视频、远程控制、数字孪生和低时延应用。 |
 
 ## 5. 课堂讨论入口
 
 | 问题 | 可配合资源 |
 | --- | --- |
-| AI 如何改变舰船瞭望和值更组织？ | NIST AI RMF、OECD AI Principles、OpenBridge |
-| 智能避碰系统怎样满足 COLREGs 和操纵性能？ | IMO MASS Code、Avikus、Sea Machines |
-| 远程监督模式下，谁承担最终航行责任？ | IMO MASS Code、Kongsberg、OpenBridge |
-| 生成式 AI 可以进入船桥哪些工作，哪些环节需要限制？ | NIST AI RMF、OECD AI Principles |
-| 海军院校如何训练智能航海军官？ | AI 与船舶操纵地图、综合演练报告 |
+| 自主船舶最适合先在哪些航线落地？ | Yara Birkeland、MEGURI2040、Sea Machines |
+| 船上无人时，远程操作员需要看见哪些信息？ | Massterly、OpenBridge、Orca AI |
+| AI 船长需要遵守哪些规则？ | IMO MASS Code、Mayflower、Avikus |
+| 港口如何欢迎一艘自主船？ | Rotterdam Digital Port、MASS Port Network |
+| 一条南京到鹿特丹航线中，最难自动化的是哪个阶段？ | 航次挑战图谱、IMO、Rotterdam、MEGURI2040 |
 
-## 6. 推荐关键词
+## 6. 建议学生长期跟踪的关键词
 
-intelligent navigation, maritime autonomous surface ships, MASS Code, autonomous navigation, remote operation center, AI risk management, trustworthy AI, sensor fusion, maritime situational awareness, path planning, collision avoidance, guidance navigation control, human-AI teaming, shiphandling, autonomous control.
+MASS, autonomous ships, remote operation center, smart shipping, intelligent navigation, autonomous navigation, maritime situational awareness, ship-shore communication, digital port, smart port, maritime cybersecurity, MASS Code.

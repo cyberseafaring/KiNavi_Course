@@ -1,0 +1,8 @@
+* [首页](cpt363-4/home.md)
+* [内容架构](cpt363-4/contents.md)
+* [AI操纵地图](cpt363-4/ai-shiphandling-map.md)
+* [系统挑战](cpt363-4/mass-voyage-challenges.md)
+* [课程安排](cpt363-4/schedule.md)
+* [课程资源](cpt363-4/resources.md)
+* [课程专题](cpt363-4/topics.md)
+* [联系方式](cpt363-4/contact.md)
