@@ -1,15 +1,36 @@
-![Usability Test](images/4642289926_7964e733d1_b.jpg ':class=banner-image')
+# Chapter 5 雷达导航与定位方法
 
-# How to plan, conduct, and summarize usability tests?
+本章进入雷达的航行应用。学生需要使用雷达距离、方位、固定目标、岸线和平行线导航完成船位判断和受限水域监控。
 
-## Summaries and Questions  
-[Jun 6th Class One-minute Summaries](https://sso.canvaslms.com/courses/1924881/assignments/14377746)
+## 学习目标
 
-## Presented Slides  
-<div class="video-container-16by9"><iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRnnRFelgw1ksq_p8Eryg3dnyLCRRLPf5fBgdwdv9p-tCIwcxqWvzDGrGbjxGHL7HqEJVpmV26ntk3a/embed?start=false&loop=false&delayms=3000" frameborder="0" width=780" height="585" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></div>
+- 使用距离、方位和距离方位联合方法进行雷达定位。
+- 理解固定目标选择、岸线识别和定位误差来源。
+- 掌握平行线导航、通过距离监控和转向点检查。
+- 说明雷达叠加到电子海图时需要检查哪些偏差。
 
-## Supplemental Materials  
-<div class="video-container-4by3"><iframe width="780" height="585" src="https://www.youtube.com/embed/QckIzHC99Xc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+## 核心问题
 
-## Required Reading  
-<a class="embedly-card" data-card-controls="0" data-card-align="left" href="http://www.uxbooth.com/articles/the-art-of-guerrilla-usability-testing/">The Art of Guerrilla Usability Testing</a>
+1. 什么样的目标适合作为雷达定位参考？
+2. 雷达距离和方位误差会怎样影响船位判断？
+3. 平行线导航如何帮助受限水域航行？
+4. 雷达图像与 ECDIS 不一致时应该先检查什么？
+
+## 教学主线
+
+1. 从固定目标和岸线回波进入雷达定位。
+2. 对比距离定位、方位定位和联合定位。
+3. 讲解平行线导航的设置、监控和偏离判断。
+4. 用港区、狭水道和近岸场景组织应用练习。
+
+## 资源入口
+
+- [Chapter 5 译文](cpt363-1/textbook/LJMU-Radar/chapter05/chapter-05.md)
+- [章节课件](cpt363-1/slides.md)
+- [第17-18课时教案](data/radar-lessonPlan/第17-18课时.md)
+- [第19-20课时教案](data/radar-lessonPlan/第19-20课时.md)
+- [受限水域案例](cpt363-1/module-10.md)
+
+## 课堂输出
+
+设计一个狭水道雷达监控方案，标出固定目标、平行线、关键通过距离和需要复核的风险点。

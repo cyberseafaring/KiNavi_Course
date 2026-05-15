@@ -1,15 +1,28 @@
-![Image Description](images/dave-hoefler-vl2uAIdBWJ8-unsplash.jpg ':class=banner-image')
+# Workshop 2 受限水域案例
 
-# Module Title
+本训练用于第5章之后，帮助学生把雷达定位和平行线导航用于港区、狭水道和近岸航行监控。
 
-## Content Header
-Module content here.
+## 训练目标
 
-## Content Header
-Module content here.
+- 选择适合雷达定位和通过距离监控的固定目标。
+- 设置平行线导航并说明安全距离依据。
+- 识别岸线、浮标、桥区、停泊船和小目标带来的判读难点。
+- 说明雷达图像与电子海图不一致时的复核步骤。
 
-## Content Header  
-Module content here.
+## 训练流程
 
-## Content Header
-Module content here.
+1. 给定一段受限水域航线和若干固定目标。
+2. 标出关键转向点、通过距离和危险区域。
+3. 设计雷达量程、显示模式和 EBL / VRM 使用方式。
+4. 说明偏离航线时的判断依据和处置建议。
+5. 讨论能见度下降或交通密度上升时的调整。
+
+## 交付物
+
+提交一张“受限水域雷达监控图”，附 300 字说明，解释关键监控目标、通过距离和风险复核方法。
+
+## 配套资源
+
+- [Chapter 5 雷达导航与定位方法](cpt363-1/module-05.md)
+- [Chapter 5 译文](cpt363-1/textbook/LJMU-Radar/chapter05/chapter-05.md)
+- [课程安排](cpt363-1/schedule.md)

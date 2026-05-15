@@ -1,31 +1,29 @@
-# Schedule
+# LMS Schedule
 
-## :fas fa-calendar fa-fw: Week 1 (May 9 - 15)
-**[What is usability and user experience design?](https://canvas.sfu.ca/courses/44038/modules/items/1096965)**  
-:fas fa-desktop fa-fw: [Introduction to UX Design](https://docs.google.com/presentation/d/e/2PACX-1vRnnRFelgw1ksq_p8Eryg3dnyLCRRLPf5fBgdwdv9p-tCIwcxqWvzDGrGbjxGHL7HqEJVpmV26ntk3a/pub?start=false&loop=false&delayms=3000)   
-:fas fa-book fa-fw: [Usability 101: Introduction to Usability](https://www.nngroup.com/articles/usability-101-introduction-to-usability/)  
+此页用于兼容旧 LMS 链接。当前课程安排已按《船舶导航雷达》八章主线重构，建议使用以下入口：
 
-## :fas fa-calendar fa-fw: Week 2 (May 16 - 22)
-**[What does a holistic user experience design process look like?](https://canvas.sfu.ca/courses/44038/modules/items/1096966)**  
-:fas fa-keyboard fa-fw: [Course Reflection Log](https://sso.canvaslms.com/courses/1924881/assignments/14377752) <span class='badge'> Fri Aug 3rd 11:59pm PDT</span>  
-:fas fa-desktop fa-fw: [The Process of UX Design](https://docs.google.com/presentation/d/e/2PACX-1vRnnRFelgw1ksq_p8Eryg3dnyLCRRLPf5fBgdwdv9p-tCIwcxqWvzDGrGbjxGHL7HqEJVpmV26ntk3a/pub?start=false&loop=false&delayms=3000)   
-:fas fa-book fa-fw: [The Evolution of UX Process Methodology](https://uxplanet.org/the-evolution-of-ux-process-methodology-47f52557178b)  
+- [课程安排](cpt363-1/schedule.md)
+- [内容架构](cpt363-1/contents.md)
+- [章节课件](cpt363-1/slides.md)
+- [课程资源](cpt363-1/resources.md)
 
-## :fas fa-calendar fa-fw: Week 3 (May 23 - 29)
-**[How to make more strategic design decisions?](https://canvas.sfu.ca/courses/44038/modules/items/1096970)**  
-:fas fa-keyboard fa-fw: [Journey Map](https://sso.canvaslms.com/courses/1924881/assignments/14377756) <span class='badge'> Tue Jun 12th 11:59pm PDT</span>  
-:fas fa-folder fa-fw: [Informed Consent Materials](https://sso.canvaslms.com/courses/1924881/files/folder/Downloads/Informed%20Consent)  
-:fas fa-desktop fa-fw: [Strategic UX Design](https://docs.google.com/presentation/d/e/2PACX-1vRnnRFelgw1ksq_p8Eryg3dnyLCRRLPf5fBgdwdv9p-tCIwcxqWvzDGrGbjxGHL7HqEJVpmV26ntk3a/pub?start=false&loop=false&delayms=3000)   
-:fas fa-book fa-fw: [What is a User Journey Map?](https://www.aytech.ca/blog/user-journey-map/)  
+## 16 课时主线
 
-## :fas fa-calendar fa-fw: Week 4 (May 30 - Jun 5)
-**[How to explore the problem space?](https://canvas.sfu.ca/courses/44038/modules/items/1096967)**  
-:fas fa-desktop fa-fw: [Prototyping](https://docs.google.com/presentation/d/e/2PACX-1vRnnRFelgw1ksq_p8Eryg3dnyLCRRLPf5fBgdwdv9p-tCIwcxqWvzDGrGbjxGHL7HqEJVpmV26ntk3a/pub?start=false&loop=false&delayms=3000)   
-:fas fa-book fa-fw: [The Skeptic’s Guide To Low-Fidelity Prototyping](https://www.smashingmagazine.com/2014/10/the-skeptics-guide-to-low-fidelity-prototyping/)  
-:fas fa-users fa-fw: In-class office hours (tentative)  
-
-## :fas fa-calendar fa-fw: Week 5 (Jun 6 - 12)
-**[How to plan, conduct, and summarize usability tests?](https://canvas.sfu.ca/courses/44038/modules/items/1096974)**  
-:fas fa-desktop fa-fw: [Usability Testing](https://docs.google.com/presentation/d/e/2PACX-1vRnnRFelgw1ksq_p8Eryg3dnyLCRRLPf5fBgdwdv9p-tCIwcxqWvzDGrGbjxGHL7HqEJVpmV26ntk3a/pub?start=false&loop=false&delayms=3000)   
-:fas fa-book fa-fw: [The Art of Guerrilla Usability Testing](http://www.uxbooth.com/articles/the-art-of-guerrilla-usability-testing/)  
-:fas fa-users fa-fw: In-class office hours (tentative)
+| 课时 | 主题 | 模块 |
+| --- | --- | --- |
+| 01-02 | 雷达技术基础与船舶应用 | [module-01](cpt363-1/module-01.md) |
+| 03-04 | 核心功能与性能要求 | [module-01](cpt363-1/module-01.md) |
+| 05-06 | 船载雷达系统组成 | [module-02](cpt363-1/module-02.md) |
+| 07-08 | 辅助传感器与数据输入 | [module-02](cpt363-1/module-02.md) |
+| 09-10 | 传播、反射与目标特性 | [module-03](cpt363-1/module-03.md) |
+| 11-12 | 杂波、干扰与探测限制 | [module-03](cpt363-1/module-03.md) |
+| 13-14 | 操作流程与图像调节 | [module-04](cpt363-1/module-04.md) |
+| 15-16 | 显示模式与目标判读 | [module-04](cpt363-1/module-04.md) |
+| 17-18 | 雷达定位方法 | [module-05](cpt363-1/module-05.md) |
+| 19-20 | 平行线导航与受限水域 | [module-05](cpt363-1/module-05.md) |
+| 21-22 | 目标标绘与相对运动 | [module-06](cpt363-1/module-06.md) |
+| 23-24 | ARPA、CPA / TCPA 与避碰 | [module-06](cpt363-1/module-06.md) |
+| 25-26 | 维护检查与性能测试 | [module-07](cpt363-1/module-07.md) |
+| 27-28 | 故障诊断与安全管理 | [module-07](cpt363-1/module-07.md) |
+| 29-30 | 新型雷达技术 | [module-08](cpt363-1/module-08.md) |
+| 31-32 | 数据融合与综合复习 | [module-08](cpt363-1/module-08.md) |

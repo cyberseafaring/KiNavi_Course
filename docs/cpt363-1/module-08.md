@@ -1,15 +1,36 @@
-![Image Description](images/dave-hoefler-vl2uAIdBWJ8-unsplash.jpg ':class=banner-image')
+# Chapter 8 新型雷达与数据融合
 
-# Module Title
+本章面向现代船桥和智能航海场景。学生需要理解固态雷达、相控阵、多波束、雷达图像处理和多源数据融合如何扩展传统雷达的应用。
 
-## Content Header
-Module content here.
+## 学习目标
 
-## Content Header
-Module content here.
+- 比较磁控管雷达、固态雷达、相控阵雷达和多波束雷达。
+- 了解雷达图像增强、目标检测和深度学习处理的基本用途。
+- 分析雷达、AIS、ECDIS、视觉和气象数据融合的价值。
+- 说明雷达数据在 VTS、远程操控和自主船舶中的作用边界。
 
-## Content Header  
-Module content here.
+## 核心问题
 
-## Content Header
-Module content here.
+1. 固态雷达相对传统雷达有哪些运行优势？
+2. 雷达图像智能识别能解决哪些问题，又会带来哪些新风险？
+3. 多源融合怎样提高态势感知，为什么也需要一致性检查？
+4. 智能航海场景中，雷达数据的价值如何被重新定义？
+
+## 教学主线
+
+1. 从传统雷达限制进入新型雷达技术。
+2. 介绍雷达图像处理和智能识别。
+3. 讲解雷达与 AIS、ECDIS、视觉数据的融合逻辑。
+4. 连接 VTS、远程操控、MASS 和未来航海人才能力。
+
+## 资源入口
+
+- [DNN Radar 扩展读物](cpt363-1/textbook/DNN-Radar/DNN-Radar-book.md)
+- [章节课件](cpt363-1/slides.md)
+- [第29-30课时教案](data/radar-lessonPlan/第29-30课时.md)
+- [第31-32课时教案](data/radar-lessonPlan/第31-32课时.md)
+- [AIS / ECDIS 融合训练](cpt363-1/module-11.md)
+
+## 课堂输出
+
+选择一个智能航海应用，说明雷达提供什么数据、与哪些系统融合、可能出现什么错误，以及人工如何复核。

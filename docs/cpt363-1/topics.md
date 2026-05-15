@@ -1,199 +1,112 @@
-# Topics
-### [A](#a)[B](#b)[C](#c)[D](#d)[E](#e)[F](#f)[G](#g)[H](#h)[I](#i)[J](#j)[K](#k)[L](#l)[M](#m)[N](#n)[O](#o)[P](#p)[Q](#q)[R](#r)[S](#s)[T](#t)[U](#u)[V](#v)[W](#w)[X](#x)[Y](#y)[Z](#z)
+# 《船舶导航雷达》专题地图
 
-## A
-### Advancements in Radar Antenna Technology
-Explore the latest developments in radar antenna technology, focusing on how advancements like phased array antennas and metamaterials are enhancing performance and reliability in marine radar systems.
+本页用于课堂讨论、小论文选题和复习展示。专题按照八章主线组织，每个专题都对应一个可观察、可分析的雷达使用问题。
 
-### Applications of Radar in Autonomous Marine Vehicles
-Investigate the role of radar in the development and operation of autonomous marine vehicles, including how radar systems are integrated to ensure safe navigation and collision avoidance in autonomous operations.
+## 章节资源地图
 
-## B
-### Benefits of Solid-State Radar in Maritime Navigation
-Examine the advantages of solid-state radar systems over traditional magnetron-based systems, including improved reliability, reduced maintenance, and enhanced performance in maritime environments.
+| 章节 | 课程模块 | 课件 | 资源重点 |
+| --- | --- | --- | --- |
+| 第1章 雷达技术基础与船舶应用 | [module-01](cpt363-1/module-01.md) | [打开课件](cpt363-1/slides.md) | 雷达定义、工作原理、船舶应用、IMO 要求 |
+| 第2章 船载雷达系统组成 | [module-02](cpt363-1/module-02.md) | [打开课件](cpt363-1/slides.md) | 天线、发射接收、显示、传感器输入 |
+| 第3章 电磁波传播与目标探测 | [module-03](cpt363-1/module-03.md) | [打开课件](cpt363-1/slides.md) | 传播、RCS、海杂波、雨杂波、误差 |
+| 第4章 雷达操作与图像判读 | [module-04](cpt363-1/module-04.md) | [打开课件](cpt363-1/slides.md) | 量程、增益、显示模式、EBL / VRM |
+| 第5章 雷达导航与定位方法 | [module-05](cpt363-1/module-05.md) | [打开课件](cpt363-1/slides.md) | 雷达定位、平行线导航、受限水域 |
+| 第6章 目标跟踪与避碰决策 | [module-06](cpt363-1/module-06.md) | [打开课件](cpt363-1/slides.md) | 标绘、ARPA、CPA / TCPA、COLREGs |
+| 第7章 维护、测试与故障诊断 | [module-07](cpt363-1/module-07.md) | [打开课件](cpt363-1/slides.md) | 性能测试、误差检查、常见故障 |
+| 第8章 新型雷达与数据融合 | [module-08](cpt363-1/module-08.md) | [打开课件](cpt363-1/slides.md) | 固态雷达、相控阵、图像处理、多源融合 |
 
-### Best Practices for Radar Maintenance and Calibration
-Discuss the essential maintenance and calibration procedures required to ensure optimal performance of marine radar systems, including regular checks, cleaning, and alignment procedures.
+## 专题方向
 
-## C
-### Challenges in Radar Signal Processing for Maritime Use
-Analyze the complexities involved in radar signal processing, particularly in maritime environments, where factors like sea clutter and atmospheric conditions can impact signal quality and detection accuracy.
+### A. 雷达为什么仍然不可替代
 
-### Comparative Analysis of Different Radar Systems
-Conduct a detailed comparison of various radar systems used in maritime navigation, evaluating their strengths, weaknesses, and suitability for different operational scenarios.
+**核心问题**：在 GNSS、AIS、ECDIS 已经普及的驾驶台中，雷达继续承担哪些安全任务？
 
-## D
-### Design Considerations for Radar User Interfaces
-Investigate the key design principles and considerations for creating user-friendly and effective radar user interfaces, focusing on enhancing situational awareness and decision-making for mariners.
+适合讨论：
 
-### Development of Radar Algorithms for Collision Avoidance
-Explore the development and implementation of advanced radar algorithms designed to improve collision avoidance capabilities, including target tracking, prediction, and alerting systems.
+- 非合作目标和小目标探测。
+- 夜航、雾航和强降雨条件下的态势感知。
+- 岸线、浮标、固定目标和雷达定位。
+- AIS 信息缺失、错误或延迟时的交叉验证。
 
-## E
-### Effects of Environmental Factors on Radar Performance
-Study the impact of environmental factors such as weather conditions, sea state, and atmospheric interference on radar performance, and discuss strategies for mitigating these effects.
+### B. 雷达图像调节如何影响判断
 
-### Evolution of Radar Technology in Marine Navigation
-Trace the historical development of radar technology in marine navigation, highlighting key milestones and technological advancements that have shaped modern radar systems.
+**核心问题**：同一个海面场景为什么会因为量程、增益、海杂波和雨杂波设置不同而呈现不同图像？
 
-## F
-### Future Trends in Marine Radar Technology
-Predict and analyze future trends in marine radar technology, including emerging innovations, potential applications, and the impact of these advancements on maritime operations.
+适合讨论：
 
-### Fundamentals of Radar Signal Processing Techniques
-Provide an in-depth overview of the fundamental techniques used in radar signal processing, including filtering, noise reduction, and target detection algorithms.
+- 量程变化对目标尺度和回波密度的影响。
+- 过高或过低增益带来的漏检和误判。
+- 海杂波抑制对近距离小目标的影响。
+- 雨杂波、同频干扰和虚假回波的处理顺序。
 
-## G
-### Ground Clutter Suppression Techniques in Radar Systems
-Examine various techniques used to suppress ground clutter in radar systems, focusing on their effectiveness in improving radar performance and reducing false alarms.
+### C. 受限水域中的雷达导航
 
-### Guidelines for Effective Radar Operation in Adverse Weather
-Develop a set of guidelines for operating radar systems effectively in adverse weather conditions, including strategies for optimizing radar settings and interpreting radar data.
+**核心问题**：在港区、狭水道和近岸航行中，雷达如何支持位置监控和通过距离控制？
 
-## H
-### History of Radar Development for Marine Use
-Delve into the historical context of radar development for marine applications, exploring early experiments, significant breakthroughs, and the evolution of radar technology over time.
+适合讨论：
 
-### How Radar Contributes to Maritime Safety and Efficiency
-Discuss the critical role of radar in enhancing maritime safety and operational efficiency, including collision avoidance, navigation in poor visibility, and traffic management.
+- 固定目标选择和距离方位定位。
+- 平行线导航的设置与复核。
+- 岸线回波、浮标和桥区目标的判读。
+- 雷达叠加到电子海图时的偏差检查。
 
-## I
-### Impact of Radar Technology on Modern Maritime Operations
-Assess the overall impact of radar technology on modern maritime operations, including changes in navigation practices, regulatory requirements, and the integration of radar with other systems.
+### D. 会遇场景中的目标标绘
 
-### Integration of Radar with Other Navigation Systems
-Explore the integration of radar systems with other navigation tools such as AIS, ECDIS, and GPS, focusing on the benefits and challenges of data fusion and interoperability.
+**核心问题**：雷达观测如何从几个连续位置点转化为 CPA、TCPA 和避碰行动建议？
 
-## J
-### Justifying the Need for Advanced Radar Systems in Shipping
-Provide a comprehensive justification for the adoption of advanced radar systems in the shipping industry, highlighting the benefits in terms of safety, efficiency, and compliance with international regulations.
+适合讨论：
 
-### Journey Mapping for Radar System Design and Improvement
-Use journey mapping techniques to analyze the user experience of radar systems, identifying pain points and opportunities for improvement in radar system design and operation.
+- 相对运动线、真运动和目标矢量。
+- 手工标绘与 ARPA 自动跟踪的差异。
+- AIS 目标和雷达目标不一致时的判断。
+- 避让行动后的效果复核。
 
-## K
-### Key Features of Modern Marine Radar Systems
-Identify and discuss the key features of modern marine radar systems, including advanced signal processing, user-friendly interfaces, and integration capabilities with other navigation systems.
+### E. ARPA 数据可以信任到什么程度
 
-### Knowledge-Based Systems in Radar Operation and Maintenance
-Examine the application of knowledge-based systems in radar operation and maintenance, focusing on how these systems can improve decision-making and reduce the risk of human error.
+**核心问题**：自动跟踪目标提供的 CPA / TCPA、航向和航速为什么需要人工复核？
 
-## L
-### Lean Design Principles for Radar System Development
-Explore the application of lean design principles in the development of radar systems, focusing on optimizing performance, reducing complexity, and enhancing user experience.
+适合讨论：
 
-### Legal Implications of Radar Use in International Waters
-Investigate the legal and regulatory implications of radar use in international waters, including compliance with international maritime conventions and the impact on maritime security.
+- 初始捕获阶段的跟踪稳定性。
+- 航向、航速输入对真矢量的影响。
+- 海面稳定和地面稳定显示的差异。
+- 目标机动、遮挡和近距离交汇带来的误差。
 
-## M
-### Maritime Radar and Its Role in Global Trade
-Analyze the critical role of maritime radar in facilitating global trade, including its impact on shipping efficiency, port operations, and maritime safety.
+### F. 雷达故障如何进入安全管理
 
-### Modern Radar Systems and Their Impact on Navigation
-Evaluate the impact of modern radar systems on maritime navigation, including improvements in situational awareness, collision avoidance, and overall operational efficiency.
+**核心问题**：雷达图像异常、测距偏差或方位偏差出现时，船员应如何组织检查和记录？
 
-## N
-### Navigational Challenges and Radar Solutions
-Identify common navigational challenges faced by mariners and explore how radar systems can provide effective solutions, including real-time monitoring, target tracking, and collision avoidance.
+适合讨论：
 
-### New Developments in Radar Signal Processing
-Stay current with the latest developments in radar signal processing, including advancements in algorithms, hardware, and software that enhance radar performance and reliability.
+- 日常开航前检查。
+- 天线、波导、显示单元和电源故障现象。
+- 距离、方位和显示模式误差。
+- 维护记录、缺陷报告和航行限制。
 
-## O
-### Optimizing Radar Performance for Different Maritime Environments
-Discuss strategies for optimizing radar performance in various maritime environments, including open seas, coastal areas, and restricted waters, focusing on adapting radar settings to maximize effectiveness.
+### G. 现代雷达如何服务智能航海
 
-### Overview of Radar Technology in the Maritime Industry
-Provide a comprehensive overview of radar technology in the maritime industry, including its history, current applications, and future trends.
+**核心问题**：固态雷达、图像处理和多源融合如何改变传统雷达课程的学习重点？
 
-## P
-### Performance Metrics for Radar Systems
-Develop and evaluate performance metrics for radar systems, focusing on key parameters such as detection range, accuracy, and reliability, and their impact on maritime operations.
+适合讨论：
 
-### Practical Applications of Radar in Port Operations
-Explore the practical applications of radar in port operations, including vessel traffic management, collision avoidance, and environmental monitoring, and discuss the benefits and challenges of radar implementation in port settings.
+- 固态雷达与磁控管雷达的差异。
+- 雷达图像增强和目标检测算法。
+- 雷达、AIS、视觉和电子海图融合。
+- VTS、远程操控和自主船舶中的雷达数据。
 
-### Prototyping Radar Systems for Real-World Testing
-Investigate the process of prototyping radar systems for real-world testing, including design considerations, testing methodologies, and the importance of iterative development in refining radar performance.
+## 小论文建议题目
 
-## Q
-### Qualitative Analysis of Radar Data for Decision Support
-Conduct a qualitative analysis of radar data to support decision-making in maritime operations, focusing on interpreting radar imagery, identifying potential hazards, and making informed navigation decisions.
+1. 船舶导航雷达在能见度受限航行中的作用与限制。
+2. 海杂波抑制对近距离小目标探测的影响。
+3. 雷达平行线导航在狭水道航行中的应用。
+4. 手工标绘与 ARPA 自动跟踪的比较。
+5. AIS 信息与雷达目标不一致时的驾驶台判断。
+6. 地面稳定和海面稳定显示对避碰判断的影响。
+7. 固态雷达在商船导航中的优势与应用边界。
+8. 雷达数据在智能航海态势感知中的价值。
 
-### Quantitative Methods for Evaluating Radar Performance
-Explore quantitative methods for evaluating radar performance, including statistical analysis, simulation techniques, and performance metrics, and their application in assessing radar system effectiveness.
+## 复习建议
 
-## R
-### Radar and Its Role in Reducing Maritime Accidents
-Assess the role of radar technology in reducing maritime accidents, including case studies of successful collision avoidance and the impact of radar on overall maritime safety.
-
-### Radar Data Fusion Techniques for Enhanced Situational Awareness
-Investigate radar data fusion techniques and their application in enhancing situational awareness, including the integration of radar data with other sensors and systems to provide a comprehensive view of the maritime environment.
-
-## S
-### Scalability of Radar Systems for Different Vessel Sizes
-Examine the scalability of radar systems for different vessel sizes, from small recreational boats to large commercial ships, focusing on the challenges and solutions for adapting radar technology to meet diverse operational needs.
-
-### Sea Clutter and Its Impact on Radar Effectiveness
-Study the phenomenon of sea clutter and its impact on radar effectiveness, including the causes of sea clutter, its characteristics, and techniques for mitigating its effects on radar performance.
-
-### Simulation Techniques for Radar System Training
-Explore simulation techniques used in radar system training, focusing on the benefits of virtual training environments, the types of simulations available, and their effectiveness in preparing operators for real-world scenarios.
-
-### Social Implications of Radar Technology in Maritime Communities
-Investigate the social implications of radar technology in maritime communities, including the impact on employment, training requirements, and the overall perception of radar technology among mariners and stakeholders.
-
-### Software Tools for Radar System Design and Analysis
-Evaluate the software tools available for radar system design and analysis, including simulation software, signal processing tools, and performance evaluation software, and their role in enhancing radar system development.
-
-## T
-### Technical Challenges in Radar Signal Processing
-Identify and discuss the technical challenges involved in radar signal processing, including noise reduction, interference mitigation, and the development of advanced algorithms for improved target detection and tracking.
-
-### Testing and Validation of Radar Systems
-Examine the process of testing and validating radar systems, including the development of test plans, the use of simulation and real-world testing, and the importance of certification and compliance with international standards.
-
-## U
-### Understanding Radar Signal Characteristics
-Provide an in-depth understanding of radar signal characteristics, including frequency, pulse width, repetition rate, and their impact on radar performance and detection capabilities.
-
-### User-Centered Design of Radar Interfaces
-Explore the principles of user-centered design in the context of radar interfaces, focusing on creating intuitive and effective user experiences that enhance situational awareness and decision-making.
-
-### Usage of Radar Data in Maritime Traffic Management
-Investigate the usage of radar data in maritime traffic management, including the role of radar in vessel traffic services, collision avoidance, and the optimization of maritime traffic flow.
-
-## V
-### Value of Radar Technology in Modern Maritime Fleets
-Assess the value of radar technology in modern maritime fleets, including its impact on safety, efficiency, and compliance with international regulations, and the return on investment for radar system implementation.
-
-### Verification and Validation of Radar Systems
-Discuss the importance of verification and validation in radar system development, including the methodologies used to ensure radar systems meet specified requirements and perform reliably in real-world conditions.
-
-## W
-### Weather Radar Integration with Marine Navigation Systems
-Explore the integration of weather radar with marine navigation systems, focusing on the benefits of real-time weather data for safe navigation, route planning, and collision avoidance.
-
-### Wireless Communication and Radar Systems
-Investigate the interaction between wireless communication systems and radar systems in maritime environments, including potential interference issues and strategies for ensuring reliable radar performance in the presence of wireless communications.
-
-## X
-### X-Band Radar Applications in Maritime Navigation
-Examine the specific applications of X-band radar in maritime navigation, including its advantages in terms of resolution, detection capabilities, and suitability for different maritime environments.
-
-### X-Band Radar vs. S-Band Radar: A Comparative Study
-Conduct a comparative study of X-band and S-band radar systems, evaluating their performance characteristics, applications, and suitability for different maritime operations.
-
-## Y
-### Yacht Navigation and the Role of Radar Systems
-Investigate the role of radar systems in yacht navigation, focusing on the unique challenges and requirements of recreational boating and the benefits of radar technology in ensuring safe and efficient navigation.
-
-### Young Professionals and the Future of Radar Technology
-Explore the perspectives of young professionals on the future of radar technology, including emerging trends, potential applications, and the role of innovation in shaping the next generation of radar systems.
-
-## Z
-### Zero-Day Vulnerabilities in Radar Systems and Cybersecurity
-Discuss the cybersecurity challenges associated with radar systems, including the risk of zero-day vulnerabilities and the importance of robust cybersecurity measures to protect radar systems from cyber threats.
-
-### Zoning Strategies for Radar Coverage in Port Areas
-Evaluate zoning strategies for radar coverage in port areas, focusing on optimizing radar placement and configuration to ensure comprehensive coverage, detect potential hazards, and facilitate efficient traffic management.
+- 用 [内容架构](cpt363-1/contents.md) 重建八章知识链。
+- 用 [课程安排](cpt363-1/schedule.md) 回看每两课时的核心问题。
+- 用 [术语缩写](cpt363-1/abbreviation.md) 复习 EBL、VRM、CPA、TCPA、ARPA、AIS、ECDIS 等关键词。

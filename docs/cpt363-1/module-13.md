@@ -1,15 +1,38 @@
-![Image Description](images/dave-hoefler-vl2uAIdBWJ8-unsplash.jpg ':class=banner-image')
+# Workshop 5 复习与项目展示
 
-# Module Title
+本训练用于课程收束。目标是把八章知识重新归并为一条可解释的安全判断链，而不是停留在分散术语记忆。
 
-## Content Header
-Module content here.
+## 复习主线
 
-## Content Header
-Module content here.
+1. 雷达如何形成回波。
+2. 设备和传感器输入如何影响显示。
+3. 操作者如何调节图像并判读目标。
+4. 雷达如何服务定位、平行线导航和受限水域监控。
+5. 连续目标观测如何转化为避碰判断。
+6. 设备故障和多源融合如何改变风险评估。
 
-## Content Header  
-Module content here.
+## 展示题目
 
-## Content Header
-Module content here.
+学生可从以下题目中选择一个完成 5 分钟展示或 1500 字小论文提纲：
+
+- 雷达在能见度受限航行中的作用与限制。
+- 海杂波抑制对近距离小目标探测的影响。
+- 平行线导航在狭水道航行中的应用。
+- 手工标绘与 ARPA 自动跟踪的比较。
+- AIS 与雷达目标不一致时的驾驶台判断。
+- 固态雷达和智能识别对传统雷达操作的影响。
+
+## 展示结构
+
+1. 场景：说明船舶所处水域、交通、能见度和设备状态。
+2. 信息：列出雷达、AIS、ECDIS、视觉或其他传感器提供的信息。
+3. 判断：说明如何从信息得出风险判断。
+4. 行动：说明操作、避让、复核或维护建议。
+5. 反思：说明该场景中雷达的价值和限制。
+
+## 配套资源
+
+- [内容架构](cpt363-1/contents.md)
+- [课程专题](cpt363-1/topics.md)
+- [课程资源](cpt363-1/resources.md)
+- [章节课件](cpt363-1/slides.md)

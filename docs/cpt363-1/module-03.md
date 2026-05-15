@@ -1,18 +1,36 @@
-![Bullseye](images/6384294717_5047a35d48_b.jpg ':class=banner-image')
+# Chapter 3 电磁波传播与目标探测
 
-# How to make more strategic design decisions?
+本章解释雷达图像背后的物理机制。学生需要理解电磁波传播、目标反射、雷达截面积、环境干扰和探测限制如何共同决定雷达屏幕上的回波。
 
-## Summaries and Questions  
-[May 23rd Class One-minute Summaries](https://sso.canvaslms.com/courses/1924881/assignments/14377744)
+## 学习目标
 
-## Presented Slides  
-<div class="video-container-16by9"><iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRnnRFelgw1ksq_p8Eryg3dnyLCRRLPf5fBgdwdv9p-tCIwcxqWvzDGrGbjxGHL7HqEJVpmV26ntk3a/embed?start=false&loop=false&delayms=3000" frameborder="0" width=780" height="585" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></div>
+- 说明雷达波的传播、反射、折射、散射和衰减。
+- 理解目标尺寸、材料、形状、姿态和距离对回波强弱的影响。
+- 分析海杂波、雨杂波、同频干扰、旁瓣和异常传播。
+- 能解释为什么某些目标会漏检、弱显或形成虚假回波。
 
-## Supplemental Materials  
-<div class="video-container-4by3"><iframe width="780" height="585" src="https://www.youtube.com/embed/a40QYgO-_aM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+## 核心问题
 
-## Assignments
-[Journey Map](https://sso.canvaslms.com/courses/1924881/assignments/14377756)  
+1. 同一艘船在不同距离和角度下为什么回波不同？
+2. 海杂波和雨杂波分别怎样影响近距离和大范围探测？
+3. 雷达截面积为什么比目标真实尺寸更能说明可探测性？
+4. 雷达图像中的亮点是否总是代表真实目标？
 
-## Required Reading  
-<a class="embedly-card" data-card-controls="0" data-card-align="left" href="https://www.aytech.ca/blog/user-journey-map/">What is a User Journey Map?</a>
+## 教学主线
+
+1. 从波长、频率、脉冲宽度和波束宽度进入探测性能。
+2. 讲解海上典型目标的反射特性。
+3. 分析杂波、遮挡和干扰对图像的影响。
+4. 把物理限制转化为后续图像调节和风险判断。
+
+## 资源入口
+
+- [Chapter 3 译文](cpt363-1/textbook/LJMU-Radar/chapter03/chapter-03.md)
+- [章节课件](cpt363-1/slides.md)
+- [第09-10课时教案](data/radar-lessonPlan/第09-10课时.md)
+- [第11-12课时教案](data/radar-lessonPlan/第11-12课时.md)
+- [课程专题](cpt363-1/topics.md)
+
+## 课堂输出
+
+选择一种回波异常现象，写出可能原因、对航行判断的影响和操作上的复核方法。

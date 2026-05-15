@@ -1,15 +1,37 @@
-![Image Description](images/dave-hoefler-vl2uAIdBWJ8-unsplash.jpg ':class=banner-image')
+# Chapter 7 维护、测试与故障诊断
 
-# Module Title
+本章建立雷达设备可靠运行的检查和诊断思路。学生需要把故障现象、可能原因、检查步骤和航行安全管理连接起来。
 
-## Content Header
-Module content here.
+## 学习目标
 
-## Content Header
-Module content here.
+- 说明雷达日常检查、开航前检查和运行中监控要点。
+- 识别距离误差、方位误差、调谐异常和显示异常。
+- 根据故障现象提出可能原因和排查顺序。
+- 理解维护记录、缺陷报告和航行限制的管理意义。
 
-## Content Header  
-Module content here.
+## 核心问题
 
-## Content Header
-Module content here.
+1. 雷达性能测试应该覆盖哪些项目？
+2. 方位误差、距离误差和图像异常分别可能来自哪里？
+3. 天线、波导、电源、接收机和显示单元故障有什么典型表现？
+4. 设备缺陷如何转化为航行限制和风险控制措施？
+
+## 教学主线
+
+1. 从日常检查清单进入性能测试。
+2. 建立故障现象和可能原因之间的映射。
+3. 分析维护记录、标准要求和船舶安全管理。
+4. 用案例训练诊断步骤和报告表达。
+
+## 资源入口
+
+- [Chapter 8 译文](cpt363-1/textbook/LJMU-Radar/chapter08/chapter-08.md)
+- [Chapter 11 译文](cpt363-1/textbook/LJMU-Radar/chapter11/chapter-11.md)
+- [章节课件](cpt363-1/slides.md)
+- [第25-26课时教案](data/radar-lessonPlan/第25-26课时.md)
+- [第27-28课时教案](data/radar-lessonPlan/第27-28课时.md)
+- [故障与标准阅读](cpt363-1/module-12.md)
+
+## 课堂输出
+
+制作一张“雷达故障诊断表”，至少包含故障现象、可能原因、检查步骤、是否影响航行和记录要求。

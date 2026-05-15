@@ -1,15 +1,28 @@
-![Image Description](images/dave-hoefler-vl2uAIdBWJ8-unsplash.jpg ':class=banner-image')
+# Workshop 1 雷达标绘训练
 
-# Module Title
+本训练用于第6章之后，帮助学生把连续雷达观测转化为目标运动判断。重点是手工标绘、相对运动线、CPA、TCPA 和行动后复核。
 
-## Content Header
-Module content here.
+## 训练目标
 
-## Content Header
-Module content here.
+- 根据连续观测点判断目标相对运动趋势。
+- 计算或解释 CPA、TCPA、BCR、BCT 等风险指标。
+- 比较手工标绘和 ARPA 自动跟踪结果。
+- 用清晰步骤说明避让行动前后的风险变化。
 
-## Content Header  
-Module content here.
+## 训练流程
 
-## Content Header
-Module content here.
+1. 给定本船航向、航速和目标三次观测位置。
+2. 绘制目标相对运动线，判断最近会遇趋势。
+3. 估算 CPA / TCPA，并说明是否需要行动。
+4. 设定一项避让行动，复核新相对运动线。
+5. 讨论 ARPA 或 AIS 信息与手工标绘不一致时的处理。
+
+## 交付物
+
+提交一页标绘说明，包含观测数据、运动判断、CPA / TCPA、避让建议和复核结论。
+
+## 配套资源
+
+- [Chapter 6 目标跟踪与避碰决策](cpt363-1/module-06.md)
+- [Chapter 6 译文](cpt363-1/textbook/LJMU-Radar/chapter06/chapter-06.md)
+- [课程专题：会遇场景中的目标标绘](cpt363-1/topics.md)

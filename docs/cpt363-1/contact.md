@@ -1,15 +1,13 @@
-# Contact
+# 联系方式
 
-## Course Instructor 
+## 课程教师
 
-Ruolan Zhang 
+张若澜
 
-zhangruolan@dlmu.edu.cn 
+zhangruolan@dlmu.edu.cn
 
-Online office hours:  
+## 课程沟通建议
 
-Mondays 13:30-14:30pm   
-
-Suggestion, concern or complaint?  
-
-Send me your [anonymous course feedback](#)!
+- 课程内容、课堂展示、资源链接和作业要求可通过邮件沟通。
+- 反馈时请尽量说明具体页面、章节或课时，便于快速定位问题。
+- 与雷达图像、标绘或案例分析有关的问题，建议附上截图、观测数据或作业草稿。

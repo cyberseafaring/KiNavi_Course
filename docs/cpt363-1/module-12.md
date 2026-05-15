@@ -1,15 +1,28 @@
-![Image Description](images/dave-hoefler-vl2uAIdBWJ8-unsplash.jpg ':class=banner-image')
+# Workshop 4 故障与标准阅读
 
-# Module Title
+本训练用于第7章之后，帮助学生把设备异常、维护检查和标准要求放在同一个安全管理框架中分析。
 
-## Content Header
-Module content here.
+## 训练目标
 
-## Content Header
-Module content here.
+- 从故障现象推断可能原因。
+- 设计逐步检查路径，避免直接跳到单一结论。
+- 区分立即影响航行安全的问题和可计划维护的问题。
+- 用规范语言记录缺陷、限制和复核结果。
 
-## Content Header  
-Module content here.
+## 训练流程
 
-## Content Header
-Module content here.
+1. 选择一个故障现象，例如无回波、目标拖尾、方位偏差、距离误差或 ARPA 跟踪不稳定。
+2. 列出可能原因，覆盖天线、发射接收、传感器输入、显示设置和外部环境。
+3. 设计检查顺序，说明每一步希望排除什么。
+4. 判断是否需要改变航行计划、加强瞭望或限制设备使用。
+5. 写出维护记录和课堂汇报摘要。
+
+## 交付物
+
+提交一张故障分析表，包含“现象、可能原因、检查步骤、航行影响、记录内容”五列。
+
+## 配套资源
+
+- [Chapter 7 维护、测试与故障诊断](cpt363-1/module-07.md)
+- [Chapter 11 译文](cpt363-1/textbook/LJMU-Radar/chapter11/chapter-11.md)
+- [课程资源](cpt363-1/resources.md)

@@ -1,19 +1,36 @@
-![Wireframe](images/6968244538_4c0f7c7e64_k.jpg ':class=banner-image')
+# Chapter 4 雷达操作与图像判读
 
-# How to explore the problem space?
+本章把雷达原理和系统组成转化为驾驶台操作流程。学生需要掌握雷达开机检查、参数调节、显示模式和目标判读的基本顺序。
 
-## Summaries and Questions  
-[May 30th Class One-minute Summaries](https://sso.canvaslms.com/courses/1924881/assignments/14377745)
+## 学习目标
 
-## Presented Slides  
-<div class="video-container-16by9"><iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRnnRFelgw1ksq_p8Eryg3dnyLCRRLPf5fBgdwdv9p-tCIwcxqWvzDGrGbjxGHL7HqEJVpmV26ntk3a/embed?start=false&loop=false&delayms=3000" frameborder="0" width=780" height="585" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></div>
+- 按步骤说明雷达开机、待机、发射、调节和关机过程。
+- 合理选择量程、增益、调谐、海杂波和雨杂波设置。
+- 使用 EBL、VRM、光标读数和显示模式支持目标判断。
+- 判读船舶、岸线、浮标、雨区、干扰和遮挡等常见图像。
 
-## Supplemental Materials  
-<div class="video-container-4by3"><iframe width="780" height="585" src="https://www.youtube.com/embed/MwidSAlbEB8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+## 核心问题
 
-## Downloads
-[4-UP BROWSERS + GRID](https://sso.canvaslms.com/courses/1924881/files/folder/Downloads/Sketching%20Templates/sneakpeekit-4-browsers)  
-[4-UP MOBILES + GRID](https://sso.canvaslms.com/courses/1924881/files/folder/Downloads/Sketching%20Templates/sneakpeekit-4-mobiles)  
+1. 雷达图像调节为什么需要固定顺序？
+2. 量程变化会怎样改变目标密度和风险感知？
+3. 海杂波抑制过强会带来什么危险？
+4. Head-Up、North-Up、Course-Up 显示分别适合哪些操作？
 
-## Required Reading  
-<a class="embedly-card" data-card-controls="0" data-card-align="left" href="https://www.smashingmagazine.com/2014/10/the-skeptics-guide-to-low-fidelity-prototyping/">The Skeptic’s Guide To Low-Fidelity Prototyping</a>
+## 教学主线
+
+1. 建立标准化雷达操作流程。
+2. 用图像变化解释主要旋钮和菜单设置。
+3. 结合 EBL / VRM 讲解距离和方位测量。
+4. 通过典型图像训练目标类型和异常现象识别。
+
+## 资源入口
+
+- [Chapter 4 译文](cpt363-1/textbook/LJMU-Radar/chapter04/chapter-04.md)
+- [章节课件](cpt363-1/slides.md)
+- [第13-14课时教案](data/radar-lessonPlan/第13-14课时.md)
+- [第15-16课时教案](data/radar-lessonPlan/第15-16课时.md)
+- [术语缩写](cpt363-1/abbreviation.md)
+
+## 课堂输出
+
+完成一份“雷达图像调节检查单”，每一步写明调节目的、过度调节的风险和复核方式。

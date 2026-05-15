@@ -1,15 +1,28 @@
-![Image Description](images/dave-hoefler-vl2uAIdBWJ8-unsplash.jpg ':class=banner-image')
+# Workshop 3 AIS / ECDIS 融合训练
 
-# Module Title
+本训练用于第6章或第8章之后，帮助学生比较雷达、AIS 和 ECDIS 信息的一致性，理解综合显示并不能替代人工复核。
 
-## Content Header
-Module content here.
+## 训练目标
 
-## Content Header
-Module content here.
+- 比较雷达目标、AIS 目标和电子海图对象的来源差异。
+- 识别目标位置、航向、航速、名称和状态不一致的情况。
+- 说明传感器延迟、输入错误和目标关联失败带来的风险。
+- 形成驾驶台多源信息交叉验证步骤。
 
-## Content Header  
-Module content here.
+## 训练流程
 
-## Content Header
-Module content here.
+1. 给定一个包含雷达目标、AIS 目标和海图对象的场景。
+2. 检查目标位置、航向、航速、CPA / TCPA 和目标名称。
+3. 标出一致、不一致和需要继续观察的信息。
+4. 说明哪些信息可用于避碰判断，哪些只作为辅助参考。
+5. 给出人工复核和记录建议。
+
+## 交付物
+
+提交一张“雷达-AIS-ECDIS 一致性检查表”，至少列出 5 个检查项和对应风险。
+
+## 配套资源
+
+- [Chapter 6 目标跟踪与避碰决策](cpt363-1/module-06.md)
+- [Chapter 8 新型雷达与数据融合](cpt363-1/module-08.md)
+- [术语缩写](cpt363-1/abbreviation.md)
