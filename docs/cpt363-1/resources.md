@@ -9,8 +9,19 @@
 - [课程安排](cpt363-1/schedule.md)
 - [课程专题](cpt363-1/topics.md)
 - [章节课件](cpt363-1/slides.md)
+- [HTML 课件总览](cpt363-1/slides/index.html)
 - [数字教材](cpt363-1/textbook.md)
 - [术语缩写](cpt363-1/abbreviation.md)
+
+## Bilingual HTML Slide Decks
+
+| 专题 | 教材主线 | 入口 |
+| --- | --- | --- |
+| 雷达工作原理 / Radar Working Principles | 第2-3章 | [HTML 课件](cpt363-1/slides/principles.html) |
+| 雷达组成 / Radar System Architecture | 第3章 | [HTML 课件](cpt363-1/slides/system.html) |
+| 雷达操作 / Radar Operation | 第4章 | [HTML 课件](cpt363-1/slides/operation.html) |
+| 雷达目标观测 / Radar Target Observation | 第5章 | [HTML 课件](cpt363-1/slides/observation.html) |
+| 雷达避碰 / Radar Collision Avoidance | 第7-8章 | [HTML 课件](cpt363-1/slides/collision-avoidance.html) |
 
 ## Textbook Entrances
 

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>雷达工作原理 - 船舶导航雷达</title>
+  <link rel="icon" href="../../assets/favicon/favicon.png">
+  <link rel="stylesheet" href="deck.css?v=1">
+</head>
+<body>
+  <div class="deck-shell">
+    <main id="deck" class="deck" aria-live="polite"></main>
+  </div>
+  <nav class="deck-controls" aria-label="slide controls">
+    <button id="prev" type="button">上一页</button>
+    <span id="counter">1 / 1</span>
+    <button id="next" type="button">下一页</button>
+    <button id="overview-toggle" type="button">总览</button>
+  </nav>
+  <div class="progress"><span id="progress-bar"></span></div>
+  <aside id="overview" class="overview" aria-label="slide overview"></aside>
+  <script>window.KINAVI_RADAR_DECK_ID = "principles";</script>
+  <script src="deck-data.js?v=1"></script>
+  <script src="deck.js?v=1"></script>
+</body>
+</html>

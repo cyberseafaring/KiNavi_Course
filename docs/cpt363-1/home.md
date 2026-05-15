@@ -13,11 +13,11 @@
           <span>CPA / TCPA</span>
           <span>COLREGs</span>
         </div>
-        <div class="course-actions">
-          <a class="course-button course-button--primary" href="#/cpt363-1/contents">内容架构 · Structure</a>
-          <a class="course-button" href="#/cpt363-1/home?id=course-chapters">八章主线 · Chapters</a>
-          <a class="course-button" href="#/cpt363-1/slides">章节课件 · Slides</a>
-        </div>
+      <div class="course-actions">
+        <a class="course-button course-button--primary" href="#/cpt363-1/contents">内容架构 · Structure</a>
+        <a class="course-button" href="#/cpt363-1/home?id=course-chapters">八章主线 · Chapters</a>
+        <a class="course-button" href="cpt363-1/slides/index.html">HTML 课件 · Decks</a>
+      </div>
       </div>
 <div class="radar-scope-card" aria-label="radar training overview">
 <div class="radar-scope"><span class="radar-sweep"></span><span class="radar-blip radar-blip--one"></span><span class="radar-blip radar-blip--two"></span><span class="radar-blip radar-blip--three"></span><span class="radar-vector radar-vector--one"></span><span class="radar-vector radar-vector--two"></span></div>
@@ -197,7 +197,7 @@
       <a href="#/cpt363-1/contents"><strong>内容架构</strong><span>Structure of the eight chapters</span></a>
       <a href="#/cpt363-1/schedule"><strong>课程安排</strong><span>16-unit teaching route</span></a>
       <a href="#/cpt363-1/topics"><strong>专题地图</strong><span>Discussion and paper topics</span></a>
-      <a href="#/cpt363-1/slides"><strong>章节课件</strong><span>Chapter slides and classroom deck</span></a>
+      <a href="cpt363-1/slides/index.html"><strong>HTML 课件</strong><span>Bilingual radar classroom decks</span></a>
       <a href="#/cpt363-1/textbook"><strong>数字教材</strong><span>Textbook and bilingual reading</span></a>
       <a href="#/cpt363-1/abbreviation"><strong>术语缩写</strong><span>Radar and bridge glossary</span></a>
       <a href="#/cpt363-1/module-09"><strong>标绘训练</strong><span>CPA / TCPA and motion plotting</span></a>

@@ -1,6 +1,20 @@
 # 章节课件
 
-本页保留 8 章腾讯文档课件入口，并按当前课程八章主线重新组织。课堂展示时建议优先使用表格入口打开对应章节；下方嵌入区用于站内预览。
+本页分为两类课件入口。第一类是基于《航海仪器（下册：船舶导航雷达）》第三版重点知识重构的中英双语 HTML 网页课件，适合课堂直接展示和学生复习。第二类保留原有 8 章腾讯文档课件入口，用于配合既有教学材料。
+
+## Bilingual HTML Slide Decks
+
+| 专题 | 教材依据 | HTML 课件 |
+| --- | --- | --- |
+| 雷达工作原理 / Radar Working Principles | 第2-3章：目标探测、显示方式、设备工作原理 | [打开 HTML 课件](cpt363-1/slides/principles.html) |
+| 雷达组成 / Radar System Architecture | 第3章：系统配置、发射机、双工器、天线、接收机、显示系统 | [打开 HTML 课件](cpt363-1/slides/system.html) |
+| 雷达操作 / Radar Operation | 第4章：主要控制操作要领、基本操作方法 | [打开 HTML 课件](cpt363-1/slides/operation.html) |
+| 雷达目标观测 / Radar Target Observation | 第5章：观测性能、目标特性、影响观测因素 | [打开 HTML 课件](cpt363-1/slides/observation.html) |
+| 雷达避碰 / Radar Collision Avoidance | 第7-8章：雷达标绘、ARPA、AIS 关联、会遇判断与避碰行动 | [打开 HTML 课件](cpt363-1/slides/collision-avoidance.html) |
+
+[进入 HTML 课件总览](cpt363-1/slides/index.html)
+
+> 教材依据：刘彤著，《航海仪器（下册：船舶导航雷达）》第三版，大连海事大学出版社，2023。以上课件为课堂讲授用知识重构，采用中英双语术语，不长篇摘录教材原文。
 
 ## Slide Map
 
