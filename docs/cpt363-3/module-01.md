@@ -1,19 +1,45 @@
-![UX - User Experience](images/12650723674_d5c85af332_k.jpg ':class=banner-image')
+# 模块 1 智能航海导论与军官能力
 
-# What is usability and user experience design?
+本模块建立课程总图。重点说明智能航海与传统航海、自动化船桥、远程监督和自主航行之间的关系，并把 AI 对舰船操纵的影响放入军官院校训练体系中理解。
 
-## Summaries and Questions  
-[May 9th Class One-minute Summaries](https://sso.canvaslms.com/courses/1924881/assignments/14377751)
+## 学习目标
 
-## Presented Slides  
-<div class="video-container-16by9"><iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRnnRFelgw1ksq_p8Eryg3dnyLCRRLPf5fBgdwdv9p-tCIwcxqWvzDGrGbjxGHL7HqEJVpmV26ntk3a/embed?start=false&loop=false&delayms=3000" frameborder="0" width=780" height="585" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></div>
+- 解释智能航海、MASS、远程监督、自主航行和智能船桥的基本概念。
+- 说明 AI 如何改变瞭望、定位、避碰、航线保持和应急处置。
+- 理解海军军官在智能航海系统中的判断、监督、接管和记录责任。
+- 能画出“感知 -> 决策 -> 控制 -> 复核”的智能航行闭环。
 
-## Supplemental Materials  
-[Elements of User Experience by Jesse James Garrett](https://qofr.files.wordpress.com/2016/11/q-of-r-presentation-11.pdf)
-<div class="responsive-container"><iframe src="https://docs.google.com/viewer?url=https://qofr.files.wordpress.com/2016/11/q-of-r-presentation-11.pdf&embedded=true" style="width:780px; height:585px;" frameborder="0"></iframe></div>
+## 核心问题
 
-## Downloads
-[Course Overview](https://sso.canvaslms.com/courses/1924881/files/folder/Downloads/Course%20Overview)  
+1. 智能航海与传统航海训练之间是什么关系？
+2. AI 系统进入船桥后，值更官的职责如何变化？
+3. 舰船操纵为什么需要同时理解算法、船体运动和人员组织？
+4. 什么情况下需要从智能辅助切换到人工主导？
 
-## Recommended Reading  
-<a class="embedly-card" data-card-controls="0" data-card-align="left" href="https://www.nngroup.com/articles/usability-101-introduction-to-usability/">Usability 101: Introduction to Usability</a>
+## 知识结构
+
+| 概念 | 课程解释 | 操纵含义 |
+| --- | --- | --- |
+| 智能航海 | 利用数据、AI、通信和控制技术增强航行安全与效率 | 船舶操纵从人工经验扩展为人机协同 |
+| MASS | Maritime Autonomous Surface Ships | 提供法规和系统设计背景 |
+| 远程监督 | 岸基或编队支援人员监控船舶状态 | 值更组织从本船扩展到船岸协同 |
+| 自主航行 | 系统在限定运行条件下完成部分航行任务 | 需要明确运行条件与限制 |
+| 人工接管 | 人员在异常或高风险场景恢复主导 | 保持军官责任和安全边界 |
+
+## 课堂训练
+
+1. 给出一个雾航会遇场景，让学员标出人、AI、雷达、AIS、电子海图各自承担的信息任务。
+2. 让学员画出智能航行闭环，并说明每一环节可能出现的错误。
+3. 讨论“AI 给出避碰建议时，值更官应如何判断是否采纳”。
+
+## 复习问题
+
+- AI 辅助航行系统的输出为什么需要人员解释和复核？
+- 智能航海对舰船操纵训练提出了哪些新增能力要求？
+- 运行条件与限制在智能航行系统中有什么作用？
+
+## 配套资源
+
+- [内容架构](cpt363-3/contents.md)
+- [AI 与船舶操纵地图](cpt363-3/ai-shiphandling-map.md)
+- [课堂资源](cpt363-3/resources.md)

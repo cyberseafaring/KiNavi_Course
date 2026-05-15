@@ -1,19 +1,50 @@
-![Wireframe](images/6968244538_4c0f7c7e64_k.jpg ':class=banner-image')
+# 模块 4 智能感知与多源融合
 
-# How to explore the problem space?
+本模块对应智能航行闭环中的“看见”和“理解”。课程重点是雷达、光电、红外、AIS、电子海图、气象海况和平台状态数据如何形成态势图，以及这些信息在复杂海况下如何失真。
 
-## Summaries and Questions  
-[May 30th Class One-minute Summaries](https://sso.canvaslms.com/courses/1924881/assignments/14377745)
+## 学习目标
 
-## Presented Slides  
-<div class="video-container-16by9"><iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRnnRFelgw1ksq_p8Eryg3dnyLCRRLPf5fBgdwdv9p-tCIwcxqWvzDGrGbjxGHL7HqEJVpmV26ntk3a/embed?start=false&loop=false&delayms=3000" frameborder="0" width=780" height="585" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></div>
+- 说明多源传感器在智能航海中的互补关系。
+- 理解目标检测、跟踪、数据关联、传感器融合和不确定性。
+- 分析小目标、遮挡、雨雾、夜间、强反射和虚假数据对感知系统的影响。
+- 能设计一份智能瞭望系统的人员复核清单。
 
-## Supplemental Materials  
-<div class="video-container-4by3"><iframe width="780" height="585" src="https://www.youtube.com/embed/MwidSAlbEB8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+## 核心问题
 
-## Downloads
-[4-UP BROWSERS + GRID](https://sso.canvaslms.com/courses/1924881/files/folder/Downloads/Sketching%20Templates/sneakpeekit-4-browsers)  
-[4-UP MOBILES + GRID](https://sso.canvaslms.com/courses/1924881/files/folder/Downloads/Sketching%20Templates/sneakpeekit-4-mobiles)  
+1. AI 感知系统如何扩展传统瞭望？
+2. 雷达、光电、红外和 AIS 结果不一致时应如何判断？
+3. 多源融合如何降低单一传感器风险，又会引入哪些新风险？
+4. 学员如何识别感知系统已经超出运行条件？
 
-## Required Reading  
-<a class="embedly-card" data-card-controls="0" data-card-align="left" href="https://www.smashingmagazine.com/2014/10/the-skeptics-guide-to-low-fidelity-prototyping/">The Skeptic’s Guide To Low-Fidelity Prototyping</a>
+## 感知链路
+
+| 数据源 | 提供信息 | AI 处理 | 操纵用途 |
+| --- | --- | --- | --- |
+| 雷达 | 距离、方位、目标运动、岸线和杂波 | 目标检测、跟踪、杂波识别 | 避碰、定位和低能见度航行 |
+| 光电 | 目标外形、颜色、灯光和视觉语义 | 图像识别、语义分割 | 自动瞭望和目标确认 |
+| 红外 | 夜间目标、热源和低光环境目标 | 热目标检测 | 夜航和受限可见度辅助 |
+| AIS / VDES | 身份、航向、航速、意图和通信数据 | 数据关联、异常检测 | 交通组织和目标识别 |
+| 电子海图 | 水深、航道、禁航区、助航标志 | 语义约束、路径边界 | 航线规划和安全边界 |
+| 气象海况 | 风、流、浪、能见度 | 环境预测和风险评分 | 航速、航向和操纵裕度调整 |
+
+## 不确定性来源
+
+| 情况 | 可能影响 | 复核方法 |
+| --- | --- | --- |
+| 小目标弱回波 | 雷达漏检或 AI 误判为杂波 | 调整量程和杂波抑制，结合光电观察 |
+| 雨雾和眩光 | 视觉模型识别不稳定 | 交叉使用雷达、红外和人工瞭望 |
+| AIS 信息异常 | 目标身份或运动状态错误 | 用雷达目标和视觉目标进行关联 |
+| 海图与传感器偏移 | 路径规划边界错误 | 检查 GNSS、航向源和海图基准 |
+| 传感器欺骗 | 系统生成错误态势 | 比较多源一致性并进入保守模式 |
+
+## 课堂训练
+
+1. 给出一张复杂水域态势表，让学员判断哪些目标可靠、哪些需要继续观察。
+2. 设计一个多源感知链路图，标出数据输入、融合输出和复核点。
+3. 讨论“雷达发现目标，视觉模型未识别，AIS 无报告”时的值更判断。
+
+## 复习问题
+
+- 多源融合为什么不能消除所有感知风险？
+- 智能感知系统的运行条件应包含哪些内容？
+- 在受限能见度条件下，AI 感知如何改变传统瞭望组织？

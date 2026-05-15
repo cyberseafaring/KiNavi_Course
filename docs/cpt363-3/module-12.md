@@ -1,15 +1,27 @@
-![Image Description](images/dave-hoefler-vl2uAIdBWJ8-unsplash.jpg ':class=banner-image')
+# 训练 4 控制闭环与接管条件
 
-# Module Title
+本训练配合模块 6-7 使用，要求学员把规划决策转化为控制执行和接管判断。
 
-## Content Header
-Module content here.
+## 训练目标
 
-## Content Header
-Module content here.
+- 说明制导、导航、控制和反馈的关系。
+- 分析自动控制输出如何影响真实船体运动。
+- 设置人工接管和安全降级条件。
 
-## Content Header  
-Module content here.
+## 分析模板
 
-## Content Header
-Module content here.
+| 环节 | 需要填写 |
+| --- | --- |
+| 计划航迹 | 航向、速度、转向点、通过距离 |
+| 状态估计 | 位置、航向、速度、风流浪 |
+| 控制输出 | 舵角、车令、推进器、侧推 |
+| 实际反馈 | 航迹误差、横移、转向响应、速度变化 |
+| 接管条件 | 误差超限、传感器冲突、执行异常、通信受限 |
+| 记录内容 | AI 建议、人员判断、行动、复核和异常 |
+
+## 评价维度
+
+- 控制链条完整。
+- 能解释执行滞后和环境扰动。
+- 接管条件具体、可观察。
+- 记录内容便于复盘和训练评估。

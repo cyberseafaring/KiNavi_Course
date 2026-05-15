@@ -1,31 +1,22 @@
-# Schedule
+# LMS 课程安排
 
-## :fas fa-calendar fa-fw: Week 1 (May 9 - 15)
-**[What is usability and user experience design?](https://canvas.sfu.ca/courses/44038/modules/items/1096965)**  
-:fas fa-desktop fa-fw: [Introduction to UX Design](https://docs.google.com/presentation/d/e/2PACX-1vRnnRFelgw1ksq_p8Eryg3dnyLCRRLPf5fBgdwdv9p-tCIwcxqWvzDGrGbjxGHL7HqEJVpmV26ntk3a/pub?start=false&loop=false&delayms=3000)   
-:fas fa-book fa-fw: [Usability 101: Introduction to Usability](https://www.nngroup.com/articles/usability-101-introduction-to-usability/)  
+本页为 LMS 导入使用，按 16 次课、32 学时整理。
 
-## :fas fa-calendar fa-fw: Week 2 (May 16 - 22)
-**[What does a holistic user experience design process look like?](https://canvas.sfu.ca/courses/44038/modules/items/1096966)**  
-:fas fa-keyboard fa-fw: [Course Reflection Log](https://sso.canvaslms.com/courses/1924881/assignments/14377752) <span class='badge'> Fri Aug 3rd 11:59pm PDT</span>  
-:fas fa-desktop fa-fw: [The Process of UX Design](https://docs.google.com/presentation/d/e/2PACX-1vRnnRFelgw1ksq_p8Eryg3dnyLCRRLPf5fBgdwdv9p-tCIwcxqWvzDGrGbjxGHL7HqEJVpmV26ntk3a/pub?start=false&loop=false&delayms=3000)   
-:fas fa-book fa-fw: [The Evolution of UX Process Methodology](https://uxplanet.org/the-evolution-of-ux-process-methodology-47f52557178b)  
-
-## :fas fa-calendar fa-fw: Week 3 (May 23 - 29)
-**[How to make more strategic design decisions?](https://canvas.sfu.ca/courses/44038/modules/items/1096970)**  
-:fas fa-keyboard fa-fw: [Journey Map](https://sso.canvaslms.com/courses/1924881/assignments/14377756) <span class='badge'> Tue Jun 12th 11:59pm PDT</span>  
-:fas fa-folder fa-fw: [Informed Consent Materials](https://sso.canvaslms.com/courses/1924881/files/folder/Downloads/Informed%20Consent)  
-:fas fa-desktop fa-fw: [Strategic UX Design](https://docs.google.com/presentation/d/e/2PACX-1vRnnRFelgw1ksq_p8Eryg3dnyLCRRLPf5fBgdwdv9p-tCIwcxqWvzDGrGbjxGHL7HqEJVpmV26ntk3a/pub?start=false&loop=false&delayms=3000)   
-:fas fa-book fa-fw: [What is a User Journey Map?](https://www.aytech.ca/blog/user-journey-map/)  
-
-## :fas fa-calendar fa-fw: Week 4 (May 30 - Jun 5)
-**[How to explore the problem space?](https://canvas.sfu.ca/courses/44038/modules/items/1096967)**  
-:fas fa-desktop fa-fw: [Prototyping](https://docs.google.com/presentation/d/e/2PACX-1vRnnRFelgw1ksq_p8Eryg3dnyLCRRLPf5fBgdwdv9p-tCIwcxqWvzDGrGbjxGHL7HqEJVpmV26ntk3a/pub?start=false&loop=false&delayms=3000)   
-:fas fa-book fa-fw: [The Skeptic’s Guide To Low-Fidelity Prototyping](https://www.smashingmagazine.com/2014/10/the-skeptics-guide-to-low-fidelity-prototyping/)  
-:fas fa-users fa-fw: In-class office hours (tentative)  
-
-## :fas fa-calendar fa-fw: Week 5 (Jun 6 - 12)
-**[How to plan, conduct, and summarize usability tests?](https://canvas.sfu.ca/courses/44038/modules/items/1096974)**  
-:fas fa-desktop fa-fw: [Usability Testing](https://docs.google.com/presentation/d/e/2PACX-1vRnnRFelgw1ksq_p8Eryg3dnyLCRRLPf5fBgdwdv9p-tCIwcxqWvzDGrGbjxGHL7HqEJVpmV26ntk3a/pub?start=false&loop=false&delayms=3000)   
-:fas fa-book fa-fw: [The Art of Guerrilla Usability Testing](http://www.uxbooth.com/articles/the-art-of-guerrilla-usability-testing/)  
-:fas fa-users fa-fw: In-class office hours (tentative)
+| 次序 | 主题 | 课堂任务 |
+| --- | --- | --- |
+| 1 | 智能航海导论 | 建立感知到控制闭环 |
+| 2 | 海军军官智能航海能力 | AI 概念与航海案例卡 |
+| 3 | 航海数据与模型输入 | 数据质量检查 |
+| 4 | 模型训练、评估和泛化 | 误报漏报案例讨论 |
+| 5 | 深度学习与多模态 AI | 海上目标识别案例 |
+| 6 | 强化学习、生成式 AI 与智能体 | 强化学习避碰任务设计 |
+| 7 | 多源传感器与智能感知 | 感知链路图 |
+| 8 | 融合、不确定性与复核 | 传感器冲突判断 |
+| 9 | 态势预测与风险评估 | 多目标风险排序 |
+| 10 | 路径规划与智能避碰 | 智能避碰推演 |
+| 11 | 船舶运动模型与控制基础 | 控制闭环图 |
+| 12 | 自主执行与低速操纵 | 接管条件设计 |
+| 13 | 人机协同与智能船桥 | 智能船桥信息需求 |
+| 14 | 远程监督与解释性 | 值更记录模板 |
+| 15 | 安全验证与对抗环境 | 异常场景处置 |
+| 16 | 综合演练与课程复盘 | 综合演练报告 |

@@ -1,15 +1,27 @@
-![Image Description](images/dave-hoefler-vl2uAIdBWJ8-unsplash.jpg ':class=banner-image')
+# 训练 1 AI 概念与航海案例卡
 
-# Module Title
+本训练配合模块 1-3 使用，要求学员把一个 AI 概念转化为一个舰船操纵案例。
 
-## Content Header
-Module content here.
+## 训练目标
 
-## Content Header
-Module content here.
+- 用航海语言解释 AI 概念。
+- 说明该 AI 能力影响哪个操纵环节。
+- 识别数据需求、失效条件和人员复核点。
 
-## Content Header  
-Module content here.
+## 任务模板
 
-## Content Header
-Module content here.
+| 项目 | 内容 |
+| --- | --- |
+| AI 概念 | 分类、回归、强化学习、生成式 AI、智能体等 |
+| 航海场景 | 雾航、避碰、航迹保持、低速操纵、通信受限等 |
+| 输入数据 | 传感器、海图、气象、平台状态、值更记录 |
+| 输出结果 | 识别、预测、建议、控制指令或解释文本 |
+| 操纵影响 | 改变瞭望、判断、决策、控制或复核 |
+| 风险边界 | 误报、漏报、泛化不足、数据延迟、解释不足 |
+
+## 评价维度
+
+- 概念解释准确。
+- 航海场景具体。
+- 能说明 AI 输出进入操纵判断的路径。
+- 能提出人员复核和接管要求。

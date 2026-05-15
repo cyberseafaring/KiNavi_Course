@@ -1,18 +1,44 @@
-![Bullseye](images/6384294717_5047a35d48_b.jpg ':class=banner-image')
+# 模块 3 前沿 AI：深度学习、强化学习、生成式 AI 与智能体
 
-# How to make more strategic design decisions?
+本模块介绍智能航海中正在快速发展的 AI 技术。重点不放在数学推导，而放在这些技术能改变哪些航海任务、需要什么条件、有哪些风险边界。
 
-## Summaries and Questions  
-[May 23rd Class One-minute Summaries](https://sso.canvaslms.com/courses/1924881/assignments/14377744)
+## 学习目标
 
-## Presented Slides  
-<div class="video-container-16by9"><iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRnnRFelgw1ksq_p8Eryg3dnyLCRRLPf5fBgdwdv9p-tCIwcxqWvzDGrGbjxGHL7HqEJVpmV26ntk3a/embed?start=false&loop=false&delayms=3000" frameborder="0" width=780" height="585" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></div>
+- 解释深度学习、CNN、Transformer、多模态模型和基础模型的基本作用。
+- 理解强化学习中的状态、动作、奖励和策略。
+- 说明生成式 AI 与大语言模型在航行辅助中的可能用途。
+- 认识 AI 智能体在多步骤任务分解、工具调用和仿真推演中的作用。
 
-## Supplemental Materials  
-<div class="video-container-4by3"><iframe width="780" height="585" src="https://www.youtube.com/embed/a40QYgO-_aM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+## 核心问题
 
-## Assignments
-[Journey Map](https://sso.canvaslms.com/courses/1924881/assignments/14377756)  
+1. 深度学习如何改进视觉瞭望和雷达图像理解？
+2. 强化学习为什么适合在仿真中训练操纵策略？
+3. 生成式 AI 能为值更官提供哪些帮助，哪些内容需要严格复核？
+4. 智能体系统在航行任务中为什么需要权限边界和人工批准？
 
-## Required Reading  
-<a class="embedly-card" data-card-controls="0" data-card-align="left" href="https://www.aytech.ca/blog/user-journey-map/">What is a User Journey Map?</a>
+## 前沿技术与航海应用
+
+| 技术 | 航海应用 | 风险边界 |
+| --- | --- | --- |
+| CNN / 视觉模型 | 船舶、浮标、岸线、浪花、障碍物识别 | 夜间、雨雾、眩光和遮挡影响稳定性 |
+| Transformer | 多目标轨迹、航行文本、海图语义理解 | 数据量和计算资源要求高 |
+| 多模态模型 | 图像、雷达、AIS、文本和语音共同理解 | 不同来源冲突时需要解释机制 |
+| 强化学习 | 避碰策略、路径跟踪、低速操纵训练 | 奖励设计可能偏离航海安全目标 |
+| 生成式 AI | 值更摘要、法规检索、航行解释、训练问答 | 生成内容需要来源核验和责任边界 |
+| 智能体 | 调用海图、天气、仿真和计算工具形成建议 | 必须限制自动执行权限 |
+
+## 强化学习在操纵中的位置
+
+强化学习可用于训练控制策略，但真实舰船操纵需要考虑船体惯性、舵机响应、推进器限制、环境扰动和安全裕度。课程要求学员理解强化学习适合做仿真训练和方案探索，真实使用时需要验证、约束和人工接管。
+
+## 课堂训练
+
+1. 让学员比较视觉模型、雷达处理模型和 AIS 异常检测模型的输入输出。
+2. 设计一个强化学习避碰任务，写出状态、动作和奖励。
+3. 让生成式 AI 输出一段航行建议，再由学员标出需要核验的事实和风险。
+
+## 复习问题
+
+- 生成式 AI 在航海场景中最适合作为哪类工具？
+- 强化学习训练出的操纵策略为什么需要仿真、实船和人员三重验证？
+- 多模态 AI 在智能船桥中可能带来哪些新增风险？

@@ -1,24 +1,49 @@
-![Flowchart](images/4853380320_492f9dce63_b.jpg ':class=banner-image')
+# 模块 2 AI 基础：数据、模型、训练与评估
 
-# What does a holistic user experience design process look like?
+本模块把 AI 基础知识放到航海数据和船舶操纵场景中讲授。学员需要理解模型输出来自数据、训练和评估过程，进而能判断 AI 建议的可信程度。
 
-## Summaries and Questions  
-[May 16th Class One-minute Summaries](https://sso.canvaslms.com/courses/1924881/assignments/14377743)
+## 学习目标
 
-## Presented Slides  
-<div class="video-container-16by9"><iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRnnRFelgw1ksq_p8Eryg3dnyLCRRLPf5fBgdwdv9p-tCIwcxqWvzDGrGbjxGHL7HqEJVpmV26ntk3a/embed?start=false&loop=false&delayms=3000" frameborder="0" width=780" height="585" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></div>
+- 说明数据集、特征、标签、训练、验证、测试和泛化的含义。
+- 区分分类、回归、聚类、异常检测等常见机器学习任务。
+- 理解准确率、召回率、误报、漏报、置信度和混淆矩阵。
+- 能用航海例子解释数据偏差、传感器延迟和模型失效。
 
-## CPT-363 UX Design Process/Toolkit
-![UX Design Process/Toolkit](images/ux-toolkit-8-no-numbers.png)
+## 核心问题
 
-## Downloads
-[Product Reaction Cards](https://sso.canvaslms.com/courses/1924881/files/folder/Downloads/Product%20Reaction%20Cards)  
+1. 航海 AI 系统需要哪些数据，数据质量怎样影响操纵判断？
+2. 目标识别和风险预测分别属于什么 AI 任务？
+3. 模型在实验室表现良好，为什么到真实水域仍可能失效？
+4. 值更官如何理解置信度、误报和漏报？
 
-## Assignments
-[Course Reflection Log](https://sso.canvaslms.com/courses/1413912/assignments/9519528)  
+## AI 基础表
 
-## Quick Quiz
-<iframe src="https://h5p.org/h5p/embed/214115" width="728" height="278" frameborder="0" allowfullscreen="allowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *" title="User-Centered Design"></iframe><script src="https://h5p.org/sites/all/modules/h5p/library/js/h5p-resizer.js" charset="UTF-8"></script>
+| AI 概念 | 航海例子 | 操纵风险 |
+| --- | --- | --- |
+| 分类 | 判断图像中目标是船舶、浮标或岸线 | 小目标误分类影响瞭望 |
+| 回归 | 预测目标未来位置或本船偏航量 | 预测误差影响避碰提前量 |
+| 聚类 | 发现常见交通流模式 | 异常交通可能被归入常规模式 |
+| 异常检测 | 发现 AIS 异常、传感器跳变或航迹异常 | 误告警增加人员负担 |
+| 模型泛化 | 从训练水域迁移到陌生水域 | 新海况、新目标、新光照下可靠性下降 |
 
-## Recommended Reading  
-<a class="embedly-card" data-card-controls="0" data-card-align="left" href="https://uxplanet.org/the-evolution-of-ux-process-methodology-47f52557178b">The Evolution of UX Process Methodology</a>
+## 数据质量检查
+
+| 检查项 | 航海含义 | 课堂提问 |
+| --- | --- | --- |
+| 完整性 | 是否缺少雷达、光电、AIS 或气象数据 | 哪个传感器缺失会影响当前判断？ |
+| 时效性 | 数据是否延迟或不同步 | 目标高速机动时延迟会带来什么后果？ |
+| 准确性 | 位置、航向、速度是否可靠 | 误差如何影响 CPA / TCPA？ |
+| 代表性 | 训练样本是否覆盖夜间、雨雾、拥挤水域 | 模型在哪些场景可能泛化不足？ |
+| 安全性 | 数据是否可能被欺骗、污染或篡改 | 如何发现 AIS / GNSS 异常？ |
+
+## 课堂训练
+
+1. 用“识别小艇”解释分类、误报、漏报和召回率。
+2. 用“预测会遇目标 6 分钟后位置”解释回归和误差传播。
+3. 给出一组传感器数据，让学员找出延迟、缺失和冲突。
+
+## 复习问题
+
+- AI 模型输出的置信度能否直接等同于安全结论？
+- 为什么军官需要理解训练数据和测试场景？
+- 漏检和误报在航海操纵中分别会造成什么后果？

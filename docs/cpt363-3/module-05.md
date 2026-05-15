@@ -1,15 +1,49 @@
-![Usability Test](images/4642289926_7964e733d1_b.jpg ':class=banner-image')
+# 模块 5 态势预测、路径规划与智能避碰
 
-# How to plan, conduct, and summarize usability tests?
+本模块连接感知与决策。课程重点是 AI 如何预测目标运动和交通风险，如何生成航线和避碰方案，以及这些方案如何接受 COLREGs、操纵性能、任务意图和安全裕度约束。
 
-## Summaries and Questions  
-[Jun 6th Class One-minute Summaries](https://sso.canvaslms.com/courses/1924881/assignments/14377746)
+## 学习目标
 
-## Presented Slides  
-<div class="video-container-16by9"><iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRnnRFelgw1ksq_p8Eryg3dnyLCRRLPf5fBgdwdv9p-tCIwcxqWvzDGrGbjxGHL7HqEJVpmV26ntk3a/embed?start=false&loop=false&delayms=3000" frameborder="0" width=780" height="585" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></div>
+- 解释目标运动预测、交通流预测和风险评分的基本思路。
+- 理解路径规划中的安全、时间、能耗、隐蔽性需求和航道限制。
+- 分析智能避碰系统与 COLREGs、CPA / TCPA、船舶操纵性能之间的关系。
+- 能比较 AI 建议、人工判断和规则要求之间的一致性。
 
-## Supplemental Materials  
-<div class="video-container-4by3"><iframe width="780" height="585" src="https://www.youtube.com/embed/QckIzHC99Xc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+## 核心问题
 
-## Required Reading  
-<a class="embedly-card" data-card-controls="0" data-card-align="left" href="http://www.uxbooth.com/articles/the-art-of-guerrilla-usability-testing/">The Art of Guerrilla Usability Testing</a>
+1. AI 如何预测目标未来位置和本船风险？
+2. 航线规划为什么需要同时考虑环境、任务、规则和操纵性能？
+3. 智能避碰方案怎样证明安全、合规和可执行？
+4. 多目标会遇时，AI 建议如何被值更官复核？
+
+## 决策链
+
+| 环节 | 输入 | 输出 | 人员复核 |
+| --- | --- | --- | --- |
+| 运动预测 | 雷达 / AIS 轨迹、本船运动、环境扰动 | 目标未来位置、风险窗口 | 预测是否符合实际观察 |
+| 风险评估 | CPA / TCPA、交通密度、航道约束 | 风险等级和排序 | 是否遗漏小目标和特殊水域 |
+| 路径规划 | 任务点、海图、天气、禁限区 | 候选航线和安全边界 | 航线是否满足指挥意图 |
+| 避碰决策 | COLREGs、操纵性能、目标趋势 | 改向、变速或保持行动建议 | 行动是否明显、及早、可执行 |
+| 行动复核 | 新目标矢量、新 CPA、航迹误差 | 行动有效性结论 | 是否需要二次行动或接管 |
+
+## 智能避碰的约束
+
+| 约束 | 课程解释 |
+| --- | --- |
+| 规则约束 | 行动应符合 COLREGs 和特定水域航行规则 |
+| 操纵约束 | 船舶转向、加减速和停船能力有限 |
+| 环境约束 | 风流浪会改变航迹和操纵响应 |
+| 任务约束 | 编队、护航、航道、时间窗和安全距离会限制行动空间 |
+| 可解释性约束 | 值更官需要理解建议原因、备选方案和风险变化 |
+
+## 课堂训练
+
+1. 给出交叉会遇场景，让学员比较 AI 建议与人工避碰判断。
+2. 让学员为一条受限水域航线列出规划约束。
+3. 设计“AI 避碰建议采纳记录”，包含输入、建议、人工判断、行动和复核。
+
+## 复习问题
+
+- 路径最短是否一定适合舰船安全航行？
+- AI 避碰建议应向值更官解释哪些内容？
+- 多目标会遇时，风险排序可能出现哪些问题？

@@ -1,15 +1,33 @@
-![Image Description](images/dave-hoefler-vl2uAIdBWJ8-unsplash.jpg ':class=banner-image')
+# 训练 3 智能避碰推演
 
-# Module Title
+本训练配合模块 5 使用，要求学员比较 AI 避碰建议、COLREGs 判断和人工操纵经验。
 
-## Content Header
-Module content here.
+## 训练目标
 
-## Content Header
-Module content here.
+- 使用目标运动数据分析会遇风险。
+- 判断 AI 生成方案是否符合规则、任务和操纵性能。
+- 写出采纳、修正或拒绝 AI 建议的理由。
 
-## Content Header  
-Module content here.
+## 输入数据
 
-## Content Header
-Module content here.
+| 数据 | 示例 |
+| --- | --- |
+| 本船状态 | 航向、航速、操纵限制、任务意图 |
+| 目标状态 | 距离、方位、航向、航速、CPA / TCPA |
+| 环境 | 能见度、风流浪、航道边界、交通密度 |
+| AI 建议 | 改向、变速、保持、等待或重新规划 |
+
+## 输出模板
+
+1. 会遇局面判断。
+2. AI 建议摘要。
+3. 与 COLREGs 和操纵性能的符合性分析。
+4. 人员最终决定。
+5. 行动后复核指标。
+
+## 评价维度
+
+- 风险判断与数据一致。
+- 规则分析清楚。
+- 能说明 AI 建议的优点和风险。
+- 有明确行动后复核方案。

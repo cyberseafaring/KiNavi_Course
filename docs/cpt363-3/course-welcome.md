@@ -1,11 +1,22 @@
-![Welcome sign](images/belinda-fewings-6wAGwpsXHE0-unsplash.jpg ':class=banner-image')
+![智能航海课程入口](images/belinda-fewings-6wAGwpsXHE0-unsplash.jpg ':class=banner-image')
 
-# Welcome to CPT-363 User Interface Design 👋🏼  
+# 欢迎学习《智能航海》
 
- To help orientate yourself to the course, explore the [course syllabus](https://canvas.sfu.ca/courses/44038/assignments/syllabus). You may also want to view a brief tour of [Blackboard Collaborate Ultra](https://www.youtube.com/watch?v=1W4sGpVmJaY).
+本页作为课程入口，帮助学员快速理解本课程的学习方式。《智能航海》是一门 32 学时课程，面向海军军官院校航海、舰船操纵和值更训练相关专业。课程把人工智能基础、智能航行系统和舰船操纵训练放在同一条主线上讲授。
 
-Is this your first online course? If so, you might find these articles of help:
+## 进入课程前先建立三条线索
 
-* [8 Strategies for Getting the Most Out of an Online Class](https://www.northeastern.edu/graduate/blog/tips-for-taking-online-classes/)
-* [What Makes a Successful Online Learner?](https://careerwise.minnstate.edu/education/successonline.html)
-* [Student toolkit to help tackle remote learning](https://socialmediaforlearning.com/2020/03/22/guest-post-a-student-toolkit-to-help-you-tackle-remote-learning-written-by-students-for-students/)
+| 线索 | 需要先想清楚的问题 | 对应页面 |
+| --- | --- | --- |
+| AI 知识线 | 数据、模型、训练、评估、深度学习、强化学习、生成式 AI 和智能体如何进入航海系统？ | [内容架构](cpt363-3/contents.md) |
+| 操纵任务线 | AI 如何影响瞭望、定位、避碰、航线保持、低速操纵和人工接管？ | [AI 与船舶操纵地图](cpt363-3/ai-shiphandling-map.md) |
+| 军官能力线 | 值更官如何理解系统限制、质疑系统建议、组织人机协同并完成安全复核？ | [教学思路](cpt363-3/teaching-logic.md) |
+
+## 建议学习顺序
+
+1. 先阅读 [课程主页](cpt363-3/home.md)，明确课程对象、学时和总体目标。
+2. 查看 [内容架构](cpt363-3/contents.md)，建立从感知到控制的知识框架。
+3. 对照 [课程安排](cpt363-3/schedule.md)，按 16 次课完成学习。
+4. 使用 [训练包](cpt363-3/module-09.md) 到 [综合演练报告](cpt363-3/module-13.md)，把 AI 概念转化为操纵判断。
+
+?> 本课程强调安全航行、系统理解、人机协同和可靠接管。课堂案例服务于舰船驾驶训练和智能航行系统理解，不展开武器运用、电子对抗战术或作战打击方案。

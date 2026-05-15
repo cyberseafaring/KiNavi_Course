@@ -1,57 +1,12 @@
-# Topics
+# LMS 专题题库
 
-### [A](#a)|B|C|[D](#d)|E|[F](#f)|G|[H](#h)|I|[J](#j)|[K](#k)|[L](#l)|[M](#m)|N|O|[P](#p)|Q|R|[S](#s)|[T](#t)|[U](#u)|[V](#v)|W|X|Y|Z  
-
-### A
-[Agile UX](https://canvas.sfu.ca/courses/44038/modules/items/1096966)
-
-### D
-[Design Ethics](https://canvas.sfu.ca/courses/44038/modules/items/1096966)  
-[Design Thinking](https://canvas.sfu.ca/courses/44038/modules/items/1096965)  
-
-### F
-[5-Second Test](https://canvas.sfu.ca/courses/44038/modules/items/1096974)   
-[Five Whys](https://canvas.sfu.ca/courses/44038/modules/items/1096965)  
-
-### H
-[Hypothesis](https://canvas.sfu.ca/courses/44038/modules/items/1096966)  
-
-### J
-[Journey Maps](https://canvas.sfu.ca/courses/44038/modules/items/1096970)  
-
-### K
-[Kano Model](https://canvas.sfu.ca/courses/44038/modules/items/1096970)  
-
-### L
-[Lean UX](https://canvas.sfu.ca/courses/44038/modules/items/1096966)  
-
-### M
-[Microsoft Product Reaction Cards](https://canvas.sfu.ca/courses/44038/modules/items/1096966)  
-
-### P
-[Problem Statement](https://canvas.sfu.ca/courses/44038/modules/items/1096970)  
-[Product Design Principles](https://canvas.sfu.ca/courses/44038/modules/items/1096970)  
-[Prototyping](https://canvas.sfu.ca/courses/44038/modules/items/1096967)   
-
-### S
-[Scenario-based Design (and Task-Centered Design)](https://canvas.sfu.ca/courses/44038/modules/items/1096967)  
-[Scenarios (and Design Scenarios)](https://canvas.sfu.ca/courses/44038/modules/items/1096967)  
-[Sketching](https://canvas.sfu.ca/courses/44038/modules/items/1096967)
-[Social Design](https://canvas.sfu.ca/courses/44038/modules/items/1096965)  
-[Software Design Processes](https://canvas.sfu.ca/courses/44038/modules/items/1096966)  
-[Storyboards](https://canvas.sfu.ca/courses/44038/modules/items/1096967)  
-
-### T
-[Task Analysis](https://canvas.sfu.ca/courses/44038/modules/items/1096966)  
-
-### U
-[Usability](https://canvas.sfu.ca/courses/44038/modules/items/1096965)  
-[Usability Goals](https://canvas.sfu.ca/courses/44038/modules/items/1096966)  
-[Usability Testing](https://canvas.sfu.ca/courses/44038/modules/items/1096974)   
-[User-centered Design (UCD)](https://canvas.sfu.ca/courses/44038/modules/items/1096965)  
-[User Experience Design](https://canvas.sfu.ca/courses/44038/modules/items/1096966)   
-[UX Goals](https://canvas.sfu.ca/courses/44038/modules/items/1096966)  
-[UX Strategy](https://canvas.sfu.ca/courses/44038/modules/items/1096970)  
-
-### V
-[Value Proposition](https://canvas.sfu.ca/courses/44038/modules/items/1096970)  
+1. AI 进入船桥后的军官能力变化。
+2. 航海数据质量与模型可靠性。
+3. 深度学习与海上目标识别。
+4. 多源感知与智能瞭望。
+5. 智能避碰与 COLREGs。
+6. 强化学习与船舶控制。
+7. 智能船桥与人机协同。
+8. 对抗环境与安全降级。
+9. 生成式 AI 与航行辅助。
+10. 智能航海训练体系。

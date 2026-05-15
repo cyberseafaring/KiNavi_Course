@@ -1,15 +1,26 @@
-![Image Description](images/dave-hoefler-vl2uAIdBWJ8-unsplash.jpg ':class=banner-image')
+# 训练 2 多源感知链路图
 
-# Module Title
+本训练配合模块 4 使用，要求学员绘制智能感知系统从数据输入到态势输出的链路图。
 
-## Content Header
-Module content here.
+## 训练目标
 
-## Content Header
-Module content here.
+- 标出雷达、光电、红外、AIS、电子海图、气象和平台状态数据。
+- 说明目标检测、跟踪、关联和融合的基本流程。
+- 标出不确定性来源和人员复核点。
 
-## Content Header  
-Module content here.
+## 图示要求
 
-## Content Header
-Module content here.
+1. 左侧列出传感器和数据源。
+2. 中间列出 AI 处理环节：检测、分类、跟踪、关联、融合。
+3. 右侧列出态势输出：目标清单、风险区域、航线边界、告警。
+4. 用红色或特殊标记标出可能失效的位置。
+5. 在图下写 200 字说明，解释值更官如何复核系统输出。
+
+## 评价维度
+
+| 维度 | 达标表现 |
+| --- | --- |
+| 完整性 | 主要传感器和数据源齐全 |
+| 链路清晰 | 输入、处理、输出关系明确 |
+| 风险意识 | 能标出延迟、偏移、遮挡、欺骗和不一致 |
+| 操纵连接 | 能说明态势图如何影响避碰或航迹控制 |
