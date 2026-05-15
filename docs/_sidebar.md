@@ -4,7 +4,7 @@
   - [Kinavi Lab](https://cyberseafaring.github.io/)
 
 - **Course Info**
-  - [智能航海](cpt363-3/home.md)
+  - [智能航海｜全校选修](cpt363-3/home.md)
   - [智能航海](cpt363-4/home.md)
   - [船舶导航雷达](cpt363-1/home.md)
   - [物联网与传感网技术](cpt363-2/home.md)

@@ -18,6 +18,8 @@
 | [Kongsberg Maritime：Remote and autonomous vessels](https://www.kongsberg.com/maritime/ship-types/autonomous-ships/) | 适合讲自主船舶系统集成、远程操作、传感器和控制能力。 |
 | [Yara：The first ever zero emission, autonomous ship](https://www.yara.com/knowledge-grows/game-changer-for-the-environment/) | 适合补充 Yara Birkeland 的项目背景、船舶使命和零排放短途运输场景。 |
 | [Nippon Foundation：MEGURI2040](https://en.nippon-foundation.or.jp/what/projects/ocean/meguri2040) | 日本无人运航船项目，适合讲多船型、多航线、多企业协同验证。 |
+| [Nippon Foundation：GENBU 进入商用运行](https://en.nippon-foundation.or.jp/news/articles/2026/20260130-110050.html) | 适合讲 Level 4 等级自主航行、船级认证、政府检查、固定商用航线和社会实施。 |
+| [Furuno：MEGURI2040 四艘示范船取得认证](https://www.furuno.co.jp/en/news/general/general_category.html?dispmid=961&itemid=1812) | 适合讲船端系统、通信系统、岸基支持系统如何合成完整运行体系。 |
 | [MEGURI2040：大型渡船自主航行演示](https://en.nippon-foundation.or.jp/news/articles/2022/20220118-66716.html) | 适合展示高速大型船舶自主航行、自动靠离泊和社会应用目标。 |
 | [IBM：Mayflower Autonomous Ship](https://www.ibm.com/case-studies/mayflower) | 适合讲 AI 船长、边缘计算、远洋无人科研船和真实海况挑战。 |
 | [IBM Newsroom：Mayflower 跨大西洋尝试](https://newsroom.ibm.com/Mayflower-Autonomous-Ship-2022-Transatlantic-Crossing-Attempt-Now-Underway) | 适合讨论无人船远洋航行中的设备可靠性、天气和远程监控。 |
@@ -32,6 +34,7 @@
 | [Avikus HiNAS](https://www.avikus.ai/products-control) | 适合展示大型商船自主导航辅助系统，讨论从辅助决策到自动控制的过渡。 |
 | [OpenBridge](https://www.openbridge.no/about-openbridge) | 适合讲远程操作中心、船桥界面和工业人机交互标准。 |
 | [Massterly Operations](https://www.massterly.com/operation) | 适合讲自主船队运营、远程支持、技术管理和 24/7 监控。 |
+| [MEGURI2040：移动 Fleet Operation Center](https://en.nippon-foundation.or.jp/news/articles/2025/20250205-107946.html) | 适合讲岸基中心、灾害备份、多船远程支持和通信连续性。 |
 
 ## 4. 港口、航道与船岸协同
 
