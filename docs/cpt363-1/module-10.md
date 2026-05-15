@@ -26,3 +26,30 @@
 - [Chapter 5 雷达导航与定位方法](cpt363-1/module-05.md)
 - [Chapter 5 译文](cpt363-1/textbook/LJMU-Radar/chapter05/chapter-05.md)
 - [课程安排](cpt363-1/schedule.md)
+
+## 场景输入模板
+
+| 信息 | 示例 | 用途 |
+| --- | --- | --- |
+| 航道 | Channel leg, planned course | 确定平行线方向 |
+| 固定目标 | Beacon, headland, pier, bridge mark | 选择定位和监控目标 |
+| 危险区域 | Shallow water, traffic lane edge, restricted area | 设定最小通过距离 |
+| 雷达设置 | Range, display mode, sea clutter | 确定课堂操作方案 |
+| 复核来源 | ECDIS, visual bearing, depth, AIS | 与雷达判断交叉验证 |
+
+## 课堂任务
+
+1. 在给定航线上标出至少两个可稳定观测的固定目标。
+2. 设置一条平行线，说明它代表的安全通过距离。
+3. 设计转向点前后的雷达监控动作。
+4. 写出当雷达岸线与 ECDIS 叠加不一致时的检查顺序。
+5. 用英文说明核心判断：`The parallel index is used to monitor clearing distance from ...`
+
+## 评价维度
+
+| 维度 | 达标表现 |
+| --- | --- |
+| 目标选择 | 固定目标清晰、可识别、与海图对应 |
+| 安全裕度 | 通过距离有依据并考虑船位误差 |
+| 操作设计 | 量程、显示模式和 EBL / VRM 使用合理 |
+| 风险复核 | 能处理雷达与 ECDIS 不一致的情况 |

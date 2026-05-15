@@ -26,3 +26,31 @@
 - [Chapter 6 目标跟踪与避碰决策](cpt363-1/module-06.md)
 - [Chapter 6 译文](cpt363-1/textbook/LJMU-Radar/chapter06/chapter-06.md)
 - [课程专题：会遇场景中的目标标绘](cpt363-1/topics.md)
+
+## 训练数据模板
+
+| 项目 | 示例字段 | 说明 |
+| --- | --- | --- |
+| 本船信息 | Course, Speed | 本船航向、航速和显示稳定方式 |
+| 目标观测 1 | Time, Range, Bearing | 第一次观测距离和方位 |
+| 目标观测 2 | Time, Range, Bearing | 第二次观测距离和方位 |
+| 目标观测 3 | Time, Range, Bearing | 第三次观测用于确认趋势 |
+| 环境条件 | Visibility, traffic density, sea state | 用于判断行动时机和安全裕度 |
+
+## 判断步骤
+
+1. 把三次观测点标在同一相对运动图上。
+2. 连接目标位置，形成相对运动线。
+3. 找出最近会遇点，估算 CPA 和 TCPA。
+4. 判断风险是否达到行动阈值。
+5. 设计避让行动并画出新相对运动线。
+6. 用英文复述结论：`The target is passing ahead / astern with CPA ... NM and TCPA ... minutes.`
+
+## 评价维度
+
+| 维度 | 达标表现 |
+| --- | --- |
+| 数据处理 | 观测点、时间间隔和标绘比例一致 |
+| 风险判断 | CPA / TCPA 结论与图上趋势一致 |
+| 规则意识 | 能结合会遇局面说明行动理由 |
+| 复核能力 | 能解释行动后如何确认风险降低 |

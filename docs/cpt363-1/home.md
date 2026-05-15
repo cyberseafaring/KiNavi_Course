@@ -199,6 +199,7 @@
       <a href="#/cpt363-1/topics"><strong>专题地图</strong><span>Discussion and paper topics</span></a>
       <a href="cpt363-1/slides/index.html"><strong>HTML 课件</strong><span>Bilingual radar classroom decks</span></a>
       <a href="#/cpt363-1/textbook"><strong>数字教材</strong><span>Textbook and bilingual reading</span></a>
+      <a href="#/cpt363-1/textbook-knowledge-map"><strong>教材知识地图</strong><span>Textbook-to-course alignment</span></a>
       <a href="#/cpt363-1/abbreviation"><strong>术语缩写</strong><span>Radar and bridge glossary</span></a>
       <a href="#/cpt363-1/module-09"><strong>标绘训练</strong><span>CPA / TCPA and motion plotting</span></a>
       <a href="#/cpt363-1/module-13"><strong>复习展示</strong><span>Final review and presentation</span></a>

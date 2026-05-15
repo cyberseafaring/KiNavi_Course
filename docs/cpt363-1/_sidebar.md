@@ -8,6 +8,7 @@
 - [课程资源](cpt363-1/resources.md)
 - [章节课件](cpt363-1/slides.md)
 - [数字教材](cpt363-1/textbook.md)
+- [教材知识地图](cpt363-1/textbook-knowledge-map.md)
 - [术语缩写](cpt363-1/abbreviation.md)
 
 **八章主线**

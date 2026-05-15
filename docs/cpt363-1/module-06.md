@@ -35,3 +35,35 @@
 ## 课堂输出
 
 完成一个会遇场景分析，包含目标连续位置、相对运动判断、CPA / TCPA、适用规则、避让行动和行动后复核。
+
+## 教材深化 · Textbook Deepening
+
+| 教材连接 | 需要学生掌握的内容 | English Expression |
+| --- | --- | --- |
+| 第7章 第一节 | 雷达标绘建立相对运动和避碰计算基础 | Radar plotting builds the basis for relative motion analysis. |
+| 第7章 第二节 | 相对运动作图用于判断 CPA、TCPA 和目标趋势 | Relative motion plotting supports CPA and TCPA assessment. |
+| 第8章 第一至二节 | ARPA 目标跟踪依赖稳定获取、传感器输入和目标运动模型 | ARPA tracking depends on stable acquisition, sensor inputs, and target motion. |
+| 第8章 第五至七节 | 避碰行动必须结合会遇局面、避碰规则和行动后复核 | Collision avoidance requires COLREGs judgement and post-action verification. |
+
+## 避碰分析流程
+
+| 环节 | 课堂动作 | 产出 |
+| --- | --- | --- |
+| 连续观测 | 记录目标多个位置、距离和方位 | 相对运动趋势 |
+| 手工标绘 | 画相对运动线和最近会遇点 | CPA / TCPA 判断 |
+| ARPA 对照 | 查看自动跟踪矢量和告警 | 计算结果复核 |
+| AIS 关联 | 检查身份、航向、航速和位置一致性 | 信息可信度判断 |
+| 规则分析 | 判断对遇、交叉、追越或特殊水域约束 | 行动责任 |
+| 行动复核 | 观察新矢量、新 CPA 和通过距离 | 避让效果 |
+
+## 课堂训练
+
+1. 给出三次目标观测位置，让学生画出相对运动线并估算 CPA / TCPA。
+2. 给出 ARPA 和 AIS 不一致的数据，让学生判断哪些信息可用于避碰。
+3. 让学生说明避让行动后如何用雷达确认风险已经降低。
+
+## 复习问题
+
+- 为什么 ARPA 自动计算仍然需要人工复核？
+- 相对矢量和真矢量分别回答什么问题？
+- 符合避碰规则的行动为什么还需要行动后检查？

@@ -11,6 +11,7 @@
 - [章节课件](cpt363-1/slides.md)
 - [HTML 课件总览](cpt363-1/slides/index.html)
 - [数字教材](cpt363-1/textbook.md)
+- [教材知识地图](cpt363-1/textbook-knowledge-map.md)
 - [术语缩写](cpt363-1/abbreviation.md)
 
 ## Bilingual HTML Slide Decks

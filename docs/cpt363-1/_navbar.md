@@ -3,5 +3,6 @@
 * [课程安排](cpt363-1/schedule.md)
 * [专题地图](cpt363-1/topics.md)
 * [课程资源](cpt363-1/resources.md)
+* [教材地图](cpt363-1/textbook-knowledge-map.md)
 * [术语缩写](cpt363-1/abbreviation.md)
 * [联系方式](cpt363-1/contact.md)

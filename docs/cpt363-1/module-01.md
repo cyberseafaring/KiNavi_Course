@@ -34,3 +34,31 @@
 ## 课堂输出
 
 完成一页“雷达为什么仍然重要”案例卡，内容包括场景、可见目标、雷达信息、其他设备信息和最终安全判断。
+
+## 教材深化 · Textbook Deepening
+
+| 教材连接 | 需要学生掌握的内容 | English Expression |
+| --- | --- | --- |
+| 第1章 引言 | 雷达在瞭望、定位、导航和避碰中的安全价值 | Radar supports lookout, fixing, navigation, and collision avoidance. |
+| 第2章 第一节 | 雷达通过测量回波往返时间获得目标距离 | Range is derived from the echo time of flight. |
+| 第2章 第一节 | 雷达通过天线指向和艏线基准获得目标方位 | Bearing depends on antenna direction and heading reference. |
+| 第2章 第二节 | 不同显示方式改变驾驶员理解图像的参考基准 | Display modes change the reference frame of the radar picture. |
+
+## 关键概念拆解
+
+- **回波 / Echo**：目标反射回来的电磁波信号，是雷达图像的基础。
+- **距离 / Range**：从本船到目标的距离，常用海里表示，是避碰和定位的基础数据。
+- **方位 / Bearing**：目标相对本船或真北的方向，受艏线和航向输入影响。
+- **显示模式 / Display mode**：Head-Up、North-Up、Course-Up 等模式服务不同操船任务。
+
+## 课堂训练
+
+1. 给出一个雾航场景，让学生列出视觉、AIS、ECDIS 和雷达分别能提供的信息。
+2. 让学生解释“为什么 AIS 上没有目标，雷达上仍可能存在目标”。
+3. 用一张简单雷达截图，让学生标出距离、方位、岸线、目标和可能的杂波区域。
+
+## 复习问题
+
+- 雷达与 AIS 的根本区别是什么？
+- 雷达为什么适合发现非合作目标？
+- 在能见度受限航行中，雷达信息如何进入安全航速和避碰判断？
